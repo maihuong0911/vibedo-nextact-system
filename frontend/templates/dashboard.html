@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Thống Quản Lý Công Việc</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Hệ Thống Quản Lý Công Việc</h1>
+            <div class="header-buttons">
+                <button class="btn btn-primary" onclick="openAddNoteModal()">Tạo Ghi Chú</button>
+                <button class="btn btn-primary" onclick="openQuickAddModal()">Tạo Nhanh</button>
+                <button class="btn btn-logout" onclick="logout()">Đăng Xuất</button>
+            </div>
+        </div>
+
+        <!-- ====== LAYOUT B: LEFT SIDEBAR + MAIN + RIGHT PANEL ====== -->
+        <div class="dashboard-layout">
+            <!-- LEFT SIDEBAR -->
+            <aside class="sidebar">
+                <h2>Thống Kê</h2>
+                <div class="stats">
+                    <p>
+                        <span>Tổng Ghi Chú</span>
+                        <strong id="total">0</strong>
+                    </p>
+                    <p>
+                        <span>Có Hạn Chót</span>
+                        <strong id="withDeadline">0</strong>
+                    </p>
+                    <p>
+                        <span>Ưu Tiên Cao</span>
+                        <strong id="highPriority">0</strong>
+                    </p>
+                    <p>
+                        <span>Không Có Hạn Chót</span>
+                        <strong id="noDeadline">0</strong>
+                    </p>
+                </div>
+
+                <!-- Quick shortcuts (tĩnh, không đụng logic) -->
+                <div class="side-card">
+                    <div class="side-card-title">Lối tắt</div>
+                    <div class="side-actions">
+                        <button class="btn btn-primary side-btn" onclick="openQuickAddModal()">⚡ Tạo nhanh</button>
+                        <button class="btn side-btn side-btn-outline" onclick="openAddNoteModal()">➕ Tạo ghi chú</button>
+                    </div>
+                    <div class="side-hint">
+                        Tip: Click vào 1 card để xem chi tiết và hỏi trợ lý.
+                    </div>
+                </div>
+            </aside>
+
+            <!-- MAIN -->
+            <main class="main">
+                <!-- Filter & Search Section -->
+                <div class="filter-container">
+                    <div class="filter-header">
+                        <h2>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+                            </svg>
+                            Bộ Lọc & Tìm Kiếm
+                        </h2>
+                        <button class="filter-toggle" onclick="toggleFilters()">
+                            <span id="toggleText">Thu gọn</span>
+                        </button>
+                    </div>
+
+                    <div id="filtersContent">
+                        <!-- Search Box -->
+                        <div class="search-box">
+                            <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"/>
+                                <path d="m21 21-4.35-4.35"/>
+                            </svg>
+                            <input
+                                type="text"
+                                class="search-input"
+                                id="searchInput"
+                                placeholder="Tìm kiếm công việc..."
+                                oninput="handleSearch()"
+                            >
+                            <button class="clear-search" id="clearSearch" onclick="clearSearch()">×</button>
+                        </div>
+
+                        <!-- Filters Grid -->
+                        <div class="filters-grid">
+                            <div class="filter-group">
+                                <label>Độ ưu tiên</label>
+                                <select class="filter-select" id="priorityFilter" onchange="applyFilters()">
+                                    <option value="">Tất cả</option>
+                                    <option value="3">Cao</option>
+                                    <option value="2">Trung bình</option>
+                                    <option value="1">Thấp</option>
+                                </select>
+                            </div>
+
+                            <div class="filter-group">
+                                <label>Hạn chót</label>
+                                <select class="filter-select" id="deadlineFilter" onchange="applyFilters()">
+                                    <option value="">Tất cả</option>
+                                    <option value="today">Hôm nay</option>
+                                    <option value="tomorrow">Ngày mai</option>
+                                    <option value="week">Tuần này</option>
+                                    <option value="month">Tháng này</option>
+                                    <option value="none">Không có hạn</option>
+                                </select>
+                            </div>
+
+                            <div class="filter-group">
+                                <label>Loại task</label>
+                                <select class="filter-select" id="typeFilter" onchange="applyFilters()">
+                                    <option value="">Tất cả</option>
+                                    <option value="quick">Tạo nhanh</option>
+                                    <option value="normal">Thường</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Filter Actions -->
+                        <div class="filter-actions">
+                            <button class="btn btn-reset" onclick="resetFilters()">Xóa bộ lọc</button>
+                        </div>
+
+                        <!-- Active Filters -->
+                        <div class="active-filters" id="activeFilters"></div>
+                    </div>
+                </div>
+
+                <!-- Results Summary -->
+                <div class="results-summary">
+                    <div>
+                        <span>Tìm thấy</span>
+                        <strong id="resultCount">0</strong>
+                        <span>công việc</span>
+                    </div>
+                    <div class="sort-controls">
+                        <span style="font-size: 13px; color: #6b7280; margin-right: 8px;">Sắp xếp:</span>
+                        <button class="sort-btn active" onclick="sortBy('deadline')">📅 Hạn chót</button>
+                        <button class="sort-btn" onclick="sortBy('priority')">⭐ Ưu tiên</button>
+                        <button class="sort-btn" onclick="sortBy('created')">🕐 Mới nhất</button>
+                    </div>
+                </div>
+
+                <!-- Notes -->
+                <div class="notes-box">
+                    <h2>Công Việc Của Tôi</h2>
+                    <div class="notes-grid" id="notesGrid">
+                        <div class="empty">Chưa có ghi chú nào</div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- RIGHT PANEL (Gợi ý hành động / Trợ lý) -->
+            <aside class="right-panel">
+                <div class="panel-card">
+                    <div class="panel-title">✨ Gợi ý hành động</div>
+                    <div class="panel-sub">
+                        Chọn 1 công việc để xem checklist & đề xuất. (Hiện tại demo tĩnh – sau bạn nối RAG/API vào đây là “ăn điểm” ngay.)
+                    </div>
+
+                    <div class="panel-section">
+                        <div class="panel-section-title">Gợi ý nhanh</div>
+                        <ul class="panel-list">
+                            <li>Chia nhỏ công việc thành 3 bước (subtasks)</li>
+                            <li>Gắn hạn chót + ưu tiên để sắp xếp tự động</li>
+                            <li>Chuẩn bị trước vật dụng / giấy tờ cần thiết</li>
+                        </ul>
+                    </div>
+
+                    <div class="panel-section">
+                        <div class="panel-section-title">Checklist mẫu</div>
+                        <div class="panel-checklist">
+                            <label class="check-item"><input type="checkbox"> Xác nhận thời gian / địa điểm</label>
+                            <label class="check-item"><input type="checkbox"> Chuẩn bị tài liệu / vật dụng</label>
+                            <label class="check-item"><input type="checkbox"> Dự phòng 15–20 phút di chuyển</label>
+                        </div>
+                    </div>
+
+                    <div class="panel-section">
+                        <div class="panel-section-title">Gợi ý hỏi trợ lý</div>
+                        <div class="panel-chips">
+                            <button class="chip" type="button" onclick="openDetailModal(window.currentDetailId || 0)">Cần chuẩn bị gì?</button>
+                            <button class="chip" type="button" onclick="openDetailModal(window.currentDetailId || 0)">Chia nhỏ thành bước</button>
+                            <button class="chip" type="button" onclick="openDetailModal(window.currentDetailId || 0)">Nhắc hạn chót</button>
+                        </div>
+                        <div class="panel-note">
+                            Tip: Panel này giữ “đề tài gợi ý hành động” luôn hiện, nhìn vào là thấy đúng hướng đồ án.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-card">
+                    <div class="panel-title">💡 Trợ lý theo công việc</div>
+                    <div class="panel-sub">
+                        Phần chat chi tiết vẫn nằm trong modal. Panel này đóng vai trò “điểm nhấn AI”.
+                    </div>
+                    <div class="panel-mini">
+                        <div class="mini-row">
+                            <span class="mini-dot"></span>
+                            <span>Đề xuất theo nhãn (category)</span>
+                        </div>
+                        <div class="mini-row">
+                            <span class="mini-dot"></span>
+                            <span>Đề xuất theo hạn chót</span>
+                        </div>
+                        <div class="mini-row">
+                            <span class="mini-dot"></span>
+                            <span>Đề xuất theo lịch sử người dùng</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Modal Tạo Ghi Chú -->
+    <div class="modal" id="addModal">
+        <div class="modal-content">
+            <button class="close" onclick="closeAddNoteModal()">&times;</button>
+            <div class="modal-header">Tạo Ghi Chú</div>
+            <form id="addForm" onsubmit="addNote(event)">
+                <div class="form-group">
+                    <label>Tiêu Đề</label>
+                    <input type="text" id="addTitle" required>
+                </div>
+                <div class="form-group">
+                    <label>Mô Tả</label>
+                    <textarea id="addContent"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Ưu Tiên</label>
+                    <select id="addPriority">
+                        <option value="1">Thấp</option>
+                        <option value="2">Trung Bình</option>
+                        <option value="3">Cao</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Hạn Chót</label>
+                    <input type="date" id="addDueDate">
+                </div>
+                <div class="modal-actions">
+                    <button type="submit" class="btn-save">Tạo</button>
+                    <button type="button" class="btn-cancel" onclick="closeAddNoteModal()">Hủy</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Tạo Nhanh -->
+    <div class="modal" id="quickModal">
+        <div class="modal-content">
+            <button class="close" onclick="closeQuickAddModal()">&times;</button>
+            <div class="modal-header">Tạo Nhanh</div>
+            <form id="quickForm" onsubmit="quickAdd(event)">
+                <div class="form-group">
+                    <label>Tiêu Đề</label>
+                    <input type="text" id="quickTitle" required oninput="handleQuickInput()">
+                </div>
+                <input type="hidden" id="quickDueDate">
+                <div class="form-group" id="classifyResult" style="display: none;">
+                    <label>Phân Tích Tự Động</label>
+                    <div style="background: #e8f4f8; padding: 12px; border-radius: 8px; border-left: 4px solid #2c5f7d;">
+                        <div style="margin-bottom: 8px;">
+                            <strong id="categoryName" style="color: #1a3d52;"></strong>
+                            <span id="confidenceScore" style="color: #ff8c42; font-weight: 600; margin-left: 10px;"></span>
+                        </div>
+                        <div id="deadlineResult" style="display: none; margin-top: 8px; padding-top: 8px; border-top: 1px solid #d1d5db;">
+                            <small style="color: #6b7280;">Hạn chót: <strong id="deadlineValue" style="color: #ef4444;"></strong></small>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button type="submit" class="btn-save">Thêm</button>
+                    <button type="button" class="btn-cancel" onclick="closeQuickAddModal()">Hủy</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Chỉnh Sửa -->
+    <div class="modal" id="editModal">
+        <div class="modal-content">
+            <button class="close" onclick="closeEditModal()">&times;</button>
+            <div class="modal-header">Chỉnh Sửa Ghi Chú</div>
+            <form id="editForm" onsubmit="updateNote(event)">
+                <div class="form-group">
+                    <label>Tiêu Đề</label>
+                    <input type="text" id="editTitle" required>
+                </div>
+                <div class="form-group">
+                    <label>Mô Tả</label>
+                    <textarea id="editContent"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Ưu Tiên</label>
+                    <select id="editPriority">
+                        <option value="1">Thấp</option>
+                        <option value="2">Trung Bình</option>
+                        <option value="3">Cao</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Hạn Chót</label>
+                    <input type="date" id="editDueDate">
+                </div>
+                <div class="modal-actions">
+                    <button type="submit" class="btn-save">Lưu</button>
+                    <button type="button" class="btn-cancel" onclick="closeEditModal()">Hủy</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Xem Chi Tiết -->
+    <div class="modal" id="detailModal">
+        <div class="modal-content" style="max-width: 800px; max-height: 90vh; display: flex; flex-direction: column;">
+            <button class="close" onclick="closeDetailModal()">&times;</button>
+            <div class="modal-header">Chi Tiết Công Việc</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 20px; overflow-y: auto; flex: 1;">
+                <!-- Phần thông tin chi tiết -->
+                <div>
+                    <div style="margin-bottom: 20px;">
+                        <label style="color: #9ca3af; font-size: 12px; font-weight: 600;">TIÊU ĐỀ</label>
+                        <h2 id="detailTitle" style="color: #2c5f7d; margin: 8px 0; font-size: 18px;"></h2>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label style="color: #9ca3af; font-size: 12px; font-weight: 600;">MÔ TẢ</label>
+                        <p id="detailContent" style="color: #6b7280; margin: 8px 0; line-height: 1.6;"></p>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px;">
+                        <div>
+                            <label style="color: #9ca3af; font-size: 12px; font-weight: 600;">ƯU TIÊN</label>
+                            <p id="detailPriority" style="color: #6b7280; margin: 8px 0;"></p>
+                        </div>
+                        <div>
+                            <label style="color: #9ca3af; font-size: 12px; font-weight: 600;">HẠN CHÓT</label>
+                            <p id="detailDueDate" style="color: #6b7280; margin: 8px 0;"></p>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label style="color: #9ca3af; font-size: 12px; font-weight: 600;">NGÀY TẠO</label>
+                        <p id="detailCreatedAt" style="color: #6b7280; margin: 8px 0;"></p>
+                    </div>
+                    <div id="detailQuickAdd" style="display: none; background: #fff3e6; border-left: 4px solid #ff8c42; padding: 12px; margin-bottom: 20px; border-radius: 8px;">
+                        <p style="color: #ff8c42; font-weight: 600; margin: 0;">⚡ Được tạo nhanh</p>
+                    </div>
+                </div>
+
+                <!-- Phần chat -->
+                <div class="chat-box-container">
+                    <div class="chat-box-header">
+                        <h3>💡 Trợ Lý Gợi Ý</h3>
+                    </div>
+                    <div id="chatMessages" class="chat-box-messages">
+                        <div class="chat-msg bot-msg">
+                            👋 Hỏi tôi về cách chuẩn bị cho công việc này!
+                        </div>
+                    </div>
+                    <div class="chat-box-input">
+                        <input type="text" id="chatInput" placeholder="Nhập câu hỏi..." class="chat-box-input-field">
+                        <button onclick="sendChatMessage()" class="chat-box-send-btn">Gửi</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nút actions -->
+            <div style="padding: 16px; border-top: 2px solid #e5e7eb; display: flex; gap: 10px;">
+                <button class="btn btn-primary" onclick="openEditModalFromDetail()" style="flex: 1;">Sửa</button>
+                <button class="btn" style="flex: 1; background: #ef4444; color: white;" onclick="deleteAndClose()">Xóa</button>
+                <button type="button" class="btn" onclick="closeDetailModal()" style="flex: 1; background: #e5e7eb; color: #374151;">Đóng</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

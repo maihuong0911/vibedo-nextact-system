@@ -1,0 +1,2001 @@
+﻿scenario,text,labels,time_phrase,id
+TRUONG_HOC,học bài môn toán trước ngày mai.,HOC_TAP,ngày mai,1
+VAN_PHONG,thứ 7 soạn email dự án.,GUI_EMAIL,thứ 7,2
+VAN_PHONG,cập nhật tiến độ dự án trước 8h.,THEO_DOI_CONG_VIEC,thứ 2,3
+TRUONG_HOC,hoàn thành bài tập môn toán trước thứ 6.,NOP_BAI,thứ 2,4
+VAN_PHONG,hôm nay phải theo dõi tiến độ kế hoạch.,THEO_DOI_CONG_VIEC,hôm nay,5
+TRUONG_HOC,ngày mai có họp lớp bài tập nhóm.,HOP_LOP,ngày mai,6
+CA_NHAN,chủ nhật phải mua bác sĩ.,MUA_SAM,chủ nhật,7
+TRUONG_HOC,hoàn thành bài tập môn toán trước 8h.,NOP_BAI,chủ nhật,8
+VAN_PHONG,thứ 5 có báo cáo tiến độ tài liệu.,THEO_DOI_CONG_VIEC,thứ 5,9
+TRUONG_HOC,thứ 2 phải sinh hoạt lớp môn lập trình.,HOP_LOP,thứ 2,10
+CA_NHAN,lịch hẹn quà sinh nhật vào thứ 3.,HEN_CA_NHAN,thứ 3,11
+TRUONG_HOC,sinh hoạt lớp bài tập nhóm trước 8h.,HOP_LOP,ngày mai,12
+TRUONG_HOC,thứ 6 học bài môn văn.,HOC_TAP,thứ 6,13
+CA_NHAN,tối nay có đi gặp quà sinh nhật.,HEN_CA_NHAN,tối nay,14
+TRUONG_HOC,tối nay thi cuối kỳ bài tập nhóm.,THI_CU,tối nay,15
+VAN_PHONG,hôm nay có trả lời email dự án.,GUI_EMAIL,hôm nay,16
+CA_NHAN,đặt mua đồ dùng cá nhân vào thứ 3.,MUA_SAM,thứ 3,17
+CA_NHAN,nhắc đồ dùng cá nhân trước 10h.,NHAC_VIEC,thứ 4,18
+VAN_PHONG,tối nay phải theo dõi tiến độ kế hoạch.,THEO_DOI_CONG_VIEC,tối nay,19
+CA_NHAN,cuối tuần hẹn đồ dùng cá nhân.,HEN_CA_NHAN,cuối tuần,20
+VAN_PHONG,cập nhật tiến độ tài liệu vào thứ 3.,THEO_DOI_CONG_VIEC,thứ 3,21
+CA_NHAN,phải làm đồ dùng cá nhân vào thứ 4.,NHAC_VIEC,thứ 4,22
+VAN_PHONG,ngày kia phải nộp báo cáo kế hoạch.,NOP_BAO_CAO,ngày kia,23
+VAN_PHONG,thứ 3 báo cáo tiến độ kế hoạch.,THEO_DOI_CONG_VIEC,thứ 3,24
+VAN_PHONG,chủ nhật có báo cáo tiến độ công việc.,THEO_DOI_CONG_VIEC,chủ nhật,25
+VAN_PHONG,meeting tài liệu vào thứ 5.,HEN_LICH,thứ 5,26
+TRUONG_HOC,hôm nay nộp bài tập môn tiếng Anh.,NOP_BAI,hôm nay,27
+VAN_PHONG,thứ 4 theo dõi tiến độ dự án.,THEO_DOI_CONG_VIEC,thứ 4,28
+VAN_PHONG,thứ 7 có trao đổi kế hoạch.,HEN_LICH,thứ 7,29
+CA_NHAN,chủ nhật phải lịch hẹn bạn bè.,HEN_CA_NHAN,chủ nhật,30
+CA_NHAN,thứ 4 nhớ quà sinh nhật.,NHAC_VIEC,thứ 4,31
+VAN_PHONG,thứ 6 cập nhật tiến độ hợp đồng.,THEO_DOI_CONG_VIEC,thứ 6,32
+VAN_PHONG,thứ 6 phải lịch hẹn công việc.,HEN_LICH,thứ 6,33
+CA_NHAN,lịch hẹn quà sinh nhật trước 10h.,HEN_CA_NHAN,thứ 4,34
+VAN_PHONG,chiều mai có soạn email dự án.,GUI_EMAIL,chiều mai,35
+CA_NHAN,nhắc gia đình trước 10h.,NHAC_VIEC,tối nay,36
+CA_NHAN,chủ nhật phải đi mua bạn bè.,MUA_SAM,chủ nhật,37
+VAN_PHONG,báo cáo tiến độ kế hoạch vào thứ 2.,THEO_DOI_CONG_VIEC,thứ 2,38
+TRUONG_HOC,thứ 6 phải nộp bài môn lập trình.,NOP_BAI,thứ 6,39
+CA_NHAN,tối nay có đi mua đồ dùng cá nhân.,MUA_SAM,tối nay,40
+TRUONG_HOC,thứ 2 phải nộp bài môn toán.,NOP_BAI,thứ 2,41
+TRUONG_HOC,chủ nhật học bài bài tập nhóm.,HOC_TAP,chủ nhật,42
+TRUONG_HOC,thứ 5 phải thi môn toán.,THI_CU,thứ 5,43
+TRUONG_HOC,học bài môn lập trình vào ngày mai.,HOC_TAP,ngày mai,44
+TRUONG_HOC,ngày kia họp lớp môn văn.,HOP_LOP,ngày kia,45
+VAN_PHONG,báo cáo tiến độ kế hoạch trước ngày mai.,THEO_DOI_CONG_VIEC,chủ nhật,46
+TRUONG_HOC,thứ 7 kiểm tra bài tập nhóm.,THI_CU,thứ 7,47
+VAN_PHONG,thứ 5 phải trao đổi kế hoạch.,HEN_LICH,thứ 5,48
+VAN_PHONG,thứ 3 phải lịch hẹn kế hoạch.,HEN_LICH,thứ 3,49
+CA_NHAN,thứ 5 phải nhớ quà sinh nhật.,NHAC_VIEC,thứ 5,50
+VAN_PHONG,trả lời email tài liệu vào cuối tuần.,GUI_EMAIL,cuối tuần,51
+CA_NHAN,thứ 7 đi gặp bạn bè.,HEN_CA_NHAN,thứ 7,52
+TRUONG_HOC,tối nay phải chuẩn bị bài môn toán.,HOC_TAP,tối nay,53
+VAN_PHONG,gửi báo cáo tài liệu trước 8h.,NOP_BAO_CAO,chiều mai,54
+VAN_PHONG,soạn email tài liệu vào thứ 7.,GUI_EMAIL,thứ 7,55
+VAN_PHONG,thứ 3 hẹn gặp kế hoạch.,HEN_LICH,thứ 3,56
+CA_NHAN,phải làm bác sĩ vào tối nay.,NHAC_VIEC,tối nay,57
+TRUONG_HOC,chuẩn bị bài môn lập trình trong hôm nay.,HOC_TAP,thứ 6,58
+TRUONG_HOC,thứ 3 phải chuẩn bị bài bài tập nhóm.,HOC_TAP,thứ 3,59
+TRUONG_HOC,thứ 5 có học bài môn toán.,HOC_TAP,thứ 5,60
+VAN_PHONG,thứ 2 có gửi báo cáo dự án.,NOP_BAO_CAO,thứ 2,61
+VAN_PHONG,ngày kia phải hoàn thành báo cáo công việc.,NOP_BAO_CAO,ngày kia,62
+TRUONG_HOC,thứ 5 phải chuẩn bị bài môn toán.,HOC_TAP,thứ 5,63
+CA_NHAN,thứ 7 có lịch hẹn đồ dùng cá nhân.,HEN_CA_NHAN,thứ 7,64
+TRUONG_HOC,ngày mai có học bài môn lập trình.,HOC_TAP,ngày mai,65
+VAN_PHONG,thứ 6 soạn email hợp đồng.,GUI_EMAIL,thứ 6,66
+TRUONG_HOC,ngày mai phải thi giữa kỳ bài tập nhóm.,THI_CU,ngày mai,67
+VAN_PHONG,hôm nay phải lịch hẹn công việc.,HEN_LICH,hôm nay,68
+TRUONG_HOC,học bài môn lập trình trước 10h.,HOC_TAP,thứ 5,69
+CA_NHAN,ngày mai đi mua gia đình.,MUA_SAM,ngày mai,70
+CA_NHAN,thứ 3 hẹn bác sĩ.,HEN_CA_NHAN,thứ 3,71
+TRUONG_HOC,ngày mai hoàn thành bài tập môn văn.,NOP_BAI,ngày mai,72
+TRUONG_HOC,nộp bài tập bài tập nhóm trước 17h.,NOP_BAI,thứ 5,73
+VAN_PHONG,ngày mai có trao đổi kế hoạch.,HEN_LICH,ngày mai,74
+VAN_PHONG,nộp báo cáo công việc trước 17h.,NOP_BAO_CAO,sáng mai,75
+VAN_PHONG,sáng mai có trả lời email tài liệu.,GUI_EMAIL,sáng mai,76
+TRUONG_HOC,nộp bài tập môn toán trước 8h.,NOP_BAI,hôm nay,77
+CA_NHAN,thứ 2 đi gặp đồ dùng cá nhân.,HEN_CA_NHAN,thứ 2,78
+CA_NHAN,đi mua đồ dùng cá nhân vào thứ 7.,MUA_SAM,thứ 7,79
+CA_NHAN,thứ 2 phải phải làm bạn bè.,NHAC_VIEC,thứ 2,80
+CA_NHAN,thứ 5 đặt mua bạn bè.,MUA_SAM,thứ 5,81
+VAN_PHONG,thứ 5 họp công việc.,HEN_LICH,thứ 5,82
+VAN_PHONG,chủ nhật có báo cáo tiến độ công việc.,THEO_DOI_CONG_VIEC,chủ nhật,83
+VAN_PHONG,thứ 3 theo dõi tiến độ kế hoạch.,THEO_DOI_CONG_VIEC,thứ 3,84
+TRUONG_HOC,thứ 4 thi giữa kỳ bài tập nhóm.,THI_CU,thứ 4,85
+TRUONG_HOC,học bài môn văn vào hôm nay.,HOC_TAP,hôm nay,86
+VAN_PHONG,sáng mai phải cập nhật tiến độ tài liệu.,THEO_DOI_CONG_VIEC,sáng mai,87
+CA_NHAN,cuối tuần phải lịch hẹn gia đình.,HEN_CA_NHAN,cuối tuần,88
+TRUONG_HOC,thứ 3 phải nộp bài tập môn toán.,NOP_BAI,thứ 3,89
+VAN_PHONG,thứ 5 có hoàn thành báo cáo tài liệu.,NOP_BAO_CAO,thứ 5,90
+CA_NHAN,chiều mai phải nhắc gia đình.,NHAC_VIEC,chiều mai,91
+VAN_PHONG,báo cáo tiến độ tài liệu trong hôm nay.,THEO_DOI_CONG_VIEC,ngày kia,92
+CA_NHAN,tối nay phải đi gặp quà sinh nhật.,HEN_CA_NHAN,tối nay,93
+VAN_PHONG,sáng mai họp kế hoạch.,HEN_LICH,sáng mai,94
+TRUONG_HOC,sáng mai phải họp lớp môn toán.,HOP_LOP,sáng mai,95
+TRUONG_HOC,thi môn tiếng Anh trước 8h.,THI_CU,tối nay,96
+CA_NHAN,đi gặp quà sinh nhật vào ngày mai.,HEN_CA_NHAN,ngày mai,97
+TRUONG_HOC,chiều mai phải nộp bài tập môn văn.,NOP_BAI,chiều mai,98
+VAN_PHONG,ngày mai có cập nhật tiến độ hợp đồng.,THEO_DOI_CONG_VIEC,ngày mai,99
+VAN_PHONG,ngày kia có nộp báo cáo tài liệu.,NOP_BAO_CAO,ngày kia,100
+CA_NHAN,chủ nhật phải đặt mua gia đình.,MUA_SAM,chủ nhật,101
+VAN_PHONG,thứ 3 theo dõi tiến độ hợp đồng.,THEO_DOI_CONG_VIEC,thứ 3,102
+CA_NHAN,đi gặp đồ dùng cá nhân trước thứ 6.,HEN_CA_NHAN,thứ 3,103
+TRUONG_HOC,sinh hoạt lớp môn tiếng Anh trước 8h.,HOP_LOP,tối nay,104
+VAN_PHONG,gửi email hợp đồng vào hôm nay.,GUI_EMAIL,hôm nay,105
+VAN_PHONG,thứ 2 cập nhật tiến độ hợp đồng.,THEO_DOI_CONG_VIEC,thứ 2,106
+CA_NHAN,thứ 3 phải lịch hẹn quà sinh nhật.,HEN_CA_NHAN,thứ 3,107
+CA_NHAN,ngày mai có đặt mua gia đình.,MUA_SAM,ngày mai,108
+VAN_PHONG,hôm nay cập nhật tiến độ hợp đồng.,THEO_DOI_CONG_VIEC,hôm nay,109
+TRUONG_HOC,sinh hoạt lớp môn lập trình vào chiều mai.,HOP_LOP,chiều mai,110
+TRUONG_HOC,cuối tuần sinh hoạt lớp môn toán.,HOP_LOP,cuối tuần,111
+TRUONG_HOC,thứ 2 thi cuối kỳ môn toán.,THI_CU,thứ 2,112
+CA_NHAN,nhớ gia đình vào ngày mai.,NHAC_VIEC,ngày mai,113
+CA_NHAN,tối nay hẹn đồ dùng cá nhân.,HEN_CA_NHAN,tối nay,114
+TRUONG_HOC,sáng mai phải nộp bài môn lập trình.,NOP_BAI,sáng mai,115
+TRUONG_HOC,sinh hoạt lớp môn văn vào tối nay.,HOP_LOP,tối nay,116
+VAN_PHONG,thứ 2 báo cáo tiến độ tài liệu.,THEO_DOI_CONG_VIEC,thứ 2,117
+VAN_PHONG,tối nay có cập nhật tiến độ tài liệu.,THEO_DOI_CONG_VIEC,tối nay,118
+TRUONG_HOC,hoàn thành bài tập môn văn vào ngày kia.,NOP_BAI,ngày kia,119
+TRUONG_HOC,chiều mai có thi giữa kỳ môn lập trình.,THI_CU,chiều mai,120
+TRUONG_HOC,học bài môn tiếng Anh vào thứ 7.,HOC_TAP,thứ 7,121
+VAN_PHONG,hoàn thành báo cáo kế hoạch trước 10h.,NOP_BAO_CAO,ngày mai,122
+TRUONG_HOC,học bài môn lập trình vào tối nay.,HOC_TAP,tối nay,123
+VAN_PHONG,nộp báo cáo dự án trước 17h.,NOP_BAO_CAO,ngày kia,124
+VAN_PHONG,gửi email công việc trước ngày mai.,GUI_EMAIL,thứ 3,125
+VAN_PHONG,meeting hợp đồng trước thứ 6.,HEN_LICH,thứ 5,126
+VAN_PHONG,cập nhật tiến độ công việc vào tối nay.,THEO_DOI_CONG_VIEC,tối nay,127
+TRUONG_HOC,thứ 7 phải kiểm tra bài tập nhóm.,THI_CU,thứ 7,128
+VAN_PHONG,gửi email hợp đồng vào thứ 5.,GUI_EMAIL,thứ 5,129
+TRUONG_HOC,thi môn văn vào hôm nay.,THI_CU,hôm nay,130
+CA_NHAN,nhắc bác sĩ trước ngày mai.,NHAC_VIEC,thứ 5,131
+TRUONG_HOC,thứ 2 phải họp lớp môn toán.,HOP_LOP,thứ 2,132
+CA_NHAN,ngày mai mua đồ dùng cá nhân.,MUA_SAM,ngày mai,133
+VAN_PHONG,hôm nay có nộp báo cáo tài liệu.,NOP_BAO_CAO,hôm nay,134
+VAN_PHONG,chiều mai soạn email hợp đồng.,GUI_EMAIL,chiều mai,135
+VAN_PHONG,lịch hẹn tài liệu vào chủ nhật.,HEN_LICH,chủ nhật,136
+TRUONG_HOC,hôm nay có chuẩn bị bài môn toán.,HOC_TAP,hôm nay,137
+TRUONG_HOC,thứ 6 phải thi giữa kỳ môn văn.,THI_CU,thứ 6,138
+CA_NHAN,chiều mai có lịch hẹn đồ dùng cá nhân.,HEN_CA_NHAN,chiều mai,139
+VAN_PHONG,hẹn gặp hợp đồng vào sáng mai.,HEN_LICH,sáng mai,140
+VAN_PHONG,gửi email hợp đồng vào thứ 4.,GUI_EMAIL,thứ 4,141
+VAN_PHONG,soạn email hợp đồng vào thứ 4.,GUI_EMAIL,thứ 4,142
+VAN_PHONG,lịch hẹn tài liệu vào ngày mai.,HEN_LICH,ngày mai,143
+VAN_PHONG,thứ 6 có gửi email kế hoạch.,GUI_EMAIL,thứ 6,144
+TRUONG_HOC,chủ nhật phải hoàn thành bài tập môn tiếng Anh.,NOP_BAI,chủ nhật,145
+TRUONG_HOC,ngày kia họp lớp bài tập nhóm.,HOP_LOP,ngày kia,146
+VAN_PHONG,thứ 5 trao đổi kế hoạch.,HEN_LICH,thứ 5,147
+VAN_PHONG,chiều mai cập nhật tiến độ công việc.,THEO_DOI_CONG_VIEC,chiều mai,148
+VAN_PHONG,gửi email kế hoạch vào sáng mai.,GUI_EMAIL,sáng mai,149
+VAN_PHONG,cuối tuần có soạn email hợp đồng.,GUI_EMAIL,cuối tuần,150
+TRUONG_HOC,ngày mai ôn bài môn toán.,HOC_TAP,ngày mai,151
+TRUONG_HOC,họp lớp bài tập nhóm vào tối nay.,HOP_LOP,tối nay,152
+TRUONG_HOC,thi cuối kỳ môn toán vào hôm nay.,THI_CU,hôm nay,153
+VAN_PHONG,thứ 2 có soạn email hợp đồng.,GUI_EMAIL,thứ 2,154
+CA_NHAN,nhắc đồ dùng cá nhân vào thứ 2.,NHAC_VIEC,thứ 2,155
+VAN_PHONG,ngày mai theo dõi tiến độ hợp đồng.,THEO_DOI_CONG_VIEC,ngày mai,156
+TRUONG_HOC,chủ nhật có chuẩn bị bài môn toán.,HOC_TAP,chủ nhật,157
+TRUONG_HOC,chiều mai có thi môn lập trình.,THI_CU,chiều mai,158
+TRUONG_HOC,tối nay thi bài tập nhóm.,THI_CU,tối nay,159
+VAN_PHONG,nộp báo cáo hợp đồng vào chiều mai.,NOP_BAO_CAO,chiều mai,160
+TRUONG_HOC,thứ 6 sinh hoạt lớp môn văn.,HOP_LOP,thứ 6,161
+CA_NHAN,chủ nhật có phải làm bạn bè.,NHAC_VIEC,chủ nhật,162
+TRUONG_HOC,ngày mai phải sinh hoạt lớp bài tập nhóm.,HOP_LOP,ngày mai,163
+TRUONG_HOC,ngày mai ôn bài môn tiếng Anh.,HOC_TAP,ngày mai,164
+TRUONG_HOC,ngày mai có kiểm tra môn tiếng Anh.,THI_CU,ngày mai,165
+CA_NHAN,lịch hẹn bác sĩ vào thứ 5.,HEN_CA_NHAN,thứ 5,166
+VAN_PHONG,thứ 6 phải nộp báo cáo hợp đồng.,NOP_BAO_CAO,thứ 6,167
+CA_NHAN,tối nay có đặt mua bác sĩ.,MUA_SAM,tối nay,168
+TRUONG_HOC,thứ 3 có thi giữa kỳ môn lập trình.,THI_CU,thứ 3,169
+VAN_PHONG,thứ 2 phải theo dõi tiến độ kế hoạch.,THEO_DOI_CONG_VIEC,thứ 2,170
+TRUONG_HOC,thứ 5 phải học bài môn toán.,HOC_TAP,thứ 5,171
+CA_NHAN,sáng mai mua bác sĩ.,MUA_SAM,sáng mai,172
+VAN_PHONG,cuối tuần có meeting kế hoạch.,HEN_LICH,cuối tuần,173
+VAN_PHONG,gửi email dự án trước 10h.,GUI_EMAIL,hôm nay,174
+CA_NHAN,thứ 7 phải lịch hẹn gia đình.,HEN_CA_NHAN,thứ 7,175
+TRUONG_HOC,thi môn toán trong hôm nay.,THI_CU,sáng mai,176
+TRUONG_HOC,thứ 4 ôn bài môn lập trình.,HOC_TAP,thứ 4,177
+VAN_PHONG,chiều mai phải gửi email tài liệu.,GUI_EMAIL,chiều mai,178
+VAN_PHONG,ngày kia có trả lời email công việc.,GUI_EMAIL,ngày kia,179
+VAN_PHONG,thứ 7 nộp báo cáo hợp đồng.,NOP_BAO_CAO,thứ 7,180
+TRUONG_HOC,nộp bài tập bài tập nhóm trước thứ 6.,NOP_BAI,ngày kia,181
+VAN_PHONG,thứ 5 có gửi báo cáo công việc.,NOP_BAO_CAO,thứ 5,182
+TRUONG_HOC,nộp bài tập bài tập nhóm vào thứ 4.,NOP_BAI,thứ 4,183
+VAN_PHONG,soạn email kế hoạch vào thứ 5.,GUI_EMAIL,thứ 5,184
+VAN_PHONG,thứ 5 meeting kế hoạch.,HEN_LICH,thứ 5,185
+TRUONG_HOC,ngày kia thi cuối kỳ môn văn.,THI_CU,ngày kia,186
+CA_NHAN,đi gặp đồ dùng cá nhân trong hôm nay.,HEN_CA_NHAN,ngày mai,187
+TRUONG_HOC,ôn bài môn lập trình trước 10h.,HOC_TAP,thứ 3,188
+VAN_PHONG,thứ 6 phải họp hợp đồng.,HEN_LICH,thứ 6,189
+TRUONG_HOC,ôn bài môn tiếng Anh trước 8h.,HOC_TAP,thứ 4,190
+CA_NHAN,chiều mai phải nhắc quà sinh nhật.,NHAC_VIEC,chiều mai,191
+CA_NHAN,chủ nhật phải đi gặp đồ dùng cá nhân.,HEN_CA_NHAN,chủ nhật,192
+TRUONG_HOC,chuẩn bị bài môn văn trước cuối tuần.,HOC_TAP,hôm nay,193
+VAN_PHONG,ngày kia phải cập nhật tiến độ dự án.,THEO_DOI_CONG_VIEC,ngày kia,194
+VAN_PHONG,lịch hẹn dự án vào thứ 5.,HEN_LICH,thứ 5,195
+CA_NHAN,thứ 3 phải đi mua đồ dùng cá nhân.,MUA_SAM,thứ 3,196
+TRUONG_HOC,thứ 7 phải sinh hoạt lớp môn tiếng Anh.,HOP_LOP,thứ 7,197
+VAN_PHONG,trao đổi hợp đồng vào thứ 6.,HEN_LICH,thứ 6,198
+CA_NHAN,thứ 5 nhắc đồ dùng cá nhân.,NHAC_VIEC,thứ 5,199
+VAN_PHONG,trả lời email công việc vào ngày mai.,GUI_EMAIL,ngày mai,200
+CA_NHAN,hôm nay phải đặt mua bác sĩ.,MUA_SAM,hôm nay,201
+VAN_PHONG,soạn email tài liệu trước 8h.,GUI_EMAIL,ngày mai,202
+TRUONG_HOC,chủ nhật ôn bài môn toán.,HOC_TAP,chủ nhật,203
+VAN_PHONG,tối nay phải gửi báo cáo công việc.,NOP_BAO_CAO,tối nay,204
+CA_NHAN,mua bác sĩ trước 17h.,MUA_SAM,cuối tuần,205
+TRUONG_HOC,học bài bài tập nhóm vào thứ 3.,HOC_TAP,thứ 3,206
+VAN_PHONG,thứ 2 có soạn email hợp đồng.,GUI_EMAIL,thứ 2,207
+CA_NHAN,thứ 4 phải mua gia đình.,MUA_SAM,thứ 4,208
+VAN_PHONG,theo dõi tiến độ công việc vào sáng mai.,THEO_DOI_CONG_VIEC,sáng mai,209
+VAN_PHONG,hôm nay có gửi email tài liệu.,GUI_EMAIL,hôm nay,210
+TRUONG_HOC,nộp bài tập bài tập nhóm vào sáng mai.,NOP_BAI,sáng mai,211
+CA_NHAN,thứ 4 phải nhớ đồ dùng cá nhân.,NHAC_VIEC,thứ 4,212
+TRUONG_HOC,thi môn tiếng Anh trước 10h.,THI_CU,thứ 2,213
+CA_NHAN,hẹn quà sinh nhật trước 17h.,HEN_CA_NHAN,thứ 3,214
+CA_NHAN,chiều mai phải phải làm bác sĩ.,NHAC_VIEC,chiều mai,215
+VAN_PHONG,thứ 5 có soạn email hợp đồng.,GUI_EMAIL,thứ 5,216
+VAN_PHONG,chủ nhật gửi báo cáo kế hoạch.,NOP_BAO_CAO,chủ nhật,217
+VAN_PHONG,thứ 4 họp tài liệu.,HEN_LICH,thứ 4,218
+CA_NHAN,thứ 5 có phải làm bạn bè.,NHAC_VIEC,thứ 5,219
+CA_NHAN,lịch hẹn gia đình vào chủ nhật.,HEN_CA_NHAN,chủ nhật,220
+VAN_PHONG,nộp báo cáo kế hoạch vào chiều mai.,NOP_BAO_CAO,chiều mai,221
+VAN_PHONG,thứ 5 có hẹn gặp công việc.,HEN_LICH,thứ 5,222
+VAN_PHONG,trao đổi công việc trước thứ 6.,HEN_LICH,chủ nhật,223
+TRUONG_HOC,hôm nay họp lớp môn văn.,HOP_LOP,hôm nay,224
+CA_NHAN,thứ 2 hẹn bạn bè.,HEN_CA_NHAN,thứ 2,225
+VAN_PHONG,sáng mai phải trao đổi tài liệu.,HEN_LICH,sáng mai,226
+TRUONG_HOC,chuẩn bị bài bài tập nhóm vào sáng mai.,HOC_TAP,sáng mai,227
+CA_NHAN,ngày mai đi gặp gia đình.,HEN_CA_NHAN,ngày mai,228
+CA_NHAN,phải làm quà sinh nhật vào hôm nay.,NHAC_VIEC,hôm nay,229
+CA_NHAN,ngày kia nhắc đồ dùng cá nhân.,NHAC_VIEC,ngày kia,230
+TRUONG_HOC,ngày mai có chuẩn bị bài môn toán.,HOC_TAP,ngày mai,231
+CA_NHAN,hẹn quà sinh nhật trước cuối tuần.,HEN_CA_NHAN,sáng mai,232
+TRUONG_HOC,thứ 7 phải kiểm tra môn toán.,THI_CU,thứ 7,233
+TRUONG_HOC,ngày kia có chuẩn bị bài môn văn.,HOC_TAP,ngày kia,234
+VAN_PHONG,cập nhật tiến độ tài liệu trước cuối tuần.,THEO_DOI_CONG_VIEC,thứ 2,235
+TRUONG_HOC,thứ 5 phải họp lớp môn toán.,HOP_LOP,thứ 5,236
+CA_NHAN,chủ nhật nhắc đồ dùng cá nhân.,NHAC_VIEC,chủ nhật,237
+CA_NHAN,hôm nay lịch hẹn bác sĩ.,HEN_CA_NHAN,hôm nay,238
+CA_NHAN,chiều mai hẹn bạn bè.,HEN_CA_NHAN,chiều mai,239
+VAN_PHONG,chiều mai hoàn thành báo cáo dự án.,NOP_BAO_CAO,chiều mai,240
+VAN_PHONG,gửi email tài liệu vào sáng mai.,GUI_EMAIL,sáng mai,241
+VAN_PHONG,ngày mai nộp báo cáo kế hoạch.,NOP_BAO_CAO,ngày mai,242
+CA_NHAN,thứ 6 phải đi gặp gia đình.,HEN_CA_NHAN,thứ 6,243
+VAN_PHONG,thứ 4 có gửi báo cáo công việc.,NOP_BAO_CAO,thứ 4,244
+VAN_PHONG,hôm nay có trả lời email công việc.,GUI_EMAIL,hôm nay,245
+TRUONG_HOC,sinh hoạt lớp bài tập nhóm vào chiều mai.,HOP_LOP,chiều mai,246
+VAN_PHONG,thứ 4 báo cáo tiến độ dự án.,THEO_DOI_CONG_VIEC,thứ 4,247
+CA_NHAN,chủ nhật có mua bác sĩ.,MUA_SAM,chủ nhật,248
+VAN_PHONG,thứ 2 theo dõi tiến độ tài liệu.,THEO_DOI_CONG_VIEC,thứ 2,249
+VAN_PHONG,thứ 6 phải trả lời email dự án.,GUI_EMAIL,thứ 6,250
+TRUONG_HOC,ngày kia phải thi giữa kỳ bài tập nhóm.,THI_CU,ngày kia,251
+CA_NHAN,ngày mai hẹn bạn bè.,HEN_CA_NHAN,ngày mai,252
+TRUONG_HOC,hoàn thành bài tập môn lập trình vào thứ 4.,NOP_BAI,thứ 4,253
+TRUONG_HOC,thứ 4 có nộp bài tập môn toán.,NOP_BAI,thứ 4,254
+TRUONG_HOC,họp lớp môn tiếng Anh vào sáng mai.,HOP_LOP,sáng mai,255
+VAN_PHONG,thứ 4 phải lịch hẹn tài liệu.,HEN_LICH,thứ 4,256
+TRUONG_HOC,thứ 6 có kiểm tra môn tiếng Anh.,THI_CU,thứ 6,257
+CA_NHAN,thứ 6 phải lịch hẹn gia đình.,HEN_CA_NHAN,thứ 6,258
+CA_NHAN,hẹn gia đình trước thứ 6.,HEN_CA_NHAN,tối nay,259
+VAN_PHONG,chủ nhật có nộp báo cáo công việc.,NOP_BAO_CAO,chủ nhật,260
+VAN_PHONG,thứ 3 gửi báo cáo kế hoạch.,NOP_BAO_CAO,thứ 3,261
+VAN_PHONG,ngày kia có hẹn gặp hợp đồng.,HEN_LICH,ngày kia,262
+CA_NHAN,thứ 2 nhớ gia đình.,NHAC_VIEC,thứ 2,263
+TRUONG_HOC,học bài môn tiếng Anh vào hôm nay.,HOC_TAP,hôm nay,264
+TRUONG_HOC,thứ 6 phải chuẩn bị bài môn lập trình.,HOC_TAP,thứ 6,265
+TRUONG_HOC,họp lớp môn văn trước cuối tuần.,HOP_LOP,cuối tuần,266
+CA_NHAN,đặt mua đồ dùng cá nhân trước 10h.,MUA_SAM,cuối tuần,267
+VAN_PHONG,thứ 6 có hoàn thành báo cáo dự án.,NOP_BAO_CAO,thứ 6,268
+TRUONG_HOC,tối nay phải nộp bài tập môn văn.,NOP_BAI,tối nay,269
+TRUONG_HOC,sinh hoạt lớp môn tiếng Anh vào hôm nay.,HOP_LOP,hôm nay,270
+CA_NHAN,sáng mai đặt mua bạn bè.,MUA_SAM,sáng mai,271
+TRUONG_HOC,thứ 3 phải họp lớp môn toán.,HOP_LOP,thứ 3,272
+VAN_PHONG,hoàn thành báo cáo công việc trước ngày mai.,NOP_BAO_CAO,ngày mai,273
+TRUONG_HOC,thứ 7 có chuẩn bị bài môn tiếng Anh.,HOC_TAP,thứ 7,274
+CA_NHAN,thứ 2 phải nhớ đồ dùng cá nhân.,NHAC_VIEC,thứ 2,275
+TRUONG_HOC,thứ 4 hoàn thành bài tập bài tập nhóm.,NOP_BAI,thứ 4,276
+TRUONG_HOC,hôm nay thi cuối kỳ môn tiếng Anh.,THI_CU,hôm nay,277
+TRUONG_HOC,thứ 3 phải sinh hoạt lớp bài tập nhóm.,HOP_LOP,thứ 3,278
+TRUONG_HOC,thứ 6 phải họp lớp môn tiếng Anh.,HOP_LOP,thứ 6,279
+VAN_PHONG,sáng mai phải hẹn gặp hợp đồng.,HEN_LICH,sáng mai,280
+VAN_PHONG,soạn email hợp đồng trước 17h.,GUI_EMAIL,thứ 6,281
+CA_NHAN,tối nay phải hẹn gia đình.,HEN_CA_NHAN,tối nay,282
+TRUONG_HOC,sinh hoạt lớp môn tiếng Anh vào sáng mai.,HOP_LOP,sáng mai,283
+VAN_PHONG,sáng mai có trả lời email kế hoạch.,GUI_EMAIL,sáng mai,284
+TRUONG_HOC,sáng mai có sinh hoạt lớp bài tập nhóm.,HOP_LOP,sáng mai,285
+VAN_PHONG,trả lời email dự án trước ngày mai.,GUI_EMAIL,ngày mai,286
+TRUONG_HOC,sáng mai chuẩn bị bài môn lập trình.,HOC_TAP,sáng mai,287
+CA_NHAN,sáng mai có lịch hẹn bác sĩ.,HEN_CA_NHAN,sáng mai,288
+CA_NHAN,cuối tuần phải đi gặp bạn bè.,HEN_CA_NHAN,cuối tuần,289
+TRUONG_HOC,kiểm tra môn văn trước ngày mai.,THI_CU,thứ 5,290
+VAN_PHONG,thứ 2 phải trao đổi công việc.,HEN_LICH,thứ 2,291
+CA_NHAN,đi gặp đồ dùng cá nhân trước 8h.,HEN_CA_NHAN,sáng mai,292
+VAN_PHONG,trả lời email kế hoạch vào cuối tuần.,GUI_EMAIL,cuối tuần,293
+TRUONG_HOC,nộp bài tập môn tiếng Anh vào ngày kia.,NOP_BAI,ngày kia,294
+VAN_PHONG,chủ nhật theo dõi tiến độ tài liệu.,THEO_DOI_CONG_VIEC,chủ nhật,295
+VAN_PHONG,thứ 6 có trả lời email tài liệu.,GUI_EMAIL,thứ 6,296
+TRUONG_HOC,sáng mai phải thi cuối kỳ môn tiếng Anh.,THI_CU,sáng mai,297
+CA_NHAN,hôm nay phải làm bác sĩ.,NHAC_VIEC,hôm nay,298
+CA_NHAN,đi mua bác sĩ vào thứ 7.,MUA_SAM,thứ 7,299
+VAN_PHONG,sáng mai có hẹn gặp hợp đồng.,HEN_LICH,sáng mai,300
+VAN_PHONG,trả lời email hợp đồng trong hôm nay.,GUI_EMAIL,tối nay,301
+VAN_PHONG,trả lời email công việc trước 17h.,GUI_EMAIL,thứ 5,302
+VAN_PHONG,trả lời email công việc vào cuối tuần.,GUI_EMAIL,cuối tuần,303
+TRUONG_HOC,sáng mai thi giữa kỳ môn văn.,THI_CU,sáng mai,304
+TRUONG_HOC,ngày kia học bài môn lập trình.,HOC_TAP,ngày kia,305
+VAN_PHONG,báo cáo tiến độ tài liệu trong hôm nay.,THEO_DOI_CONG_VIEC,thứ 5,306
+VAN_PHONG,hôm nay phải cập nhật tiến độ dự án.,THEO_DOI_CONG_VIEC,hôm nay,307
+TRUONG_HOC,hoàn thành bài tập bài tập nhóm trước cuối tuần.,NOP_BAI,chủ nhật,308
+VAN_PHONG,hẹn gặp dự án vào sáng mai.,HEN_LICH,sáng mai,309
+CA_NHAN,lịch hẹn bạn bè vào cuối tuần.,HEN_CA_NHAN,cuối tuần,310
+VAN_PHONG,lịch hẹn kế hoạch trước 17h.,HEN_LICH,tối nay,311
+CA_NHAN,thứ 5 có nhớ bạn bè.,NHAC_VIEC,thứ 5,312
+VAN_PHONG,báo cáo tiến độ tài liệu trước cuối tuần.,THEO_DOI_CONG_VIEC,hôm nay,313
+CA_NHAN,lịch hẹn đồ dùng cá nhân vào chủ nhật.,HEN_CA_NHAN,chủ nhật,314
+TRUONG_HOC,chủ nhật phải nộp bài môn tiếng Anh.,NOP_BAI,chủ nhật,315
+TRUONG_HOC,sáng mai phải họp lớp môn toán.,HOP_LOP,sáng mai,316
+VAN_PHONG,hôm nay meeting dự án.,HEN_LICH,hôm nay,317
+VAN_PHONG,thứ 6 có nộp báo cáo kế hoạch.,NOP_BAO_CAO,thứ 6,318
+CA_NHAN,chiều mai phải mua đồ dùng cá nhân.,MUA_SAM,chiều mai,319
+VAN_PHONG,chiều mai soạn email kế hoạch.,GUI_EMAIL,chiều mai,320
+TRUONG_HOC,hôm nay sinh hoạt lớp môn lập trình.,HOP_LOP,hôm nay,321
+VAN_PHONG,ngày mai có họp tài liệu.,HEN_LICH,ngày mai,322
+TRUONG_HOC,hôm nay có học bài bài tập nhóm.,HOC_TAP,hôm nay,323
+CA_NHAN,sáng mai phải đi mua đồ dùng cá nhân.,MUA_SAM,sáng mai,324
+VAN_PHONG,soạn email kế hoạch vào sáng mai.,GUI_EMAIL,sáng mai,325
+TRUONG_HOC,sinh hoạt lớp môn lập trình trước ngày mai.,HOP_LOP,tối nay,326
+TRUONG_HOC,thi giữa kỳ môn toán trước thứ 6.,THI_CU,chủ nhật,327
+TRUONG_HOC,nộp bài bài tập nhóm trước 17h.,NOP_BAI,cuối tuần,328
+TRUONG_HOC,học bài môn tiếng Anh trước cuối tuần.,HOC_TAP,sáng mai,329
+VAN_PHONG,thứ 4 có cập nhật tiến độ dự án.,THEO_DOI_CONG_VIEC,thứ 4,330
+TRUONG_HOC,thứ 3 phải chuẩn bị bài môn toán.,HOC_TAP,thứ 3,331
+CA_NHAN,hẹn quà sinh nhật vào sáng mai.,HEN_CA_NHAN,sáng mai,332
+TRUONG_HOC,hoàn thành bài tập bài tập nhóm vào thứ 6.,NOP_BAI,thứ 6,333
+VAN_PHONG,gửi báo cáo tài liệu vào hôm nay.,NOP_BAO_CAO,hôm nay,334
+TRUONG_HOC,học bài bài tập nhóm vào tối nay.,HOC_TAP,tối nay,335
+TRUONG_HOC,tối nay phải hoàn thành bài tập môn lập trình.,NOP_BAI,tối nay,336
+TRUONG_HOC,thứ 7 phải thi giữa kỳ môn tiếng Anh.,THI_CU,thứ 7,337
+VAN_PHONG,ngày kia có nộp báo cáo dự án.,NOP_BAO_CAO,ngày kia,338
+TRUONG_HOC,cuối tuần phải thi cuối kỳ bài tập nhóm.,THI_CU,cuối tuần,339
+VAN_PHONG,cập nhật tiến độ dự án vào thứ 4.,THEO_DOI_CONG_VIEC,thứ 4,340
+VAN_PHONG,hôm nay có gửi báo cáo tài liệu.,NOP_BAO_CAO,hôm nay,341
+CA_NHAN,mua bác sĩ trước 10h.,MUA_SAM,hôm nay,342
+TRUONG_HOC,học bài môn lập trình vào thứ 5.,HOC_TAP,thứ 5,343
+CA_NHAN,cuối tuần có mua gia đình.,MUA_SAM,cuối tuần,344
+VAN_PHONG,hôm nay gửi báo cáo dự án.,NOP_BAO_CAO,hôm nay,345
+CA_NHAN,thứ 6 phải làm đồ dùng cá nhân.,NHAC_VIEC,thứ 6,346
+CA_NHAN,chiều mai có đi mua bác sĩ.,MUA_SAM,chiều mai,347
+TRUONG_HOC,chuẩn bị bài môn toán vào sáng mai.,HOC_TAP,sáng mai,348
+VAN_PHONG,thứ 2 phải theo dõi tiến độ công việc.,THEO_DOI_CONG_VIEC,thứ 2,349
+VAN_PHONG,hôm nay lịch hẹn công việc.,HEN_LICH,hôm nay,350
+VAN_PHONG,hôm nay phải soạn email hợp đồng.,GUI_EMAIL,hôm nay,351
+TRUONG_HOC,nộp bài môn lập trình vào chủ nhật.,NOP_BAI,chủ nhật,352
+CA_NHAN,hẹn gia đình vào thứ 4.,HEN_CA_NHAN,thứ 4,353
+VAN_PHONG,ngày kia phải trả lời email hợp đồng.,GUI_EMAIL,ngày kia,354
+VAN_PHONG,tối nay phải meeting kế hoạch.,HEN_LICH,tối nay,355
+VAN_PHONG,trao đổi công việc vào chiều mai.,HEN_LICH,chiều mai,356
+VAN_PHONG,thứ 6 có theo dõi tiến độ dự án.,THEO_DOI_CONG_VIEC,thứ 6,357
+VAN_PHONG,ngày kia phải theo dõi tiến độ công việc.,THEO_DOI_CONG_VIEC,ngày kia,358
+CA_NHAN,lịch hẹn đồ dùng cá nhân vào thứ 7.,HEN_CA_NHAN,thứ 7,359
+VAN_PHONG,thứ 2 trả lời email hợp đồng.,GUI_EMAIL,thứ 2,360
+TRUONG_HOC,thứ 3 thi giữa kỳ môn văn.,THI_CU,thứ 3,361
+TRUONG_HOC,ngày kia sinh hoạt lớp môn toán.,HOP_LOP,ngày kia,362
+CA_NHAN,thứ 6 có mua quà sinh nhật.,MUA_SAM,thứ 6,363
+VAN_PHONG,thứ 5 phải gửi email công việc.,GUI_EMAIL,thứ 5,364
+VAN_PHONG,thứ 5 meeting công việc.,HEN_LICH,thứ 5,365
+CA_NHAN,nhắc bác sĩ trước ngày mai.,NHAC_VIEC,thứ 6,366
+TRUONG_HOC,học bài môn toán trước ngày mai.,HOC_TAP,tối nay,367
+TRUONG_HOC,hôm nay phải học bài môn tiếng Anh.,HOC_TAP,hôm nay,368
+TRUONG_HOC,thứ 7 phải ôn bài môn văn.,HOC_TAP,thứ 7,369
+CA_NHAN,ngày mai lịch hẹn quà sinh nhật.,HEN_CA_NHAN,ngày mai,370
+CA_NHAN,ngày kia phải đi mua gia đình.,MUA_SAM,ngày kia,371
+CA_NHAN,chủ nhật phải đặt mua bạn bè.,MUA_SAM,chủ nhật,372
+VAN_PHONG,cuối tuần trao đổi hợp đồng.,HEN_LICH,cuối tuần,373
+CA_NHAN,nhớ gia đình vào cuối tuần.,NHAC_VIEC,cuối tuần,374
+VAN_PHONG,ngày kia có meeting hợp đồng.,HEN_LICH,ngày kia,375
+VAN_PHONG,hôm nay có hoàn thành báo cáo công việc.,NOP_BAO_CAO,hôm nay,376
+CA_NHAN,mua gia đình trước cuối tuần.,MUA_SAM,thứ 7,377
+VAN_PHONG,cuối tuần có lịch hẹn kế hoạch.,HEN_LICH,cuối tuần,378
+CA_NHAN,thứ 3 phải làm bác sĩ.,NHAC_VIEC,thứ 3,379
+CA_NHAN,nhớ quà sinh nhật trong hôm nay.,NHAC_VIEC,hôm nay,380
+VAN_PHONG,thứ 2 phải hẹn gặp dự án.,HEN_LICH,thứ 2,381
+VAN_PHONG,thứ 7 lịch hẹn công việc.,HEN_LICH,thứ 7,382
+VAN_PHONG,hẹn gặp công việc trước ngày mai.,HEN_LICH,hôm nay,383
+CA_NHAN,đi mua quà sinh nhật vào thứ 2.,MUA_SAM,thứ 2,384
+VAN_PHONG,hôm nay gửi email kế hoạch.,GUI_EMAIL,hôm nay,385
+TRUONG_HOC,sinh hoạt lớp môn toán vào ngày mai.,HOP_LOP,ngày mai,386
+VAN_PHONG,nộp báo cáo kế hoạch vào sáng mai.,NOP_BAO_CAO,sáng mai,387
+CA_NHAN,nhắc bác sĩ vào sáng mai.,NHAC_VIEC,sáng mai,388
+CA_NHAN,thứ 5 có đặt mua bác sĩ.,MUA_SAM,thứ 5,389
+TRUONG_HOC,họp lớp môn lập trình trước cuối tuần.,HOP_LOP,chiều mai,390
+TRUONG_HOC,thứ 7 có họp lớp môn lập trình.,HOP_LOP,thứ 7,391
+VAN_PHONG,báo cáo tiến độ dự án trước 8h.,THEO_DOI_CONG_VIEC,thứ 4,392
+VAN_PHONG,thứ 2 lịch hẹn hợp đồng.,HEN_LICH,thứ 2,393
+VAN_PHONG,tối nay gửi báo cáo hợp đồng.,NOP_BAO_CAO,tối nay,394
+VAN_PHONG,sáng mai có trao đổi công việc.,HEN_LICH,sáng mai,395
+CA_NHAN,ngày mai mua quà sinh nhật.,MUA_SAM,ngày mai,396
+CA_NHAN,hôm nay hẹn bạn bè.,HEN_CA_NHAN,hôm nay,397
+TRUONG_HOC,kiểm tra môn toán trong hôm nay.,THI_CU,hôm nay,398
+TRUONG_HOC,nộp bài tập bài tập nhóm vào thứ 7.,NOP_BAI,thứ 7,399
+VAN_PHONG,chủ nhật có gửi báo cáo hợp đồng.,NOP_BAO_CAO,chủ nhật,400
+VAN_PHONG,trao đổi công việc trước cuối tuần.,HEN_LICH,cuối tuần,401
+CA_NHAN,thứ 2 có mua đồ dùng cá nhân.,MUA_SAM,thứ 2,402
+TRUONG_HOC,cuối tuần thi cuối kỳ môn tiếng Anh.,THI_CU,cuối tuần,403
+VAN_PHONG,gửi email kế hoạch vào thứ 7.,GUI_EMAIL,thứ 7,404
+CA_NHAN,ngày kia phải nhắc gia đình.,NHAC_VIEC,ngày kia,405
+TRUONG_HOC,thứ 3 có thi cuối kỳ môn lập trình.,THI_CU,thứ 3,406
+VAN_PHONG,ngày mai có hẹn gặp tài liệu.,HEN_LICH,ngày mai,407
+TRUONG_HOC,cuối tuần có hoàn thành bài tập môn tiếng Anh.,NOP_BAI,cuối tuần,408
+CA_NHAN,sáng mai phải đi gặp bạn bè.,HEN_CA_NHAN,sáng mai,409
+TRUONG_HOC,thi giữa kỳ môn văn trước 10h.,THI_CU,sáng mai,410
+CA_NHAN,phải làm bác sĩ vào chiều mai.,NHAC_VIEC,chiều mai,411
+TRUONG_HOC,học bài môn toán trước cuối tuần.,HOC_TAP,hôm nay,412
+CA_NHAN,hẹn đồ dùng cá nhân vào chủ nhật.,HEN_CA_NHAN,chủ nhật,413
+TRUONG_HOC,chiều mai có nộp bài tập môn tiếng Anh.,NOP_BAI,chiều mai,414
+CA_NHAN,nhớ gia đình trong hôm nay.,NHAC_VIEC,thứ 5,415
+CA_NHAN,phải làm gia đình vào hôm nay.,NHAC_VIEC,hôm nay,416
+TRUONG_HOC,thứ 7 phải sinh hoạt lớp môn văn.,HOP_LOP,thứ 7,417
+TRUONG_HOC,cuối tuần có họp lớp môn toán.,HOP_LOP,cuối tuần,418
+CA_NHAN,thứ 5 hẹn bạn bè.,HEN_CA_NHAN,thứ 5,419
+VAN_PHONG,thứ 3 có soạn email hợp đồng.,GUI_EMAIL,thứ 3,420
+CA_NHAN,đi mua quà sinh nhật vào cuối tuần.,MUA_SAM,cuối tuần,421
+TRUONG_HOC,chủ nhật có sinh hoạt lớp môn toán.,HOP_LOP,chủ nhật,422
+TRUONG_HOC,thứ 7 hoàn thành bài tập môn toán.,NOP_BAI,thứ 7,423
+TRUONG_HOC,chủ nhật phải thi cuối kỳ bài tập nhóm.,THI_CU,chủ nhật,424
+TRUONG_HOC,sinh hoạt lớp môn tiếng Anh trong hôm nay.,HOP_LOP,tối nay,425
+TRUONG_HOC,thứ 4 nộp bài môn lập trình.,NOP_BAI,thứ 4,426
+TRUONG_HOC,ôn bài môn lập trình trước 17h.,HOC_TAP,chiều mai,427
+TRUONG_HOC,cuối tuần phải chuẩn bị bài môn lập trình.,HOC_TAP,cuối tuần,428
+CA_NHAN,hẹn bạn bè trước thứ 6.,HEN_CA_NHAN,hôm nay,429
+CA_NHAN,sáng mai hẹn quà sinh nhật.,HEN_CA_NHAN,sáng mai,430
+CA_NHAN,nhắc bác sĩ trước thứ 6.,NHAC_VIEC,thứ 3,431
+VAN_PHONG,chủ nhật trả lời email dự án.,GUI_EMAIL,chủ nhật,432
+VAN_PHONG,gửi báo cáo tài liệu trước 17h.,NOP_BAO_CAO,chủ nhật,433
+CA_NHAN,thứ 5 đi gặp bạn bè.,HEN_CA_NHAN,thứ 5,434
+VAN_PHONG,ngày mai hoàn thành báo cáo tài liệu.,NOP_BAO_CAO,ngày mai,435
+VAN_PHONG,hoàn thành báo cáo hợp đồng trước cuối tuần.,NOP_BAO_CAO,cuối tuần,436
+TRUONG_HOC,hoàn thành bài tập môn toán trước ngày mai.,NOP_BAI,sáng mai,437
+TRUONG_HOC,thứ 4 phải chuẩn bị bài môn văn.,HOC_TAP,thứ 4,438
+VAN_PHONG,cuối tuần soạn email dự án.,GUI_EMAIL,cuối tuần,439
+TRUONG_HOC,thứ 5 học bài bài tập nhóm.,HOC_TAP,thứ 5,440
+VAN_PHONG,báo cáo tiến độ dự án trước 8h.,THEO_DOI_CONG_VIEC,thứ 6,441
+VAN_PHONG,ngày kia phải nộp báo cáo dự án.,NOP_BAO_CAO,ngày kia,442
+TRUONG_HOC,thứ 5 có nộp bài tập môn lập trình.,NOP_BAI,thứ 5,443
+TRUONG_HOC,nộp bài môn tiếng Anh trước thứ 6.,NOP_BAI,sáng mai,444
+VAN_PHONG,chiều mai cập nhật tiến độ hợp đồng.,THEO_DOI_CONG_VIEC,chiều mai,445
+VAN_PHONG,thứ 4 phải hẹn gặp kế hoạch.,HEN_LICH,thứ 4,446
+VAN_PHONG,thứ 4 có trả lời email tài liệu.,GUI_EMAIL,thứ 4,447
+CA_NHAN,sáng mai nhớ đồ dùng cá nhân.,NHAC_VIEC,sáng mai,448
+TRUONG_HOC,thứ 2 có kiểm tra môn tiếng Anh.,THI_CU,thứ 2,449
+TRUONG_HOC,thứ 3 học bài môn toán.,HOC_TAP,thứ 3,450
+TRUONG_HOC,ngày mai có ôn bài môn văn.,HOC_TAP,ngày mai,451
+CA_NHAN,thứ 6 phải đi gặp đồ dùng cá nhân.,HEN_CA_NHAN,thứ 6,452
+VAN_PHONG,trả lời email kế hoạch vào chiều mai.,GUI_EMAIL,chiều mai,453
+CA_NHAN,thứ 6 phải mua gia đình.,MUA_SAM,thứ 6,454
+VAN_PHONG,báo cáo tiến độ kế hoạch trước 17h.,THEO_DOI_CONG_VIEC,chiều mai,455
+TRUONG_HOC,chủ nhật phải kiểm tra môn tiếng Anh.,THI_CU,chủ nhật,456
+VAN_PHONG,thứ 7 có trao đổi dự án.,HEN_LICH,thứ 7,457
+CA_NHAN,ngày kia nhắc quà sinh nhật.,NHAC_VIEC,ngày kia,458
+TRUONG_HOC,tối nay phải hoàn thành bài tập môn văn.,NOP_BAI,tối nay,459
+TRUONG_HOC,ngày mai có chuẩn bị bài môn toán.,HOC_TAP,ngày mai,460
+CA_NHAN,chiều mai nhắc bác sĩ.,NHAC_VIEC,chiều mai,461
+VAN_PHONG,gửi email hợp đồng vào thứ 3.,GUI_EMAIL,thứ 3,462
+TRUONG_HOC,hôm nay có học bài môn văn.,HOC_TAP,hôm nay,463
+TRUONG_HOC,hoàn thành bài tập môn tiếng Anh vào thứ 2.,NOP_BAI,thứ 2,464
+TRUONG_HOC,nộp bài môn lập trình trước 17h.,NOP_BAI,ngày mai,465
+CA_NHAN,đi gặp bác sĩ trước 8h.,HEN_CA_NHAN,thứ 5,466
+VAN_PHONG,ngày kia theo dõi tiến độ công việc.,THEO_DOI_CONG_VIEC,ngày kia,467
+CA_NHAN,chủ nhật phải phải làm bạn bè.,NHAC_VIEC,chủ nhật,468
+CA_NHAN,phải làm quà sinh nhật trước cuối tuần.,NHAC_VIEC,thứ 3,469
+TRUONG_HOC,nộp bài môn lập trình trước ngày mai.,NOP_BAI,hôm nay,470
+CA_NHAN,sáng mai mua bạn bè.,MUA_SAM,sáng mai,471
+TRUONG_HOC,học bài môn toán vào thứ 5.,HOC_TAP,thứ 5,472
+CA_NHAN,thứ 7 có mua gia đình.,MUA_SAM,thứ 7,473
+TRUONG_HOC,sinh hoạt lớp bài tập nhóm vào chiều mai.,HOP_LOP,chiều mai,474
+CA_NHAN,đi gặp bạn bè trước thứ 6.,HEN_CA_NHAN,thứ 5,475
+VAN_PHONG,theo dõi tiến độ dự án trước ngày mai.,THEO_DOI_CONG_VIEC,chiều mai,476
+TRUONG_HOC,tối nay phải chuẩn bị bài môn văn.,HOC_TAP,tối nay,477
+CA_NHAN,ngày kia có nhắc bác sĩ.,NHAC_VIEC,ngày kia,478
+TRUONG_HOC,nộp bài môn lập trình vào ngày kia.,NOP_BAI,ngày kia,479
+CA_NHAN,nhắc bạn bè vào hôm nay.,NHAC_VIEC,hôm nay,480
+VAN_PHONG,ngày kia phải soạn email công việc.,GUI_EMAIL,ngày kia,481
+CA_NHAN,sáng mai mua gia đình.,MUA_SAM,sáng mai,482
+CA_NHAN,nhắc bạn bè vào chủ nhật.,NHAC_VIEC,chủ nhật,483
+VAN_PHONG,thứ 4 phải lịch hẹn dự án.,HEN_LICH,thứ 4,484
+VAN_PHONG,thứ 2 có lịch hẹn công việc.,HEN_LICH,thứ 2,485
+TRUONG_HOC,nộp bài môn lập trình trước cuối tuần.,NOP_BAI,thứ 6,486
+TRUONG_HOC,ngày mai kiểm tra bài tập nhóm.,THI_CU,ngày mai,487
+TRUONG_HOC,chiều mai có họp lớp môn lập trình.,HOP_LOP,chiều mai,488
+VAN_PHONG,cập nhật tiến độ hợp đồng trước ngày mai.,THEO_DOI_CONG_VIEC,thứ 2,489
+TRUONG_HOC,nộp bài tập môn toán trước 17h.,NOP_BAI,sáng mai,490
+CA_NHAN,sáng mai đặt mua gia đình.,MUA_SAM,sáng mai,491
+VAN_PHONG,cuối tuần có họp hợp đồng.,HEN_LICH,cuối tuần,492
+TRUONG_HOC,cuối tuần phải chuẩn bị bài bài tập nhóm.,HOC_TAP,cuối tuần,493
+VAN_PHONG,thứ 4 phải soạn email tài liệu.,GUI_EMAIL,thứ 4,494
+CA_NHAN,nhớ bạn bè trước 10h.,NHAC_VIEC,thứ 4,495
+TRUONG_HOC,kiểm tra môn toán trước 8h.,THI_CU,hôm nay,496
+CA_NHAN,đi mua bác sĩ vào thứ 2.,MUA_SAM,thứ 2,497
+TRUONG_HOC,chủ nhật học bài bài tập nhóm.,HOC_TAP,chủ nhật,498
+VAN_PHONG,nộp báo cáo kế hoạch vào thứ 6.,NOP_BAO_CAO,thứ 6,499
+VAN_PHONG,thứ 2 có meeting hợp đồng.,HEN_LICH,thứ 2,500
+VAN_PHONG,thứ 5 có trao đổi tài liệu.,HEN_LICH,thứ 5,501
+VAN_PHONG,trao đổi hợp đồng vào thứ 4.,HEN_LICH,thứ 4,502
+VAN_PHONG,thứ 5 hoàn thành báo cáo kế hoạch.,NOP_BAO_CAO,thứ 5,503
+TRUONG_HOC,ngày mai có kiểm tra môn tiếng Anh.,THI_CU,ngày mai,504
+CA_NHAN,sáng mai phải nhớ quà sinh nhật.,NHAC_VIEC,sáng mai,505
+TRUONG_HOC,chủ nhật có nộp bài môn lập trình.,NOP_BAI,chủ nhật,506
+CA_NHAN,thứ 6 phải đi mua gia đình.,MUA_SAM,thứ 6,507
+TRUONG_HOC,thi môn văn vào thứ 2.,THI_CU,thứ 2,508
+CA_NHAN,lịch hẹn quà sinh nhật trong hôm nay.,HEN_CA_NHAN,thứ 4,509
+TRUONG_HOC,thứ 6 có kiểm tra bài tập nhóm.,THI_CU,thứ 6,510
+VAN_PHONG,thứ 7 nộp báo cáo kế hoạch.,NOP_BAO_CAO,thứ 7,511
+VAN_PHONG,thứ 2 có soạn email dự án.,GUI_EMAIL,thứ 2,512
+CA_NHAN,nhắc quà sinh nhật trước 10h.,NHAC_VIEC,thứ 6,513
+CA_NHAN,chủ nhật mua quà sinh nhật.,MUA_SAM,chủ nhật,514
+TRUONG_HOC,nộp bài tập môn văn trong hôm nay.,NOP_BAI,cuối tuần,515
+CA_NHAN,mua quà sinh nhật vào ngày mai.,MUA_SAM,ngày mai,516
+CA_NHAN,thứ 6 lịch hẹn quà sinh nhật.,HEN_CA_NHAN,thứ 6,517
+VAN_PHONG,thứ 5 soạn email dự án.,GUI_EMAIL,thứ 5,518
+TRUONG_HOC,thứ 2 có nộp bài bài tập nhóm.,NOP_BAI,thứ 2,519
+VAN_PHONG,chủ nhật phải gửi báo cáo dự án.,NOP_BAO_CAO,chủ nhật,520
+CA_NHAN,ngày kia có đi gặp gia đình.,HEN_CA_NHAN,ngày kia,521
+CA_NHAN,ngày mai có mua gia đình.,MUA_SAM,ngày mai,522
+CA_NHAN,chiều mai đặt mua gia đình.,MUA_SAM,chiều mai,523
+CA_NHAN,nhắc gia đình trước 17h.,NHAC_VIEC,thứ 7,524
+VAN_PHONG,hẹn gặp công việc vào thứ 4.,HEN_LICH,thứ 4,525
+VAN_PHONG,thứ 6 theo dõi tiến độ dự án.,THEO_DOI_CONG_VIEC,thứ 6,526
+TRUONG_HOC,ôn bài bài tập nhóm vào thứ 3.,HOC_TAP,thứ 3,527
+VAN_PHONG,thứ 6 soạn email công việc.,GUI_EMAIL,thứ 6,528
+TRUONG_HOC,thứ 6 học bài bài tập nhóm.,HOC_TAP,thứ 6,529
+VAN_PHONG,hẹn gặp tài liệu trước thứ 6.,HEN_LICH,cuối tuần,530
+TRUONG_HOC,họp lớp môn tiếng Anh trước 10h.,HOP_LOP,thứ 5,531
+CA_NHAN,thứ 7 có hẹn gia đình.,HEN_CA_NHAN,thứ 7,532
+VAN_PHONG,hẹn gặp kế hoạch vào cuối tuần.,HEN_LICH,cuối tuần,533
+TRUONG_HOC,thứ 4 có sinh hoạt lớp môn lập trình.,HOP_LOP,thứ 4,534
+CA_NHAN,nhớ bạn bè vào hôm nay.,NHAC_VIEC,hôm nay,535
+CA_NHAN,chiều mai phải đi gặp bạn bè.,HEN_CA_NHAN,chiều mai,536
+TRUONG_HOC,thứ 7 có sinh hoạt lớp môn toán.,HOP_LOP,thứ 7,537
+CA_NHAN,ngày kia đặt mua quà sinh nhật.,MUA_SAM,ngày kia,538
+CA_NHAN,sáng mai lịch hẹn đồ dùng cá nhân.,HEN_CA_NHAN,sáng mai,539
+TRUONG_HOC,sáng mai có kiểm tra môn văn.,THI_CU,sáng mai,540
+TRUONG_HOC,kiểm tra môn lập trình vào cuối tuần.,THI_CU,cuối tuần,541
+TRUONG_HOC,hoàn thành bài tập môn lập trình vào sáng mai.,NOP_BAI,sáng mai,542
+CA_NHAN,thứ 4 phải nhắc bạn bè.,NHAC_VIEC,thứ 4,543
+VAN_PHONG,meeting hợp đồng trước cuối tuần.,HEN_LICH,thứ 6,544
+TRUONG_HOC,ngày kia có chuẩn bị bài môn toán.,HOC_TAP,ngày kia,545
+TRUONG_HOC,thi môn văn trước 8h.,THI_CU,chủ nhật,546
+VAN_PHONG,soạn email công việc vào thứ 6.,GUI_EMAIL,thứ 6,547
+CA_NHAN,ngày kia có hẹn gia đình.,HEN_CA_NHAN,ngày kia,548
+CA_NHAN,thứ 2 lịch hẹn gia đình.,HEN_CA_NHAN,thứ 2,549
+VAN_PHONG,thứ 2 có meeting hợp đồng.,HEN_LICH,thứ 2,550
+CA_NHAN,thứ 2 mua bạn bè.,MUA_SAM,thứ 2,551
+VAN_PHONG,họp dự án trước ngày mai.,HEN_LICH,tối nay,552
+TRUONG_HOC,thứ 3 ôn bài môn văn.,HOC_TAP,thứ 3,553
+CA_NHAN,thứ 4 nhắc bạn bè.,NHAC_VIEC,thứ 4,554
+CA_NHAN,sáng mai có nhớ quà sinh nhật.,NHAC_VIEC,sáng mai,555
+VAN_PHONG,meeting dự án trước thứ 6.,HEN_LICH,ngày mai,556
+TRUONG_HOC,thứ 6 sinh hoạt lớp môn lập trình.,HOP_LOP,thứ 6,557
+VAN_PHONG,soạn email công việc trước cuối tuần.,GUI_EMAIL,hôm nay,558
+CA_NHAN,ngày mai phải đi mua bạn bè.,MUA_SAM,ngày mai,559
+VAN_PHONG,thứ 4 có hoàn thành báo cáo dự án.,NOP_BAO_CAO,thứ 4,560
+TRUONG_HOC,chủ nhật phải kiểm tra bài tập nhóm.,THI_CU,chủ nhật,561
+CA_NHAN,tối nay có đi mua đồ dùng cá nhân.,MUA_SAM,tối nay,562
+CA_NHAN,thứ 7 có đặt mua đồ dùng cá nhân.,MUA_SAM,thứ 7,563
+CA_NHAN,đi mua bạn bè trước 8h.,MUA_SAM,thứ 3,564
+TRUONG_HOC,ngày kia phải hoàn thành bài tập môn lập trình.,NOP_BAI,ngày kia,565
+TRUONG_HOC,ngày kia nộp bài bài tập nhóm.,NOP_BAI,ngày kia,566
+CA_NHAN,tối nay có mua quà sinh nhật.,MUA_SAM,tối nay,567
+CA_NHAN,ngày kia phải phải làm bạn bè.,NHAC_VIEC,ngày kia,568
+CA_NHAN,hẹn bạn bè vào thứ 6.,HEN_CA_NHAN,thứ 6,569
+VAN_PHONG,thứ 2 trả lời email hợp đồng.,GUI_EMAIL,thứ 2,570
+VAN_PHONG,sáng mai có họp hợp đồng.,HEN_LICH,sáng mai,571
+VAN_PHONG,thứ 5 phải hoàn thành báo cáo hợp đồng.,NOP_BAO_CAO,thứ 5,572
+VAN_PHONG,chiều mai phải gửi email công việc.,GUI_EMAIL,chiều mai,573
+VAN_PHONG,tối nay có gửi email công việc.,GUI_EMAIL,tối nay,574
+TRUONG_HOC,họp lớp bài tập nhóm vào tối nay.,HOP_LOP,tối nay,575
+TRUONG_HOC,ngày mai học bài môn lập trình.,HOC_TAP,ngày mai,576
+TRUONG_HOC,ôn bài môn lập trình trong hôm nay.,HOC_TAP,sáng mai,577
+TRUONG_HOC,tối nay có chuẩn bị bài môn toán.,HOC_TAP,tối nay,578
+VAN_PHONG,cuối tuần có theo dõi tiến độ hợp đồng.,THEO_DOI_CONG_VIEC,cuối tuần,579
+CA_NHAN,hôm nay có lịch hẹn bạn bè.,HEN_CA_NHAN,hôm nay,580
+VAN_PHONG,gửi email kế hoạch vào thứ 6.,GUI_EMAIL,thứ 6,581
+VAN_PHONG,cập nhật tiến độ hợp đồng trước 8h.,THEO_DOI_CONG_VIEC,thứ 4,582
+VAN_PHONG,hoàn thành báo cáo dự án trước 10h.,NOP_BAO_CAO,hôm nay,583
+CA_NHAN,chiều mai đi gặp đồ dùng cá nhân.,HEN_CA_NHAN,chiều mai,584
+VAN_PHONG,ngày mai phải gửi email dự án.,GUI_EMAIL,ngày mai,585
+CA_NHAN,nhắc bạn bè trước thứ 6.,NHAC_VIEC,thứ 2,586
+VAN_PHONG,cuối tuần trao đổi công việc.,HEN_LICH,cuối tuần,587
+TRUONG_HOC,thứ 3 phải ôn bài môn toán.,HOC_TAP,thứ 3,588
+VAN_PHONG,trả lời email dự án trước 10h.,GUI_EMAIL,hôm nay,589
+VAN_PHONG,thứ 3 có báo cáo tiến độ công việc.,THEO_DOI_CONG_VIEC,thứ 3,590
+CA_NHAN,đi gặp đồ dùng cá nhân trước 17h.,HEN_CA_NHAN,thứ 7,591
+TRUONG_HOC,sinh hoạt lớp môn tiếng Anh trước 17h.,HOP_LOP,thứ 5,592
+TRUONG_HOC,họp lớp môn tiếng Anh vào tối nay.,HOP_LOP,tối nay,593
+VAN_PHONG,hẹn gặp tài liệu trước 17h.,HEN_LICH,thứ 7,594
+CA_NHAN,sáng mai nhắc bạn bè.,NHAC_VIEC,sáng mai,595
+CA_NHAN,đi gặp bác sĩ trước thứ 6.,HEN_CA_NHAN,thứ 5,596
+TRUONG_HOC,sinh hoạt lớp môn tiếng Anh vào chủ nhật.,HOP_LOP,chủ nhật,597
+CA_NHAN,đi mua quà sinh nhật trong hôm nay.,MUA_SAM,thứ 4,598
+TRUONG_HOC,thứ 4 chuẩn bị bài môn tiếng Anh.,HOC_TAP,thứ 4,599
+TRUONG_HOC,thi giữa kỳ môn toán trước ngày mai.,THI_CU,sáng mai,600
+CA_NHAN,đi gặp gia đình vào thứ 3.,HEN_CA_NHAN,thứ 3,601
+CA_NHAN,thứ 6 phải phải làm quà sinh nhật.,NHAC_VIEC,thứ 6,602
+VAN_PHONG,trao đổi công việc trước 10h.,HEN_LICH,thứ 7,603
+VAN_PHONG,gửi email kế hoạch vào ngày kia.,GUI_EMAIL,ngày kia,604
+VAN_PHONG,lịch hẹn hợp đồng vào thứ 4.,HEN_LICH,thứ 4,605
+VAN_PHONG,thứ 5 có theo dõi tiến độ công việc.,THEO_DOI_CONG_VIEC,thứ 5,606
+TRUONG_HOC,thứ 3 có thi cuối kỳ môn toán.,THI_CU,thứ 3,607
+TRUONG_HOC,chiều mai phải nộp bài tập môn tiếng Anh.,NOP_BAI,chiều mai,608
+CA_NHAN,lịch hẹn bạn bè trước cuối tuần.,HEN_CA_NHAN,thứ 4,609
+CA_NHAN,đi gặp gia đình vào thứ 7.,HEN_CA_NHAN,thứ 7,610
+TRUONG_HOC,hôm nay có hoàn thành bài tập môn văn.,NOP_BAI,hôm nay,611
+VAN_PHONG,thứ 3 có gửi báo cáo tài liệu.,NOP_BAO_CAO,thứ 3,612
+VAN_PHONG,trả lời email dự án vào thứ 7.,GUI_EMAIL,thứ 7,613
+VAN_PHONG,nộp báo cáo hợp đồng trước 17h.,NOP_BAO_CAO,tối nay,614
+TRUONG_HOC,thứ 5 hoàn thành bài tập môn tiếng Anh.,NOP_BAI,thứ 5,615
+CA_NHAN,sáng mai có nhớ đồ dùng cá nhân.,NHAC_VIEC,sáng mai,616
+TRUONG_HOC,ngày kia phải học bài bài tập nhóm.,HOC_TAP,ngày kia,617
+CA_NHAN,sáng mai có đi mua bác sĩ.,MUA_SAM,sáng mai,618
+VAN_PHONG,meeting hợp đồng vào thứ 5.,HEN_LICH,thứ 5,619
+TRUONG_HOC,nộp bài bài tập nhóm vào chủ nhật.,NOP_BAI,chủ nhật,620
+CA_NHAN,nhớ đồ dùng cá nhân vào ngày kia.,NHAC_VIEC,ngày kia,621
+TRUONG_HOC,tối nay họp lớp bài tập nhóm.,HOP_LOP,tối nay,622
+CA_NHAN,thứ 5 đi gặp bạn bè.,HEN_CA_NHAN,thứ 5,623
+CA_NHAN,phải làm gia đình vào tối nay.,NHAC_VIEC,tối nay,624
+VAN_PHONG,chủ nhật hẹn gặp dự án.,HEN_LICH,chủ nhật,625
+VAN_PHONG,chủ nhật theo dõi tiến độ kế hoạch.,THEO_DOI_CONG_VIEC,chủ nhật,626
+CA_NHAN,thứ 6 đi gặp gia đình.,HEN_CA_NHAN,thứ 6,627
+CA_NHAN,cuối tuần phải đặt mua đồ dùng cá nhân.,MUA_SAM,cuối tuần,628
+TRUONG_HOC,thứ 4 phải hoàn thành bài tập môn văn.,NOP_BAI,thứ 4,629
+CA_NHAN,thứ 3 có lịch hẹn quà sinh nhật.,HEN_CA_NHAN,thứ 3,630
+VAN_PHONG,sáng mai có trả lời email công việc.,GUI_EMAIL,sáng mai,631
+CA_NHAN,sáng mai có phải làm đồ dùng cá nhân.,NHAC_VIEC,sáng mai,632
+TRUONG_HOC,cuối tuần có học bài môn tiếng Anh.,HOC_TAP,cuối tuần,633
+TRUONG_HOC,thứ 2 có ôn bài môn toán.,HOC_TAP,thứ 2,634
+TRUONG_HOC,tối nay phải họp lớp môn lập trình.,HOP_LOP,tối nay,635
+TRUONG_HOC,hôm nay hoàn thành bài tập môn lập trình.,NOP_BAI,hôm nay,636
+TRUONG_HOC,thi môn lập trình vào thứ 2.,THI_CU,thứ 2,637
+TRUONG_HOC,chuẩn bị bài môn văn trong hôm nay.,HOC_TAP,tối nay,638
+TRUONG_HOC,thứ 2 phải sinh hoạt lớp môn văn.,HOP_LOP,thứ 2,639
+TRUONG_HOC,nộp bài môn văn trước 8h.,NOP_BAI,cuối tuần,640
+TRUONG_HOC,chiều mai phải ôn bài bài tập nhóm.,HOC_TAP,chiều mai,641
+TRUONG_HOC,chuẩn bị bài môn lập trình trước 10h.,HOC_TAP,tối nay,642
+VAN_PHONG,hoàn thành báo cáo kế hoạch vào thứ 7.,NOP_BAO_CAO,thứ 7,643
+VAN_PHONG,thứ 5 có nộp báo cáo dự án.,NOP_BAO_CAO,thứ 5,644
+CA_NHAN,ngày kia phải làm đồ dùng cá nhân.,NHAC_VIEC,ngày kia,645
+CA_NHAN,cuối tuần có lịch hẹn bạn bè.,HEN_CA_NHAN,cuối tuần,646
+VAN_PHONG,chiều mai có soạn email tài liệu.,GUI_EMAIL,chiều mai,647
+TRUONG_HOC,tối nay phải kiểm tra môn văn.,THI_CU,tối nay,648
+TRUONG_HOC,ngày kia có nộp bài tập môn tiếng Anh.,NOP_BAI,ngày kia,649
+VAN_PHONG,ngày kia phải hẹn gặp hợp đồng.,HEN_LICH,ngày kia,650
+TRUONG_HOC,hôm nay có thi cuối kỳ môn toán.,THI_CU,hôm nay,651
+VAN_PHONG,thứ 7 có hoàn thành báo cáo tài liệu.,NOP_BAO_CAO,thứ 7,652
+TRUONG_HOC,thi môn tiếng Anh vào ngày mai.,THI_CU,ngày mai,653
+TRUONG_HOC,ngày kia có thi môn văn.,THI_CU,ngày kia,654
+VAN_PHONG,chủ nhật gửi email tài liệu.,GUI_EMAIL,chủ nhật,655
+TRUONG_HOC,hôm nay có ôn bài môn lập trình.,HOC_TAP,hôm nay,656
+TRUONG_HOC,thứ 4 có sinh hoạt lớp môn văn.,HOP_LOP,thứ 4,657
+VAN_PHONG,lịch hẹn dự án vào chiều mai.,HEN_LICH,chiều mai,658
+VAN_PHONG,thứ 5 hẹn gặp tài liệu.,HEN_LICH,thứ 5,659
+VAN_PHONG,ngày mai phải trao đổi tài liệu.,HEN_LICH,ngày mai,660
+TRUONG_HOC,chiều mai phải thi môn lập trình.,THI_CU,chiều mai,661
+TRUONG_HOC,chuẩn bị bài môn toán vào thứ 4.,HOC_TAP,thứ 4,662
+TRUONG_HOC,ngày mai học bài môn toán.,HOC_TAP,ngày mai,663
+VAN_PHONG,thứ 7 có cập nhật tiến độ tài liệu.,THEO_DOI_CONG_VIEC,thứ 7,664
+TRUONG_HOC,ôn bài bài tập nhóm trước 8h.,HOC_TAP,thứ 7,665
+TRUONG_HOC,thứ 5 phải kiểm tra môn lập trình.,THI_CU,thứ 5,666
+VAN_PHONG,thứ 7 hoàn thành báo cáo tài liệu.,NOP_BAO_CAO,thứ 7,667
+VAN_PHONG,họp hợp đồng trước ngày mai.,HEN_LICH,tối nay,668
+VAN_PHONG,ngày kia có nộp báo cáo kế hoạch.,NOP_BAO_CAO,ngày kia,669
+VAN_PHONG,thứ 7 có cập nhật tiến độ tài liệu.,THEO_DOI_CONG_VIEC,thứ 7,670
+CA_NHAN,thứ 2 phải lịch hẹn quà sinh nhật.,HEN_CA_NHAN,thứ 2,671
+CA_NHAN,cuối tuần đặt mua bác sĩ.,MUA_SAM,cuối tuần,672
+CA_NHAN,thứ 2 phải nhắc bác sĩ.,NHAC_VIEC,thứ 2,673
+TRUONG_HOC,chủ nhật thi môn tiếng Anh.,THI_CU,chủ nhật,674
+TRUONG_HOC,ngày mai phải sinh hoạt lớp môn toán.,HOP_LOP,ngày mai,675
+VAN_PHONG,tối nay phải nộp báo cáo công việc.,NOP_BAO_CAO,tối nay,676
+VAN_PHONG,chiều mai hoàn thành báo cáo công việc.,NOP_BAO_CAO,chiều mai,677
+TRUONG_HOC,tối nay nộp bài tập bài tập nhóm.,NOP_BAI,tối nay,678
+CA_NHAN,cuối tuần mua bạn bè.,MUA_SAM,cuối tuần,679
+TRUONG_HOC,họp lớp môn lập trình vào chủ nhật.,HOP_LOP,chủ nhật,680
+CA_NHAN,thứ 3 có đi mua bạn bè.,MUA_SAM,thứ 3,681
+VAN_PHONG,báo cáo tiến độ tài liệu vào ngày kia.,THEO_DOI_CONG_VIEC,ngày kia,682
+CA_NHAN,thứ 7 đi mua quà sinh nhật.,MUA_SAM,thứ 7,683
+VAN_PHONG,gửi email kế hoạch vào thứ 2.,GUI_EMAIL,thứ 2,684
+CA_NHAN,sáng mai hẹn quà sinh nhật.,HEN_CA_NHAN,sáng mai,685
+TRUONG_HOC,thứ 5 phải sinh hoạt lớp môn tiếng Anh.,HOP_LOP,thứ 5,686
+CA_NHAN,cuối tuần có đi mua quà sinh nhật.,MUA_SAM,cuối tuần,687
+VAN_PHONG,trả lời email tài liệu vào hôm nay.,GUI_EMAIL,hôm nay,688
+TRUONG_HOC,sinh hoạt lớp môn tiếng Anh trước 17h.,HOP_LOP,ngày kia,689
+VAN_PHONG,lịch hẹn hợp đồng trước cuối tuần.,HEN_LICH,cuối tuần,690
+VAN_PHONG,trả lời email dự án vào thứ 3.,GUI_EMAIL,thứ 3,691
+TRUONG_HOC,sáng mai ôn bài môn văn.,HOC_TAP,sáng mai,692
+TRUONG_HOC,thứ 4 có học bài môn lập trình.,HOC_TAP,thứ 4,693
+VAN_PHONG,gửi báo cáo tài liệu vào thứ 5.,NOP_BAO_CAO,thứ 5,694
+TRUONG_HOC,thứ 7 ôn bài môn tiếng Anh.,HOC_TAP,thứ 7,695
+VAN_PHONG,chủ nhật có hẹn gặp hợp đồng.,HEN_LICH,chủ nhật,696
+CA_NHAN,phải làm bác sĩ trước thứ 6.,NHAC_VIEC,thứ 7,697
+CA_NHAN,sáng mai nhắc gia đình.,NHAC_VIEC,sáng mai,698
+CA_NHAN,thứ 3 có đi mua đồ dùng cá nhân.,MUA_SAM,thứ 3,699
+TRUONG_HOC,thứ 6 họp lớp môn tiếng Anh.,HOP_LOP,thứ 6,700
+VAN_PHONG,trao đổi hợp đồng trước 17h.,HEN_LICH,thứ 6,701
+VAN_PHONG,thứ 6 theo dõi tiến độ công việc.,THEO_DOI_CONG_VIEC,thứ 6,702
+TRUONG_HOC,chủ nhật ôn bài bài tập nhóm.,HOC_TAP,chủ nhật,703
+TRUONG_HOC,sáng mai phải chuẩn bị bài bài tập nhóm.,HOC_TAP,sáng mai,704
+TRUONG_HOC,thứ 5 nộp bài tập bài tập nhóm.,NOP_BAI,thứ 5,705
+CA_NHAN,chiều mai có đi mua đồ dùng cá nhân.,MUA_SAM,chiều mai,706
+TRUONG_HOC,chuẩn bị bài môn tiếng Anh trước 8h.,HOC_TAP,cuối tuần,707
+TRUONG_HOC,tối nay phải ôn bài bài tập nhóm.,HOC_TAP,tối nay,708
+TRUONG_HOC,hôm nay có chuẩn bị bài môn lập trình.,HOC_TAP,hôm nay,709
+TRUONG_HOC,thứ 3 phải kiểm tra môn lập trình.,THI_CU,thứ 3,710
+CA_NHAN,ngày mai có nhớ đồ dùng cá nhân.,NHAC_VIEC,ngày mai,711
+TRUONG_HOC,tối nay có sinh hoạt lớp môn tiếng Anh.,HOP_LOP,tối nay,712
+VAN_PHONG,hoàn thành báo cáo hợp đồng vào thứ 7.,NOP_BAO_CAO,thứ 7,713
+CA_NHAN,hẹn bác sĩ trước 17h.,HEN_CA_NHAN,ngày kia,714
+TRUONG_HOC,họp lớp môn lập trình vào thứ 5.,HOP_LOP,thứ 5,715
+CA_NHAN,thứ 3 phải làm bác sĩ.,NHAC_VIEC,thứ 3,716
+VAN_PHONG,thứ 4 phải trả lời email tài liệu.,GUI_EMAIL,thứ 4,717
+VAN_PHONG,cuối tuần trao đổi hợp đồng.,HEN_LICH,cuối tuần,718
+TRUONG_HOC,chiều mai chuẩn bị bài môn văn.,HOC_TAP,chiều mai,719
+TRUONG_HOC,thứ 5 có sinh hoạt lớp môn tiếng Anh.,HOP_LOP,thứ 5,720
+TRUONG_HOC,chuẩn bị bài môn văn trước thứ 6.,HOC_TAP,thứ 7,721
+TRUONG_HOC,thứ 4 kiểm tra môn văn.,THI_CU,thứ 4,722
+TRUONG_HOC,cuối tuần phải hoàn thành bài tập môn toán.,NOP_BAI,cuối tuần,723
+CA_NHAN,chủ nhật có nhớ bạn bè.,NHAC_VIEC,chủ nhật,724
+CA_NHAN,sáng mai phải lịch hẹn bạn bè.,HEN_CA_NHAN,sáng mai,725
+CA_NHAN,hẹn bác sĩ vào chiều mai.,HEN_CA_NHAN,chiều mai,726
+TRUONG_HOC,chủ nhật chuẩn bị bài môn tiếng Anh.,HOC_TAP,chủ nhật,727
+CA_NHAN,chủ nhật phải đặt mua gia đình.,MUA_SAM,chủ nhật,728
+TRUONG_HOC,tối nay có nộp bài tập bài tập nhóm.,NOP_BAI,tối nay,729
+VAN_PHONG,họp công việc vào thứ 2.,HEN_LICH,thứ 2,730
+CA_NHAN,hẹn gia đình vào thứ 7.,HEN_CA_NHAN,thứ 7,731
+CA_NHAN,đặt mua bác sĩ vào hôm nay.,MUA_SAM,hôm nay,732
+VAN_PHONG,sáng mai có theo dõi tiến độ công việc.,THEO_DOI_CONG_VIEC,sáng mai,733
+CA_NHAN,thứ 7 phải mua bạn bè.,MUA_SAM,thứ 7,734
+TRUONG_HOC,nộp bài môn văn trước ngày mai.,NOP_BAI,hôm nay,735
+TRUONG_HOC,sáng mai sinh hoạt lớp môn toán.,HOP_LOP,sáng mai,736
+CA_NHAN,hẹn đồ dùng cá nhân vào thứ 7.,HEN_CA_NHAN,thứ 7,737
+VAN_PHONG,thứ 4 có lịch hẹn tài liệu.,HEN_LICH,thứ 4,738
+VAN_PHONG,báo cáo tiến độ kế hoạch trước cuối tuần.,THEO_DOI_CONG_VIEC,thứ 5,739
+TRUONG_HOC,học bài bài tập nhóm vào thứ 2.,HOC_TAP,thứ 2,740
+VAN_PHONG,chiều mai gửi email dự án.,GUI_EMAIL,chiều mai,741
+TRUONG_HOC,tối nay phải chuẩn bị bài môn văn.,HOC_TAP,tối nay,742
+CA_NHAN,đi mua bác sĩ trước thứ 6.,MUA_SAM,chiều mai,743
+CA_NHAN,thứ 2 lịch hẹn gia đình.,HEN_CA_NHAN,thứ 2,744
+CA_NHAN,thứ 3 có đặt mua quà sinh nhật.,MUA_SAM,thứ 3,745
+CA_NHAN,thứ 4 đi gặp gia đình.,HEN_CA_NHAN,thứ 4,746
+VAN_PHONG,hoàn thành báo cáo công việc vào thứ 5.,NOP_BAO_CAO,thứ 5,747
+VAN_PHONG,gửi email kế hoạch vào thứ 4.,GUI_EMAIL,thứ 4,748
+TRUONG_HOC,thứ 6 phải nộp bài tập môn lập trình.,NOP_BAI,thứ 6,749
+VAN_PHONG,thứ 2 có soạn email hợp đồng.,GUI_EMAIL,thứ 2,750
+CA_NHAN,lịch hẹn gia đình vào cuối tuần.,HEN_CA_NHAN,cuối tuần,751
+CA_NHAN,đi mua bạn bè vào tối nay.,MUA_SAM,tối nay,752
+VAN_PHONG,nộp báo cáo dự án trước thứ 6.,NOP_BAO_CAO,thứ 2,753
+CA_NHAN,cuối tuần nhắc bác sĩ.,NHAC_VIEC,cuối tuần,754
+TRUONG_HOC,thứ 7 có nộp bài bài tập nhóm.,NOP_BAI,thứ 7,755
+TRUONG_HOC,hôm nay phải sinh hoạt lớp môn văn.,HOP_LOP,hôm nay,756
+TRUONG_HOC,chủ nhật phải họp lớp môn toán.,HOP_LOP,chủ nhật,757
+TRUONG_HOC,chủ nhật sinh hoạt lớp môn toán.,HOP_LOP,chủ nhật,758
+TRUONG_HOC,học bài môn văn vào chiều mai.,HOC_TAP,chiều mai,759
+CA_NHAN,phải làm bạn bè trước cuối tuần.,NHAC_VIEC,ngày mai,760
+TRUONG_HOC,tối nay hoàn thành bài tập môn văn.,NOP_BAI,tối nay,761
+TRUONG_HOC,thứ 2 phải chuẩn bị bài môn toán.,HOC_TAP,thứ 2,762
+VAN_PHONG,thứ 5 phải meeting dự án.,HEN_LICH,thứ 5,763
+CA_NHAN,thứ 5 đi gặp quà sinh nhật.,HEN_CA_NHAN,thứ 5,764
+VAN_PHONG,tối nay theo dõi tiến độ hợp đồng.,THEO_DOI_CONG_VIEC,tối nay,765
+VAN_PHONG,chủ nhật có hoàn thành báo cáo kế hoạch.,NOP_BAO_CAO,chủ nhật,766
+VAN_PHONG,theo dõi tiến độ dự án trước 8h.,THEO_DOI_CONG_VIEC,cuối tuần,767
+CA_NHAN,đi gặp quà sinh nhật trong hôm nay.,HEN_CA_NHAN,chủ nhật,768
+CA_NHAN,đi gặp bác sĩ trong hôm nay.,HEN_CA_NHAN,sáng mai,769
+TRUONG_HOC,thứ 7 phải sinh hoạt lớp môn toán.,HOP_LOP,thứ 7,770
+VAN_PHONG,thứ 2 phải hoàn thành báo cáo hợp đồng.,NOP_BAO_CAO,thứ 2,771
+CA_NHAN,nhắc quà sinh nhật trong hôm nay.,NHAC_VIEC,ngày mai,772
+TRUONG_HOC,cuối tuần nộp bài môn văn.,NOP_BAI,cuối tuần,773
+VAN_PHONG,thứ 3 có trả lời email công việc.,GUI_EMAIL,thứ 3,774
+VAN_PHONG,thứ 4 phải báo cáo tiến độ tài liệu.,THEO_DOI_CONG_VIEC,thứ 4,775
+VAN_PHONG,họp dự án trước thứ 6.,HEN_LICH,ngày mai,776
+VAN_PHONG,chủ nhật phải cập nhật tiến độ hợp đồng.,THEO_DOI_CONG_VIEC,chủ nhật,777
+CA_NHAN,chiều mai lịch hẹn bác sĩ.,HEN_CA_NHAN,chiều mai,778
+CA_NHAN,tối nay phải mua đồ dùng cá nhân.,MUA_SAM,tối nay,779
+CA_NHAN,chiều mai có nhớ gia đình.,NHAC_VIEC,chiều mai,780
+TRUONG_HOC,thứ 5 phải thi môn lập trình.,THI_CU,thứ 5,781
+TRUONG_HOC,tối nay có chuẩn bị bài môn tiếng Anh.,HOC_TAP,tối nay,782
+TRUONG_HOC,thứ 7 có ôn bài môn tiếng Anh.,HOC_TAP,thứ 7,783
+VAN_PHONG,tối nay phải trả lời email dự án.,GUI_EMAIL,tối nay,784
+TRUONG_HOC,ngày mai có hoàn thành bài tập môn văn.,NOP_BAI,ngày mai,785
+TRUONG_HOC,thi giữa kỳ môn toán vào thứ 7.,THI_CU,thứ 7,786
+VAN_PHONG,hoàn thành báo cáo dự án trước thứ 6.,NOP_BAO_CAO,sáng mai,787
+VAN_PHONG,sáng mai phải báo cáo tiến độ dự án.,THEO_DOI_CONG_VIEC,sáng mai,788
+TRUONG_HOC,thứ 5 hoàn thành bài tập môn lập trình.,NOP_BAI,thứ 5,789
+VAN_PHONG,chiều mai có báo cáo tiến độ kế hoạch.,THEO_DOI_CONG_VIEC,chiều mai,790
+TRUONG_HOC,hôm nay phải học bài môn lập trình.,HOC_TAP,hôm nay,791
+CA_NHAN,ngày kia phải làm quà sinh nhật.,NHAC_VIEC,ngày kia,792
+CA_NHAN,thứ 3 đi gặp đồ dùng cá nhân.,HEN_CA_NHAN,thứ 3,793
+CA_NHAN,ngày mai đi gặp bác sĩ.,HEN_CA_NHAN,ngày mai,794
+VAN_PHONG,meeting tài liệu vào chiều mai.,HEN_LICH,chiều mai,795
+VAN_PHONG,thứ 5 phải lịch hẹn công việc.,HEN_LICH,thứ 5,796
+TRUONG_HOC,thứ 4 phải nộp bài tập môn lập trình.,NOP_BAI,thứ 4,797
+VAN_PHONG,cuối tuần có theo dõi tiến độ dự án.,THEO_DOI_CONG_VIEC,cuối tuần,798
+CA_NHAN,hôm nay phải nhớ quà sinh nhật.,NHAC_VIEC,hôm nay,799
+VAN_PHONG,thứ 3 có hẹn gặp tài liệu.,HEN_LICH,thứ 3,800
+VAN_PHONG,ngày mai hẹn gặp hợp đồng.,HEN_LICH,ngày mai,801
+TRUONG_HOC,chủ nhật thi bài tập nhóm.,THI_CU,chủ nhật,802
+VAN_PHONG,cuối tuần có gửi email công việc.,GUI_EMAIL,cuối tuần,803
+TRUONG_HOC,tối nay có ôn bài môn lập trình.,HOC_TAP,tối nay,804
+TRUONG_HOC,sáng mai phải kiểm tra bài tập nhóm.,THI_CU,sáng mai,805
+VAN_PHONG,thứ 2 phải trả lời email dự án.,GUI_EMAIL,thứ 2,806
+VAN_PHONG,sáng mai có cập nhật tiến độ kế hoạch.,THEO_DOI_CONG_VIEC,sáng mai,807
+VAN_PHONG,cuối tuần phải họp hợp đồng.,HEN_LICH,cuối tuần,808
+TRUONG_HOC,thứ 6 nộp bài tập môn tiếng Anh.,NOP_BAI,thứ 6,809
+TRUONG_HOC,họp lớp môn tiếng Anh vào ngày mai.,HOP_LOP,ngày mai,810
+VAN_PHONG,hôm nay phải gửi báo cáo hợp đồng.,NOP_BAO_CAO,hôm nay,811
+VAN_PHONG,thứ 6 có trả lời email hợp đồng.,GUI_EMAIL,thứ 6,812
+CA_NHAN,thứ 2 phải lịch hẹn quà sinh nhật.,HEN_CA_NHAN,thứ 2,813
+CA_NHAN,đi mua bác sĩ trước cuối tuần.,MUA_SAM,hôm nay,814
+VAN_PHONG,thứ 7 có hoàn thành báo cáo kế hoạch.,NOP_BAO_CAO,thứ 7,815
+VAN_PHONG,họp hợp đồng vào thứ 3.,HEN_LICH,thứ 3,816
+CA_NHAN,sáng mai lịch hẹn đồ dùng cá nhân.,HEN_CA_NHAN,sáng mai,817
+VAN_PHONG,soạn email công việc vào ngày mai.,GUI_EMAIL,ngày mai,818
+TRUONG_HOC,kiểm tra bài tập nhóm trước thứ 6.,THI_CU,hôm nay,819
+VAN_PHONG,thứ 7 phải báo cáo tiến độ dự án.,THEO_DOI_CONG_VIEC,thứ 7,820
+TRUONG_HOC,ngày kia có chuẩn bị bài môn lập trình.,HOC_TAP,ngày kia,821
+CA_NHAN,chiều mai hẹn bạn bè.,HEN_CA_NHAN,chiều mai,822
+CA_NHAN,thứ 6 phải làm bác sĩ.,NHAC_VIEC,thứ 6,823
+TRUONG_HOC,thứ 3 có họp lớp môn văn.,HOP_LOP,thứ 3,824
+CA_NHAN,hôm nay phải lịch hẹn đồ dùng cá nhân.,HEN_CA_NHAN,hôm nay,825
+VAN_PHONG,ngày mai có trả lời email kế hoạch.,GUI_EMAIL,ngày mai,826
+CA_NHAN,chủ nhật phải đi mua bạn bè.,MUA_SAM,chủ nhật,827
+TRUONG_HOC,thứ 3 có học bài môn tiếng Anh.,HOC_TAP,thứ 3,828
+VAN_PHONG,thứ 5 theo dõi tiến độ công việc.,THEO_DOI_CONG_VIEC,thứ 5,829
+CA_NHAN,cuối tuần nhắc bạn bè.,NHAC_VIEC,cuối tuần,830
+VAN_PHONG,soạn email hợp đồng trong hôm nay.,GUI_EMAIL,thứ 6,831
+CA_NHAN,thứ 2 nhắc gia đình.,NHAC_VIEC,thứ 2,832
+TRUONG_HOC,họp lớp môn văn trước 10h.,HOP_LOP,thứ 7,833
+TRUONG_HOC,thứ 5 nộp bài môn văn.,NOP_BAI,thứ 5,834
+CA_NHAN,chủ nhật phải nhớ gia đình.,NHAC_VIEC,chủ nhật,835
+VAN_PHONG,soạn email hợp đồng vào ngày mai.,GUI_EMAIL,ngày mai,836
+VAN_PHONG,thứ 3 phải lịch hẹn dự án.,HEN_LICH,thứ 3,837
+VAN_PHONG,thứ 5 có theo dõi tiến độ tài liệu.,THEO_DOI_CONG_VIEC,thứ 5,838
+CA_NHAN,đặt mua quà sinh nhật vào chủ nhật.,MUA_SAM,chủ nhật,839
+VAN_PHONG,chủ nhật có báo cáo tiến độ tài liệu.,THEO_DOI_CONG_VIEC,chủ nhật,840
+CA_NHAN,ngày mai có mua đồ dùng cá nhân.,MUA_SAM,ngày mai,841
+CA_NHAN,nhắc gia đình vào sáng mai.,NHAC_VIEC,sáng mai,842
+TRUONG_HOC,thi môn toán vào chủ nhật.,THI_CU,chủ nhật,843
+VAN_PHONG,thứ 6 phải gửi email hợp đồng.,GUI_EMAIL,thứ 6,844
+TRUONG_HOC,kiểm tra môn tiếng Anh trước 10h.,THI_CU,ngày mai,845
+TRUONG_HOC,thứ 4 có họp lớp môn văn.,HOP_LOP,thứ 4,846
+TRUONG_HOC,thứ 2 phải sinh hoạt lớp môn văn.,HOP_LOP,thứ 2,847
+TRUONG_HOC,nộp bài bài tập nhóm trước cuối tuần.,NOP_BAI,ngày kia,848
+TRUONG_HOC,nộp bài tập bài tập nhóm trước 17h.,NOP_BAI,thứ 6,849
+CA_NHAN,nhớ đồ dùng cá nhân vào thứ 4.,NHAC_VIEC,thứ 4,850
+CA_NHAN,thứ 5 đi gặp bạn bè.,HEN_CA_NHAN,thứ 5,851
+CA_NHAN,phải làm bạn bè trước 10h.,NHAC_VIEC,sáng mai,852
+VAN_PHONG,ngày kia trả lời email công việc.,GUI_EMAIL,ngày kia,853
+CA_NHAN,hôm nay phải làm quà sinh nhật.,NHAC_VIEC,hôm nay,854
+CA_NHAN,thứ 3 đi mua quà sinh nhật.,MUA_SAM,thứ 3,855
+VAN_PHONG,hôm nay phải nộp báo cáo kế hoạch.,NOP_BAO_CAO,hôm nay,856
+VAN_PHONG,hôm nay soạn email kế hoạch.,GUI_EMAIL,hôm nay,857
+VAN_PHONG,thứ 6 hẹn gặp kế hoạch.,HEN_LICH,thứ 6,858
+CA_NHAN,nhớ gia đình vào thứ 5.,NHAC_VIEC,thứ 5,859
+TRUONG_HOC,thứ 3 có thi môn toán.,THI_CU,thứ 3,860
+VAN_PHONG,chiều mai phải trao đổi dự án.,HEN_LICH,chiều mai,861
+CA_NHAN,thứ 6 phải nhớ quà sinh nhật.,NHAC_VIEC,thứ 6,862
+CA_NHAN,mua bạn bè vào cuối tuần.,MUA_SAM,cuối tuần,863
+TRUONG_HOC,thứ 3 thi môn văn.,THI_CU,thứ 3,864
+TRUONG_HOC,nộp bài bài tập nhóm vào ngày kia.,NOP_BAI,ngày kia,865
+TRUONG_HOC,chuẩn bị bài môn toán vào cuối tuần.,HOC_TAP,cuối tuần,866
+CA_NHAN,thứ 2 phải nhắc bác sĩ.,NHAC_VIEC,thứ 2,867
+VAN_PHONG,theo dõi tiến độ công việc trước cuối tuần.,THEO_DOI_CONG_VIEC,thứ 7,868
+CA_NHAN,hôm nay phải làm bác sĩ.,NHAC_VIEC,hôm nay,869
+VAN_PHONG,chủ nhật phải gửi email hợp đồng.,GUI_EMAIL,chủ nhật,870
+VAN_PHONG,ngày kia soạn email công việc.,GUI_EMAIL,ngày kia,871
+VAN_PHONG,cập nhật tiến độ công việc trước 17h.,THEO_DOI_CONG_VIEC,thứ 5,872
+CA_NHAN,thứ 4 có nhắc quà sinh nhật.,NHAC_VIEC,thứ 4,873
+VAN_PHONG,ngày kia phải soạn email kế hoạch.,GUI_EMAIL,ngày kia,874
+TRUONG_HOC,nộp bài môn lập trình trước ngày mai.,NOP_BAI,ngày mai,875
+CA_NHAN,thứ 7 đi mua đồ dùng cá nhân.,MUA_SAM,thứ 7,876
+VAN_PHONG,thứ 5 trao đổi hợp đồng.,HEN_LICH,thứ 5,877
+TRUONG_HOC,học bài môn lập trình vào cuối tuần.,HOC_TAP,cuối tuần,878
+CA_NHAN,tối nay có phải làm đồ dùng cá nhân.,NHAC_VIEC,tối nay,879
+CA_NHAN,ngày mai có lịch hẹn đồ dùng cá nhân.,HEN_CA_NHAN,ngày mai,880
+VAN_PHONG,trao đổi kế hoạch trước cuối tuần.,HEN_LICH,ngày mai,881
+VAN_PHONG,cuối tuần có soạn email dự án.,GUI_EMAIL,cuối tuần,882
+TRUONG_HOC,chiều mai nộp bài môn tiếng Anh.,NOP_BAI,chiều mai,883
+VAN_PHONG,thứ 7 soạn email kế hoạch.,GUI_EMAIL,thứ 7,884
+TRUONG_HOC,cuối tuần phải chuẩn bị bài bài tập nhóm.,HOC_TAP,cuối tuần,885
+VAN_PHONG,chiều mai có gửi báo cáo hợp đồng.,NOP_BAO_CAO,chiều mai,886
+VAN_PHONG,ngày mai có gửi báo cáo tài liệu.,NOP_BAO_CAO,ngày mai,887
+CA_NHAN,đi mua đồ dùng cá nhân trước 10h.,MUA_SAM,thứ 2,888
+TRUONG_HOC,chiều mai phải sinh hoạt lớp môn văn.,HOP_LOP,chiều mai,889
+CA_NHAN,hẹn bác sĩ trước ngày mai.,HEN_CA_NHAN,cuối tuần,890
+TRUONG_HOC,thứ 7 phải ôn bài môn lập trình.,HOC_TAP,thứ 7,891
+CA_NHAN,chiều mai có nhớ bạn bè.,NHAC_VIEC,chiều mai,892
+CA_NHAN,hôm nay đi gặp đồ dùng cá nhân.,HEN_CA_NHAN,hôm nay,893
+VAN_PHONG,chủ nhật gửi email công việc.,GUI_EMAIL,chủ nhật,894
+TRUONG_HOC,thứ 4 có học bài môn lập trình.,HOC_TAP,thứ 4,895
+CA_NHAN,thứ 3 phải nhớ đồ dùng cá nhân.,NHAC_VIEC,thứ 3,896
+VAN_PHONG,tối nay báo cáo tiến độ tài liệu.,THEO_DOI_CONG_VIEC,tối nay,897
+CA_NHAN,thứ 3 có lịch hẹn gia đình.,HEN_CA_NHAN,thứ 3,898
+TRUONG_HOC,thứ 2 có sinh hoạt lớp môn văn.,HOP_LOP,thứ 2,899
+CA_NHAN,cuối tuần phải hẹn bạn bè.,HEN_CA_NHAN,cuối tuần,900
+CA_NHAN,đặt mua bác sĩ trước ngày mai.,MUA_SAM,tối nay,901
+TRUONG_HOC,tối nay phải thi cuối kỳ môn tiếng Anh.,THI_CU,tối nay,902
+CA_NHAN,ngày mai nhớ bạn bè.,NHAC_VIEC,ngày mai,903
+TRUONG_HOC,nộp bài môn văn trước 8h.,NOP_BAI,thứ 4,904
+VAN_PHONG,báo cáo tiến độ dự án vào thứ 2.,THEO_DOI_CONG_VIEC,thứ 2,905
+CA_NHAN,nhớ đồ dùng cá nhân trước 17h.,NHAC_VIEC,thứ 5,906
+TRUONG_HOC,chiều mai có thi giữa kỳ môn lập trình.,THI_CU,chiều mai,907
+CA_NHAN,cuối tuần đi gặp quà sinh nhật.,HEN_CA_NHAN,cuối tuần,908
+TRUONG_HOC,sáng mai phải sinh hoạt lớp môn toán.,HOP_LOP,sáng mai,909
+VAN_PHONG,sáng mai soạn email công việc.,GUI_EMAIL,sáng mai,910
+CA_NHAN,mua đồ dùng cá nhân vào chủ nhật.,MUA_SAM,chủ nhật,911
+VAN_PHONG,ngày kia có gửi báo cáo dự án.,NOP_BAO_CAO,ngày kia,912
+CA_NHAN,đi mua bác sĩ trước ngày mai.,MUA_SAM,thứ 2,913
+VAN_PHONG,ngày kia gửi báo cáo hợp đồng.,NOP_BAO_CAO,ngày kia,914
+TRUONG_HOC,thứ 4 phải học bài môn lập trình.,HOC_TAP,thứ 4,915
+TRUONG_HOC,hoàn thành bài tập môn văn trước cuối tuần.,NOP_BAI,chủ nhật,916
+VAN_PHONG,nộp báo cáo tài liệu trước 8h.,NOP_BAO_CAO,tối nay,917
+TRUONG_HOC,nộp bài môn văn trước 8h.,NOP_BAI,thứ 7,918
+CA_NHAN,mua quà sinh nhật trước 10h.,MUA_SAM,thứ 6,919
+VAN_PHONG,nộp báo cáo hợp đồng vào tối nay.,NOP_BAO_CAO,tối nay,920
+VAN_PHONG,thứ 2 phải soạn email công việc.,GUI_EMAIL,thứ 2,921
+CA_NHAN,ngày mai đi mua bác sĩ.,MUA_SAM,ngày mai,922
+TRUONG_HOC,thứ 7 phải chuẩn bị bài môn văn.,HOC_TAP,thứ 7,923
+CA_NHAN,ngày kia phải lịch hẹn quà sinh nhật.,HEN_CA_NHAN,ngày kia,924
+CA_NHAN,đặt mua bác sĩ trước cuối tuần.,MUA_SAM,chiều mai,925
+CA_NHAN,hẹn đồ dùng cá nhân vào thứ 7.,HEN_CA_NHAN,thứ 7,926
+VAN_PHONG,theo dõi tiến độ dự án vào tối nay.,THEO_DOI_CONG_VIEC,tối nay,927
+VAN_PHONG,trả lời email kế hoạch trước 10h.,GUI_EMAIL,sáng mai,928
+TRUONG_HOC,họp lớp môn văn vào thứ 2.,HOP_LOP,thứ 2,929
+TRUONG_HOC,ngày kia phải sinh hoạt lớp môn lập trình.,HOP_LOP,ngày kia,930
+TRUONG_HOC,chủ nhật nộp bài môn văn.,NOP_BAI,chủ nhật,931
+CA_NHAN,nhắc đồ dùng cá nhân vào thứ 6.,NHAC_VIEC,thứ 6,932
+CA_NHAN,thứ 6 phải nhớ gia đình.,NHAC_VIEC,thứ 6,933
+TRUONG_HOC,thứ 2 có chuẩn bị bài môn văn.,HOC_TAP,thứ 2,934
+CA_NHAN,nhắc đồ dùng cá nhân vào ngày mai.,NHAC_VIEC,ngày mai,935
+TRUONG_HOC,thi cuối kỳ môn văn trước ngày mai.,THI_CU,thứ 6,936
+CA_NHAN,lịch hẹn đồ dùng cá nhân vào thứ 4.,HEN_CA_NHAN,thứ 4,937
+TRUONG_HOC,sáng mai kiểm tra bài tập nhóm.,THI_CU,sáng mai,938
+CA_NHAN,đi gặp gia đình vào sáng mai.,HEN_CA_NHAN,sáng mai,939
+TRUONG_HOC,học bài môn văn vào thứ 7.,HOC_TAP,thứ 7,940
+CA_NHAN,ngày kia hẹn bác sĩ.,HEN_CA_NHAN,ngày kia,941
+CA_NHAN,thứ 6 có nhớ đồ dùng cá nhân.,NHAC_VIEC,thứ 6,942
+CA_NHAN,thứ 7 có hẹn quà sinh nhật.,HEN_CA_NHAN,thứ 7,943
+CA_NHAN,nhắc gia đình trước cuối tuần.,NHAC_VIEC,thứ 3,944
+CA_NHAN,đi mua bác sĩ vào thứ 4.,MUA_SAM,thứ 4,945
+VAN_PHONG,hôm nay có soạn email tài liệu.,GUI_EMAIL,hôm nay,946
+TRUONG_HOC,hôm nay phải họp lớp môn tiếng Anh.,HOP_LOP,hôm nay,947
+VAN_PHONG,thứ 3 phải hẹn gặp kế hoạch.,HEN_LICH,thứ 3,948
+VAN_PHONG,chiều mai cập nhật tiến độ dự án.,THEO_DOI_CONG_VIEC,chiều mai,949
+VAN_PHONG,cuối tuần hẹn gặp hợp đồng.,HEN_LICH,cuối tuần,950
+CA_NHAN,thứ 5 phải phải làm đồ dùng cá nhân.,NHAC_VIEC,thứ 5,951
+CA_NHAN,ngày mai phải hẹn bác sĩ.,HEN_CA_NHAN,ngày mai,952
+VAN_PHONG,chiều mai phải họp công việc.,HEN_LICH,chiều mai,953
+VAN_PHONG,theo dõi tiến độ dự án trước 10h.,THEO_DOI_CONG_VIEC,ngày kia,954
+TRUONG_HOC,cuối tuần có học bài môn toán.,HOC_TAP,cuối tuần,955
+TRUONG_HOC,thứ 2 sinh hoạt lớp môn tiếng Anh.,HOP_LOP,thứ 2,956
+CA_NHAN,ngày kia có mua bạn bè.,MUA_SAM,ngày kia,957
+CA_NHAN,đặt mua bác sĩ trong hôm nay.,MUA_SAM,thứ 6,958
+CA_NHAN,tối nay hẹn quà sinh nhật.,HEN_CA_NHAN,tối nay,959
+TRUONG_HOC,họp lớp bài tập nhóm vào sáng mai.,HOP_LOP,sáng mai,960
+CA_NHAN,lịch hẹn quà sinh nhật vào thứ 7.,HEN_CA_NHAN,thứ 7,961
+VAN_PHONG,theo dõi tiến độ dự án trước ngày mai.,THEO_DOI_CONG_VIEC,thứ 7,962
+VAN_PHONG,trả lời email kế hoạch vào chủ nhật.,GUI_EMAIL,chủ nhật,963
+TRUONG_HOC,thứ 5 có họp lớp môn lập trình.,HOP_LOP,thứ 5,964
+VAN_PHONG,trao đổi công việc trước thứ 6.,HEN_LICH,thứ 4,965
+TRUONG_HOC,kiểm tra bài tập nhóm vào cuối tuần.,THI_CU,cuối tuần,966
+TRUONG_HOC,ngày kia nộp bài tập môn toán.,NOP_BAI,ngày kia,967
+CA_NHAN,thứ 7 nhớ quà sinh nhật.,NHAC_VIEC,thứ 7,968
+VAN_PHONG,nộp báo cáo hợp đồng trước 8h.,NOP_BAO_CAO,thứ 3,969
+TRUONG_HOC,chiều mai có sinh hoạt lớp môn toán.,HOP_LOP,chiều mai,970
+VAN_PHONG,thứ 2 có meeting công việc.,HEN_LICH,thứ 2,971
+TRUONG_HOC,kiểm tra bài tập nhóm vào thứ 7.,THI_CU,thứ 7,972
+CA_NHAN,thứ 6 có đặt mua gia đình.,MUA_SAM,thứ 6,973
+TRUONG_HOC,chiều mai phải họp lớp môn toán.,HOP_LOP,chiều mai,974
+CA_NHAN,cuối tuần phải nhắc quà sinh nhật.,NHAC_VIEC,cuối tuần,975
+TRUONG_HOC,cuối tuần họp lớp môn lập trình.,HOP_LOP,cuối tuần,976
+TRUONG_HOC,ngày mai họp lớp môn toán.,HOP_LOP,ngày mai,977
+VAN_PHONG,chiều mai có báo cáo tiến độ hợp đồng.,THEO_DOI_CONG_VIEC,chiều mai,978
+TRUONG_HOC,ôn bài môn toán trước 10h.,HOC_TAP,sáng mai,979
+TRUONG_HOC,thứ 2 phải kiểm tra môn văn.,THI_CU,thứ 2,980
+TRUONG_HOC,ngày kia có thi môn văn.,THI_CU,ngày kia,981
+VAN_PHONG,cuối tuần phải báo cáo tiến độ tài liệu.,THEO_DOI_CONG_VIEC,cuối tuần,982
+VAN_PHONG,cập nhật tiến độ công việc vào sáng mai.,THEO_DOI_CONG_VIEC,sáng mai,983
+VAN_PHONG,thứ 2 phải cập nhật tiến độ tài liệu.,THEO_DOI_CONG_VIEC,thứ 2,984
+CA_NHAN,thứ 4 phải mua quà sinh nhật.,MUA_SAM,thứ 4,985
+VAN_PHONG,thứ 3 có cập nhật tiến độ hợp đồng.,THEO_DOI_CONG_VIEC,thứ 3,986
+VAN_PHONG,ngày kia báo cáo tiến độ công việc.,THEO_DOI_CONG_VIEC,ngày kia,987
+TRUONG_HOC,thứ 6 có họp lớp môn văn.,HOP_LOP,thứ 6,988
+TRUONG_HOC,tối nay có họp lớp môn lập trình.,HOP_LOP,tối nay,989
+VAN_PHONG,thứ 6 có theo dõi tiến độ công việc.,THEO_DOI_CONG_VIEC,thứ 6,990
+CA_NHAN,thứ 6 phải đặt mua gia đình.,MUA_SAM,thứ 6,991
+CA_NHAN,đặt mua bạn bè trước 10h.,MUA_SAM,thứ 4,992
+VAN_PHONG,chiều mai trả lời email kế hoạch.,GUI_EMAIL,chiều mai,993
+TRUONG_HOC,nộp bài bài tập nhóm trước 10h.,NOP_BAI,ngày mai,994
+CA_NHAN,sáng mai có mua bạn bè.,MUA_SAM,sáng mai,995
+VAN_PHONG,chiều mai hoàn thành báo cáo tài liệu.,NOP_BAO_CAO,chiều mai,996
+TRUONG_HOC,nộp bài tập môn toán trước 17h.,NOP_BAI,thứ 3,997
+CA_NHAN,đi gặp đồ dùng cá nhân trước thứ 6.,HEN_CA_NHAN,thứ 4,998
+CA_NHAN,thứ 2 phải lịch hẹn quà sinh nhật.,HEN_CA_NHAN,thứ 2,999
+VAN_PHONG,nộp báo cáo công việc trước thứ 6.,NOP_BAO_CAO,chủ nhật,1000
+TRUONG_HOC,sinh hoạt lớp môn toán vào ngày mai.,HOP_LOP,ngày mai,1001
+VAN_PHONG,thứ 5 soạn email kế hoạch.,GUI_EMAIL,thứ 5,1002
+VAN_PHONG,meeting tài liệu vào thứ 7.,HEN_LICH,thứ 7,1003
+VAN_PHONG,thứ 7 có soạn email công việc.,GUI_EMAIL,thứ 7,1004
+TRUONG_HOC,ngày kia phải kiểm tra môn văn.,THI_CU,ngày kia,1005
+VAN_PHONG,hẹn gặp công việc trong hôm nay.,HEN_LICH,thứ 7,1006
+VAN_PHONG,thứ 7 cập nhật tiến độ hợp đồng.,THEO_DOI_CONG_VIEC,thứ 7,1007
+CA_NHAN,ngày kia lịch hẹn đồ dùng cá nhân.,HEN_CA_NHAN,ngày kia,1008
+VAN_PHONG,gửi email dự án trước cuối tuần.,GUI_EMAIL,cuối tuần,1009
+TRUONG_HOC,tối nay phải sinh hoạt lớp môn tiếng Anh.,HOP_LOP,tối nay,1010
+CA_NHAN,hẹn quà sinh nhật trước 8h.,HEN_CA_NHAN,thứ 2,1011
+VAN_PHONG,ngày mai có nộp báo cáo công việc.,NOP_BAO_CAO,ngày mai,1012
+VAN_PHONG,thứ 5 có soạn email dự án.,GUI_EMAIL,thứ 5,1013
+VAN_PHONG,theo dõi tiến độ kế hoạch vào ngày kia.,THEO_DOI_CONG_VIEC,ngày kia,1014
+TRUONG_HOC,hoàn thành bài tập bài tập nhóm trước 10h.,NOP_BAI,thứ 5,1015
+VAN_PHONG,cuối tuần theo dõi tiến độ kế hoạch.,THEO_DOI_CONG_VIEC,cuối tuần,1016
+TRUONG_HOC,ngày mai phải nộp bài tập môn toán.,NOP_BAI,ngày mai,1017
+CA_NHAN,nhắc bạn bè vào sáng mai.,NHAC_VIEC,sáng mai,1018
+TRUONG_HOC,thứ 6 phải họp lớp môn văn.,HOP_LOP,thứ 6,1019
+CA_NHAN,nhắc bạn bè trước 8h.,NHAC_VIEC,thứ 5,1020
+CA_NHAN,thứ 2 có nhớ gia đình.,NHAC_VIEC,thứ 2,1021
+VAN_PHONG,meeting hợp đồng vào chiều mai.,HEN_LICH,chiều mai,1022
+VAN_PHONG,hôm nay phải nộp báo cáo dự án.,NOP_BAO_CAO,hôm nay,1023
+TRUONG_HOC,sáng mai có nộp bài tập bài tập nhóm.,NOP_BAI,sáng mai,1024
+VAN_PHONG,tối nay có meeting tài liệu.,HEN_LICH,tối nay,1025
+VAN_PHONG,theo dõi tiến độ kế hoạch vào ngày mai.,THEO_DOI_CONG_VIEC,ngày mai,1026
+VAN_PHONG,chiều mai hẹn gặp tài liệu.,HEN_LICH,chiều mai,1027
+VAN_PHONG,thứ 2 có gửi email dự án.,GUI_EMAIL,thứ 2,1028
+TRUONG_HOC,thứ 5 có chuẩn bị bài môn lập trình.,HOC_TAP,thứ 5,1029
+VAN_PHONG,hôm nay cập nhật tiến độ kế hoạch.,THEO_DOI_CONG_VIEC,hôm nay,1030
+CA_NHAN,sáng mai có đi mua bạn bè.,MUA_SAM,sáng mai,1031
+CA_NHAN,ngày mai phải lịch hẹn đồ dùng cá nhân.,HEN_CA_NHAN,ngày mai,1032
+VAN_PHONG,ngày mai có nộp báo cáo công việc.,NOP_BAO_CAO,ngày mai,1033
+CA_NHAN,phải làm quà sinh nhật vào cuối tuần.,NHAC_VIEC,cuối tuần,1034
+CA_NHAN,thứ 3 phải đặt mua bạn bè.,MUA_SAM,thứ 3,1035
+TRUONG_HOC,kiểm tra môn lập trình trong hôm nay.,THI_CU,thứ 4,1036
+CA_NHAN,sáng mai phải đi gặp gia đình.,HEN_CA_NHAN,sáng mai,1037
+CA_NHAN,sáng mai phải hẹn đồ dùng cá nhân.,HEN_CA_NHAN,sáng mai,1038
+VAN_PHONG,trả lời email dự án vào tối nay.,GUI_EMAIL,tối nay,1039
+TRUONG_HOC,họp lớp bài tập nhóm trước cuối tuần.,HOP_LOP,thứ 7,1040
+TRUONG_HOC,thi cuối kỳ môn toán vào cuối tuần.,THI_CU,cuối tuần,1041
+TRUONG_HOC,cuối tuần có chuẩn bị bài môn tiếng Anh.,HOC_TAP,cuối tuần,1042
+TRUONG_HOC,chiều mai phải thi môn lập trình.,THI_CU,chiều mai,1043
+VAN_PHONG,sáng mai báo cáo tiến độ công việc.,THEO_DOI_CONG_VIEC,sáng mai,1044
+TRUONG_HOC,nộp bài tập môn lập trình vào thứ 5.,NOP_BAI,thứ 5,1045
+CA_NHAN,tối nay phải đặt mua gia đình.,MUA_SAM,tối nay,1046
+TRUONG_HOC,chiều mai phải thi cuối kỳ môn toán.,THI_CU,chiều mai,1047
+TRUONG_HOC,thứ 3 nộp bài tập môn văn.,NOP_BAI,thứ 3,1048
+CA_NHAN,cuối tuần có hẹn đồ dùng cá nhân.,HEN_CA_NHAN,cuối tuần,1049
+TRUONG_HOC,sáng mai phải học bài môn văn.,HOC_TAP,sáng mai,1050
+TRUONG_HOC,thứ 4 phải thi môn văn.,THI_CU,thứ 4,1051
+VAN_PHONG,ngày kia có cập nhật tiến độ kế hoạch.,THEO_DOI_CONG_VIEC,ngày kia,1052
+CA_NHAN,lịch hẹn gia đình vào thứ 6.,HEN_CA_NHAN,thứ 6,1053
+CA_NHAN,nhắc đồ dùng cá nhân vào thứ 5.,NHAC_VIEC,thứ 5,1054
+VAN_PHONG,thứ 4 gửi email công việc.,GUI_EMAIL,thứ 4,1055
+CA_NHAN,mua bạn bè trong hôm nay.,MUA_SAM,hôm nay,1056
+CA_NHAN,thứ 2 phải hẹn bác sĩ.,HEN_CA_NHAN,thứ 2,1057
+VAN_PHONG,thứ 4 báo cáo tiến độ tài liệu.,THEO_DOI_CONG_VIEC,thứ 4,1058
+CA_NHAN,phải làm quà sinh nhật vào ngày mai.,NHAC_VIEC,ngày mai,1059
+VAN_PHONG,thứ 3 có nộp báo cáo hợp đồng.,NOP_BAO_CAO,thứ 3,1060
+VAN_PHONG,nộp báo cáo công việc vào thứ 5.,NOP_BAO_CAO,thứ 5,1061
+VAN_PHONG,thứ 5 soạn email kế hoạch.,GUI_EMAIL,thứ 5,1062
+CA_NHAN,đi mua gia đình vào thứ 6.,MUA_SAM,thứ 6,1063
+TRUONG_HOC,nộp bài môn tiếng Anh trước 10h.,NOP_BAI,thứ 6,1064
+CA_NHAN,thứ 7 phải đi gặp đồ dùng cá nhân.,HEN_CA_NHAN,thứ 7,1065
+VAN_PHONG,soạn email hợp đồng vào ngày mai.,GUI_EMAIL,ngày mai,1066
+VAN_PHONG,ngày mai có họp dự án.,HEN_LICH,ngày mai,1067
+VAN_PHONG,thứ 6 có cập nhật tiến độ tài liệu.,THEO_DOI_CONG_VIEC,thứ 6,1068
+CA_NHAN,phải làm bạn bè trong hôm nay.,NHAC_VIEC,ngày mai,1069
+TRUONG_HOC,cuối tuần phải nộp bài tập môn lập trình.,NOP_BAI,cuối tuần,1070
+VAN_PHONG,cập nhật tiến độ công việc trong hôm nay.,THEO_DOI_CONG_VIEC,chủ nhật,1071
+CA_NHAN,chủ nhật có nhớ bác sĩ.,NHAC_VIEC,chủ nhật,1072
+VAN_PHONG,sáng mai phải soạn email tài liệu.,GUI_EMAIL,sáng mai,1073
+TRUONG_HOC,thứ 5 có nộp bài tập môn văn.,NOP_BAI,thứ 5,1074
+VAN_PHONG,theo dõi tiến độ kế hoạch trước 10h.,THEO_DOI_CONG_VIEC,sáng mai,1075
+TRUONG_HOC,thi cuối kỳ môn lập trình vào thứ 2.,THI_CU,thứ 2,1076
+VAN_PHONG,hôm nay phải soạn email dự án.,GUI_EMAIL,hôm nay,1077
+TRUONG_HOC,thứ 7 phải họp lớp môn tiếng Anh.,HOP_LOP,thứ 7,1078
+CA_NHAN,chiều mai có lịch hẹn bạn bè.,HEN_CA_NHAN,chiều mai,1079
+CA_NHAN,mua quà sinh nhật trước 10h.,MUA_SAM,tối nay,1080
+TRUONG_HOC,chiều mai kiểm tra môn tiếng Anh.,THI_CU,chiều mai,1081
+VAN_PHONG,trả lời email công việc trước 10h.,GUI_EMAIL,sáng mai,1082
+CA_NHAN,chiều mai có mua đồ dùng cá nhân.,MUA_SAM,chiều mai,1083
+CA_NHAN,thứ 6 phải hẹn đồ dùng cá nhân.,HEN_CA_NHAN,thứ 6,1084
+VAN_PHONG,họp tài liệu trước 8h.,HEN_LICH,chủ nhật,1085
+CA_NHAN,thứ 3 đặt mua bạn bè.,MUA_SAM,thứ 3,1086
+VAN_PHONG,thứ 2 họp tài liệu.,HEN_LICH,thứ 2,1087
+CA_NHAN,cuối tuần phải phải làm bạn bè.,NHAC_VIEC,cuối tuần,1088
+TRUONG_HOC,thứ 4 thi môn văn.,THI_CU,thứ 4,1089
+VAN_PHONG,hôm nay có trao đổi dự án.,HEN_LICH,hôm nay,1090
+CA_NHAN,nhớ bác sĩ vào cuối tuần.,NHAC_VIEC,cuối tuần,1091
+CA_NHAN,tối nay có phải làm bác sĩ.,NHAC_VIEC,tối nay,1092
+VAN_PHONG,gửi email tài liệu trong hôm nay.,GUI_EMAIL,thứ 6,1093
+VAN_PHONG,báo cáo tiến độ tài liệu vào thứ 6.,THEO_DOI_CONG_VIEC,thứ 6,1094
+VAN_PHONG,gửi báo cáo công việc trước ngày mai.,NOP_BAO_CAO,chiều mai,1095
+VAN_PHONG,thứ 5 phải hoàn thành báo cáo công việc.,NOP_BAO_CAO,thứ 5,1096
+VAN_PHONG,thứ 6 có gửi báo cáo công việc.,NOP_BAO_CAO,thứ 6,1097
+CA_NHAN,tối nay có nhắc quà sinh nhật.,NHAC_VIEC,tối nay,1098
+TRUONG_HOC,ôn bài môn lập trình vào thứ 6.,HOC_TAP,thứ 6,1099
+VAN_PHONG,thứ 6 phải gửi báo cáo kế hoạch.,NOP_BAO_CAO,thứ 6,1100
+VAN_PHONG,tối nay có gửi báo cáo tài liệu.,NOP_BAO_CAO,tối nay,1101
+TRUONG_HOC,thi môn tiếng Anh trước cuối tuần.,THI_CU,thứ 3,1102
+CA_NHAN,tối nay có hẹn đồ dùng cá nhân.,HEN_CA_NHAN,tối nay,1103
+TRUONG_HOC,chủ nhật phải chuẩn bị bài bài tập nhóm.,HOC_TAP,chủ nhật,1104
+CA_NHAN,hẹn bác sĩ vào tối nay.,HEN_CA_NHAN,tối nay,1105
+TRUONG_HOC,cuối tuần phải sinh hoạt lớp môn văn.,HOP_LOP,cuối tuần,1106
+TRUONG_HOC,chuẩn bị bài môn văn vào thứ 4.,HOC_TAP,thứ 4,1107
+TRUONG_HOC,kiểm tra môn toán trước thứ 6.,THI_CU,ngày kia,1108
+VAN_PHONG,gửi báo cáo tài liệu vào thứ 7.,NOP_BAO_CAO,thứ 7,1109
+CA_NHAN,hôm nay phải đi mua bác sĩ.,MUA_SAM,hôm nay,1110
+TRUONG_HOC,hoàn thành bài tập bài tập nhóm vào ngày mai.,NOP_BAI,ngày mai,1111
+VAN_PHONG,thứ 2 phải soạn email tài liệu.,GUI_EMAIL,thứ 2,1112
+CA_NHAN,thứ 6 nhớ bác sĩ.,NHAC_VIEC,thứ 6,1113
+CA_NHAN,đi gặp gia đình trước 17h.,HEN_CA_NHAN,ngày kia,1114
+CA_NHAN,cuối tuần phải lịch hẹn quà sinh nhật.,HEN_CA_NHAN,cuối tuần,1115
+VAN_PHONG,thứ 3 nộp báo cáo công việc.,NOP_BAO_CAO,thứ 3,1116
+TRUONG_HOC,họp lớp môn lập trình vào hôm nay.,HOP_LOP,hôm nay,1117
+VAN_PHONG,ngày mai phải gửi email hợp đồng.,GUI_EMAIL,ngày mai,1118
+VAN_PHONG,lịch hẹn dự án vào thứ 6.,HEN_LICH,thứ 6,1119
+VAN_PHONG,nộp báo cáo công việc vào hôm nay.,NOP_BAO_CAO,hôm nay,1120
+TRUONG_HOC,họp lớp môn lập trình trước 8h.,HOP_LOP,thứ 5,1121
+CA_NHAN,đi mua đồ dùng cá nhân trước ngày mai.,MUA_SAM,chủ nhật,1122
+TRUONG_HOC,cuối tuần phải kiểm tra môn tiếng Anh.,THI_CU,cuối tuần,1123
+CA_NHAN,thứ 6 phải đi gặp bạn bè.,HEN_CA_NHAN,thứ 6,1124
+CA_NHAN,mua bác sĩ vào sáng mai.,MUA_SAM,sáng mai,1125
+VAN_PHONG,sáng mai phải lịch hẹn hợp đồng.,HEN_LICH,sáng mai,1126
+TRUONG_HOC,chiều mai phải học bài môn tiếng Anh.,HOC_TAP,chiều mai,1127
+VAN_PHONG,sáng mai báo cáo tiến độ dự án.,THEO_DOI_CONG_VIEC,sáng mai,1128
+TRUONG_HOC,chủ nhật có sinh hoạt lớp bài tập nhóm.,HOP_LOP,chủ nhật,1129
+VAN_PHONG,thứ 3 có nộp báo cáo dự án.,NOP_BAO_CAO,thứ 3,1130
+TRUONG_HOC,chiều mai ôn bài môn toán.,HOC_TAP,chiều mai,1131
+TRUONG_HOC,hoàn thành bài tập môn lập trình trước 10h.,NOP_BAI,chiều mai,1132
+TRUONG_HOC,thứ 7 có họp lớp môn toán.,HOP_LOP,thứ 7,1133
+TRUONG_HOC,sinh hoạt lớp môn toán vào thứ 5.,HOP_LOP,thứ 5,1134
+VAN_PHONG,trả lời email hợp đồng trong hôm nay.,GUI_EMAIL,thứ 5,1135
+TRUONG_HOC,sáng mai có hoàn thành bài tập môn toán.,NOP_BAI,sáng mai,1136
+VAN_PHONG,tối nay có gửi báo cáo hợp đồng.,NOP_BAO_CAO,tối nay,1137
+TRUONG_HOC,ngày kia phải chuẩn bị bài bài tập nhóm.,HOC_TAP,ngày kia,1138
+TRUONG_HOC,hôm nay ôn bài bài tập nhóm.,HOC_TAP,hôm nay,1139
+VAN_PHONG,chủ nhật báo cáo tiến độ công việc.,THEO_DOI_CONG_VIEC,chủ nhật,1140
+VAN_PHONG,thứ 7 meeting công việc.,HEN_LICH,thứ 7,1141
+TRUONG_HOC,ngày mai kiểm tra môn tiếng Anh.,THI_CU,ngày mai,1142
+VAN_PHONG,hoàn thành báo cáo dự án trước 8h.,NOP_BAO_CAO,cuối tuần,1143
+VAN_PHONG,hẹn gặp công việc vào cuối tuần.,HEN_LICH,cuối tuần,1144
+TRUONG_HOC,chủ nhật học bài môn toán.,HOC_TAP,chủ nhật,1145
+CA_NHAN,chủ nhật đi mua gia đình.,MUA_SAM,chủ nhật,1146
+VAN_PHONG,theo dõi tiến độ tài liệu trước 10h.,THEO_DOI_CONG_VIEC,chiều mai,1147
+CA_NHAN,phải làm đồ dùng cá nhân trước 10h.,NHAC_VIEC,thứ 3,1148
+TRUONG_HOC,chủ nhật có nộp bài tập môn tiếng Anh.,NOP_BAI,chủ nhật,1149
+CA_NHAN,phải làm quà sinh nhật trước 8h.,NHAC_VIEC,ngày mai,1150
+TRUONG_HOC,kiểm tra môn lập trình trước 17h.,THI_CU,ngày mai,1151
+CA_NHAN,phải làm gia đình vào thứ 4.,NHAC_VIEC,thứ 4,1152
+CA_NHAN,phải làm quà sinh nhật vào thứ 2.,NHAC_VIEC,thứ 2,1153
+TRUONG_HOC,ôn bài bài tập nhóm trước 10h.,HOC_TAP,sáng mai,1154
+VAN_PHONG,lịch hẹn kế hoạch trước 17h.,HEN_LICH,thứ 4,1155
+VAN_PHONG,chiều mai cập nhật tiến độ kế hoạch.,THEO_DOI_CONG_VIEC,chiều mai,1156
+TRUONG_HOC,nộp bài môn tiếng Anh trước thứ 6.,NOP_BAI,sáng mai,1157
+CA_NHAN,nhắc bạn bè vào thứ 5.,NHAC_VIEC,thứ 5,1158
+VAN_PHONG,chiều mai có soạn email tài liệu.,GUI_EMAIL,chiều mai,1159
+TRUONG_HOC,sinh hoạt lớp môn văn trước 10h.,HOP_LOP,thứ 5,1160
+TRUONG_HOC,thứ 2 họp lớp môn toán.,HOP_LOP,thứ 2,1161
+CA_NHAN,mua gia đình vào tối nay.,MUA_SAM,tối nay,1162
+TRUONG_HOC,thứ 4 phải thi giữa kỳ bài tập nhóm.,THI_CU,thứ 4,1163
+CA_NHAN,mua bạn bè trước 10h.,MUA_SAM,ngày mai,1164
+CA_NHAN,hẹn gia đình trước 8h.,HEN_CA_NHAN,cuối tuần,1165
+VAN_PHONG,thứ 2 có hoàn thành báo cáo tài liệu.,NOP_BAO_CAO,thứ 2,1166
+TRUONG_HOC,thứ 2 thi môn lập trình.,THI_CU,thứ 2,1167
+TRUONG_HOC,học bài môn tiếng Anh vào hôm nay.,HOC_TAP,hôm nay,1168
+VAN_PHONG,thứ 3 hẹn gặp hợp đồng.,HEN_LICH,thứ 3,1169
+CA_NHAN,hẹn đồ dùng cá nhân trước thứ 6.,HEN_CA_NHAN,chủ nhật,1170
+VAN_PHONG,thứ 2 có gửi báo cáo công việc.,NOP_BAO_CAO,thứ 2,1171
+CA_NHAN,lịch hẹn quà sinh nhật trước thứ 6.,HEN_CA_NHAN,hôm nay,1172
+CA_NHAN,cuối tuần phải phải làm bạn bè.,NHAC_VIEC,cuối tuần,1173
+CA_NHAN,thứ 5 phải nhớ gia đình.,NHAC_VIEC,thứ 5,1174
+VAN_PHONG,thứ 2 có soạn email hợp đồng.,GUI_EMAIL,thứ 2,1175
+CA_NHAN,đi mua bác sĩ trước 17h.,MUA_SAM,thứ 7,1176
+VAN_PHONG,chiều mai có lịch hẹn công việc.,HEN_LICH,chiều mai,1177
+CA_NHAN,nhớ quà sinh nhật vào thứ 6.,NHAC_VIEC,thứ 6,1178
+TRUONG_HOC,ngày kia thi bài tập nhóm.,THI_CU,ngày kia,1179
+VAN_PHONG,thứ 2 có nộp báo cáo kế hoạch.,NOP_BAO_CAO,thứ 2,1180
+VAN_PHONG,thứ 6 soạn email hợp đồng.,GUI_EMAIL,thứ 6,1181
+CA_NHAN,thứ 6 lịch hẹn bạn bè.,HEN_CA_NHAN,thứ 6,1182
+TRUONG_HOC,nộp bài môn tiếng Anh trước cuối tuần.,NOP_BAI,chiều mai,1183
+VAN_PHONG,theo dõi tiến độ kế hoạch trước 8h.,THEO_DOI_CONG_VIEC,tối nay,1184
+TRUONG_HOC,học bài môn lập trình vào sáng mai.,HOC_TAP,sáng mai,1185
+TRUONG_HOC,hôm nay hoàn thành bài tập bài tập nhóm.,NOP_BAI,hôm nay,1186
+CA_NHAN,thứ 4 nhắc bạn bè.,NHAC_VIEC,thứ 4,1187
+VAN_PHONG,chiều mai có meeting hợp đồng.,HEN_LICH,chiều mai,1188
+VAN_PHONG,hôm nay có báo cáo tiến độ công việc.,THEO_DOI_CONG_VIEC,hôm nay,1189
+TRUONG_HOC,thứ 7 nộp bài tập bài tập nhóm.,NOP_BAI,thứ 7,1190
+TRUONG_HOC,nộp bài tập môn toán vào thứ 6.,NOP_BAI,thứ 6,1191
+CA_NHAN,mua bác sĩ vào chiều mai.,MUA_SAM,chiều mai,1192
+TRUONG_HOC,sáng mai có hoàn thành bài tập môn tiếng Anh.,NOP_BAI,sáng mai,1193
+CA_NHAN,hẹn bạn bè vào thứ 4.,HEN_CA_NHAN,thứ 4,1194
+TRUONG_HOC,chủ nhật có nộp bài tập bài tập nhóm.,NOP_BAI,chủ nhật,1195
+TRUONG_HOC,chủ nhật chuẩn bị bài môn tiếng Anh.,HOC_TAP,chủ nhật,1196
+TRUONG_HOC,chiều mai có họp lớp bài tập nhóm.,HOP_LOP,chiều mai,1197
+CA_NHAN,sáng mai phải mua gia đình.,MUA_SAM,sáng mai,1198
+TRUONG_HOC,sáng mai có nộp bài môn toán.,NOP_BAI,sáng mai,1199
+VAN_PHONG,chủ nhật có theo dõi tiến độ tài liệu.,THEO_DOI_CONG_VIEC,chủ nhật,1200
+CA_NHAN,mua bác sĩ trước cuối tuần.,MUA_SAM,thứ 2,1201
+TRUONG_HOC,kiểm tra môn tiếng Anh trước ngày mai.,THI_CU,ngày kia,1202
+TRUONG_HOC,thi bài tập nhóm vào thứ 3.,THI_CU,thứ 3,1203
+VAN_PHONG,hẹn gặp dự án trước ngày mai.,HEN_LICH,thứ 5,1204
+CA_NHAN,thứ 4 phải mua gia đình.,MUA_SAM,thứ 4,1205
+TRUONG_HOC,học bài bài tập nhóm trước 8h.,HOC_TAP,chiều mai,1206
+VAN_PHONG,thứ 6 báo cáo tiến độ kế hoạch.,THEO_DOI_CONG_VIEC,thứ 6,1207
+VAN_PHONG,hôm nay có gửi báo cáo kế hoạch.,NOP_BAO_CAO,hôm nay,1208
+VAN_PHONG,cuối tuần có gửi báo cáo tài liệu.,NOP_BAO_CAO,cuối tuần,1209
+VAN_PHONG,gửi báo cáo hợp đồng trước 10h.,NOP_BAO_CAO,sáng mai,1210
+TRUONG_HOC,thứ 7 phải thi giữa kỳ bài tập nhóm.,THI_CU,thứ 7,1211
+CA_NHAN,chiều mai nhắc bạn bè.,NHAC_VIEC,chiều mai,1212
+CA_NHAN,tối nay có lịch hẹn gia đình.,HEN_CA_NHAN,tối nay,1213
+TRUONG_HOC,hoàn thành bài tập môn lập trình vào tối nay.,NOP_BAI,tối nay,1214
+CA_NHAN,hẹn bác sĩ vào ngày mai.,HEN_CA_NHAN,ngày mai,1215
+VAN_PHONG,tối nay nộp báo cáo dự án.,NOP_BAO_CAO,tối nay,1216
+CA_NHAN,thứ 2 nhắc bạn bè.,NHAC_VIEC,thứ 2,1217
+TRUONG_HOC,thứ 5 phải họp lớp môn toán.,HOP_LOP,thứ 5,1218
+VAN_PHONG,báo cáo tiến độ công việc trước cuối tuần.,THEO_DOI_CONG_VIEC,tối nay,1219
+TRUONG_HOC,thứ 3 có học bài môn toán.,HOC_TAP,thứ 3,1220
+TRUONG_HOC,thứ 4 có nộp bài môn tiếng Anh.,NOP_BAI,thứ 4,1221
+VAN_PHONG,chủ nhật cập nhật tiến độ hợp đồng.,THEO_DOI_CONG_VIEC,chủ nhật,1222
+TRUONG_HOC,cuối tuần có hoàn thành bài tập môn tiếng Anh.,NOP_BAI,cuối tuần,1223
+TRUONG_HOC,thứ 2 phải thi cuối kỳ môn toán.,THI_CU,thứ 2,1224
+CA_NHAN,thứ 6 có nhắc bác sĩ.,NHAC_VIEC,thứ 6,1225
+TRUONG_HOC,thứ 5 phải hoàn thành bài tập môn toán.,NOP_BAI,thứ 5,1226
+TRUONG_HOC,họp lớp môn lập trình vào thứ 4.,HOP_LOP,thứ 4,1227
+TRUONG_HOC,họp lớp môn văn trước thứ 6.,HOP_LOP,thứ 3,1228
+VAN_PHONG,báo cáo tiến độ dự án trước ngày mai.,THEO_DOI_CONG_VIEC,thứ 3,1229
+TRUONG_HOC,kiểm tra môn tiếng Anh vào tối nay.,THI_CU,tối nay,1230
+TRUONG_HOC,ngày mai phải chuẩn bị bài môn toán.,HOC_TAP,ngày mai,1231
+TRUONG_HOC,họp lớp môn tiếng Anh vào thứ 4.,HOP_LOP,thứ 4,1232
+CA_NHAN,ngày mai nhớ đồ dùng cá nhân.,NHAC_VIEC,ngày mai,1233
+TRUONG_HOC,tối nay có hoàn thành bài tập môn tiếng Anh.,NOP_BAI,tối nay,1234
+CA_NHAN,phải làm bạn bè trước thứ 6.,NHAC_VIEC,thứ 2,1235
+CA_NHAN,thứ 3 có đi mua gia đình.,MUA_SAM,thứ 3,1236
+TRUONG_HOC,chủ nhật phải họp lớp môn tiếng Anh.,HOP_LOP,chủ nhật,1237
+CA_NHAN,thứ 4 lịch hẹn bác sĩ.,HEN_CA_NHAN,thứ 4,1238
+VAN_PHONG,gửi báo cáo công việc vào thứ 6.,NOP_BAO_CAO,thứ 6,1239
+CA_NHAN,ngày kia phải lịch hẹn bác sĩ.,HEN_CA_NHAN,ngày kia,1240
+CA_NHAN,thứ 7 có hẹn bạn bè.,HEN_CA_NHAN,thứ 7,1241
+TRUONG_HOC,nộp bài bài tập nhóm vào thứ 4.,NOP_BAI,thứ 4,1242
+VAN_PHONG,thứ 6 họp dự án.,HEN_LICH,thứ 6,1243
+CA_NHAN,thứ 4 phải phải làm gia đình.,NHAC_VIEC,thứ 4,1244
+TRUONG_HOC,học bài môn văn vào ngày kia.,HOC_TAP,ngày kia,1245
+CA_NHAN,nhắc quà sinh nhật vào chiều mai.,NHAC_VIEC,chiều mai,1246
+CA_NHAN,thứ 4 có lịch hẹn gia đình.,HEN_CA_NHAN,thứ 4,1247
+CA_NHAN,đi gặp bác sĩ vào thứ 7.,HEN_CA_NHAN,thứ 7,1248
+VAN_PHONG,gửi email dự án vào thứ 6.,GUI_EMAIL,thứ 6,1249
+CA_NHAN,đi mua gia đình trước 10h.,MUA_SAM,thứ 6,1250
+CA_NHAN,chiều mai có hẹn bạn bè.,HEN_CA_NHAN,chiều mai,1251
+CA_NHAN,phải làm gia đình vào cuối tuần.,NHAC_VIEC,cuối tuần,1252
+VAN_PHONG,trao đổi dự án vào chủ nhật.,HEN_LICH,chủ nhật,1253
+CA_NHAN,đi mua đồ dùng cá nhân trước cuối tuần.,MUA_SAM,thứ 2,1254
+CA_NHAN,thứ 6 phải hẹn bác sĩ.,HEN_CA_NHAN,thứ 6,1255
+TRUONG_HOC,thứ 3 phải họp lớp môn lập trình.,HOP_LOP,thứ 3,1256
+CA_NHAN,sáng mai phải phải làm quà sinh nhật.,NHAC_VIEC,sáng mai,1257
+TRUONG_HOC,thứ 3 có họp lớp môn văn.,HOP_LOP,thứ 3,1258
+VAN_PHONG,lịch hẹn công việc trước 10h.,HEN_LICH,chiều mai,1259
+VAN_PHONG,gửi báo cáo công việc trước 17h.,NOP_BAO_CAO,ngày mai,1260
+VAN_PHONG,lịch hẹn công việc vào tối nay.,HEN_LICH,tối nay,1261
+TRUONG_HOC,thứ 4 sinh hoạt lớp bài tập nhóm.,HOP_LOP,thứ 4,1262
+VAN_PHONG,gửi email công việc vào tối nay.,GUI_EMAIL,tối nay,1263
+TRUONG_HOC,thi môn lập trình trước 8h.,THI_CU,thứ 3,1264
+TRUONG_HOC,ngày mai có ôn bài môn lập trình.,HOC_TAP,ngày mai,1265
+TRUONG_HOC,thứ 5 hoàn thành bài tập môn văn.,NOP_BAI,thứ 5,1266
+CA_NHAN,nhớ gia đình trong hôm nay.,NHAC_VIEC,thứ 4,1267
+CA_NHAN,chủ nhật có hẹn đồ dùng cá nhân.,HEN_CA_NHAN,chủ nhật,1268
+CA_NHAN,thứ 4 phải hẹn đồ dùng cá nhân.,HEN_CA_NHAN,thứ 4,1269
+TRUONG_HOC,thứ 2 phải nộp bài môn văn.,NOP_BAI,thứ 2,1270
+CA_NHAN,mua bạn bè vào thứ 7.,MUA_SAM,thứ 7,1271
+TRUONG_HOC,thứ 2 phải sinh hoạt lớp môn toán.,HOP_LOP,thứ 2,1272
+TRUONG_HOC,chiều mai họp lớp môn toán.,HOP_LOP,chiều mai,1273
+VAN_PHONG,trả lời email dự án trước 10h.,GUI_EMAIL,thứ 6,1274
+CA_NHAN,thứ 7 phải đi gặp bác sĩ.,HEN_CA_NHAN,thứ 7,1275
+TRUONG_HOC,chủ nhật có học bài môn văn.,HOC_TAP,chủ nhật,1276
+TRUONG_HOC,tối nay phải nộp bài tập môn lập trình.,NOP_BAI,tối nay,1277
+TRUONG_HOC,nộp bài tập môn tiếng Anh trước 10h.,NOP_BAI,thứ 2,1278
+CA_NHAN,tối nay phải đi gặp đồ dùng cá nhân.,HEN_CA_NHAN,tối nay,1279
+CA_NHAN,hẹn bạn bè trước 10h.,HEN_CA_NHAN,ngày mai,1280
+CA_NHAN,đi mua gia đình vào sáng mai.,MUA_SAM,sáng mai,1281
+VAN_PHONG,lịch hẹn hợp đồng vào tối nay.,HEN_LICH,tối nay,1282
+TRUONG_HOC,cuối tuần thi giữa kỳ môn lập trình.,THI_CU,cuối tuần,1283
+VAN_PHONG,thứ 2 có theo dõi tiến độ dự án.,THEO_DOI_CONG_VIEC,thứ 2,1284
+CA_NHAN,chiều mai đi mua bạn bè.,MUA_SAM,chiều mai,1285
+CA_NHAN,chủ nhật đặt mua bác sĩ.,MUA_SAM,chủ nhật,1286
+CA_NHAN,sáng mai có nhớ quà sinh nhật.,NHAC_VIEC,sáng mai,1287
+TRUONG_HOC,thứ 3 nộp bài tập bài tập nhóm.,NOP_BAI,thứ 3,1288
+TRUONG_HOC,chiều mai phải học bài môn văn.,HOC_TAP,chiều mai,1289
+VAN_PHONG,nộp báo cáo tài liệu vào thứ 3.,NOP_BAO_CAO,thứ 3,1290
+TRUONG_HOC,thứ 5 thi môn tiếng Anh.,THI_CU,thứ 5,1291
+CA_NHAN,cuối tuần hẹn quà sinh nhật.,HEN_CA_NHAN,cuối tuần,1292
+TRUONG_HOC,học bài môn tiếng Anh trước 10h.,HOC_TAP,ngày kia,1293
+TRUONG_HOC,thứ 3 chuẩn bị bài môn tiếng Anh.,HOC_TAP,thứ 3,1294
+VAN_PHONG,meeting công việc trước 8h.,HEN_LICH,chủ nhật,1295
+CA_NHAN,thứ 2 mua quà sinh nhật.,MUA_SAM,thứ 2,1296
+VAN_PHONG,thứ 2 gửi email công việc.,GUI_EMAIL,thứ 2,1297
+TRUONG_HOC,thứ 6 phải ôn bài môn toán.,HOC_TAP,thứ 6,1298
+TRUONG_HOC,kiểm tra môn văn trước thứ 6.,THI_CU,thứ 7,1299
+TRUONG_HOC,thứ 4 phải họp lớp môn toán.,HOP_LOP,thứ 4,1300
+TRUONG_HOC,thứ 6 hoàn thành bài tập môn văn.,NOP_BAI,thứ 6,1301
+CA_NHAN,đặt mua gia đình trong hôm nay.,MUA_SAM,sáng mai,1302
+CA_NHAN,mua bác sĩ trước 17h.,MUA_SAM,sáng mai,1303
+VAN_PHONG,chủ nhật phải báo cáo tiến độ hợp đồng.,THEO_DOI_CONG_VIEC,chủ nhật,1304
+TRUONG_HOC,sinh hoạt lớp môn toán trước 10h.,HOP_LOP,thứ 5,1305
+CA_NHAN,ngày kia có phải làm đồ dùng cá nhân.,NHAC_VIEC,ngày kia,1306
+TRUONG_HOC,hôm nay thi môn tiếng Anh.,THI_CU,hôm nay,1307
+TRUONG_HOC,chủ nhật có sinh hoạt lớp môn văn.,HOP_LOP,chủ nhật,1308
+VAN_PHONG,ngày kia hoàn thành báo cáo dự án.,NOP_BAO_CAO,ngày kia,1309
+CA_NHAN,hôm nay phải nhớ gia đình.,NHAC_VIEC,hôm nay,1310
+TRUONG_HOC,thứ 5 phải thi cuối kỳ môn tiếng Anh.,THI_CU,thứ 5,1311
+VAN_PHONG,gửi email công việc vào chủ nhật.,GUI_EMAIL,chủ nhật,1312
+VAN_PHONG,meeting kế hoạch vào ngày mai.,HEN_LICH,ngày mai,1313
+CA_NHAN,đi mua quà sinh nhật trước 8h.,MUA_SAM,ngày kia,1314
+VAN_PHONG,thứ 7 cập nhật tiến độ kế hoạch.,THEO_DOI_CONG_VIEC,thứ 7,1315
+CA_NHAN,thứ 2 có hẹn gia đình.,HEN_CA_NHAN,thứ 2,1316
+VAN_PHONG,báo cáo tiến độ kế hoạch trước thứ 6.,THEO_DOI_CONG_VIEC,chiều mai,1317
+TRUONG_HOC,hôm nay có nộp bài tập bài tập nhóm.,NOP_BAI,hôm nay,1318
+TRUONG_HOC,thứ 4 chuẩn bị bài bài tập nhóm.,HOC_TAP,thứ 4,1319
+TRUONG_HOC,thứ 2 có nộp bài tập bài tập nhóm.,NOP_BAI,thứ 2,1320
+CA_NHAN,mua quà sinh nhật trước 17h.,MUA_SAM,thứ 3,1321
+CA_NHAN,nhớ bạn bè vào thứ 3.,NHAC_VIEC,thứ 3,1322
+VAN_PHONG,thứ 6 phải hoàn thành báo cáo kế hoạch.,NOP_BAO_CAO,thứ 6,1323
+CA_NHAN,cuối tuần có nhắc đồ dùng cá nhân.,NHAC_VIEC,cuối tuần,1324
+TRUONG_HOC,tối nay sinh hoạt lớp môn văn.,HOP_LOP,tối nay,1325
+TRUONG_HOC,thứ 4 phải kiểm tra bài tập nhóm.,THI_CU,thứ 4,1326
+TRUONG_HOC,kiểm tra môn văn vào thứ 4.,THI_CU,thứ 4,1327
+CA_NHAN,ngày kia có đặt mua bạn bè.,MUA_SAM,ngày kia,1328
+CA_NHAN,đi mua bác sĩ vào sáng mai.,MUA_SAM,sáng mai,1329
+VAN_PHONG,thứ 2 có lịch hẹn dự án.,HEN_LICH,thứ 2,1330
+CA_NHAN,thứ 2 có nhớ quà sinh nhật.,NHAC_VIEC,thứ 2,1331
+TRUONG_HOC,sáng mai hoàn thành bài tập bài tập nhóm.,NOP_BAI,sáng mai,1332
+CA_NHAN,lịch hẹn bạn bè trước 17h.,HEN_CA_NHAN,chủ nhật,1333
+VAN_PHONG,thứ 6 có theo dõi tiến độ kế hoạch.,THEO_DOI_CONG_VIEC,thứ 6,1334
+TRUONG_HOC,cuối tuần nộp bài tập môn lập trình.,NOP_BAI,cuối tuần,1335
+TRUONG_HOC,thi giữa kỳ môn toán trước 10h.,THI_CU,chiều mai,1336
+CA_NHAN,thứ 3 có đặt mua gia đình.,MUA_SAM,thứ 3,1337
+CA_NHAN,lịch hẹn bác sĩ vào ngày mai.,HEN_CA_NHAN,ngày mai,1338
+TRUONG_HOC,thứ 4 phải chuẩn bị bài môn tiếng Anh.,HOC_TAP,thứ 4,1339
+CA_NHAN,thứ 7 phải đi gặp quà sinh nhật.,HEN_CA_NHAN,thứ 7,1340
+CA_NHAN,hôm nay có đi gặp bạn bè.,HEN_CA_NHAN,hôm nay,1341
+CA_NHAN,đi mua bạn bè vào thứ 7.,MUA_SAM,thứ 7,1342
+CA_NHAN,thứ 4 nhắc bác sĩ.,NHAC_VIEC,thứ 4,1343
+VAN_PHONG,chủ nhật phải gửi email dự án.,GUI_EMAIL,chủ nhật,1344
+VAN_PHONG,thứ 7 phải trả lời email dự án.,GUI_EMAIL,thứ 7,1345
+TRUONG_HOC,thứ 4 phải chuẩn bị bài môn lập trình.,HOC_TAP,thứ 4,1346
+TRUONG_HOC,ngày kia có học bài môn tiếng Anh.,HOC_TAP,ngày kia,1347
+TRUONG_HOC,chuẩn bị bài môn lập trình vào thứ 7.,HOC_TAP,thứ 7,1348
+TRUONG_HOC,chủ nhật hoàn thành bài tập môn lập trình.,NOP_BAI,chủ nhật,1349
+CA_NHAN,đặt mua quà sinh nhật trước 8h.,MUA_SAM,cuối tuần,1350
+TRUONG_HOC,nộp bài môn lập trình vào thứ 4.,NOP_BAI,thứ 4,1351
+VAN_PHONG,họp kế hoạch vào chiều mai.,HEN_LICH,chiều mai,1352
+TRUONG_HOC,chiều mai có thi môn văn.,THI_CU,chiều mai,1353
+CA_NHAN,thứ 4 phải hẹn gia đình.,HEN_CA_NHAN,thứ 4,1354
+TRUONG_HOC,họp lớp môn lập trình trước 17h.,HOP_LOP,thứ 3,1355
+VAN_PHONG,gửi email công việc trước thứ 6.,GUI_EMAIL,chiều mai,1356
+TRUONG_HOC,thứ 3 thi giữa kỳ môn tiếng Anh.,THI_CU,thứ 3,1357
+TRUONG_HOC,sáng mai hoàn thành bài tập môn văn.,NOP_BAI,sáng mai,1358
+VAN_PHONG,soạn email tài liệu trước cuối tuần.,GUI_EMAIL,ngày kia,1359
+CA_NHAN,ngày mai phải lịch hẹn bạn bè.,HEN_CA_NHAN,ngày mai,1360
+CA_NHAN,tối nay phải làm quà sinh nhật.,NHAC_VIEC,tối nay,1361
+VAN_PHONG,chiều mai phải hẹn gặp dự án.,HEN_LICH,chiều mai,1362
+TRUONG_HOC,ôn bài bài tập nhóm trước ngày mai.,HOC_TAP,cuối tuần,1363
+TRUONG_HOC,cuối tuần phải sinh hoạt lớp môn toán.,HOP_LOP,cuối tuần,1364
+CA_NHAN,nhớ quà sinh nhật vào chiều mai.,NHAC_VIEC,chiều mai,1365
+VAN_PHONG,trả lời email kế hoạch vào sáng mai.,GUI_EMAIL,sáng mai,1366
+VAN_PHONG,soạn email dự án vào chiều mai.,GUI_EMAIL,chiều mai,1367
+CA_NHAN,mua bác sĩ vào thứ 4.,MUA_SAM,thứ 4,1368
+TRUONG_HOC,hoàn thành bài tập môn tiếng Anh vào hôm nay.,NOP_BAI,hôm nay,1369
+VAN_PHONG,thứ 4 có trao đổi hợp đồng.,HEN_LICH,thứ 4,1370
+CA_NHAN,phải làm bác sĩ trong hôm nay.,NHAC_VIEC,thứ 6,1371
+TRUONG_HOC,cuối tuần phải thi giữa kỳ môn tiếng Anh.,THI_CU,cuối tuần,1372
+TRUONG_HOC,thứ 7 phải nộp bài tập môn toán.,NOP_BAI,thứ 7,1373
+CA_NHAN,thứ 2 phải phải làm bạn bè.,NHAC_VIEC,thứ 2,1374
+VAN_PHONG,thứ 3 gửi email hợp đồng.,GUI_EMAIL,thứ 3,1375
+VAN_PHONG,thứ 5 có cập nhật tiến độ tài liệu.,THEO_DOI_CONG_VIEC,thứ 5,1376
+CA_NHAN,đặt mua bạn bè vào thứ 6.,MUA_SAM,thứ 6,1377
+TRUONG_HOC,thứ 6 có họp lớp môn toán.,HOP_LOP,thứ 6,1378
+VAN_PHONG,thứ 2 có meeting kế hoạch.,HEN_LICH,thứ 2,1379
+CA_NHAN,đặt mua bác sĩ trước 8h.,MUA_SAM,thứ 4,1380
+TRUONG_HOC,tối nay có thi cuối kỳ bài tập nhóm.,THI_CU,tối nay,1381
+TRUONG_HOC,ngày kia thi giữa kỳ môn văn.,THI_CU,ngày kia,1382
+CA_NHAN,chiều mai phải hẹn quà sinh nhật.,HEN_CA_NHAN,chiều mai,1383
+CA_NHAN,lịch hẹn gia đình trước cuối tuần.,HEN_CA_NHAN,thứ 2,1384
+TRUONG_HOC,thi giữa kỳ bài tập nhóm trước 8h.,THI_CU,hôm nay,1385
+TRUONG_HOC,thi bài tập nhóm vào thứ 7.,THI_CU,thứ 7,1386
+CA_NHAN,thứ 5 có nhắc gia đình.,NHAC_VIEC,thứ 5,1387
+TRUONG_HOC,chủ nhật phải nộp bài tập môn toán.,NOP_BAI,chủ nhật,1388
+CA_NHAN,ngày mai có đặt mua đồ dùng cá nhân.,MUA_SAM,ngày mai,1389
+VAN_PHONG,trả lời email dự án vào ngày kia.,GUI_EMAIL,ngày kia,1390
+TRUONG_HOC,ôn bài bài tập nhóm trước 17h.,HOC_TAP,tối nay,1391
+TRUONG_HOC,sinh hoạt lớp môn tiếng Anh trong hôm nay.,HOP_LOP,chủ nhật,1392
+VAN_PHONG,họp tài liệu trước ngày mai.,HEN_LICH,thứ 7,1393
+VAN_PHONG,gửi báo cáo công việc vào ngày kia.,NOP_BAO_CAO,ngày kia,1394
+CA_NHAN,hôm nay nhớ bạn bè.,NHAC_VIEC,hôm nay,1395
+CA_NHAN,mua bạn bè trước cuối tuần.,MUA_SAM,thứ 3,1396
+CA_NHAN,mua bác sĩ trước 8h.,MUA_SAM,tối nay,1397
+TRUONG_HOC,thứ 5 phải thi môn toán.,THI_CU,thứ 5,1398
+VAN_PHONG,ngày mai phải meeting kế hoạch.,HEN_LICH,ngày mai,1399
+VAN_PHONG,thứ 6 nộp báo cáo dự án.,NOP_BAO_CAO,thứ 6,1400
+TRUONG_HOC,sinh hoạt lớp môn tiếng Anh vào ngày kia.,HOP_LOP,ngày kia,1401
+TRUONG_HOC,tối nay phải học bài môn tiếng Anh.,HOC_TAP,tối nay,1402
+CA_NHAN,đi gặp bác sĩ vào thứ 6.,HEN_CA_NHAN,thứ 6,1403
+VAN_PHONG,cuối tuần hẹn gặp công việc.,HEN_LICH,cuối tuần,1404
+CA_NHAN,thứ 6 phải đi mua đồ dùng cá nhân.,MUA_SAM,thứ 6,1405
+CA_NHAN,nhớ bạn bè trước 17h.,NHAC_VIEC,thứ 6,1406
+VAN_PHONG,thứ 2 phải gửi báo cáo công việc.,NOP_BAO_CAO,thứ 2,1407
+VAN_PHONG,báo cáo tiến độ hợp đồng vào thứ 7.,THEO_DOI_CONG_VIEC,thứ 7,1408
+CA_NHAN,thứ 2 có mua bạn bè.,MUA_SAM,thứ 2,1409
+VAN_PHONG,lịch hẹn dự án vào thứ 6.,HEN_LICH,thứ 6,1410
+CA_NHAN,đi mua bác sĩ trước 8h.,MUA_SAM,thứ 5,1411
+VAN_PHONG,thứ 7 phải theo dõi tiến độ dự án.,THEO_DOI_CONG_VIEC,thứ 7,1412
+VAN_PHONG,trả lời email công việc trước 17h.,GUI_EMAIL,thứ 2,1413
+VAN_PHONG,gửi email dự án trước 17h.,GUI_EMAIL,thứ 2,1414
+VAN_PHONG,chủ nhật lịch hẹn dự án.,HEN_LICH,chủ nhật,1415
+VAN_PHONG,chiều mai có báo cáo tiến độ hợp đồng.,THEO_DOI_CONG_VIEC,chiều mai,1416
+VAN_PHONG,theo dõi tiến độ tài liệu vào hôm nay.,THEO_DOI_CONG_VIEC,hôm nay,1417
+TRUONG_HOC,thứ 3 có thi cuối kỳ môn toán.,THI_CU,thứ 3,1418
+VAN_PHONG,cuối tuần họp hợp đồng.,HEN_LICH,cuối tuần,1419
+CA_NHAN,tối nay nhắc đồ dùng cá nhân.,NHAC_VIEC,tối nay,1420
+VAN_PHONG,gửi email hợp đồng trước ngày mai.,GUI_EMAIL,ngày mai,1421
+CA_NHAN,cuối tuần mua đồ dùng cá nhân.,MUA_SAM,cuối tuần,1422
+CA_NHAN,phải làm bác sĩ vào chiều mai.,NHAC_VIEC,chiều mai,1423
+CA_NHAN,thứ 7 đặt mua bạn bè.,MUA_SAM,thứ 7,1424
+VAN_PHONG,ngày kia có nộp báo cáo kế hoạch.,NOP_BAO_CAO,ngày kia,1425
+TRUONG_HOC,nộp bài tập môn tiếng Anh trước 10h.,NOP_BAI,sáng mai,1426
+TRUONG_HOC,thứ 7 phải chuẩn bị bài môn lập trình.,HOC_TAP,thứ 7,1427
+TRUONG_HOC,chiều mai có họp lớp môn tiếng Anh.,HOP_LOP,chiều mai,1428
+VAN_PHONG,soạn email hợp đồng vào chủ nhật.,GUI_EMAIL,chủ nhật,1429
+CA_NHAN,ngày mai có nhắc bác sĩ.,NHAC_VIEC,ngày mai,1430
+CA_NHAN,cuối tuần hẹn bác sĩ.,HEN_CA_NHAN,cuối tuần,1431
+CA_NHAN,thứ 2 phải đặt mua bác sĩ.,MUA_SAM,thứ 2,1432
+CA_NHAN,mua quà sinh nhật vào chủ nhật.,MUA_SAM,chủ nhật,1433
+VAN_PHONG,sáng mai có trả lời email kế hoạch.,GUI_EMAIL,sáng mai,1434
+CA_NHAN,nhắc đồ dùng cá nhân vào thứ 3.,NHAC_VIEC,thứ 3,1435
+VAN_PHONG,thứ 2 có gửi email tài liệu.,GUI_EMAIL,thứ 2,1436
+CA_NHAN,đặt mua quà sinh nhật trước ngày mai.,MUA_SAM,chủ nhật,1437
+TRUONG_HOC,tối nay phải hoàn thành bài tập bài tập nhóm.,NOP_BAI,tối nay,1438
+VAN_PHONG,cuối tuần phải hẹn gặp kế hoạch.,HEN_LICH,cuối tuần,1439
+TRUONG_HOC,ôn bài bài tập nhóm vào thứ 3.,HOC_TAP,thứ 3,1440
+VAN_PHONG,sáng mai có theo dõi tiến độ công việc.,THEO_DOI_CONG_VIEC,sáng mai,1441
+VAN_PHONG,thứ 4 phải cập nhật tiến độ công việc.,THEO_DOI_CONG_VIEC,thứ 4,1442
+VAN_PHONG,thứ 6 soạn email tài liệu.,GUI_EMAIL,thứ 6,1443
+CA_NHAN,thứ 6 phải lịch hẹn đồ dùng cá nhân.,HEN_CA_NHAN,thứ 6,1444
+TRUONG_HOC,thứ 6 ôn bài bài tập nhóm.,HOC_TAP,thứ 6,1445
+VAN_PHONG,thứ 7 phải gửi email tài liệu.,GUI_EMAIL,thứ 7,1446
+CA_NHAN,thứ 7 đặt mua đồ dùng cá nhân.,MUA_SAM,thứ 7,1447
+VAN_PHONG,ngày kia có gửi email dự án.,GUI_EMAIL,ngày kia,1448
+VAN_PHONG,thứ 3 có hoàn thành báo cáo hợp đồng.,NOP_BAO_CAO,thứ 3,1449
+TRUONG_HOC,hoàn thành bài tập môn tiếng Anh vào thứ 2.,NOP_BAI,thứ 2,1450
+TRUONG_HOC,ngày kia phải nộp bài tập bài tập nhóm.,NOP_BAI,ngày kia,1451
+TRUONG_HOC,thứ 7 phải chuẩn bị bài môn văn.,HOC_TAP,thứ 7,1452
+TRUONG_HOC,ôn bài môn văn vào ngày kia.,HOC_TAP,ngày kia,1453
+VAN_PHONG,sáng mai cập nhật tiến độ công việc.,THEO_DOI_CONG_VIEC,sáng mai,1454
+VAN_PHONG,hôm nay trao đổi tài liệu.,HEN_LICH,hôm nay,1455
+CA_NHAN,ngày mai có đặt mua bác sĩ.,MUA_SAM,ngày mai,1456
+VAN_PHONG,báo cáo tiến độ công việc vào thứ 4.,THEO_DOI_CONG_VIEC,thứ 4,1457
+CA_NHAN,cuối tuần phải phải làm quà sinh nhật.,NHAC_VIEC,cuối tuần,1458
+CA_NHAN,thứ 3 phải đặt mua bác sĩ.,MUA_SAM,thứ 3,1459
+VAN_PHONG,hoàn thành báo cáo hợp đồng vào thứ 6.,NOP_BAO_CAO,thứ 6,1460
+TRUONG_HOC,chuẩn bị bài môn toán vào thứ 6.,HOC_TAP,thứ 6,1461
+TRUONG_HOC,tối nay có thi giữa kỳ môn tiếng Anh.,THI_CU,tối nay,1462
+CA_NHAN,thứ 6 có đi mua bác sĩ.,MUA_SAM,thứ 6,1463
+CA_NHAN,ngày kia có đi gặp đồ dùng cá nhân.,HEN_CA_NHAN,ngày kia,1464
+TRUONG_HOC,ngày mai phải nộp bài tập môn tiếng Anh.,NOP_BAI,ngày mai,1465
+TRUONG_HOC,sinh hoạt lớp môn tiếng Anh trước 17h.,HOP_LOP,thứ 7,1466
+TRUONG_HOC,họp lớp môn tiếng Anh trước thứ 6.,HOP_LOP,hôm nay,1467
+VAN_PHONG,thứ 4 có trả lời email kế hoạch.,GUI_EMAIL,thứ 4,1468
+TRUONG_HOC,tối nay sinh hoạt lớp bài tập nhóm.,HOP_LOP,tối nay,1469
+VAN_PHONG,thứ 2 có nộp báo cáo công việc.,NOP_BAO_CAO,thứ 2,1470
+TRUONG_HOC,chuẩn bị bài môn tiếng Anh trong hôm nay.,HOC_TAP,chủ nhật,1471
+VAN_PHONG,gửi báo cáo dự án trước 10h.,NOP_BAO_CAO,chiều mai,1472
+CA_NHAN,mua gia đình vào thứ 4.,MUA_SAM,thứ 4,1473
+TRUONG_HOC,thứ 3 phải sinh hoạt lớp môn văn.,HOP_LOP,thứ 3,1474
+VAN_PHONG,cập nhật tiến độ kế hoạch trước thứ 6.,THEO_DOI_CONG_VIEC,thứ 6,1475
+VAN_PHONG,thứ 5 có gửi báo cáo dự án.,NOP_BAO_CAO,thứ 5,1476
+VAN_PHONG,thứ 6 phải họp công việc.,HEN_LICH,thứ 6,1477
+TRUONG_HOC,thứ 3 phải nộp bài tập môn lập trình.,NOP_BAI,thứ 3,1478
+TRUONG_HOC,chiều mai phải ôn bài môn văn.,HOC_TAP,chiều mai,1479
+CA_NHAN,thứ 2 có phải làm bạn bè.,NHAC_VIEC,thứ 2,1480
+TRUONG_HOC,thứ 3 phải nộp bài môn tiếng Anh.,NOP_BAI,thứ 3,1481
+CA_NHAN,thứ 3 đi mua bác sĩ.,MUA_SAM,thứ 3,1482
+TRUONG_HOC,ôn bài môn văn trong hôm nay.,HOC_TAP,chủ nhật,1483
+TRUONG_HOC,học bài môn toán trước 10h.,HOC_TAP,ngày kia,1484
+TRUONG_HOC,thứ 4 thi giữa kỳ môn toán.,THI_CU,thứ 4,1485
+VAN_PHONG,ngày kia cập nhật tiến độ hợp đồng.,THEO_DOI_CONG_VIEC,ngày kia,1486
+VAN_PHONG,cuối tuần phải hoàn thành báo cáo kế hoạch.,NOP_BAO_CAO,cuối tuần,1487
+VAN_PHONG,thứ 7 phải trả lời email công việc.,GUI_EMAIL,thứ 7,1488
+VAN_PHONG,gửi báo cáo hợp đồng trước ngày mai.,NOP_BAO_CAO,hôm nay,1489
+TRUONG_HOC,thứ 5 phải nộp bài môn toán.,NOP_BAI,thứ 5,1490
+CA_NHAN,hôm nay lịch hẹn bạn bè.,HEN_CA_NHAN,hôm nay,1491
+CA_NHAN,thứ 4 hẹn quà sinh nhật.,HEN_CA_NHAN,thứ 4,1492
+CA_NHAN,đi gặp quà sinh nhật trước cuối tuần.,HEN_CA_NHAN,ngày mai,1493
+CA_NHAN,cuối tuần nhớ bác sĩ.,NHAC_VIEC,cuối tuần,1494
+VAN_PHONG,hôm nay có theo dõi tiến độ công việc.,THEO_DOI_CONG_VIEC,hôm nay,1495
+CA_NHAN,thứ 4 có đặt mua bác sĩ.,MUA_SAM,thứ 4,1496
+VAN_PHONG,thứ 6 phải theo dõi tiến độ tài liệu.,THEO_DOI_CONG_VIEC,thứ 6,1497
+VAN_PHONG,ngày kia nộp báo cáo tài liệu.,NOP_BAO_CAO,ngày kia,1498
+VAN_PHONG,chủ nhật phải hẹn gặp công việc.,HEN_LICH,chủ nhật,1499
+VAN_PHONG,thứ 7 lịch hẹn kế hoạch.,HEN_LICH,thứ 7,1500
+VAN_PHONG,hoàn thành báo cáo hợp đồng trong hôm nay.,NOP_BAO_CAO,tối nay,1501
+VAN_PHONG,ngày kia họp kế hoạch.,HEN_LICH,ngày kia,1502
+VAN_PHONG,lịch hẹn công việc vào chiều mai.,HEN_LICH,chiều mai,1503
+CA_NHAN,hôm nay phải nhớ đồ dùng cá nhân.,NHAC_VIEC,hôm nay,1504
+VAN_PHONG,theo dõi tiến độ công việc vào sáng mai.,THEO_DOI_CONG_VIEC,sáng mai,1505
+CA_NHAN,phải làm đồ dùng cá nhân trước 8h.,NHAC_VIEC,ngày kia,1506
+TRUONG_HOC,họp lớp môn văn trước ngày mai.,HOP_LOP,hôm nay,1507
+TRUONG_HOC,sáng mai có thi cuối kỳ môn tiếng Anh.,THI_CU,sáng mai,1508
+VAN_PHONG,hôm nay phải gửi email tài liệu.,GUI_EMAIL,hôm nay,1509
+TRUONG_HOC,thứ 4 phải họp lớp môn lập trình.,HOP_LOP,thứ 4,1510
+TRUONG_HOC,kiểm tra môn lập trình trong hôm nay.,THI_CU,ngày mai,1511
+VAN_PHONG,chủ nhật có lịch hẹn công việc.,HEN_LICH,chủ nhật,1512
+CA_NHAN,thứ 4 nhắc đồ dùng cá nhân.,NHAC_VIEC,thứ 4,1513
+CA_NHAN,phải làm bác sĩ trước 10h.,NHAC_VIEC,ngày mai,1514
+TRUONG_HOC,nộp bài tập bài tập nhóm trước cuối tuần.,NOP_BAI,thứ 6,1515
+CA_NHAN,thứ 7 có nhớ bác sĩ.,NHAC_VIEC,thứ 7,1516
+VAN_PHONG,thứ 5 có theo dõi tiến độ hợp đồng.,THEO_DOI_CONG_VIEC,thứ 5,1517
+TRUONG_HOC,ôn bài bài tập nhóm trong hôm nay.,HOC_TAP,hôm nay,1518
+TRUONG_HOC,ngày mai kiểm tra môn văn.,THI_CU,ngày mai,1519
+TRUONG_HOC,thứ 7 họp lớp bài tập nhóm.,HOP_LOP,thứ 7,1520
+TRUONG_HOC,ngày kia có họp lớp bài tập nhóm.,HOP_LOP,ngày kia,1521
+VAN_PHONG,thứ 2 trao đổi kế hoạch.,HEN_LICH,thứ 2,1522
+TRUONG_HOC,sáng mai phải sinh hoạt lớp môn lập trình.,HOP_LOP,sáng mai,1523
+CA_NHAN,đi mua bác sĩ trước 8h.,MUA_SAM,ngày mai,1524
+CA_NHAN,chủ nhật phải nhắc quà sinh nhật.,NHAC_VIEC,chủ nhật,1525
+TRUONG_HOC,sáng mai phải học bài môn toán.,HOC_TAP,sáng mai,1526
+VAN_PHONG,thứ 7 có họp tài liệu.,HEN_LICH,thứ 7,1527
+TRUONG_HOC,nộp bài tập môn văn trước ngày mai.,NOP_BAI,tối nay,1528
+CA_NHAN,thứ 4 có hẹn quà sinh nhật.,HEN_CA_NHAN,thứ 4,1529
+CA_NHAN,thứ 3 có hẹn quà sinh nhật.,HEN_CA_NHAN,thứ 3,1530
+CA_NHAN,mua bạn bè vào ngày kia.,MUA_SAM,ngày kia,1531
+TRUONG_HOC,thứ 6 có họp lớp môn lập trình.,HOP_LOP,thứ 6,1532
+CA_NHAN,ngày mai phải nhắc bác sĩ.,NHAC_VIEC,ngày mai,1533
+TRUONG_HOC,thứ 5 phải hoàn thành bài tập bài tập nhóm.,NOP_BAI,thứ 5,1534
+CA_NHAN,chiều mai phải mua bác sĩ.,MUA_SAM,chiều mai,1535
+CA_NHAN,nhớ bác sĩ trước ngày mai.,NHAC_VIEC,chủ nhật,1536
+CA_NHAN,thứ 5 nhớ bạn bè.,NHAC_VIEC,thứ 5,1537
+CA_NHAN,thứ 3 nhớ bác sĩ.,NHAC_VIEC,thứ 3,1538
+CA_NHAN,cuối tuần có nhắc đồ dùng cá nhân.,NHAC_VIEC,cuối tuần,1539
+TRUONG_HOC,chủ nhật có hoàn thành bài tập môn văn.,NOP_BAI,chủ nhật,1540
+TRUONG_HOC,thứ 5 có học bài môn toán.,HOC_TAP,thứ 5,1541
+CA_NHAN,đi gặp gia đình trước cuối tuần.,HEN_CA_NHAN,thứ 6,1542
+CA_NHAN,thứ 4 phải nhắc bác sĩ.,NHAC_VIEC,thứ 4,1543
+CA_NHAN,cuối tuần hẹn gia đình.,HEN_CA_NHAN,cuối tuần,1544
+TRUONG_HOC,hoàn thành bài tập môn lập trình trong hôm nay.,NOP_BAI,thứ 3,1545
+VAN_PHONG,họp công việc trước 8h.,HEN_LICH,thứ 3,1546
+CA_NHAN,thứ 4 hẹn bạn bè.,HEN_CA_NHAN,thứ 4,1547
+CA_NHAN,sáng mai phải mua bác sĩ.,MUA_SAM,sáng mai,1548
+TRUONG_HOC,thứ 4 có sinh hoạt lớp bài tập nhóm.,HOP_LOP,thứ 4,1549
+CA_NHAN,nhắc bác sĩ trước ngày mai.,NHAC_VIEC,tối nay,1550
+CA_NHAN,ngày mai đặt mua quà sinh nhật.,MUA_SAM,ngày mai,1551
+VAN_PHONG,soạn email hợp đồng trước 10h.,GUI_EMAIL,hôm nay,1552
+CA_NHAN,lịch hẹn gia đình trong hôm nay.,HEN_CA_NHAN,thứ 7,1553
+VAN_PHONG,thứ 4 phải gửi báo cáo kế hoạch.,NOP_BAO_CAO,thứ 4,1554
+CA_NHAN,ngày kia có phải làm quà sinh nhật.,NHAC_VIEC,ngày kia,1555
+VAN_PHONG,trả lời email kế hoạch trước cuối tuần.,GUI_EMAIL,thứ 3,1556
+VAN_PHONG,thứ 4 họp hợp đồng.,HEN_LICH,thứ 4,1557
+CA_NHAN,thứ 4 hẹn đồ dùng cá nhân.,HEN_CA_NHAN,thứ 4,1558
+CA_NHAN,đi gặp đồ dùng cá nhân trước cuối tuần.,HEN_CA_NHAN,thứ 7,1559
+TRUONG_HOC,họp lớp môn văn trong hôm nay.,HOP_LOP,ngày kia,1560
+VAN_PHONG,hôm nay phải cập nhật tiến độ dự án.,THEO_DOI_CONG_VIEC,hôm nay,1561
+CA_NHAN,ngày kia có đi gặp quà sinh nhật.,HEN_CA_NHAN,ngày kia,1562
+CA_NHAN,nhắc đồ dùng cá nhân vào thứ 5.,NHAC_VIEC,thứ 5,1563
+TRUONG_HOC,thứ 7 phải sinh hoạt lớp môn toán.,HOP_LOP,thứ 7,1564
+CA_NHAN,hôm nay có nhắc gia đình.,NHAC_VIEC,hôm nay,1565
+VAN_PHONG,trả lời email kế hoạch trong hôm nay.,GUI_EMAIL,thứ 4,1566
+VAN_PHONG,thứ 5 có soạn email hợp đồng.,GUI_EMAIL,thứ 5,1567
+TRUONG_HOC,học bài bài tập nhóm trước 17h.,HOC_TAP,thứ 7,1568
+CA_NHAN,nhớ bác sĩ vào thứ 3.,NHAC_VIEC,thứ 3,1569
+VAN_PHONG,ngày kia có gửi email tài liệu.,GUI_EMAIL,ngày kia,1570
+VAN_PHONG,nộp báo cáo kế hoạch trước 10h.,NOP_BAO_CAO,thứ 6,1571
+TRUONG_HOC,nộp bài môn tiếng Anh trước ngày mai.,NOP_BAI,thứ 5,1572
+CA_NHAN,đi mua bác sĩ vào cuối tuần.,MUA_SAM,cuối tuần,1573
+TRUONG_HOC,ngày mai hoàn thành bài tập môn toán.,NOP_BAI,ngày mai,1574
+TRUONG_HOC,thứ 3 phải thi giữa kỳ bài tập nhóm.,THI_CU,thứ 3,1575
+VAN_PHONG,trao đổi kế hoạch vào thứ 4.,HEN_LICH,thứ 4,1576
+VAN_PHONG,thứ 2 có theo dõi tiến độ kế hoạch.,THEO_DOI_CONG_VIEC,thứ 2,1577
+CA_NHAN,phải làm gia đình vào thứ 5.,NHAC_VIEC,thứ 5,1578
+CA_NHAN,thứ 6 phải đi gặp quà sinh nhật.,HEN_CA_NHAN,thứ 6,1579
+VAN_PHONG,chủ nhật có trả lời email tài liệu.,GUI_EMAIL,chủ nhật,1580
+CA_NHAN,cuối tuần phải đi mua bác sĩ.,MUA_SAM,cuối tuần,1581
+CA_NHAN,hôm nay phải đi gặp gia đình.,HEN_CA_NHAN,hôm nay,1582
+TRUONG_HOC,thứ 7 phải học bài môn văn.,HOC_TAP,thứ 7,1583
+VAN_PHONG,hôm nay nộp báo cáo kế hoạch.,NOP_BAO_CAO,hôm nay,1584
+CA_NHAN,đi mua gia đình vào ngày mai.,MUA_SAM,ngày mai,1585
+TRUONG_HOC,họp lớp môn tiếng Anh trong hôm nay.,HOP_LOP,chiều mai,1586
+VAN_PHONG,thứ 4 có báo cáo tiến độ tài liệu.,THEO_DOI_CONG_VIEC,thứ 4,1587
+VAN_PHONG,thứ 7 phải báo cáo tiến độ dự án.,THEO_DOI_CONG_VIEC,thứ 7,1588
+CA_NHAN,chủ nhật lịch hẹn bạn bè.,HEN_CA_NHAN,chủ nhật,1589
+TRUONG_HOC,sáng mai nộp bài môn văn.,NOP_BAI,sáng mai,1590
+CA_NHAN,đi mua quà sinh nhật vào ngày kia.,MUA_SAM,ngày kia,1591
+TRUONG_HOC,ngày mai nộp bài môn tiếng Anh.,NOP_BAI,ngày mai,1592
+TRUONG_HOC,thứ 6 hoàn thành bài tập bài tập nhóm.,NOP_BAI,thứ 6,1593
+CA_NHAN,nhắc đồ dùng cá nhân trước cuối tuần.,NHAC_VIEC,chiều mai,1594
+VAN_PHONG,thứ 6 báo cáo tiến độ công việc.,THEO_DOI_CONG_VIEC,thứ 6,1595
+TRUONG_HOC,thứ 6 kiểm tra môn lập trình.,THI_CU,thứ 6,1596
+VAN_PHONG,soạn email dự án trước cuối tuần.,GUI_EMAIL,sáng mai,1597
+CA_NHAN,nhớ gia đình trước cuối tuần.,NHAC_VIEC,tối nay,1598
+CA_NHAN,lịch hẹn bác sĩ trước cuối tuần.,HEN_CA_NHAN,thứ 2,1599
+VAN_PHONG,chủ nhật nộp báo cáo dự án.,NOP_BAO_CAO,chủ nhật,1600
+VAN_PHONG,tối nay soạn email hợp đồng.,GUI_EMAIL,tối nay,1601
+CA_NHAN,phải làm quà sinh nhật vào ngày mai.,NHAC_VIEC,ngày mai,1602
+TRUONG_HOC,chiều mai học bài môn văn.,HOC_TAP,chiều mai,1603
+CA_NHAN,thứ 7 có phải làm bác sĩ.,NHAC_VIEC,thứ 7,1604
+TRUONG_HOC,hoàn thành bài tập môn toán trong hôm nay.,NOP_BAI,thứ 7,1605
+VAN_PHONG,soạn email hợp đồng vào tối nay.,GUI_EMAIL,tối nay,1606
+VAN_PHONG,theo dõi tiến độ kế hoạch trong hôm nay.,THEO_DOI_CONG_VIEC,thứ 4,1607
+CA_NHAN,hẹn đồ dùng cá nhân vào thứ 3.,HEN_CA_NHAN,thứ 3,1608
+TRUONG_HOC,nộp bài tập môn tiếng Anh vào thứ 2.,NOP_BAI,thứ 2,1609
+CA_NHAN,tối nay phải nhớ đồ dùng cá nhân.,NHAC_VIEC,tối nay,1610
+TRUONG_HOC,thứ 2 thi giữa kỳ môn văn.,THI_CU,thứ 2,1611
+VAN_PHONG,thứ 7 gửi email dự án.,GUI_EMAIL,thứ 7,1612
+CA_NHAN,ngày kia có phải làm gia đình.,NHAC_VIEC,ngày kia,1613
+VAN_PHONG,cuối tuần báo cáo tiến độ kế hoạch.,THEO_DOI_CONG_VIEC,cuối tuần,1614
+VAN_PHONG,trao đổi dự án vào tối nay.,HEN_LICH,tối nay,1615
+TRUONG_HOC,ngày kia phải chuẩn bị bài bài tập nhóm.,HOC_TAP,ngày kia,1616
+VAN_PHONG,thứ 5 có nộp báo cáo tài liệu.,NOP_BAO_CAO,thứ 5,1617
+TRUONG_HOC,hoàn thành bài tập môn lập trình vào ngày mai.,NOP_BAI,ngày mai,1618
+TRUONG_HOC,chiều mai phải họp lớp bài tập nhóm.,HOP_LOP,chiều mai,1619
+VAN_PHONG,thứ 4 có theo dõi tiến độ dự án.,THEO_DOI_CONG_VIEC,thứ 4,1620
+CA_NHAN,ngày mai lịch hẹn bạn bè.,HEN_CA_NHAN,ngày mai,1621
+VAN_PHONG,chiều mai phải gửi báo cáo dự án.,NOP_BAO_CAO,chiều mai,1622
+TRUONG_HOC,thứ 6 có thi bài tập nhóm.,THI_CU,thứ 6,1623
+TRUONG_HOC,cuối tuần phải nộp bài tập bài tập nhóm.,NOP_BAI,cuối tuần,1624
+TRUONG_HOC,sáng mai phải nộp bài bài tập nhóm.,NOP_BAI,sáng mai,1625
+VAN_PHONG,thứ 2 phải gửi báo cáo dự án.,NOP_BAO_CAO,thứ 2,1626
+TRUONG_HOC,nộp bài tập môn toán trước 17h.,NOP_BAI,tối nay,1627
+TRUONG_HOC,thứ 7 phải nộp bài tập môn lập trình.,NOP_BAI,thứ 7,1628
+CA_NHAN,thứ 3 phải phải làm quà sinh nhật.,NHAC_VIEC,thứ 3,1629
+TRUONG_HOC,thứ 3 nộp bài bài tập nhóm.,NOP_BAI,thứ 3,1630
+TRUONG_HOC,thứ 6 nộp bài tập bài tập nhóm.,NOP_BAI,thứ 6,1631
+CA_NHAN,hẹn quà sinh nhật vào chiều mai.,HEN_CA_NHAN,chiều mai,1632
+VAN_PHONG,chủ nhật nộp báo cáo hợp đồng.,NOP_BAO_CAO,chủ nhật,1633
+CA_NHAN,tối nay nhớ quà sinh nhật.,NHAC_VIEC,tối nay,1634
+CA_NHAN,sáng mai có đi mua đồ dùng cá nhân.,MUA_SAM,sáng mai,1635
+CA_NHAN,đặt mua đồ dùng cá nhân vào ngày mai.,MUA_SAM,ngày mai,1636
+VAN_PHONG,cuối tuần trả lời email dự án.,GUI_EMAIL,cuối tuần,1637
+VAN_PHONG,tối nay phải gửi email dự án.,GUI_EMAIL,tối nay,1638
+TRUONG_HOC,sinh hoạt lớp bài tập nhóm trước thứ 6.,HOP_LOP,ngày kia,1639
+CA_NHAN,phải làm đồ dùng cá nhân trong hôm nay.,NHAC_VIEC,thứ 7,1640
+VAN_PHONG,cuối tuần có trả lời email kế hoạch.,GUI_EMAIL,cuối tuần,1641
+CA_NHAN,đi gặp quà sinh nhật trước thứ 6.,HEN_CA_NHAN,ngày kia,1642
+VAN_PHONG,cập nhật tiến độ hợp đồng vào thứ 2.,THEO_DOI_CONG_VIEC,thứ 2,1643
+VAN_PHONG,thứ 6 phải lịch hẹn công việc.,HEN_LICH,thứ 6,1644
+VAN_PHONG,cuối tuần có soạn email hợp đồng.,GUI_EMAIL,cuối tuần,1645
+CA_NHAN,nhớ quà sinh nhật trước thứ 6.,NHAC_VIEC,thứ 6,1646
+TRUONG_HOC,hôm nay có nộp bài môn toán.,NOP_BAI,hôm nay,1647
+TRUONG_HOC,thứ 7 phải nộp bài môn văn.,NOP_BAI,thứ 7,1648
+CA_NHAN,ngày mai đi mua quà sinh nhật.,MUA_SAM,ngày mai,1649
+VAN_PHONG,thứ 2 có hoàn thành báo cáo công việc.,NOP_BAO_CAO,thứ 2,1650
+CA_NHAN,ngày kia phải phải làm bạn bè.,NHAC_VIEC,ngày kia,1651
+TRUONG_HOC,nộp bài bài tập nhóm vào hôm nay.,NOP_BAI,hôm nay,1652
+CA_NHAN,thứ 4 có hẹn bạn bè.,HEN_CA_NHAN,thứ 4,1653
+CA_NHAN,mua quà sinh nhật trước cuối tuần.,MUA_SAM,thứ 7,1654
+CA_NHAN,sáng mai có nhớ gia đình.,NHAC_VIEC,sáng mai,1655
+CA_NHAN,mua bạn bè trước thứ 6.,MUA_SAM,sáng mai,1656
+CA_NHAN,thứ 4 có hẹn quà sinh nhật.,HEN_CA_NHAN,thứ 4,1657
+CA_NHAN,lịch hẹn đồ dùng cá nhân trong hôm nay.,HEN_CA_NHAN,thứ 3,1658
+TRUONG_HOC,thi cuối kỳ môn văn trước ngày mai.,THI_CU,thứ 7,1659
+CA_NHAN,thứ 3 nhớ gia đình.,NHAC_VIEC,thứ 3,1660
+CA_NHAN,chiều mai lịch hẹn bạn bè.,HEN_CA_NHAN,chiều mai,1661
+CA_NHAN,thứ 6 phải nhớ gia đình.,NHAC_VIEC,thứ 6,1662
+VAN_PHONG,trao đổi công việc trước cuối tuần.,HEN_LICH,cuối tuần,1663
+CA_NHAN,thứ 4 phải lịch hẹn quà sinh nhật.,HEN_CA_NHAN,thứ 4,1664
+VAN_PHONG,trao đổi dự án vào chủ nhật.,HEN_LICH,chủ nhật,1665
+VAN_PHONG,ngày mai gửi email hợp đồng.,GUI_EMAIL,ngày mai,1666
+VAN_PHONG,tối nay gửi email kế hoạch.,GUI_EMAIL,tối nay,1667
+CA_NHAN,tối nay có hẹn bạn bè.,HEN_CA_NHAN,tối nay,1668
+CA_NHAN,nhắc đồ dùng cá nhân vào thứ 6.,NHAC_VIEC,thứ 6,1669
+CA_NHAN,ngày kia có đặt mua quà sinh nhật.,MUA_SAM,ngày kia,1670
+CA_NHAN,mua quà sinh nhật trước cuối tuần.,MUA_SAM,chủ nhật,1671
+CA_NHAN,thứ 7 phải nhớ bạn bè.,NHAC_VIEC,thứ 7,1672
+TRUONG_HOC,sáng mai phải nộp bài tập bài tập nhóm.,NOP_BAI,sáng mai,1673
+VAN_PHONG,chiều mai meeting tài liệu.,HEN_LICH,chiều mai,1674
+CA_NHAN,ngày mai có lịch hẹn đồ dùng cá nhân.,HEN_CA_NHAN,ngày mai,1675
+TRUONG_HOC,thứ 2 có thi giữa kỳ môn lập trình.,THI_CU,thứ 2,1676
+TRUONG_HOC,chuẩn bị bài môn lập trình trong hôm nay.,HOC_TAP,thứ 4,1677
+TRUONG_HOC,chuẩn bị bài môn lập trình trước cuối tuần.,HOC_TAP,cuối tuần,1678
+VAN_PHONG,soạn email kế hoạch trước ngày mai.,GUI_EMAIL,thứ 6,1679
+TRUONG_HOC,sinh hoạt lớp môn lập trình vào thứ 6.,HOP_LOP,thứ 6,1680
+TRUONG_HOC,ngày kia kiểm tra môn lập trình.,THI_CU,ngày kia,1681
+VAN_PHONG,trả lời email kế hoạch vào sáng mai.,GUI_EMAIL,sáng mai,1682
+VAN_PHONG,thứ 4 theo dõi tiến độ kế hoạch.,THEO_DOI_CONG_VIEC,thứ 4,1683
+TRUONG_HOC,tối nay có thi môn văn.,THI_CU,tối nay,1684
+TRUONG_HOC,ngày kia chuẩn bị bài môn tiếng Anh.,HOC_TAP,ngày kia,1685
+CA_NHAN,lịch hẹn bác sĩ vào thứ 3.,HEN_CA_NHAN,thứ 3,1686
+CA_NHAN,chủ nhật mua quà sinh nhật.,MUA_SAM,chủ nhật,1687
+VAN_PHONG,thứ 2 nộp báo cáo kế hoạch.,NOP_BAO_CAO,thứ 2,1688
+CA_NHAN,thứ 2 phải mua bạn bè.,MUA_SAM,thứ 2,1689
+VAN_PHONG,ngày mai phải lịch hẹn kế hoạch.,HEN_LICH,ngày mai,1690
+VAN_PHONG,ngày mai báo cáo tiến độ công việc.,THEO_DOI_CONG_VIEC,ngày mai,1691
+CA_NHAN,nhớ bác sĩ trước 8h.,NHAC_VIEC,hôm nay,1692
+CA_NHAN,thứ 5 phải đi gặp bạn bè.,HEN_CA_NHAN,thứ 5,1693
+CA_NHAN,ngày kia mua bạn bè.,MUA_SAM,ngày kia,1694
+CA_NHAN,phải làm gia đình trước ngày mai.,NHAC_VIEC,ngày kia,1695
+CA_NHAN,mua bạn bè vào thứ 3.,MUA_SAM,thứ 3,1696
+CA_NHAN,phải làm đồ dùng cá nhân trước 10h.,NHAC_VIEC,hôm nay,1697
+TRUONG_HOC,chuẩn bị bài môn tiếng Anh trước thứ 6.,HOC_TAP,sáng mai,1698
+TRUONG_HOC,họp lớp môn văn vào thứ 7.,HOP_LOP,thứ 7,1699
+VAN_PHONG,thứ 2 có trả lời email dự án.,GUI_EMAIL,thứ 2,1700
+CA_NHAN,đi gặp đồ dùng cá nhân trước ngày mai.,HEN_CA_NHAN,thứ 2,1701
+VAN_PHONG,trao đổi kế hoạch vào chiều mai.,HEN_LICH,chiều mai,1702
+TRUONG_HOC,thứ 6 chuẩn bị bài bài tập nhóm.,HOC_TAP,thứ 6,1703
+TRUONG_HOC,ngày kia có nộp bài bài tập nhóm.,NOP_BAI,ngày kia,1704
+CA_NHAN,đi gặp quà sinh nhật trước ngày mai.,HEN_CA_NHAN,chủ nhật,1705
+VAN_PHONG,chủ nhật phải hoàn thành báo cáo tài liệu.,NOP_BAO_CAO,chủ nhật,1706
+VAN_PHONG,thứ 3 có soạn email tài liệu.,GUI_EMAIL,thứ 3,1707
+CA_NHAN,tối nay nhắc gia đình.,NHAC_VIEC,tối nay,1708
+CA_NHAN,thứ 3 phải làm bác sĩ.,NHAC_VIEC,thứ 3,1709
+VAN_PHONG,thứ 7 phải trao đổi công việc.,HEN_LICH,thứ 7,1710
+VAN_PHONG,gửi báo cáo kế hoạch trước 17h.,NOP_BAO_CAO,chiều mai,1711
+VAN_PHONG,ngày mai cập nhật tiến độ dự án.,THEO_DOI_CONG_VIEC,ngày mai,1712
+VAN_PHONG,hẹn gặp kế hoạch trước 17h.,HEN_LICH,ngày mai,1713
+CA_NHAN,hôm nay phải làm bạn bè.,NHAC_VIEC,hôm nay,1714
+VAN_PHONG,gửi báo cáo dự án vào ngày mai.,NOP_BAO_CAO,ngày mai,1715
+CA_NHAN,ngày kia nhắc quà sinh nhật.,NHAC_VIEC,ngày kia,1716
+CA_NHAN,tối nay đặt mua bác sĩ.,MUA_SAM,tối nay,1717
+VAN_PHONG,chủ nhật có trả lời email dự án.,GUI_EMAIL,chủ nhật,1718
+CA_NHAN,thứ 7 nhớ quà sinh nhật.,NHAC_VIEC,thứ 7,1719
+CA_NHAN,nhắc đồ dùng cá nhân vào ngày kia.,NHAC_VIEC,ngày kia,1720
+CA_NHAN,đi mua đồ dùng cá nhân vào chiều mai.,MUA_SAM,chiều mai,1721
+VAN_PHONG,nộp báo cáo tài liệu trước 8h.,NOP_BAO_CAO,thứ 2,1722
+VAN_PHONG,chiều mai gửi báo cáo công việc.,NOP_BAO_CAO,chiều mai,1723
+VAN_PHONG,lịch hẹn tài liệu trước 8h.,HEN_LICH,cuối tuần,1724
+TRUONG_HOC,tối nay có nộp bài môn văn.,NOP_BAI,tối nay,1725
+TRUONG_HOC,ôn bài môn toán vào hôm nay.,HOC_TAP,hôm nay,1726
+CA_NHAN,ngày kia có đặt mua đồ dùng cá nhân.,MUA_SAM,ngày kia,1727
+VAN_PHONG,gửi email công việc vào tối nay.,GUI_EMAIL,tối nay,1728
+TRUONG_HOC,ngày mai có họp lớp môn văn.,HOP_LOP,ngày mai,1729
+VAN_PHONG,cập nhật tiến độ tài liệu vào thứ 6.,THEO_DOI_CONG_VIEC,thứ 6,1730
+TRUONG_HOC,thứ 3 ôn bài bài tập nhóm.,HOC_TAP,thứ 3,1731
+TRUONG_HOC,chiều mai phải thi giữa kỳ môn tiếng Anh.,THI_CU,chiều mai,1732
+CA_NHAN,nhớ quà sinh nhật trong hôm nay.,NHAC_VIEC,ngày kia,1733
+TRUONG_HOC,học bài môn lập trình vào tối nay.,HOC_TAP,tối nay,1734
+CA_NHAN,thứ 7 phải phải làm bác sĩ.,NHAC_VIEC,thứ 7,1735
+CA_NHAN,phải làm bác sĩ vào ngày mai.,NHAC_VIEC,ngày mai,1736
+CA_NHAN,hẹn gia đình trước ngày mai.,HEN_CA_NHAN,hôm nay,1737
+TRUONG_HOC,thứ 2 có chuẩn bị bài môn văn.,HOC_TAP,thứ 2,1738
+VAN_PHONG,thứ 4 có meeting hợp đồng.,HEN_LICH,thứ 4,1739
+TRUONG_HOC,thứ 4 phải sinh hoạt lớp môn văn.,HOP_LOP,thứ 4,1740
+VAN_PHONG,thứ 6 trả lời email công việc.,GUI_EMAIL,thứ 6,1741
+TRUONG_HOC,ôn bài môn tiếng Anh trước cuối tuần.,HOC_TAP,ngày mai,1742
+CA_NHAN,ngày mai có phải làm đồ dùng cá nhân.,NHAC_VIEC,ngày mai,1743
+CA_NHAN,hôm nay phải mua quà sinh nhật.,MUA_SAM,hôm nay,1744
+TRUONG_HOC,ngày kia có sinh hoạt lớp môn văn.,HOP_LOP,ngày kia,1745
+TRUONG_HOC,thứ 2 có thi giữa kỳ môn toán.,THI_CU,thứ 2,1746
+CA_NHAN,sáng mai phải nhắc bạn bè.,NHAC_VIEC,sáng mai,1747
+VAN_PHONG,cập nhật tiến độ kế hoạch vào ngày kia.,THEO_DOI_CONG_VIEC,ngày kia,1748
+VAN_PHONG,chủ nhật báo cáo tiến độ tài liệu.,THEO_DOI_CONG_VIEC,chủ nhật,1749
+TRUONG_HOC,ôn bài môn tiếng Anh vào hôm nay.,HOC_TAP,hôm nay,1750
+VAN_PHONG,gửi email công việc trước cuối tuần.,GUI_EMAIL,sáng mai,1751
+CA_NHAN,thứ 4 đi gặp bác sĩ.,HEN_CA_NHAN,thứ 4,1752
+VAN_PHONG,chủ nhật phải theo dõi tiến độ kế hoạch.,THEO_DOI_CONG_VIEC,chủ nhật,1753
+TRUONG_HOC,nộp bài môn lập trình trong hôm nay.,NOP_BAI,thứ 2,1754
+TRUONG_HOC,thứ 3 thi giữa kỳ môn toán.,THI_CU,thứ 3,1755
+CA_NHAN,chủ nhật mua quà sinh nhật.,MUA_SAM,chủ nhật,1756
+CA_NHAN,ngày mai có nhắc bạn bè.,NHAC_VIEC,ngày mai,1757
+TRUONG_HOC,thứ 7 có họp lớp môn toán.,HOP_LOP,thứ 7,1758
+TRUONG_HOC,thi giữa kỳ môn lập trình trước thứ 6.,THI_CU,chủ nhật,1759
+TRUONG_HOC,thứ 2 có thi cuối kỳ môn tiếng Anh.,THI_CU,thứ 2,1760
+VAN_PHONG,thứ 2 phải cập nhật tiến độ kế hoạch.,THEO_DOI_CONG_VIEC,thứ 2,1761
+CA_NHAN,thứ 6 có nhắc gia đình.,NHAC_VIEC,thứ 6,1762
+CA_NHAN,ngày kia có mua đồ dùng cá nhân.,MUA_SAM,ngày kia,1763
+CA_NHAN,phải làm quà sinh nhật trong hôm nay.,NHAC_VIEC,ngày kia,1764
+TRUONG_HOC,chiều mai nộp bài bài tập nhóm.,NOP_BAI,chiều mai,1765
+TRUONG_HOC,ngày kia phải họp lớp môn văn.,HOP_LOP,ngày kia,1766
+CA_NHAN,phải làm bạn bè vào thứ 2.,NHAC_VIEC,thứ 2,1767
+VAN_PHONG,chủ nhật theo dõi tiến độ hợp đồng.,THEO_DOI_CONG_VIEC,chủ nhật,1768
+TRUONG_HOC,kiểm tra môn văn vào sáng mai.,THI_CU,sáng mai,1769
+VAN_PHONG,nộp báo cáo công việc vào thứ 3.,NOP_BAO_CAO,thứ 3,1770
+VAN_PHONG,hoàn thành báo cáo dự án trong hôm nay.,NOP_BAO_CAO,thứ 4,1771
+VAN_PHONG,chiều mai có soạn email tài liệu.,GUI_EMAIL,chiều mai,1772
+TRUONG_HOC,thi môn lập trình vào ngày kia.,THI_CU,ngày kia,1773
+TRUONG_HOC,thi giữa kỳ môn tiếng Anh vào thứ 5.,THI_CU,thứ 5,1774
+VAN_PHONG,ngày mai phải gửi email tài liệu.,GUI_EMAIL,ngày mai,1775
+TRUONG_HOC,sáng mai nộp bài tập môn tiếng Anh.,NOP_BAI,sáng mai,1776
+TRUONG_HOC,thứ 4 chuẩn bị bài môn tiếng Anh.,HOC_TAP,thứ 4,1777
+VAN_PHONG,soạn email kế hoạch vào ngày kia.,GUI_EMAIL,ngày kia,1778
+VAN_PHONG,soạn email công việc trước 17h.,GUI_EMAIL,chiều mai,1779
+VAN_PHONG,soạn email dự án vào thứ 5.,GUI_EMAIL,thứ 5,1780
+CA_NHAN,sáng mai nhớ gia đình.,NHAC_VIEC,sáng mai,1781
+VAN_PHONG,hôm nay phải báo cáo tiến độ tài liệu.,THEO_DOI_CONG_VIEC,hôm nay,1782
+TRUONG_HOC,sinh hoạt lớp môn lập trình vào ngày mai.,HOP_LOP,ngày mai,1783
+CA_NHAN,hôm nay có đi gặp gia đình.,HEN_CA_NHAN,hôm nay,1784
+TRUONG_HOC,ngày mai thi cuối kỳ môn lập trình.,THI_CU,ngày mai,1785
+TRUONG_HOC,học bài môn văn vào thứ 4.,HOC_TAP,thứ 4,1786
+VAN_PHONG,sáng mai cập nhật tiến độ tài liệu.,THEO_DOI_CONG_VIEC,sáng mai,1787
+CA_NHAN,lịch hẹn bác sĩ vào thứ 5.,HEN_CA_NHAN,thứ 5,1788
+VAN_PHONG,thứ 4 gửi báo cáo kế hoạch.,NOP_BAO_CAO,thứ 4,1789
+TRUONG_HOC,ngày kia có học bài bài tập nhóm.,HOC_TAP,ngày kia,1790
+VAN_PHONG,tối nay nộp báo cáo dự án.,NOP_BAO_CAO,tối nay,1791
+CA_NHAN,ngày mai có đi mua bác sĩ.,MUA_SAM,ngày mai,1792
+TRUONG_HOC,thi môn lập trình trước 8h.,THI_CU,chiều mai,1793
+TRUONG_HOC,thi giữa kỳ môn văn vào tối nay.,THI_CU,tối nay,1794
+TRUONG_HOC,ôn bài môn tiếng Anh vào chủ nhật.,HOC_TAP,chủ nhật,1795
+TRUONG_HOC,học bài môn văn vào cuối tuần.,HOC_TAP,cuối tuần,1796
+TRUONG_HOC,chiều mai phải sinh hoạt lớp môn lập trình.,HOP_LOP,chiều mai,1797
+CA_NHAN,đi mua bạn bè trước 17h.,MUA_SAM,hôm nay,1798
+TRUONG_HOC,thi môn văn vào hôm nay.,THI_CU,hôm nay,1799
+TRUONG_HOC,tối nay hoàn thành bài tập môn lập trình.,NOP_BAI,tối nay,1800
+CA_NHAN,tối nay phải đi mua đồ dùng cá nhân.,MUA_SAM,tối nay,1801
+CA_NHAN,đi mua quà sinh nhật vào ngày kia.,MUA_SAM,ngày kia,1802
+TRUONG_HOC,thi cuối kỳ bài tập nhóm vào thứ 6.,THI_CU,thứ 6,1803
+TRUONG_HOC,hôm nay học bài môn tiếng Anh.,HOC_TAP,hôm nay,1804
+TRUONG_HOC,thi cuối kỳ bài tập nhóm trước 8h.,THI_CU,chủ nhật,1805
+TRUONG_HOC,hoàn thành bài tập môn văn vào thứ 4.,NOP_BAI,thứ 4,1806
+CA_NHAN,chủ nhật phải hẹn đồ dùng cá nhân.,HEN_CA_NHAN,chủ nhật,1807
+CA_NHAN,đi gặp bạn bè vào chủ nhật.,HEN_CA_NHAN,chủ nhật,1808
+CA_NHAN,thứ 5 phải nhớ đồ dùng cá nhân.,NHAC_VIEC,thứ 5,1809
+CA_NHAN,lịch hẹn bác sĩ trong hôm nay.,HEN_CA_NHAN,thứ 5,1810
+CA_NHAN,thứ 3 phải đặt mua gia đình.,MUA_SAM,thứ 3,1811
+TRUONG_HOC,thứ 2 có họp lớp môn lập trình.,HOP_LOP,thứ 2,1812
+VAN_PHONG,hẹn gặp hợp đồng vào thứ 6.,HEN_LICH,thứ 6,1813
+TRUONG_HOC,thứ 3 có học bài môn tiếng Anh.,HOC_TAP,thứ 3,1814
+VAN_PHONG,theo dõi tiến độ dự án trước 8h.,THEO_DOI_CONG_VIEC,ngày kia,1815
+CA_NHAN,đặt mua gia đình vào tối nay.,MUA_SAM,tối nay,1816
+TRUONG_HOC,học bài môn toán trong hôm nay.,HOC_TAP,cuối tuần,1817
+TRUONG_HOC,chiều mai có ôn bài môn lập trình.,HOC_TAP,chiều mai,1818
+VAN_PHONG,thứ 4 có trao đổi dự án.,HEN_LICH,thứ 4,1819
+CA_NHAN,đi mua bạn bè vào chiều mai.,MUA_SAM,chiều mai,1820
+VAN_PHONG,trao đổi dự án trước thứ 6.,HEN_LICH,thứ 7,1821
+TRUONG_HOC,họp lớp bài tập nhóm trong hôm nay.,HOP_LOP,thứ 5,1822
+TRUONG_HOC,chủ nhật kiểm tra môn tiếng Anh.,THI_CU,chủ nhật,1823
+CA_NHAN,tối nay phải hẹn quà sinh nhật.,HEN_CA_NHAN,tối nay,1824
+TRUONG_HOC,thứ 3 học bài môn văn.,HOC_TAP,thứ 3,1825
+VAN_PHONG,thứ 7 phải trả lời email công việc.,GUI_EMAIL,thứ 7,1826
+TRUONG_HOC,ngày mai có thi môn lập trình.,THI_CU,ngày mai,1827
+TRUONG_HOC,học bài môn toán vào thứ 5.,HOC_TAP,thứ 5,1828
+CA_NHAN,thứ 4 có lịch hẹn bác sĩ.,HEN_CA_NHAN,thứ 4,1829
+VAN_PHONG,gửi email dự án vào ngày kia.,GUI_EMAIL,ngày kia,1830
+CA_NHAN,lịch hẹn gia đình vào hôm nay.,HEN_CA_NHAN,hôm nay,1831
+CA_NHAN,phải làm quà sinh nhật vào sáng mai.,NHAC_VIEC,sáng mai,1832
+TRUONG_HOC,sinh hoạt lớp môn lập trình vào thứ 4.,HOP_LOP,thứ 4,1833
+VAN_PHONG,sáng mai phải lịch hẹn kế hoạch.,HEN_LICH,sáng mai,1834
+TRUONG_HOC,tối nay hoàn thành bài tập bài tập nhóm.,NOP_BAI,tối nay,1835
+CA_NHAN,thứ 2 phải phải làm bạn bè.,NHAC_VIEC,thứ 2,1836
+TRUONG_HOC,thứ 4 có chuẩn bị bài môn lập trình.,HOC_TAP,thứ 4,1837
+TRUONG_HOC,sáng mai họp lớp môn tiếng Anh.,HOP_LOP,sáng mai,1838
+TRUONG_HOC,chuẩn bị bài môn lập trình trước cuối tuần.,HOC_TAP,thứ 7,1839
+VAN_PHONG,hoàn thành báo cáo tài liệu vào thứ 5.,NOP_BAO_CAO,thứ 5,1840
+CA_NHAN,thứ 3 nhớ gia đình.,NHAC_VIEC,thứ 3,1841
+CA_NHAN,ngày mai hẹn gia đình.,HEN_CA_NHAN,ngày mai,1842
+VAN_PHONG,meeting hợp đồng trước 8h.,HEN_LICH,thứ 5,1843
+TRUONG_HOC,ngày mai chuẩn bị bài bài tập nhóm.,HOC_TAP,ngày mai,1844
+CA_NHAN,nhớ quà sinh nhật trong hôm nay.,NHAC_VIEC,hôm nay,1845
+VAN_PHONG,cuối tuần nộp báo cáo hợp đồng.,NOP_BAO_CAO,cuối tuần,1846
+VAN_PHONG,chiều mai hẹn gặp tài liệu.,HEN_LICH,chiều mai,1847
+VAN_PHONG,thứ 2 gửi email hợp đồng.,GUI_EMAIL,thứ 2,1848
+VAN_PHONG,thứ 4 có nộp báo cáo tài liệu.,NOP_BAO_CAO,thứ 4,1849
+TRUONG_HOC,thứ 4 hoàn thành bài tập môn lập trình.,NOP_BAI,thứ 4,1850
+VAN_PHONG,thứ 6 phải gửi báo cáo kế hoạch.,NOP_BAO_CAO,thứ 6,1851
+VAN_PHONG,soạn email dự án vào ngày mai.,GUI_EMAIL,ngày mai,1852
+VAN_PHONG,lịch hẹn hợp đồng vào hôm nay.,HEN_LICH,hôm nay,1853
+VAN_PHONG,ngày mai có theo dõi tiến độ công việc.,THEO_DOI_CONG_VIEC,ngày mai,1854
+VAN_PHONG,thứ 2 phải nộp báo cáo công việc.,NOP_BAO_CAO,thứ 2,1855
+CA_NHAN,ngày mai có hẹn quà sinh nhật.,HEN_CA_NHAN,ngày mai,1856
+TRUONG_HOC,kiểm tra môn tiếng Anh trước 17h.,THI_CU,thứ 7,1857
+VAN_PHONG,chủ nhật có gửi email kế hoạch.,GUI_EMAIL,chủ nhật,1858
+TRUONG_HOC,thứ 7 họp lớp môn lập trình.,HOP_LOP,thứ 7,1859
+TRUONG_HOC,hoàn thành bài tập môn tiếng Anh vào sáng mai.,NOP_BAI,sáng mai,1860
+VAN_PHONG,nộp báo cáo hợp đồng trước 17h.,NOP_BAO_CAO,ngày mai,1861
+VAN_PHONG,trả lời email hợp đồng vào thứ 2.,GUI_EMAIL,thứ 2,1862
+VAN_PHONG,thứ 7 có gửi báo cáo tài liệu.,NOP_BAO_CAO,thứ 7,1863
+CA_NHAN,sáng mai nhắc bác sĩ.,NHAC_VIEC,sáng mai,1864
+CA_NHAN,ngày kia mua gia đình.,MUA_SAM,ngày kia,1865
+TRUONG_HOC,thứ 3 có chuẩn bị bài môn toán.,HOC_TAP,thứ 3,1866
+TRUONG_HOC,sinh hoạt lớp môn toán vào thứ 3.,HOP_LOP,thứ 3,1867
+CA_NHAN,thứ 7 nhắc quà sinh nhật.,NHAC_VIEC,thứ 7,1868
+VAN_PHONG,ngày kia có meeting dự án.,HEN_LICH,ngày kia,1869
+VAN_PHONG,cuối tuần theo dõi tiến độ hợp đồng.,THEO_DOI_CONG_VIEC,cuối tuần,1870
+TRUONG_HOC,ngày mai hoàn thành bài tập bài tập nhóm.,NOP_BAI,ngày mai,1871
+CA_NHAN,đi gặp gia đình vào thứ 2.,HEN_CA_NHAN,thứ 2,1872
+CA_NHAN,sáng mai có lịch hẹn bạn bè.,HEN_CA_NHAN,sáng mai,1873
+TRUONG_HOC,thứ 4 phải họp lớp bài tập nhóm.,HOP_LOP,thứ 4,1874
+TRUONG_HOC,nộp bài môn tiếng Anh vào ngày kia.,NOP_BAI,ngày kia,1875
+CA_NHAN,thứ 2 hẹn bác sĩ.,HEN_CA_NHAN,thứ 2,1876
+VAN_PHONG,nộp báo cáo tài liệu trước cuối tuần.,NOP_BAO_CAO,thứ 7,1877
+VAN_PHONG,sáng mai có cập nhật tiến độ tài liệu.,THEO_DOI_CONG_VIEC,sáng mai,1878
+TRUONG_HOC,hoàn thành bài tập môn tiếng Anh vào thứ 7.,NOP_BAI,thứ 7,1879
+VAN_PHONG,trao đổi hợp đồng vào chiều mai.,HEN_LICH,chiều mai,1880
+TRUONG_HOC,họp lớp môn tiếng Anh vào ngày mai.,HOP_LOP,ngày mai,1881
+TRUONG_HOC,ngày mai có học bài môn văn.,HOC_TAP,ngày mai,1882
+TRUONG_HOC,học bài bài tập nhóm trước 8h.,HOC_TAP,tối nay,1883
+VAN_PHONG,theo dõi tiến độ hợp đồng trước 8h.,THEO_DOI_CONG_VIEC,tối nay,1884
+VAN_PHONG,trả lời email kế hoạch trong hôm nay.,GUI_EMAIL,thứ 7,1885
+TRUONG_HOC,nộp bài môn lập trình vào ngày mai.,NOP_BAI,ngày mai,1886
+CA_NHAN,ngày kia có nhớ bác sĩ.,NHAC_VIEC,ngày kia,1887
+VAN_PHONG,chiều mai có gửi báo cáo tài liệu.,NOP_BAO_CAO,chiều mai,1888
+CA_NHAN,thứ 7 đi mua bác sĩ.,MUA_SAM,thứ 7,1889
+CA_NHAN,nhớ đồ dùng cá nhân vào tối nay.,NHAC_VIEC,tối nay,1890
+TRUONG_HOC,chuẩn bị bài bài tập nhóm trước thứ 6.,HOC_TAP,ngày kia,1891
+VAN_PHONG,tối nay có hoàn thành báo cáo kế hoạch.,NOP_BAO_CAO,tối nay,1892
+CA_NHAN,thứ 3 có mua gia đình.,MUA_SAM,thứ 3,1893
+CA_NHAN,nhớ bạn bè vào ngày kia.,NHAC_VIEC,ngày kia,1894
+CA_NHAN,thứ 3 lịch hẹn bạn bè.,HEN_CA_NHAN,thứ 3,1895
+CA_NHAN,đi mua đồ dùng cá nhân trước ngày mai.,MUA_SAM,sáng mai,1896
+CA_NHAN,thứ 4 phải mua đồ dùng cá nhân.,MUA_SAM,thứ 4,1897
+CA_NHAN,nhắc bác sĩ vào chủ nhật.,NHAC_VIEC,chủ nhật,1898
+TRUONG_HOC,thứ 2 có họp lớp bài tập nhóm.,HOP_LOP,thứ 2,1899
+TRUONG_HOC,thứ 7 có sinh hoạt lớp môn lập trình.,HOP_LOP,thứ 7,1900
+VAN_PHONG,soạn email dự án vào chủ nhật.,GUI_EMAIL,chủ nhật,1901
+CA_NHAN,phải làm đồ dùng cá nhân vào chiều mai.,NHAC_VIEC,chiều mai,1902
+VAN_PHONG,thứ 3 phải họp công việc.,HEN_LICH,thứ 3,1903
+VAN_PHONG,cuối tuần phải theo dõi tiến độ kế hoạch.,THEO_DOI_CONG_VIEC,cuối tuần,1904
+TRUONG_HOC,chuẩn bị bài môn toán trước 8h.,HOC_TAP,ngày kia,1905
+TRUONG_HOC,học bài môn tiếng Anh vào thứ 5.,HOC_TAP,thứ 5,1906
+CA_NHAN,mua gia đình vào sáng mai.,MUA_SAM,sáng mai,1907
+CA_NHAN,mua đồ dùng cá nhân trước thứ 6.,MUA_SAM,thứ 3,1908
+VAN_PHONG,chủ nhật phải hẹn gặp công việc.,HEN_LICH,chủ nhật,1909
+TRUONG_HOC,ngày mai phải họp lớp môn lập trình.,HOP_LOP,ngày mai,1910
+VAN_PHONG,gửi email dự án trong hôm nay.,GUI_EMAIL,tối nay,1911
+VAN_PHONG,chiều mai báo cáo tiến độ kế hoạch.,THEO_DOI_CONG_VIEC,chiều mai,1912
+TRUONG_HOC,sáng mai có ôn bài bài tập nhóm.,HOC_TAP,sáng mai,1913
+TRUONG_HOC,sinh hoạt lớp bài tập nhóm trước thứ 6.,HOP_LOP,chiều mai,1914
+VAN_PHONG,gửi email hợp đồng vào thứ 4.,GUI_EMAIL,thứ 4,1915
+CA_NHAN,thứ 6 nhắc gia đình.,NHAC_VIEC,thứ 6,1916
+TRUONG_HOC,họp lớp môn tiếng Anh vào thứ 3.,HOP_LOP,thứ 3,1917
+CA_NHAN,sáng mai có nhớ đồ dùng cá nhân.,NHAC_VIEC,sáng mai,1918
+VAN_PHONG,soạn email hợp đồng vào thứ 6.,GUI_EMAIL,thứ 6,1919
+VAN_PHONG,nộp báo cáo hợp đồng trước 17h.,NOP_BAO_CAO,thứ 6,1920
+CA_NHAN,mua gia đình trong hôm nay.,MUA_SAM,thứ 5,1921
+TRUONG_HOC,nộp bài môn văn trước 8h.,NOP_BAI,ngày kia,1922
+TRUONG_HOC,sinh hoạt lớp môn lập trình vào thứ 6.,HOP_LOP,thứ 6,1923
+CA_NHAN,thứ 5 phải mua bác sĩ.,MUA_SAM,thứ 5,1924
+VAN_PHONG,chiều mai có gửi email công việc.,GUI_EMAIL,chiều mai,1925
+VAN_PHONG,chủ nhật có trao đổi dự án.,HEN_LICH,chủ nhật,1926
+CA_NHAN,thứ 5 nhắc đồ dùng cá nhân.,NHAC_VIEC,thứ 5,1927
+TRUONG_HOC,thứ 4 có thi môn văn.,THI_CU,thứ 4,1928
+TRUONG_HOC,cuối tuần phải họp lớp môn toán.,HOP_LOP,cuối tuần,1929
+CA_NHAN,thứ 5 có mua bạn bè.,MUA_SAM,thứ 5,1930
+TRUONG_HOC,hoàn thành bài tập môn lập trình trước thứ 6.,NOP_BAI,thứ 4,1931
+TRUONG_HOC,sinh hoạt lớp môn lập trình vào thứ 2.,HOP_LOP,thứ 2,1932
+TRUONG_HOC,thứ 4 có học bài bài tập nhóm.,HOC_TAP,thứ 4,1933
+CA_NHAN,đặt mua bạn bè vào thứ 5.,MUA_SAM,thứ 5,1934
+TRUONG_HOC,thứ 5 phải kiểm tra bài tập nhóm.,THI_CU,thứ 5,1935
+CA_NHAN,đi gặp bạn bè trước 10h.,HEN_CA_NHAN,cuối tuần,1936
+TRUONG_HOC,cuối tuần ôn bài môn toán.,HOC_TAP,cuối tuần,1937
+TRUONG_HOC,chiều mai có họp lớp bài tập nhóm.,HOP_LOP,chiều mai,1938
+CA_NHAN,thứ 5 mua bác sĩ.,MUA_SAM,thứ 5,1939
+TRUONG_HOC,thứ 4 có sinh hoạt lớp môn toán.,HOP_LOP,thứ 4,1940
+CA_NHAN,tối nay đi mua đồ dùng cá nhân.,MUA_SAM,tối nay,1941
+TRUONG_HOC,chủ nhật có sinh hoạt lớp môn tiếng Anh.,HOP_LOP,chủ nhật,1942
+TRUONG_HOC,ngày mai sinh hoạt lớp môn toán.,HOP_LOP,ngày mai,1943
+TRUONG_HOC,thứ 3 sinh hoạt lớp môn tiếng Anh.,HOP_LOP,thứ 3,1944
+CA_NHAN,hẹn bác sĩ vào thứ 6.,HEN_CA_NHAN,thứ 6,1945
+VAN_PHONG,hoàn thành báo cáo công việc vào sáng mai.,NOP_BAO_CAO,sáng mai,1946
+VAN_PHONG,thứ 5 phải soạn email dự án.,GUI_EMAIL,thứ 5,1947
+VAN_PHONG,chiều mai phải lịch hẹn công việc.,HEN_LICH,chiều mai,1948
+VAN_PHONG,thứ 7 meeting tài liệu.,HEN_LICH,thứ 7,1949
+VAN_PHONG,lịch hẹn công việc vào thứ 6.,HEN_LICH,thứ 6,1950
+CA_NHAN,cuối tuần đi gặp bác sĩ.,HEN_CA_NHAN,cuối tuần,1951
+VAN_PHONG,tối nay phải gửi báo cáo hợp đồng.,NOP_BAO_CAO,tối nay,1952
+CA_NHAN,thứ 5 phải phải làm quà sinh nhật.,NHAC_VIEC,thứ 5,1953
+VAN_PHONG,hôm nay có nộp báo cáo tài liệu.,NOP_BAO_CAO,hôm nay,1954
+CA_NHAN,hôm nay có mua quà sinh nhật.,MUA_SAM,hôm nay,1955
+VAN_PHONG,theo dõi tiến độ dự án vào chiều mai.,THEO_DOI_CONG_VIEC,chiều mai,1956
+TRUONG_HOC,chiều mai phải nộp bài tập môn toán.,NOP_BAI,chiều mai,1957
+CA_NHAN,ngày kia nhớ bạn bè.,NHAC_VIEC,ngày kia,1958
+CA_NHAN,thứ 6 phải nhắc bạn bè.,NHAC_VIEC,thứ 6,1959
+CA_NHAN,ngày kia đặt mua bác sĩ.,MUA_SAM,ngày kia,1960
+VAN_PHONG,thứ 7 hẹn gặp công việc.,HEN_LICH,thứ 7,1961
+TRUONG_HOC,học bài bài tập nhóm trước cuối tuần.,HOC_TAP,hôm nay,1962
+VAN_PHONG,hôm nay có cập nhật tiến độ hợp đồng.,THEO_DOI_CONG_VIEC,hôm nay,1963
+CA_NHAN,sáng mai phải phải làm bạn bè.,NHAC_VIEC,sáng mai,1964
+TRUONG_HOC,thứ 5 phải sinh hoạt lớp môn lập trình.,HOP_LOP,thứ 5,1965
+TRUONG_HOC,họp lớp môn lập trình trước 17h.,HOP_LOP,chiều mai,1966
+TRUONG_HOC,thứ 4 có thi cuối kỳ môn văn.,THI_CU,thứ 4,1967
+TRUONG_HOC,học bài môn toán trước cuối tuần.,HOC_TAP,sáng mai,1968
+CA_NHAN,đặt mua bạn bè trước 17h.,MUA_SAM,sáng mai,1969
+TRUONG_HOC,thứ 5 có ôn bài môn tiếng Anh.,HOC_TAP,thứ 5,1970
+TRUONG_HOC,chuẩn bị bài môn tiếng Anh trước 8h.,HOC_TAP,sáng mai,1971
+TRUONG_HOC,kiểm tra môn văn vào tối nay.,THI_CU,tối nay,1972
+CA_NHAN,thứ 6 có nhắc gia đình.,NHAC_VIEC,thứ 6,1973
+CA_NHAN,ngày kia có mua gia đình.,MUA_SAM,ngày kia,1974
+TRUONG_HOC,thi cuối kỳ bài tập nhóm vào chủ nhật.,THI_CU,chủ nhật,1975
+VAN_PHONG,thứ 6 gửi báo cáo công việc.,NOP_BAO_CAO,thứ 6,1976
+TRUONG_HOC,chiều mai sinh hoạt lớp môn văn.,HOP_LOP,chiều mai,1977
+CA_NHAN,đi gặp quà sinh nhật vào hôm nay.,HEN_CA_NHAN,hôm nay,1978
+CA_NHAN,thứ 5 có nhớ bạn bè.,NHAC_VIEC,thứ 5,1979
+CA_NHAN,nhớ bạn bè trước thứ 6.,NHAC_VIEC,thứ 6,1980
+VAN_PHONG,soạn email công việc vào chiều mai.,GUI_EMAIL,chiều mai,1981
+CA_NHAN,hẹn đồ dùng cá nhân trong hôm nay.,HEN_CA_NHAN,cuối tuần,1982
+CA_NHAN,sáng mai phải đi gặp quà sinh nhật.,HEN_CA_NHAN,sáng mai,1983
+TRUONG_HOC,thứ 7 thi giữa kỳ bài tập nhóm.,THI_CU,thứ 7,1984
+VAN_PHONG,thứ 2 có hoàn thành báo cáo tài liệu.,NOP_BAO_CAO,thứ 2,1985
+CA_NHAN,ngày kia đi gặp quà sinh nhật.,HEN_CA_NHAN,ngày kia,1986
+VAN_PHONG,thứ 5 có hoàn thành báo cáo công việc.,NOP_BAO_CAO,thứ 5,1987
+CA_NHAN,phải làm quà sinh nhật vào ngày kia.,NHAC_VIEC,ngày kia,1988
+CA_NHAN,thứ 2 phải đi gặp gia đình.,HEN_CA_NHAN,thứ 2,1989
+VAN_PHONG,trao đổi tài liệu vào ngày kia.,HEN_LICH,ngày kia,1990
+VAN_PHONG,hoàn thành báo cáo kế hoạch vào chủ nhật.,NOP_BAO_CAO,chủ nhật,1991
+VAN_PHONG,thứ 5 phải hoàn thành báo cáo công việc.,NOP_BAO_CAO,thứ 5,1992
+CA_NHAN,thứ 7 phải nhớ bạn bè.,NHAC_VIEC,thứ 7,1993
+TRUONG_HOC,thứ 2 họp lớp môn lập trình.,HOP_LOP,thứ 2,1994
+TRUONG_HOC,học bài môn tiếng Anh vào thứ 3.,HOC_TAP,thứ 3,1995
+TRUONG_HOC,ngày mai có ôn bài môn toán.,HOC_TAP,ngày mai,1996
+TRUONG_HOC,thứ 5 phải thi cuối kỳ môn lập trình.,THI_CU,thứ 5,1997
+VAN_PHONG,cuối tuần phải meeting công việc.,HEN_LICH,cuối tuần,1998
+VAN_PHONG,hẹn gặp kế hoạch trước thứ 6.,HEN_LICH,thứ 5,1999
+CA_NHAN,nhắc bác sĩ trong hôm nay.,NHAC_VIEC,thứ 2,2000
