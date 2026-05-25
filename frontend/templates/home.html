@@ -1,0 +1,545 @@
+{% extends "base.html" %}
+{% set active_page = "home" %}
+{% block title %}Trang Chủ{% endblock %}
+
+{% block extra_head %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+.home-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 40px;
+}
+
+/* ── Greeting ─────────────────────────────── */
+.greeting-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.greeting-text h1 {
+    font-size: 21px;
+    font-weight: 800;
+    color: #1e3a5f;
+}
+.greeting-text p { font-size: 13px; color: #9ca3af; margin-top: 3px; }
+.greeting-date   { font-size: 12px; color: #9ca3af; text-align: right; }
+
+/* ── Top row: Tổng quan + Việc cần làm ngay ─ */
+.top-row {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 16px;
+    align-items: stretch;
+}
+@media (max-width: 900px) { .top-row { grid-template-columns: 1fr; } }
+
+/* ── Box chung ───────────────────────────── */
+.box {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 18px 20px;
+}
+.box-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+.box-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1e3a5f;
+}
+.box-badge {
+    font-size: 11.5px;
+    font-weight: 700;
+    background: #f3f4f6;
+    color: #6b7280;
+    border-radius: 20px;
+    padding: 2px 9px;
+}
+.box-badge.red    { background: #fee2e2; color: #ef4444; }
+.box-badge.orange { background: #fff7ed; color: #f97316; }
+.box-badge.blue   { background: #e0f2fe; color: #196B7C; }
+.box-link {
+    font-size: 12px;
+    color: #196B7C;
+    cursor: pointer;
+    font-weight: 600;
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: inherit;
+    text-decoration: none;
+}
+.box-link:hover { text-decoration: underline; }
+
+/* ── Tổng quan (trái) ────────────────────── */
+.overview-pct {
+    font-size: 42px;
+    font-weight: 900;
+    color: #1e3a5f;
+    line-height: 1;
+}
+.overview-pct span { font-size: 22px; color: #9ca3af; font-weight: 600; }
+.overview-sub {
+    font-size: 12px;
+    color: #9ca3af;
+    margin-top: 4px;
+    margin-bottom: 14px;
+}
+.overview-bar-wrap {
+    height: 6px;
+    background: #f3f4f6;
+    border-radius: 99px;
+    margin-bottom: 16px;
+    overflow: hidden;
+}
+.overview-bar {
+    height: 100%;
+    background: #196B7C;
+    border-radius: 99px;
+    transition: width .7s cubic-bezier(.4,0,.2,1);
+}
+.overview-rows { display: flex; flex-direction: column; gap: 9px; }
+.overview-row  {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12.5px;
+    color: #6b7280;
+}
+.overview-row strong {
+    font-weight: 700;
+    font-size: 13px;
+}
+.overview-row strong.red    { color: #ef4444; }
+.overview-row strong.orange { color: #f97316; }
+.overview-row strong.blue   { color: #196B7C; }
+
+/* ── Việc cần làm ngay ────────────────────── */
+.priority-list { display: flex; flex-direction: column; gap: 8px; }
+.priority-item {
+    border: 1px solid #e5e7eb;
+    border-left: 3px solid #196B7C;
+    border-radius: 8px;
+    padding: 10px 14px;
+    cursor: pointer;
+    transition: box-shadow .15s, background .15s;
+}
+.priority-item:hover { background: #f8fafc; box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+.priority-item.high  { border-left-color: #ef4444; }
+.priority-item.med   { border-left-color: #f97316; }
+.priority-title { font-size: 13.5px; font-weight: 700; color: #1e3a5f; margin-bottom: 5px; }
+.priority-tags  { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 4px; }
+.ptag {
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 2px 8px;
+}
+.ptag.label  { background: #e0f2fe; color: #0369a1; }
+.ptag.p-high { background: #fee2e2; color: #ef4444; }
+.ptag.p-med  { background: #fff7ed; color: #f97316; }
+.ptag.p-low  { background: #f0fdf4; color: #16a34a; }
+.priority-due { font-size: 11.5px; color: #9ca3af; }
+.priority-empty { font-size: 13px; color: #9ca3af; text-align: center; padding: 24px 0; }
+
+/* ── Bottom row: Trễ hạn + Hạn hôm nay + Gần đây ── */
+.bottom-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+}
+@media (max-width: 1100px) { .bottom-row { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 700px)  { .bottom-row { grid-template-columns: 1fr; } }
+
+/* ── Trễ hạn ─────────────────────────────── */
+.overdue-list { display: flex; flex-direction: column; gap: 7px; }
+.overdue-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    padding: 8px 10px;
+    background: #fff5f5;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background .12s;
+}
+.overdue-item:hover { background: #fee2e2; }
+.overdue-dot { width: 7px; height: 7px; border-radius: 50%; background: #ef4444; margin-top: 4px; flex-shrink: 0; }
+.overdue-title { font-size: 12.5px; font-weight: 600; color: #1e3a5f; }
+.overdue-late  { font-size: 11.5px; color: #ef4444; margin-top: 1px; }
+.box-empty { font-size: 12.5px; color: #9ca3af; text-align: center; padding: 20px 0; font-style: italic; }
+
+/* ── Hạn hôm nay ─────────────────────────── */
+.today-list { display: flex; flex-direction: column; gap: 7px; }
+.today-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    padding: 8px 10px;
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background .12s;
+}
+today-item:hover { background: #fef3c7; }
+.today-dot  { width: 7px; height: 7px; border-radius: 50%; background: #f59e0b; margin-top: 4px; flex-shrink: 0; }
+.today-title{ font-size: 12.5px; font-weight: 600; color: #1e3a5f; }
+.today-prio { font-size: 11.5px; color: #f59e0b; margin-top: 1px; }
+
+/* ── Gần đây ─────────────────────────────── */
+.recent-list { display: flex; flex-direction: column; gap: 8px; }
+.recent-item { display: flex; align-items: flex-start; gap: 10px; padding: 6px 0; border-bottom: 1px solid #f3f4f6; }
+.recent-item:last-child { border-bottom: none; }
+.recent-dot { width: 8px; height: 8px; border-radius: 50%; background: #196B7C; margin-top: 4px; flex-shrink: 0; }
+.recent-content { flex: 1; min-width: 0; }
+.recent-title  { font-size: 12.5px; font-weight: 600; color: #1e3a5f; }
+.recent-action { font-size: 11.5px; color: #9ca3af; }
+
+/* ── Charts & Tables row ────────────────────── */
+.assignment-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+@media (max-width: 900px) { 
+    .charts-row { grid-template-columns: 1fr; } 
+    .assignment-row { grid-template-columns: 1fr; }
+}
+
+.chart-wrap { position: relative; height: 200px; }
+
+/* ── Progress Bar Tables ──────────────────── */
+.assignment-table { width: 100%; margin-top: 10px; }
+.assignment-row-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+.assignment-label {
+    width: 100px;
+    font-size: 12.5px;
+    color: #64748b;
+}
+.assignment-progress-wrap {
+    flex: 1;
+    height: 8px;
+    background: #f1f5f9;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.assignment-progress-bar {
+    height: 100%;
+    border-radius: 10px;
+}
+.assignment-val {
+    width: 20px;
+    text-align: right;
+    font-size: 13px;
+    font-weight: 700;
+    color: #1e3a5f;
+}
+
+/* ── Câu động lực — cuối trang, nền trắng ── */
+.motivation-box {
+    background: #fff;
+    border: 1.5px solid #196B7C;
+    border-radius: 12px;
+    padding: 24px 32px;
+    text-align: center;
+}
+.motivation-quote {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1e3a5f;
+    line-height: 1.6;
+    font-style: italic;
+}
+.motivation-author {
+    font-size: 12px;
+    color: #9ca3af;
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+.loading-ph { font-size: 12px; color: #d1d5db; text-align: center; padding: 16px 0; }
+
+/* ── Phân bổ ưu tiên (trong box Tổng quan) ──── */
+.prio-dist { margin-top: 14px; padding-top: 12px; border-top: 1px solid #f3f4f6; }
+.prio-dist-title { font-size: 11.5px; font-weight: 700; color: #9ca3af; letter-spacing: .04em; text-transform: uppercase; margin-bottom: 9px; }
+.prio-dist-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.prio-dist-row:last-child { margin-bottom: 0; }
+.prio-dist-label { font-size: 12px; color: #6b7280; width: 68px; flex-shrink: 0; }
+.prio-dist-bar-wrap { flex: 1; height: 7px; background: #f3f4f6; border-radius: 99px; overflow: hidden; }
+.prio-dist-bar { height: 100%; border-radius: 99px; transition: width .6s cubic-bezier(.4,0,.2,1); }
+.prio-dist-val { font-size: 12.5px; font-weight: 700; color: #1e3a5f; width: 18px; text-align: right; }
+
+/* ── Giao việc chart bảng (cạnh chart 7 ngày) ── */
+.chart-assignment-row {
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+    gap: 16px;
+    align-items: stretch;
+}
+@media (max-width: 900px) { .chart-assignment-row { grid-template-columns: 1fr; } }
+
+.giao-viec-box { display: flex; flex-direction: column; }
+.giao-viec-tabs {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 14px;
+}
+.gv-tab {
+    flex: 1;
+    padding: 6px 0;
+    font-size: 11.5px;
+    font-weight: 700;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 8px;
+    background: #fff;
+    color: #9ca3af;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all .15s;
+}
+.gv-tab.active { background: #196B7C; color: #fff; border-color: #196B7C; }
+.gv-tab:hover:not(.active) { border-color: #196B7C; color: #196B7C; }
+
+.gv-group { display: none; flex-direction: column; gap: 0; }
+.gv-group.active { display: flex; }
+
+.gv-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f3f4f6;
+}
+.gv-row:last-child { border-bottom: none; }
+.gv-row-label { font-size: 12.5px; color: #6b7280; width: 90px; flex-shrink: 0; }
+.gv-bar-wrap { flex: 1; height: 8px; background: #f3f4f6; border-radius: 99px; overflow: hidden; }
+.gv-bar { height: 100%; border-radius: 99px; transition: width .6s cubic-bezier(.4,0,.2,1); }
+.gv-val { font-size: 13px; font-weight: 700; color: #1e3a5f; width: 22px; text-align: right; }
+.gv-empty { font-size: 12.5px; color: #9ca3af; text-align: center; padding: 20px 0; font-style: italic; }
+
+/* Scroll nếu quá nhiều task */
+.overdue-list, .today-list, .recent-list, .priority-list { max-height: 300px; overflow-y: auto; }
+.overdue-list::-webkit-scrollbar, .today-list::-webkit-scrollbar,
+.recent-list::-webkit-scrollbar, .priority-list::-webkit-scrollbar { width: 4px; }
+.overdue-list::-webkit-scrollbar-thumb, .today-list::-webkit-scrollbar-thumb,
+.recent-list::-webkit-scrollbar-thumb, .priority-list::-webkit-scrollbar-thumb { background: #e5e7eb; border-radius: 2px; }
+
+/* Dark mode */
+body.dark-mode .prio-dist { border-color: #21262d; }
+body.dark-mode .prio-dist-title { color: #6e7681; }
+body.dark-mode .prio-dist-label { color: #8b949e; }
+body.dark-mode .prio-dist-bar-wrap { background: #21262d; }
+body.dark-mode .prio-dist-val { color: #e6edf3; }
+body.dark-mode .gv-tab { border-color: #30363d; color: #8b949e; background: #1c2128; }
+body.dark-mode .gv-tab.active { background: #196B7C; color: #fff; border-color: #196B7C; }
+body.dark-mode .gv-row-label { color: #8b949e; }
+body.dark-mode .gv-bar-wrap { background: #21262d; }
+body.dark-mode .gv-val { color: #e6edf3; }
+body.dark-mode .gv-row { border-color: #21262d; }
+body.dark-mode .gv-empty { color: #6e7681; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="home-wrap">
+
+    <!-- Greeting -->
+    <div class="greeting-row">
+        <div class="greeting-text">
+            <h1 id="greetingTitle">Xin chào</h1>
+            <p>Tổng quan hoạt động của bạn hôm nay</p>
+        </div>
+        <div class="greeting-date" id="greetingDate"></div>
+    </div>
+
+    <!-- Row 1: Tổng quan + Việc cần làm ngay -->
+    <div class="top-row">
+        <!-- Tổng quan -->
+        <div class="box">
+            <div class="box-header">
+                <span class="box-title">Tổng quan</span>
+                <span class="box-badge" id="ovBadge">0 việc</span>
+            </div>
+            <div class="overview-pct"><span id="ovPct">0</span><span>%</span></div>
+            <div class="overview-sub">Tỉ lệ hoàn thành</div>
+            <div class="overview-bar-wrap">
+                <div class="overview-bar" id="ovBar" style="width:0%"></div>
+            </div>
+            <div class="overview-rows">
+                <div class="overview-row">
+                    <span>Hạn hôm nay</span>
+                    <strong class="orange" id="ovToday">—</strong>
+                </div>
+                <div class="overview-row">
+                    <span>Đang trễ hạn</span>
+                    <strong class="red" id="ovOverdue">—</strong>
+                </div>
+                <div class="overview-row">
+                    <span>Được đề xuất</span>
+                    <strong class="blue" id="ovFocus">—</strong>
+                </div>
+            </div>
+
+            <!-- Phân bổ ưu tiên -->
+            <div class="prio-dist">
+                <div class="prio-dist-title">Phân bổ ưu tiên</div>
+                <div class="prio-dist-row">
+                    <span class="prio-dist-label">Thấp</span>
+                    <div class="prio-dist-bar-wrap"><div id="prioBarLow" class="prio-dist-bar" style="width:0%;background:#10b981;"></div></div>
+                    <span class="prio-dist-val" id="prioValLow">0</span>
+                </div>
+                <div class="prio-dist-row">
+                    <span class="prio-dist-label">Trung bình</span>
+                    <div class="prio-dist-bar-wrap"><div id="prioBarMed" class="prio-dist-bar" style="width:0%;background:#9ca3af;"></div></div>
+                    <span class="prio-dist-val" id="prioValMed">0</span>
+                </div>
+                <div class="prio-dist-row">
+                    <span class="prio-dist-label">Cao</span>
+                    <div class="prio-dist-bar-wrap"><div id="prioBarHigh" class="prio-dist-bar" style="width:0%;background:#ef4444;"></div></div>
+                    <span class="prio-dist-val" id="prioValHigh">0</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Việc cần làm ngay -->
+        <div class="box">
+            <div class="box-header">
+                <span class="box-title">Việc cần làm ngay</span>
+                <span class="box-badge orange" id="focusBadge">3 ưu tiên</span>
+            </div>
+            <div class="priority-list" id="priorityList">
+                <div class="loading-ph">Đang tải...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Row 2: Trễ hạn + Hạn hôm nay + Gần đây -->
+    <div class="bottom-row">
+        <!-- Trễ hạn -->
+        <div class="box">
+            <div class="box-header">
+                <span class="box-title">Trễ hạn</span>
+                <span class="box-badge red" id="overdueBadge">0 việc</span>
+            </div>
+            <div class="overdue-list" id="overdueList">
+                <div class="loading-ph">Đang tải...</div>
+            </div>
+        </div>
+
+        <!-- Hạn hôm nay -->
+        <div class="box">
+            <div class="box-header">
+                <span class="box-title" id="todayHeading">Bạn có 0 task trong ngày</span>
+                <a class="box-link" href="/tasks">Xem tất cả</a>
+            </div>
+            <div class="today-list" id="todayList">
+                <div class="loading-ph">Đang tải...</div>
+            </div>
+        </div>
+
+        <!-- Gần đây -->
+        <div class="box">
+            <div class="box-header">
+                <span class="box-title">Gần đây</span>
+            </div>
+            <div class="recent-list" id="recentList">
+                <div class="loading-ph">Đang tải...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Row 3: Biểu đồ 7 ngày (7fr) + Giao việc (3fr) -->
+    <div class="chart-assignment-row">
+        <!-- Công việc tạo mới 7 ngày -->
+        <div class="box">
+            <div class="box-header">
+                <span class="box-title">Công việc tạo mới — 7 ngày qua</span>
+                <span style="font-size:11.5px;color:#9ca3af;" id="dailyTotal"></span>
+            </div>
+            <div class="chart-wrap">
+                <canvas id="chartDaily"></canvas>
+            </div>
+        </div>
+
+        <!-- Giao việc -->
+        <div class="box giao-viec-box">
+            <div class="box-header">
+                <span class="box-title">Giao việc</span>
+                <span class="box-badge" id="gvBadge">đã giao / được giao</span>
+            </div>
+            <!-- Tabs chuyển đã giao / được giao -->
+            <div class="giao-viec-tabs">
+                <button class="gv-tab active" onclick="switchGvTab('sent', this)">Đã giao</button>
+                <button class="gv-tab" onclick="switchGvTab('recv', this)">Được giao</button>
+            </div>
+            <!-- Nhóm Đã giao -->
+            <div class="gv-group active" id="gvGroupSent">
+                <div class="gv-row">
+                    <span class="gv-row-label">Chờ duyệt</span>
+                    <div class="gv-bar-wrap"><div id="gvSentPendingBar" class="gv-bar" style="width:0%;background:#f97316;"></div></div>
+                    <span class="gv-val" id="gvSentPendingVal">0</span>
+                </div>
+                <div class="gv-row">
+                    <span class="gv-row-label">Chấp nhận</span>
+                    <div class="gv-bar-wrap"><div id="gvSentAcceptedBar" class="gv-bar" style="width:0%;background:#10b981;"></div></div>
+                    <span class="gv-val" id="gvSentAcceptedVal">0</span>
+                </div>
+                <div class="gv-row">
+                    <span class="gv-row-label">Từ chối</span>
+                    <div class="gv-bar-wrap"><div id="gvSentRejectedBar" class="gv-bar" style="width:0%;background:#ef4444;"></div></div>
+                    <span class="gv-val" id="gvSentRejectedVal">0</span>
+                </div>
+            </div>
+            <!-- Nhóm Được giao -->
+            <div class="gv-group" id="gvGroupRecv">
+                <div class="gv-row">
+                    <span class="gv-row-label">Chờ duyệt</span>
+                    <div class="gv-bar-wrap"><div id="gvRecvPendingBar" class="gv-bar" style="width:0%;background:#f97316;"></div></div>
+                    <span class="gv-val" id="gvRecvPendingVal">0</span>
+                </div>
+                <div class="gv-row">
+                    <span class="gv-row-label">Chấp nhận</span>
+                    <div class="gv-bar-wrap"><div id="gvRecvAcceptedBar" class="gv-bar" style="width:0%;background:#10b981;"></div></div>
+                    <span class="gv-val" id="gvRecvAcceptedVal">0</span>
+                </div>
+                <div class="gv-row">
+                    <span class="gv-row-label">Từ chối</span>
+                    <div class="gv-bar-wrap"><div id="gvRecvRejectedBar" class="gv-bar" style="width:0%;background:#ef4444;"></div></div>
+                    <span class="gv-val" id="gvRecvRejectedVal">0</span>
+                </div>
+            </div>
+            <div class="assignment-table" id="gvDetailTable"></div>
+        </div>
+    </div>
+
+    <!-- Câu động lực — cuối trang -->
+    <div class="motivation-box">
+        <div class="motivation-quote" id="motivationQuote">Đang tải câu động lực...</div>
+        <div class="motivation-author" id="motivationAuthor"></div>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block page_scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', loadStats);
+</script>
+{% endblock %}

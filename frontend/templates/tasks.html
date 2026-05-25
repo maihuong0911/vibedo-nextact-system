@@ -1,0 +1,1400 @@
+{% extends "base.html" %}
+
+{# Bật filter dropdown chỉ cho trang Tasks #}
+{% set show_filter_btn      = true %}
+{% set active_page          = "tasks" %}
+
+{% block title %}Công Việc{% endblock %}
+
+{% block extra_head %}
+<style>
+/* ═══════════════════════════════════════
+   TASKS PAGE — CARD SYSTEM v3 (FIXED)
+   Font: Inter (inherited from base)
+═══════════════════════════════════════ */
+
+/* ── Tasks Page Main Title ── */
+.tasks-main-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 4px 2px;
+}
+
+/* Make stats submenu title match Weekly Planner heading */
+.stats-submenu-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    color: #1e3a5f;
+    margin-bottom: 12px;
+}
+
+/* ── Header bar ── */
+.tasks-header-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0;
+    padding: 4px 2px 14px;
+}
+.tasks-count-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: #64748b;
+    font-weight: 500;
+}
+.tasks-count-label strong {
+    color: #0f172a;
+    font-weight: 700;
+    font-size: 16px;
+    margin: 0 4px;
+}
+
+/* ── View toggle group ── */
+.view-toggle {
+    display: inline-flex;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 3px;
+    gap: 2px;
+}
+.view-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 8px;
+    border: none;
+    background: transparent;
+    color: #64748b;
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: all .15s ease;
+    white-space: nowrap;
+}
+.view-btn.active {
+    background: #1e293b;
+    color: #ffffff;
+}
+.view-btn:not(.active):hover {
+    background: #f1f5f9;
+    color: #334155;
+}
+
+/* Horizontal next template cards */
+.next-templates-scroll-container {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 14px;
+    overflow-x: auto;
+    padding: 8px 6px 14px 6px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+}
+.next-templates-scroll-container::-webkit-scrollbar {
+    height: 6px;
+}
+.next-templates-scroll-container::-webkit-scrollbar-thumb {
+    background: #fbbf24;
+    border-radius: 999px;
+}
+.next-template-card {
+    flex: 0 0 320px;
+    scroll-snap-align: start;
+    background: #ffffff !important;
+    border: 2px solid #cbd5e1 !important;
+    border-radius: 22px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+    cursor: pointer;
+    transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    min-height: 270px;
+    max-width: 320px;
+}
+.next-template-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.09) !important;
+}
+.next-template-card.selected-active {
+    border-color: #ea6f1e !important;
+    border-width: 2.5px !important;
+    background-color: #fff8f2 !important;
+    box-shadow: 0 8px 28px rgba(249,115,22,0.14) !important;
+}
+.next-template-card.selected-active .next-card-style-badge {
+    background: #fff3e0;
+    color: #1e3a5f;
+}
+.next-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+.next-card-style-badge {
+    font-size: 13px;
+    font-weight: 700;
+    background: none;
+    color: #1e3a5f;
+    padding: 0;
+    border-radius: 0;
+    text-transform: none;
+}
+.next-card-category-tag {
+    font-size: 13px;
+    color: #1e3a5f;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.next-card-subject-box {
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #e5e7eb;
+}
+.next-template-card.selected-active .next-card-subject-box {
+    border-bottom-color: #fcd5a8;
+}
+.next-subject-label {
+    font-size: 11px;
+    color: #9ca3af;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    margin-bottom: 4px;
+}
+.next-subject-content {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1e293b;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.next-card-body-content {
+    font-size: 13px;
+    color: #334155;
+    line-height: 1.8;
+    margin-bottom: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex-grow: 1;
+}
+.next-card-actions {
+    display: flex;
+    justify-content: center;
+}
+.next-inner-copy-btn {
+    width: 100%;
+    max-width: 260px;
+    border-radius: 999px;
+    text-align: center;
+}
+
+.next-inner-copy-btn {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1e3a5f;
+    background: #f1f5f9;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 10px;
+    cursor: pointer;
+    transition: background .15s ease, color .15s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+.next-inner-copy-btn:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+.next-scroll-hint-bar {
+    font-size: 12px;
+    color: #475569;
+    padding: 6px 4px 0;
+    margin-top: 6px;
+    border-top: 1px dashed #e2e8f0;
+}
+
+/* ── Gray divider ── */
+.tasks-divider {
+    height: 1px;
+    background: #cbd5e1;
+    margin-bottom: 16px;
+}
+
+/* ── Notes container ── */
+.notes-box {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+/* ══════════════════
+   BOARD VIEW (4 per row)
+══════════════════ */
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    align-items: stretch;
+}
+@media (max-width: 1200px) { .notes-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 900px)  { .notes-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px)  { .notes-grid { grid-template-columns: 1fr; } }
+
+/* ── Card base ── */
+.note-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 12px 14px 10px;
+    cursor: pointer;
+    transition: box-shadow .2s ease, transform .15s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 1px 3px rgba(0,0,0,.02);
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    height: 100%;
+    border-left-width: 5px !important;
+}
+.note-card:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,.05);
+    transform: translateY(-2px);
+}
+
+/* ── Status Border Colors ── */
+.note-card[data-status="draft"]       { border-left-color: #4b5563 !important; --status-color: #6b7280; }
+.note-card[data-status="pending"]     { border-left-color: #ea580c !important; --status-color: #f97316; }
+.note-card[data-status="in_progress"] { border-left-color: #2563eb !important; --status-color: #3b82f6; }
+.note-card[data-status="review"]      { border-left-color: #7c3aed !important; --status-color: #8b5cf6; }
+.note-card[data-status="approved"]    { border-left-color: #059669 !important; --status-color: #10b981; }
+.note-card[data-status="rejected"]    { border-left-color: #dc2626 !important; --status-color: #ef4444; }
+.note-card[data-status="cancelled"]   { border-left-color: #6b7280 !important; --status-color: #9ca3af; }
+.note-card[data-status="done"]        { border-left-color: #047857 !important; --status-color: #059669; }
+.note-card:not([data-status])         { border-left-color: #94a3b8 !important; --status-color: #cbd5e1; }
+
+/* ── Card header row (board view) ── */
+.card-header-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 6px;
+    margin-bottom: 4px;
+}
+
+/* ── Card title ── */
+.note-card h3 {
+    font-size: 13.5px !important;
+    font-weight: 700 !important;
+    color: #1e293b !important;
+    line-height: 1.4;
+    margin: 0 !important;
+    letter-spacing: -0.01em;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex: 1;
+    min-width: 0;
+}
+
+/* ── Status dot & pin group (board view) ── */
+.card-status-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+/* Hide the legacy .status-dot class (not the inline styled ones) */
+.status-dot {
+    display: none !important;
+}
+
+/* Colored priority dot in board view (server-rendered inline style div) */
+.notes-grid:not(.list-view) .card-status-wrapper div[style*="background-color"] {
+    display: inline-block !important;
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50% !important;
+    flex-shrink: 0;
+}
+
+/* Pin button (star icon) — ALWAYS visible in both views */
+.pin-btn {
+    padding: 2px !important;
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer;
+    color: #cbd5e1;
+    transition: transform .15s, color .15s;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+.pin-btn:hover { transform: scale(1.2); color: #94a3b8; }
+.pin-btn.pinned { color: #f59e0b !important; }
+
+/* ── Card content preview ── */
+.card-content {
+    font-size: 11.5px !important;
+    color: #64748b !important;
+    line-height: 1.5;
+    margin-bottom: 10px !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
+/* ── Meta row (board view) ── */
+.note-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0 !important;
+    margin-bottom: 6px !important;
+    font-size: 11px !important;
+    font-weight: 500;
+    margin-top: auto;
+}
+.meta-deadline {
+    color: #ef4444;
+    font-weight: 600;
+}
+.meta-created {
+    color: #94a3b8;
+}
+
+/* ── Action buttons row (board view) ── */
+.note-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    border-top: 1px solid rgba(15, 23, 42, 0.06);
+    padding-top: 8px;
+    margin-top: 4px;
+}
+
+/* Labels */
+.note-actions .card-labels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    flex: 1;
+    min-width: 0;
+}
+.card-label-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: 700;
+    background: rgba(15, 23, 42, 0.05);
+    color: #475569;
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+/* Action buttons group */
+.action-buttons-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.action-buttons-group button,
+.action-buttons-group a {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 4px !important;
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    color: #64748b !important;
+    text-decoration: none !important;
+    transition: color .15s ease;
+}
+.action-buttons-group .btn-edit:hover  { color: #1e293b !important; }
+.action-buttons-group .btn-delete:hover { color: #dc2626 !important; }
+
+/* Hide overflow label outside structure */
+.note-card > .card-labels { display: none; }
+
+/* ── Empty state ── */
+.empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    color: #94a3b8;
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* ══════════════════════════════════════════════════
+   LIST VIEW — FIXED GRID 4:4:2:2:1:1 | ● | ★
+   9 columns total
+══════════════════════════════════════════════════ */
+.notes-grid.list-view {
+    display: flex !important;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Each card becomes a fixed 9-column grid row */
+.notes-grid.list-view .note-card {
+    display: grid !important;
+    /* col: title | content | deadline | created | edit | delete | divider | status-dot | star */
+    grid-template-columns: 4fr 4fr 2fr 2fr auto auto 1px auto auto !important;
+    align-items: center !important;
+    padding: 10px 16px !important;
+    border-radius: 10px !important;
+    height: auto !important;
+    min-height: 44px !important;
+    gap: 0 !important;
+    column-gap: 12px !important;
+    transform: none !important;
+    flex-direction: unset !important;
+}
+.notes-grid.list-view .note-card:hover {
+    transform: none !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,.06) !important;
+}
+
+/* ── Col 1: Title ── */
+.notes-grid.list-view .card-header-row {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    display: block !important;
+    min-width: 0;
+    overflow: hidden;
+    margin-bottom: 0 !important;
+}
+.notes-grid.list-view .note-card h3 {
+    display: block !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    -webkit-line-clamp: unset !important;
+    -webkit-box-orient: unset !important;
+    font-size: 13px !important;
+}
+
+/* ── Col 2: Content preview ── */
+.notes-grid.list-view .card-content {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    display: block !important;
+    min-width: 0;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    -webkit-line-clamp: unset !important;
+    margin-bottom: 0 !important;
+}
+
+/* Break note-meta so children flow into grid directly */
+.notes-grid.list-view .note-meta {
+    display: contents !important;
+}
+
+/* ── Col 3: Deadline ── */
+.notes-grid.list-view .meta-deadline {
+    grid-column: 3 !important;
+    grid-row: 1 !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 11.5px !important;
+    font-weight: 600;
+}
+
+/* ── Col 4: Created at ── */
+.notes-grid.list-view .meta-created {
+    grid-column: 4 !important;
+    grid-row: 1 !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 11.5px !important;
+    color: #94a3b8 !important;
+}
+
+/* Break note-actions so children flow into grid */
+.notes-grid.list-view .note-actions {
+    display: contents !important;
+    border-top: none !important;
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* Hide the labels placeholder in list view (it would take a grid column otherwise) */
+.notes-grid.list-view .card-labels-placeholder,
+.notes-grid.list-view .card-labels {
+    display: none !important;
+}
+
+/* Break action-buttons-group so children flow into grid */
+.notes-grid.list-view .action-buttons-group {
+    display: contents !important;
+}
+
+/* ── Col 5: Sửa button ── */
+.notes-grid.list-view .btn-edit {
+    grid-column: 5 !important;
+    grid-row: 1 !important;
+    justify-self: center;
+    white-space: nowrap;
+    font-size: 11.5px !important;
+    padding: 2px 6px !important;
+}
+
+/* ── Col 6: Xóa button ── */
+.notes-grid.list-view .btn-delete {
+    grid-column: 6 !important;
+    grid-row: 1 !important;
+    justify-self: center;
+    white-space: nowrap;
+    font-size: 11.5px !important;
+    padding: 2px 6px !important;
+}
+
+/* ── Col 7: Vertical divider line (real element) ── */
+.list-col-divider {
+    grid-column: 7 !important;
+    grid-row: 1 !important;
+    width: 1px !important;
+    height: 18px !important;
+    background-color: #e2e8f0 !important;
+    justify-self: center;
+    align-self: center;
+    flex-shrink: 0;
+    display: block !important;
+}
+
+/* Break right-meta group so children flow into grid */
+.notes-grid.list-view .list-meta-right-group {
+    display: contents !important;
+}
+
+/* ── Col 8: Status colored dot ── */
+.notes-grid.list-view .list-status-dot-cell {
+    grid-column: 8 !important;
+    grid-row: 1 !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+.notes-grid.list-view .list-status-dot-cell > * {
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50% !important;
+    display: inline-block !important;
+}
+
+/* ── Col 9: Star pin icon ── */
+.notes-grid.list-view .pin-btn {
+    grid-column: 9 !important;
+    grid-row: 1 !important;
+    justify-self: center;
+    align-self: center;
+    margin: 0 !important;
+}
+
+/* Hide status wrapper dot in list view (we show it via list-status-dot-cell) */
+.notes-grid.list-view .card-status-wrapper {
+    display: none !important;
+}
+
+/* Suppressed style elements that would create spurious grid items */
+.notes-grid.list-view .card-header-row > div[onclick*="stopPropagation"] {
+    display: none !important;
+}
+.notes-grid.list-view .note-card > *:not(.card-header-row):not(.card-content):not(.note-meta):not(.note-actions) {
+    display: none !important;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="stats-submenu-title">Danh Sách Công việc Của Tôi</div>
+
+<div class="tasks-header-bar">
+    <span class="tasks-count-label">
+        Tìm thấy <strong id="resultCount">0</strong> công việc
+    </span>
+    <div class="view-toggle">
+        <button class="view-btn" id="btnList" onclick="setTaskView('list')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+            Danh sách
+        </button>
+        <button class="view-btn active" id="btnBoard" onclick="setTaskView('board')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+            Bảng
+        </button>
+    </div>
+</div>
+<div class="tasks-divider"></div>
+<div class="notes-box">
+    <div class="notes-grid" id="notesGrid">
+        <div class="empty">Chưa có ghi chú nào</div>
+    </div>
+</div>
+{% endblock %}
+
+{% block page_scripts %}
+<script>
+/* ═══════════════════════════════════════════
+   VIEW TOGGLE (Board / List)
+═══════════════════════════════════════════ */
+function setTaskView(mode) {
+    const grid = document.getElementById('notesGrid');
+    const btnB = document.getElementById('btnBoard');
+    const btnL = document.getElementById('btnList');
+    if (!grid) return;
+    if (mode === 'list') {
+        grid.classList.add('list-view');
+        if (btnL) btnL.classList.add('active');
+        if (btnB) btnB.classList.remove('active');
+    } else {
+        grid.classList.remove('list-view');
+        if (btnB) btnB.classList.add('active');
+        if (btnL) btnL.classList.remove('active');
+    }
+    localStorage.setItem('taskViewMode', mode);
+    _patchCards();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    setTaskView(localStorage.getItem('taskViewMode') || 'board');
+});
+
+/* ═══════════════════════════════════════════
+   INIT — load notes
+═══════════════════════════════════════════ */
+window.__notesLoaded = true;
+if (typeof loadNotes === 'function') {
+    const r = loadNotes();
+    if (r && typeof r.then === 'function') {
+        r.then(() => { if (typeof syncStatsPopover === 'function') syncStatsPopover(true); });
+    } else {
+        setTimeout(() => { if (typeof syncStatsPopover === 'function') syncStatsPopover(true); }, 600);
+    }
+}
+
+const _origSyncNote = window._onNoteStatusChanged;
+window._onNoteStatusChanged = function() {
+    if (typeof _origSyncNote === 'function') _origSyncNote.apply(this, arguments);
+    if (typeof syncStatsPopover === 'function') syncStatsPopover(true);
+};
+
+/* ═══════════════════════════════════════════
+   OPEN DETAIL MODAL
+═══════════════════════════════════════════ */
+window.openDetailModal = function(id) {
+    const notes = window.allNotes || [];
+    let n = notes.find(x => x.id === id);
+
+    // Fallback: read basic info from card DOM if allNotes not populated yet
+    if (!n) {
+        const card = document.querySelector(`.note-card[data-id="${id}"]`) ||
+                     document.querySelector(`.note-card[onclick*="(${id})"]`);
+        if (card) {
+            const deadlineEl = card.querySelector('.meta-deadline');
+            const createdEl  = card.querySelector('.meta-created');
+            const contentEl  = card.querySelector('.card-content');
+            const titleEl    = card.querySelector('h3');
+            n = {
+                id:         id,
+                title:      titleEl?.textContent?.trim()    || `Task #${id}`,
+                content:    contentEl?.textContent?.trim()  || '',
+                due_date:   deadlineEl?.dataset?.isoDate    || null,
+                created_at: createdEl?.dataset?.isoDate     || null,
+                priority:   card.dataset.priority           || '2',
+            };
+        }
+    }
+
+    if (!n) return;
+
+    window.currentDetailId = id;
+
+    const el = (sel) => document.getElementById(sel);
+
+    // ── Tiêu đề (ngoài card) ──
+    if (el('detailTitle')) el('detailTitle').textContent = n.title || '';
+
+    // ── Priority & due date ──
+    if (el('detailPriority'))  el('detailPriority').textContent  = _priLabelText(n.priority);
+    if (el('detailDueDate'))   el('detailDueDate').textContent   = n.due_date ? _fmt(n.due_date) : 'Không có hạn';
+    if (el('detailCreatedAt')) el('detailCreatedAt').textContent = n.created_at ? _fmt(n.created_at) : '';
+
+    // ── Màu dot ưu tiên ──
+    const dot = el('detailPriorityDot');
+    if (dot) {
+        const pri = Number(n.priority);
+        dot.style.background = pri >= 4 ? '#ef4444' : pri === 3 ? '#f97316' : pri === 2 ? '#3b82f6' : '#9ca3af';
+    }
+
+    // ── CARD 1: PHONG CÁCH + NHÃN (gộp vào bảng combined) ──
+    // Tách phần phong cách và nhãn từ content nếu có
+    const raw = (n.content || '').trim();
+
+    // Parse AI marker — hỗ trợ cả "\n\n---AI---" và "---AI---" ở đầu
+    let aiIdx = raw.indexOf('\n\n---AI---');
+    if (aiIdx === -1) aiIdx = raw.indexOf('---AI---');
+    const main   = aiIdx !== -1 ? raw.slice(0, aiIdx).trim() : raw;
+    const aiPart = aiIdx !== -1 ? raw.slice(aiIdx).replace(/^---AI---\n?/, '').replace(/^\n\n---AI---\n?/, '').trim() : '';
+
+    // Extract label from aiPart (line: "Nhãn: ...")
+    let labelText = '';
+    if (aiPart) {
+        const lblMatch = aiPart.match(/Nhãn:\s*([^\n]+)/);
+        if (lblMatch) labelText = lblMatch[1].trim();
+    }
+    // Nếu task có label field trực tiếp (từ quickAdd), dùng đó
+    if (!labelText && n.label) labelText = n.label;
+
+    // ── Fallback: đọc từ localStorage cache (vd_taskMeta) nếu server không trả về content ──
+    if (!labelText || !n.content) {
+        try {
+            const _meta = JSON.parse(localStorage.getItem('vd_taskMeta') || '{}');
+            const _cached = _meta[id] || _meta[String(id)];
+            if (_cached) {
+                if (!labelText && _cached.label) labelText = _cached.label;
+                if (!n._cachedStyle && _cached.style) n._cachedStyle = _cached.style;
+            }
+        } catch (_e) {}
+    }
+
+    // ── Parse [StyleName] từ dòng đầu của content (template tasks) ──
+    let contentStyle = n._cachedStyle || '';
+    let mainBody = main;
+    const styleLineMatch = main.match(/^\[([^\]]+)\]\s*\n?/);
+    if (styleLineMatch) {
+        contentStyle = styleLineMatch[1].trim();
+        mainBody = main.slice(styleLineMatch[0].length).trim();
+    }
+
+    // ── Parse "Nhãn: ..." từ đầu mainBody nếu chưa tìm được từ aiPart ──
+    if (!labelText) {
+        const mainLblMatch = mainBody.match(/^Nhãn:\s*([^\n]+)\n?/);
+        if (mainLblMatch) {
+            labelText = mainLblMatch[1].trim();
+            mainBody = mainBody.slice(mainLblMatch[0].length).trim();
+        }
+    }
+
+    // Dùng style từ content nếu có, ngược lại fallback theo priority
+    const styleText = contentStyle || _priStyleText(n.priority);
+
+    // ── Cập nhật bảng 3 phần (combined card) ──
+    const styleRow   = el('detailStyleRow');
+    const styleVal   = el('detailStyleValue');
+    const styleDivider = el('detailStyleDivider');
+    const labelRow   = el('detailLabelRow');
+    const labelVal   = el('detailLabelValue');
+    const labelDivider = el('detailLabelDivider');
+
+    // Hàng Phong cách
+    if (styleRow && styleVal) {
+        if (styleText) {
+            const isUrgent = /khẩn|urgent/i.test(styleText);
+            const cls = isUrgent ? 'urgent' : 'style-chip';
+            styleVal.innerHTML = `<span class="dm-chip ${cls}">${_escHtml(styleText)}</span>`;
+            styleRow.style.display = '';
+            if (styleDivider) styleDivider.style.display = '';
+        } else {
+            styleRow.style.display = 'none';
+            if (styleDivider) styleDivider.style.display = 'none';
+        }
+    }
+
+    // Hàng Nhãn — CHỈ hiện labels được gắn, ẩn hàng nếu không có nhãn
+    if (labelRow && labelVal) {
+        const LABEL_MAP = {
+            'Gửi/Trả lời Email': 'label-email',
+            'Soạn báo cáo':      'label-report',
+            'Lên lịch họp':      'label-meeting',
+            'Phê duyệt':         'label-approve',
+            'Tạo nhắc nhở':      'label-remind',
+            'Nộp tài liệu':      'label-submit',
+            'Công việc chung':   'label-general',
+        };
+        const selectedLabels = labelText ? labelText.split(',').map(s=>s.trim()).filter(Boolean) : [];
+        if (selectedLabels.length > 0) {
+            labelVal.innerHTML = selectedLabels.map(lbl => {
+                const cls2 = LABEL_MAP[lbl] || 'label-general';
+                return `<span class="dm-chip ${cls2}">${_escHtml(lbl)}</span>`;
+            }).join(' ');
+            labelRow.style.display = '';
+            if (styleDivider) styleDivider.style.display = styleText ? '' : 'none';
+            if (labelDivider) labelDivider.style.display = '';
+        } else {
+            // Không có nhãn → ẩn hàng nhãn và divider trước nó
+            labelRow.style.display = 'none';
+            if (styleDivider) styleDivider.style.display = 'none';
+            if (labelDivider) labelDivider.style.display = 'none';
+        }
+    }
+
+    // Keep legacy detailStyleSection in sync (for setDetailStyleChips() calls from outside)
+    const styleSection = el('detailStyleSection');
+    const styleChips   = el('detailStyleChips');
+    if (styleSection && styleChips) {
+        styleChips.innerHTML = '';
+        if (styleText) {
+            const isUrgent = /khẩn|urgent/i.test(styleText);
+            const cls = isUrgent ? 'urgent' : 'style-chip';
+            styleChips.innerHTML += `<span class="dm-chip ${cls}">${_escHtml(styleText)}</span>`;
+        }
+        if (labelText) {
+            const LABEL_MAP2 = {
+                'Gửi/Trả lời Email':'label-email','Soạn báo cáo':'label-report',
+                'Lên lịch họp':'label-meeting','Phê duyệt':'label-approve',
+                'Tạo nhắc nhở':'label-remind','Nộp tài liệu':'label-submit','Công việc chung':'label-general'
+            };
+            labelText.split(',').map(s=>s.trim()).filter(Boolean).forEach(lbl => {
+                const cls2 = LABEL_MAP2[lbl] || 'label-general';
+                styleChips.innerHTML += `<span class="dm-chip ${cls2}">${_escHtml(lbl)}</span>`;
+            });
+        }
+    }
+
+    // ── CARD 2: TIÊU ĐỀ EMAIL (nếu content chứa email subject) ──
+    // Thử detect từ content: dòng đầu có thể là tiêu đề email
+    let emailSubject = '';
+    const emailSubjectSection = el('detailEmailTitleSection');
+    const emailSubjectEl = el('detailEmailSubject');
+    if (emailSubjectSection && emailSubjectEl) {
+        // Tìm "Tiêu đề:" trong aiPart trước, rồi mainBody (template tasks)
+        if (aiPart) {
+            const subjMatch = aiPart.match(/Tiêu đề(?:\s*email)?:\s*([^\n]+)/i);
+            if (subjMatch) emailSubject = subjMatch[1].trim();
+        }
+        if (!emailSubject) {
+            const mainSubjMatch = mainBody.match(/^Tiêu đề(?:\s*email)?:\s*([^\n]+)/im);
+            if (mainSubjMatch) emailSubject = mainSubjMatch[1].trim();
+        }
+        if (emailSubject) {
+            emailSubjectEl.textContent = emailSubject;
+            emailSubjectSection.style.display = 'block';
+        } else {
+            emailSubjectSection.style.display = 'none';
+        }
+    }
+
+    // ── CARD 3: NỘI DUNG CHI TIẾT ──
+    const contentEl = el('detailContent');
+    const emailBodyEl = el('detailEmailBody');
+    if (contentEl) {
+        if (!mainBody) {
+            contentEl.innerHTML = '<span style="color:#9ca3af;font-size:13px;">Không có mô tả</span>';
+        } else {
+            contentEl.innerHTML = _escHtml(mainBody);
+        }
+    }
+    // AI part: chỉ hiện nếu có nội dung thực sự ngoài "Nhãn:" line
+    if (emailBodyEl) {
+        // Lọc bỏ dòng "Nhãn: ..." và "Việc cần làm:" headers đơn giản để kiểm tra có nội dung không
+        const aiBody = aiPart
+            ? aiPart.replace(/^Nhãn:\s*[^\n]+\n?/m, '').trim()
+            : '';
+        if (aiBody && emailSubject) {
+            emailBodyEl.innerHTML = '<div style="margin-top:10px;padding:10px 14px;background:#f0fdf4;border-left:3px solid #10b981;border-radius:6px;font-size:12.5px;color:#065f46;white-space:pre-wrap;">' + _escHtml(aiBody) + '</div>';
+            emailBodyEl.style.display = 'block';
+        } else if (aiBody && !emailSubject && !/^[\s\n]*$/.test(aiBody)) {
+            // Có AI body và không phải chỉ whitespace — hiện trong content
+            emailBodyEl.innerHTML = '<div style="margin-top:10px;padding:10px 14px;background:#f0fdf4;border-left:3px solid #10b981;border-radius:6px;font-size:12.5px;color:#065f46;white-space:pre-wrap;">' + _escHtml(aiBody) + '</div>';
+            emailBodyEl.style.display = 'block';
+        } else {
+            emailBodyEl.style.display = 'none';
+        }
+    }
+
+    // ── Trạng thái ──
+    if (typeof _refreshDetailStatus === 'function') {
+        _refreshDetailStatus(id);
+    }
+
+    // ── Chat: render lịch sử của task này (không reset, dùng _renderChatHistory từ base) ──
+    if (typeof _renderChatHistory === 'function') {
+        _renderChatHistory(id);
+    }
+
+    // ── Mở modal ──
+    const modal = el('detailModal');
+    if (modal) {
+        modal.style.display = 'flex';
+        modal.classList.add('show');
+    }
+};
+
+function _refreshDetailStatus(id) {
+    if (typeof getTaskStatusLocal !== 'function' || typeof TASK_STATUS_CONFIG === 'undefined') return;
+    const statusKey = getTaskStatusLocal(id);
+    const cfg = statusKey ? TASK_STATUS_CONFIG[statusKey] : null;
+    const sec = document.getElementById('detailStatusSection');
+    if (!sec) return;
+    if (cfg) {
+        sec.style.display = 'block';
+        const dot = sec.querySelector('.detail-status-dot');
+        const lbl = sec.querySelector('.detail-status-label');
+        const bar = sec.querySelector('.detail-status-bar-fill');
+        const pct = sec.querySelector('.detail-status-pct');
+        if (dot) dot.style.background = cfg.color;
+        if (lbl) lbl.textContent = cfg.label;
+        if (bar) { bar.style.width = (cfg.progress || 0) + '%'; bar.style.background = cfg.color; }
+        if (pct) pct.textContent = (cfg.progress || 0) + '%';
+    } else {
+        sec.style.display = 'none';
+    }
+}
+
+function _priLabelText(p) {
+    const n = Number(p);
+    if (n >= 4) return 'Khẩn cấp';
+    if (n === 3) return 'Cao';
+    if (n === 2) return 'Trung bình';
+    if (n === 1) return 'Thấp';
+    return 'Trung bình';
+}
+function _priStyleText(p) {
+    const n = Number(p);
+    if (n >= 4) return 'Khẩn cấp';
+    if (n === 3) return 'Giao việc';
+    if (n === 2) return 'Thân thiện';
+    return 'Thân thiện';
+}
+
+function _fmt(dt) {
+    if (!dt) return '';
+    const m = dt.match(/^(\d{4})-(\d{2})-(\d{2})(?:T(\d{2}):(\d{2}))?/);
+    if (!m) return dt;
+    if (m[4] && m[5] && !(m[4] === '00' && m[5] === '00'))
+        return `${m[3]}/${m[2]}/${m[1]} ${m[4]}:${m[5]}`;
+    return `${m[3]}/${m[2]}/${m[1]}`;
+}
+
+function _escHtml(s) {
+    return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+/* ═══════════════════════════════════════════
+   STAR / PIN STORAGE HELPERS
+═══════════════════════════════════════════ */
+function _isPinned(noteId) {
+    try {
+        const pins = JSON.parse(localStorage.getItem('vd_pinnedTasks') || '{}');
+        return !!pins[noteId];
+    } catch { return false; }
+}
+function _togglePin(noteId) {
+    try {
+        const pins = JSON.parse(localStorage.getItem('vd_pinnedTasks') || '{}');
+        if (pins[noteId]) delete pins[noteId];
+        else pins[noteId] = true;
+        localStorage.setItem('vd_pinnedTasks', JSON.stringify(pins));
+        return !!pins[noteId];
+    } catch { return false; }
+}
+
+/* Create a fresh pin button */
+function _makePinBtn(noteId) {
+    const btn = document.createElement('button');
+    btn.className = 'pin-btn' + (_isPinned(noteId) ? ' pinned' : '');
+    btn.title = 'Ghim / bỏ ghim';
+    btn.innerHTML = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+    </svg>`;
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        const nowPinned = _togglePin(noteId);
+        btn.classList.toggle('pinned', nowPinned);
+        // Sync all instances of this pin button across cards (e.g. after re-patch)
+        document.querySelectorAll(`.note-card[data-id="${noteId}"] .pin-btn`).forEach(b => {
+            b.classList.toggle('pinned', nowPinned);
+        });
+    });
+    return btn;
+}
+
+/* ═══════════════════════════════════════════
+   PATCH CARDS — normalize board & list layout
+═══════════════════════════════════════════ */
+function _patchCards() {
+    const grid = document.getElementById('notesGrid');
+    if (!grid) return;
+
+    const isListView = grid.classList.contains('list-view');
+
+    grid.querySelectorAll('.note-card').forEach(card => {
+        /* ── Step 0: Resolve noteId ── */
+        const oc    = card.getAttribute('onclick') || '';
+        const idM   = oc.match(/openDetailModal\((\d+)\)/);
+        let noteId  = null;
+        if (idM) {
+            noteId = idM[1];
+            card.dataset.id = noteId;
+            if (typeof getTaskStatusLocal === 'function') {
+                const sk = getTaskStatusLocal(parseInt(noteId));
+                if (sk) card.dataset.status = sk;
+            }
+        }
+
+        /* ── Step 1: Ensure .note-actions exists ── */
+        let actions = card.querySelector('.note-actions');
+        if (!actions) {
+            actions = document.createElement('div');
+            actions.className = 'note-actions';
+            card.appendChild(actions);
+        }
+
+        /* ── Step 2: Ensure .action-buttons-group exists ── */
+        let btnGroup = actions.querySelector('.action-buttons-group');
+        if (!btnGroup) {
+            btnGroup = document.createElement('div');
+            btnGroup.className = 'action-buttons-group';
+            actions.appendChild(btnGroup);
+        }
+
+        /* ── Step 3: Move Sửa / Xóa buttons into btnGroup ── */
+        card.querySelectorAll('button, a').forEach(el => {
+            if (el.closest('.action-buttons-group') ||
+                el.classList.contains('pin-btn') ||
+                el.closest('.list-meta-right-group') ||
+                el.closest('.card-status-wrapper')) return;
+
+            const txt = el.textContent.trim();
+            if (txt === 'Sửa' || (el.classList.contains('btn-edit') && !el.closest('.action-buttons-group'))) {
+                el.className = 'btn-small btn-edit';
+                el.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Sửa`;
+                // Ensure stopPropagation is set, and fallback to openEditModal via detailModal
+                el.onclick = function(e) {
+                    e.stopPropagation();
+                    e.preventDefault();
+                    const id = parseInt(noteId);
+                    if (!id) return;
+                    if (typeof openEditModal === 'function') {
+                        openEditModal(id);
+                    } else {
+                        // Fallback: open detail modal then click edit
+                        if (typeof window.openDetailModal === 'function') {
+                            window.openDetailModal(id);
+                            setTimeout(() => {
+                                const editBtn = document.querySelector('#detailModal .dm-btn-edit');
+                                if (editBtn) editBtn.click();
+                            }, 150);
+                        }
+                    }
+                };
+                btnGroup.appendChild(el);
+            } else if (txt === 'Xóa' || (el.classList.contains('btn-delete') && !el.closest('.action-buttons-group'))) {
+                el.className = 'btn-small btn-delete';
+                el.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>Xóa`;
+                // Ensure stopPropagation is set, and fallback to delNote
+                el.onclick = function(e) {
+                    e.stopPropagation();
+                    e.preventDefault();
+                    const id = parseInt(noteId);
+                    if (!id) return;
+                    if (typeof delNote === 'function') {
+                        if (confirm('Bạn chắc chắn muốn xóa ghi chú này?')) delNote(id);
+                    } else {
+                        // Fallback: open detail modal then click delete
+                        if (typeof window.openDetailModal === 'function') {
+                            window.openDetailModal(id);
+                            setTimeout(() => {
+                                const delBtn = document.querySelector('#detailModal .dm-btn-delete');
+                                if (delBtn) delBtn.click();
+                            }, 150);
+                        }
+                    }
+                };
+                btnGroup.appendChild(el);
+            }
+        });
+
+        /* ── Step 4: Resolve colored status dot ── */
+        // The dot is a div with inline background-color inside card-status-wrapper (or elsewhere)
+        let dotContainer = card.querySelector('.card-status-wrapper div[style*="background-color"]');
+        if (!dotContainer) {
+            // Fallback: any small colored div in the card header area
+            dotContainer = Array.from(card.querySelectorAll('div[style*="background-color"]')).find(el => {
+                const s = el.style;
+                return (s.borderRadius === '50%' || s.borderRadius === '50')
+                    || (s.width && parseFloat(s.width) <= 14)
+                    || el.parentElement?.classList?.contains('card-status-wrapper');
+            });
+        }
+
+        /* ── Step 5: Find or CREATE pin button ── */
+        let pinBtn = card.querySelector('.pin-btn');
+        if (!pinBtn && noteId) {
+            pinBtn = _makePinBtn(noteId);
+        }
+
+        /* ── Step 6a: BOARD VIEW layout ── */
+        if (!isListView) {
+            // Remove list-only elements
+            card.querySelector('.list-col-divider')?.remove();
+            card.querySelector('.list-status-dot-cell')?.remove();
+            card.querySelector('.list-meta-right-group')?.remove();
+            // Re-show card-status-wrapper if it was hidden
+            const wrapper = card.querySelector('.card-status-wrapper');
+            if (wrapper) wrapper.style.display = '';
+
+            // Ensure card-header-row has: h3  [status-wrapper: ONLY 1 priority dot + pinBtn]
+            const headerRow = card.querySelector('.card-header-row');
+            if (headerRow && wrapper) {
+                // ── CLEAR wrapper: remove ALL existing dots/icons, keep nothing ──
+                // This prevents 8-status dots from showing; we'll add back exactly 1 dot + star
+                Array.from(wrapper.children).forEach(child => child.remove());
+
+                // Re-add exactly ONE priority dot
+                const pri = parseInt(card.dataset.priority || '2');
+                let dotColor = '#9ca3af';
+                if (dotContainer) {
+                    // Read color from the original dot element
+                    dotColor = dotContainer.style.backgroundColor || dotContainer.style.background || '#9ca3af';
+                } else {
+                    dotColor = pri >= 4 ? '#ef4444' : pri === 3 ? '#f97316' : pri === 2 ? '#3b82f6' : '#9ca3af';
+                }
+                const newDot = document.createElement('span');
+                newDot.style.cssText = `width:10px;height:10px;border-radius:50%;display:inline-block;flex-shrink:0;background:${dotColor};`;
+                wrapper.appendChild(newDot);
+
+                // Re-add pin button (star icon) after the single dot
+                if (pinBtn) wrapper.appendChild(pinBtn);
+            } else if (headerRow && !wrapper) {
+                // No wrapper: just append pin to header row
+                if (pinBtn && !headerRow.contains(pinBtn)) headerRow.appendChild(pinBtn);
+            }
+
+            // Ensure labels placeholder so action row flex works
+            if (!actions.querySelector('.card-labels') && !actions.querySelector('.card-labels-placeholder')) {
+                const ph = document.createElement('div');
+                ph.className = 'card-labels-placeholder';
+                ph.style.flex = '1';
+                actions.insertBefore(ph, actions.firstChild);
+            }
+
+        /* ── Step 6b: LIST VIEW layout ── */
+        } else {
+            // ─────────────────────────────────────────────
+            // FIX: Ensure col 1 always shows TASK TITLE (h3)
+            // Find or create .card-header-row and make sure it holds the h3 title.
+            // The meta-deadline (red date) must NOT be inside card-header-row —
+            // it belongs in col 3 (.note-meta > .meta-deadline with grid-column:3).
+            // ─────────────────────────────────────────────
+            let headerRow = card.querySelector('.card-header-row');
+            const existingH3 = card.querySelector('h3');
+
+            // Step A: Move meta-deadline OUT of card-header-row if it got stuck there
+            if (headerRow) {
+                const migrateDeadline = headerRow.querySelector('.meta-deadline');
+                if (migrateDeadline) {
+                    // Move it into note-meta (or directly after card-content)
+                    let noteMeta = card.querySelector('.note-meta');
+                    if (noteMeta) {
+                        noteMeta.insertBefore(migrateDeadline, noteMeta.firstChild);
+                    } else {
+                        // No note-meta: insert deadline after card-content as a sibling
+                        const cc = card.querySelector('.card-content');
+                        if (cc && cc.nextSibling) {
+                            card.insertBefore(migrateDeadline, cc.nextSibling);
+                        } else if (cc) {
+                            card.insertBefore(migrateDeadline, cc);
+                            card.insertBefore(cc, migrateDeadline);
+                        }
+                    }
+                }
+            }
+
+            // Step B: Ensure .card-header-row exists
+            if (!headerRow) {
+                headerRow = document.createElement('div');
+                headerRow.className = 'card-header-row';
+                card.insertBefore(headerRow, card.firstChild);
+            }
+
+            // Step C: Move h3 into headerRow if it's not already there
+            if (existingH3 && !headerRow.contains(existingH3)) {
+                headerRow.appendChild(existingH3);
+            }
+
+            // Step D: If h3 is missing entirely, create it from allNotes title
+            if (!headerRow.querySelector('h3')) {
+                const newH3 = document.createElement('h3');
+                const note = (window.allNotes || []).find(n => String(n.id) === String(noteId));
+                newH3.textContent = note?.title || '';
+                headerRow.appendChild(newH3);
+            }
+
+            // Step E: If h3 shows the deadline date text (wrong content), fix from allNotes
+            const h3El = headerRow.querySelector('h3');
+            if (h3El && window.allNotes && noteId && !h3El.dataset.titleFixed) {
+                const note = (window.allNotes || []).find(n => String(n.id) === String(noteId));
+                if (note?.title) {
+                    h3El.textContent = note.title;
+                    h3El.dataset.titleFixed = '1';
+                }
+            }
+
+            // Remove board-only pin from wrapper; we'll place it in list-meta-right-group
+            const wrapper = card.querySelector('.card-status-wrapper');
+
+            // Build .list-meta-right-group if missing
+            let rightGroup = btnGroup.querySelector('.list-meta-right-group');
+            if (!rightGroup) {
+                rightGroup = document.createElement('div');
+                rightGroup.className = 'list-meta-right-group';
+                btnGroup.appendChild(rightGroup);
+            }
+
+            // Build .list-col-divider if missing
+            let divider = rightGroup.querySelector('.list-col-divider');
+            if (!divider) {
+                divider = document.createElement('div');
+                divider.className = 'list-col-divider';
+                rightGroup.appendChild(divider);
+            }
+
+            // Build .list-status-dot-cell if missing
+            let dotCell = rightGroup.querySelector('.list-status-dot-cell');
+            if (!dotCell) {
+                dotCell = document.createElement('div');
+                dotCell.className = 'list-status-dot-cell';
+                rightGroup.appendChild(dotCell);
+            }
+
+            // Move or clone the colored dot into dotCell
+            if (dotContainer) {
+                const clone = dotContainer.cloneNode(true);
+                clone.style.cssText = 'width:10px;height:10px;border-radius:50%;display:inline-block;flex-shrink:0;';
+                dotCell.innerHTML = '';
+                dotCell.appendChild(clone);
+            } else {
+                // Fallback: use card's data-status to determine dot color
+                const statusColors = {
+                    pending:'#f97316', in_progress:'#3b82f6', review:'#8b5cf6',
+                    approved:'#10b981', rejected:'#ef4444', done:'#059669',
+                    cancelled:'#9ca3af', draft:'#6b7280'
+                };
+                const sc = statusColors[card.dataset.status] || '#94a3b8';
+                dotCell.innerHTML = `<span style="width:10px;height:10px;border-radius:50%;background:${sc};display:inline-block;"></span>`;
+            }
+
+            // Move pin button into rightGroup (last position)
+            if (pinBtn && !rightGroup.contains(pinBtn)) {
+                rightGroup.appendChild(pinBtn);
+            }
+
+            // Sync pinned state
+            if (noteId && pinBtn) {
+                pinBtn.classList.toggle('pinned', _isPinned(noteId));
+            }
+        }
+
+        /* ── Step 7: Sync labels ── */
+        const lbl = Array.from(card.children).find(el => el.classList.contains('card-labels'));
+        if (lbl && !isListView) {
+            actions.insertBefore(lbl, actions.firstChild);
+        }
+    });
+}
+
+/* MutationObserver — re-patch when cards are added/changed */
+document.addEventListener('DOMContentLoaded', () => {
+    const grid = document.getElementById('notesGrid');
+    if (!grid || typeof MutationObserver === 'undefined') return;
+
+    let _t = null;
+    new MutationObserver(() => {
+        clearTimeout(_t);
+        _t = setTimeout(() => {
+            _patchCards();
+            if (typeof syncStatsPopover === 'function') syncStatsPopover(true);
+        }, 60);
+    }).observe(grid, { childList: true, subtree: true });
+
+    _patchCards();
+});
+
+/* Keep status in sync when status menu changes */
+const _origSetStatusMenu = window.setTaskStatusFromMenu;
+window.setTaskStatusFromMenu = function(id, status) {
+    if (typeof _origSetStatusMenu === 'function') _origSetStatusMenu.apply(this, arguments);
+    const card = document.querySelector(`.note-card[data-id="${id}"]`);
+    if (card) card.dataset.status = status;
+    if (window.currentDetailId === id && typeof _refreshDetailStatus === 'function') _refreshDetailStatus(id);
+};
+
+/* ── CLICK DELEGATION — opens detail modal on card click ── */
+document.addEventListener('DOMContentLoaded', () => {
+    const grid = document.getElementById('notesGrid');
+    if (!grid) return;
+
+    grid.addEventListener('click', function(e) {
+        // Don't open modal when clicking action buttons or pin
+        if (e.target.closest('.btn-edit'))   return;
+        if (e.target.closest('.btn-delete')) return;
+        if (e.target.closest('.pin-btn'))    return;
+        // Don't open modal when clicking the status dot area (opens status menu)
+        if (e.target.closest('[onclick*="stopPropagation"]')) return;
+
+        const card = e.target.closest('.note-card');
+        if (!card) return;
+
+        // Prevent double-call: if card has its own onclick, it already fired
+        // We only use delegation as a fallback for cards without inline onclick
+        const hasInlineOnclick = (card.getAttribute('onclick') || '').includes('openDetailModal');
+        if (hasInlineOnclick) return; // inline onclick already handled it
+
+        let noteId = card.dataset.id;
+        if (!noteId) {
+            const m = (card.getAttribute('onclick') || '').match(/openDetailModal\((\d+)\)/);
+            if (m) noteId = m[1];
+        }
+        if (!noteId) return;
+
+        if (typeof window.openDetailModal === 'function') {
+            window.openDetailModal(parseInt(noteId));
+        }
+    });
+});
+</script>
+{% endblock %}

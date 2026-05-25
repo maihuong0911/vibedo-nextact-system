@@ -1,0 +1,1552 @@
+{% extends "base.html" %}
+{% set active_page = "projects" %}
+{% block title %}Dự Án{% endblock %}
+
+{% block extra_head %}
+<style>
+/* ===== Projects layout ===== */
+#projectsView  { display: block; }
+#projectDetail { display: none; }
+
+/* ===== Project cards grid ===== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+@media (max-width: 1100px) { .projects-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 768px)  { .projects-grid { grid-template-columns: 1fr; } }
+
+.project-card {
+    background: #fff;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 16px 18px;
+    cursor: pointer;
+    transition: box-shadow .18s, transform .18s, border-color .18s;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+}
+.project-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.10); transform: translateY(-2px); border-color: #196B7C; }
+.project-card-name  { font-size: 15px; font-weight: 800; color: #1e3a5f; line-height: 1.35; }
+.project-card-desc  { font-size: 12px; color: #6b7280; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.project-card-meta  { font-size: 11.5px; color: #9ca3af; display: flex; gap: 10px; align-items: center; margin-top: 2px; }
+.project-card-meta .badge-count { background: #e0f2fe; color: #0369a1; border-radius: 20px; padding: 2px 9px; font-weight: 700; font-size: 11px; }
+.project-card-delete { position: absolute; top: 10px; right: 12px; background: none; border: none; color: #d1d5db; font-size: 17px; cursor: pointer; padding: 2px 4px; border-radius: 6px; transition: color .15s, background .15s; line-height: 1; }
+.project-card-delete:hover { color: #ef4444; background: #fee2e2; }
+.projects-empty { grid-column: 1 / -1; text-align: center; padding: 52px 24px; color: #9ca3af; }
+.projects-empty svg { opacity: .35; margin-bottom: 14px; }
+.projects-empty p { font-size: 14px; margin: 0 0 14px; }
+
+/* ===== Detail header ===== */
+.detail-back { display: inline-flex; align-items: center; gap: 6px; background: none; border: none; color: #196B7C; font-size: 13px; font-weight: 600; cursor: pointer; padding: 0; font-family: inherit; margin-bottom: 14px; transition: opacity .15s; }
+.detail-back:hover { opacity: .75; }
+.detail-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; flex-wrap: wrap; gap: 10px; }
+.detail-title { font-size: 20px; font-weight: 900; color: #1e3a5f; }
+.detail-desc  { font-size: 13px; color: #6b7280; margin-top: 3px; }
+
+/* ===== Sort bar ===== */
+.sort-bar {
+    display: flex; align-items: center; gap: 6px;
+    margin-bottom: 14px; flex-wrap: wrap;
+}
+.sort-bar span { font-size: 12px; color: #9ca3af; margin-right: 2px; }
+.sort-btn {
+    padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;
+    border: 1.5px solid #e5e7eb; background: #fff; color: #6b7280;
+    cursor: pointer; transition: all .15s; font-family: inherit;
+}
+.sort-btn:hover { border-color: #196B7C; color: #196B7C; }
+.sort-btn.active { background: #196B7C; color: #fff; border-color: #196B7C; }
+
+/* ===== Members hover tooltip — click toggle ===== */
+.members-trigger-wrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+.members-trigger-btn {
+    width: 30px; height: 30px;
+    border: 1.5px solid #e5e7eb; border-radius: 8px;
+    background: #fff; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; color: #6b7280;
+    transition: border-color .15s, background .15s, color .15s;
+    font-family: inherit;
+}
+.members-trigger-btn:hover { border-color: #196B7C; background: #f0fafa; color: #196B7C; }
+.members-trigger-btn.active { border-color: #196B7C; background: #196B7C; color: #fff; }
+
+.members-hover-panel {
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    width: 210px;
+    background: #fff;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,.11);
+    z-index: 500;
+    overflow: hidden;
+}
+.members-hover-panel.open { display: block; }
+
+.mhp-header {
+    padding: 8px 12px 7px;
+    font-size: 10.5px; font-weight: 700; color: #9ca3af;
+    text-transform: uppercase; letter-spacing: .06em;
+    border-bottom: 1px solid #f3f4f6;
+    display: flex; align-items: center; justify-content: space-between;
+}
+.mhp-add-btn {
+    font-size: 12px; cursor: pointer; color: #196B7C;
+    background: none; border: none; font-weight: 700;
+    padding: 0; line-height: 1; font-family: inherit;
+}
+.mhp-add-btn:hover { opacity: .75; }
+
+.mhp-list {
+    max-height: 160px;
+    overflow-y: auto;
+}
+.mhp-member-row {
+    display: flex; align-items: center; gap: 7px;
+    padding: 6px 12px;
+    transition: background .12s;
+    position: relative;
+}
+.mhp-member-row:hover { background: #f8fafc; }
+.mhp-avatar {
+    width: 24px; height: 24px; border-radius: 50%;
+    background: #e0f2fe; color: #0369a1;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10.5px; font-weight: 700; flex-shrink: 0;
+}
+.mhp-name  { font-size: 12px; font-weight: 600; color: #1e3a5f; flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mhp-owner-badge { font-size: 9px; background: #fef9c3; color: #92400e; border-radius: 5px; padding: 1px 5px; font-weight: 700; flex-shrink: 0; }
+.mhp-del-btn {
+    display: none;
+    background: none; border: none; cursor: pointer;
+    color: #ef4444; font-size: 13px; padding: 0 2px;
+    line-height: 1; flex-shrink: 0;
+    transition: opacity .15s;
+}
+.mhp-member-row:hover .mhp-del-btn { display: block; }
+
+.mhp-add-section { border-top: 1px solid #f3f4f6; padding: 7px 12px; }
+.mhp-add-input {
+    width: 100%; box-sizing: border-box;
+    border: 1.5px solid #d1d5db; border-radius: 7px;
+    padding: 5px 9px; font-size: 12px; font-family: inherit; outline: none;
+    transition: border-color .2s;
+}
+.mhp-add-input:focus { border-color: #196B7C; }
+.mhp-add-dd {
+    background: #fff; border: 1.5px solid #d1d5db; border-radius: 7px;
+    box-shadow: 0 4px 14px rgba(0,0,0,.10); margin-top: 4px;
+    max-height: 120px; overflow-y: auto; display: none;
+    position: absolute; left: 12px; right: 12px; z-index: 600;
+}
+.mhp-add-dd.show { display: block; }
+.mhp-dd-row {
+    padding: 6px 10px; font-size: 12px; cursor: pointer;
+    transition: background .12s;
+}
+.mhp-dd-row:hover { background: #f0fafa; }
+.mhp-dd-name  { font-weight: 600; color: #1e3a5f; }
+.mhp-dd-email { font-size: 10.5px; color: #9ca3af; }
+
+/* ===== Kanban board ===== */
+
+/* White card container */
+.kanban-container {
+    background: #fff;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.06);
+    overflow: hidden;
+    height: calc(100vh - 290px);
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+}
+
+.kanban-wrapper {
+    flex: 1;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #d1d5db transparent;
+}
+.kanban-wrapper::-webkit-scrollbar { height: 6px; }
+.kanban-wrapper::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 99px; }
+
+.kanban-board {
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+    min-width: max-content;
+    padding: 12px 12px 10px;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+/* ── Column ── */
+.kanban-col {
+    width: 220px;
+    flex-shrink: 0;
+    background: #f3f4f6;
+    border-radius: 11px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    transition: width .22s ease;
+}
+.kanban-col:last-child { border-right: none; }
+.kanban-col.collapsed  { width: 44px; }
+
+/* ── Header ── */
+.kanban-col-header {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 9px 10px 8px;
+    border-bottom: 1.5px solid rgba(0,0,0,.06);
+    background: transparent;
+    flex-shrink: 0;
+    min-height: 38px;
+    box-sizing: border-box;
+}
+.kanban-col.collapsed .kanban-col-header {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 0 6px;
+    gap: 7px;
+    border-bottom: none;
+    height: 100%;
+    width: 44px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.kanban-col.collapsed:last-child .kanban-col-header { border-right: none; }
+
+.col-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    flex-shrink: 0;
+}
+.kanban-col.collapsed .col-dot { width: 9px; height: 9px; margin-top: 2px; }
+
+.col-title {
+    font-size: 10.5px; font-weight: 800; color: #374151;
+    text-transform: uppercase; letter-spacing: .05em;
+    flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.kanban-col.collapsed .col-title {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: unset;
+    flex: 1;
+    font-size: 9.5px;
+    letter-spacing: .07em;
+    max-width: 44px;
+}
+
+.col-count {
+    font-size: 11px; font-weight: 700; color: #fff;
+    background: #196B7C; border-radius: 20px;
+    padding: 1px 7px; flex-shrink: 0;
+    min-width: 18px; text-align: center;
+    line-height: 1.6;
+}
+.kanban-col.collapsed .col-count {
+    width: 22px; height: 22px; border-radius: 50%;
+    padding: 0; display: flex; align-items: center; justify-content: center;
+    font-size: 10px; min-width: unset;
+}
+
+.col-btn {
+    background: none; border: none; cursor: pointer;
+    color: #9ca3af; font-size: 13px; padding: 2px 3px;
+    border-radius: 5px; line-height: 1; font-family: inherit;
+    transition: background .12s, color .12s;
+    flex-shrink: 0;
+}
+.col-btn:hover { background: #e5e7eb; color: #374151; }
+.kanban-col.collapsed .col-btn-hide { display: none; }
+
+/* ── Body / cards ── */
+.kanban-col-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    scrollbar-width: thin;
+    scrollbar-color: #e5e7eb transparent;
+}
+.kanban-col-body::-webkit-scrollbar { width: 4px; }
+.kanban-col-body::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 99px; }
+.kanban-col.collapsed .kanban-col-body { display: none; }
+
+.kanban-col-body.drag-over { background: #eef7f9; }
+
+/* ── Kanban card ── */
+.kb-card {
+    background: #fff;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 9px;
+    padding: 10px 12px;
+    cursor: grab;
+    font-size: 12.5px;
+    transition: box-shadow .14s, border-color .14s;
+    position: relative;
+    user-select: none;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 120px;
+    min-height: unset;
+    max-height: 120px;
+}
+.kb-card:active { cursor: grabbing; }
+.kb-card:hover  { box-shadow: 0 3px 10px rgba(0,0,0,.09); border-color: #196B7C; }
+.kb-card.dragging { opacity: .4; }
+
+.kb-card-title {
+    font-weight: 700; color: #1e3a5f; font-size: 12.5px;
+    line-height: 1.35; margin-bottom: 4px;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.kb-card-content {
+    font-size: 11px; color: #6b7280; margin-bottom: 6px;
+    display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;
+    line-height: 1.4;
+}
+.kb-card-meta {
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 10.5px; color: #9ca3af;
+    margin-bottom: 4px;
+}
+.kb-card-meta-left,
+.kb-card-meta-right {
+    display: flex; align-items: center; gap: 4px;
+    white-space: nowrap;
+}
+.kb-overdue { color: #ef4444 !important; font-weight: 600; }
+.kb-badge-quick {
+    background: #f97316; color: #fff;
+    border-radius: 5px; padding: 1px 6px;
+    font-size: 10px; font-weight: 700; flex-shrink: 0;
+}
+.kb-priority-dot {
+    display: inline-block; width: 7px; height: 7px; border-radius: 50%;
+    flex-shrink: 0;
+}
+.kb-card-actions {
+    display: flex; gap: 6px; margin-top: auto; align-items: center;
+}
+.kb-card-actions button {
+    width: 30px; height: 30px; display: inline-flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 700; cursor: pointer; font-family: inherit;
+    transition: all .15s; border: none; border-radius: 8px;
+}
+.kb-btn-icon { background: transparent; color: #6b7280; }
+.kb-btn-icon:hover { background: #f3f4f6; color: #374151; }
+.kb-btn-delete { color: #9ca3af; }
+.kb-btn-delete:hover { background: #fee2e2; color: #ef4444; }
+
+.kb-add-row {
+    display: flex; align-items: center; gap: 5px;
+    padding: 6px 4px; border-radius: 7px; cursor: pointer;
+    color: #9ca3af; font-size: 12px; font-weight: 500;
+    transition: background .12s, color .12s;
+    flex-shrink: 0;
+    margin-top: auto;
+}
+.kb-add-row:hover { background: #f3f4f6; color: #374151; }
+
+/* ── Dark mode ── */
+body.dark-mode .kanban-container       { background: #0d1117; border-color: #30363d; }
+body.dark-mode .kanban-col             { background: #161b22; }
+body.dark-mode .kanban-col-header      { border-color: rgba(255,255,255,.06); }
+body.dark-mode .kb-card                { background: #0d1117; border-color: #30363d; }
+body.dark-mode .kb-card:hover          { border-color: #196B7C; }
+body.dark-mode .kb-card-title          { color: #e6edf3; }
+body.dark-mode .kb-card-content        { color: #8b949e; }
+body.dark-mode .col-title              { color: #8b949e; }
+body.dark-mode .col-btn:hover          { background: #30363d; color: #c9d1d9; }
+body.dark-mode .kb-add-row:hover       { background: #21262d; color: #c9d1d9; }
+body.dark-mode .kanban-col-body.drag-over { background: rgba(91,196,207,.07); }
+
+/* ===== Participant tags ===== */
+.pdm-participant-tag {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: #e0f2fe; color: #0369a1;
+    border-radius: 20px; padding: 4px 12px;
+    font-size: 12px; font-weight: 600;
+}
+
+/* ===== Dark mode cho project cards ===== */
+body.dark-mode .project-card { background: #1c2128; border-color: #30363d; }
+body.dark-mode .project-card:hover { border-color: #196B7C; box-shadow: 0 4px 16px rgba(0,0,0,.4); }
+body.dark-mode .project-card-name { color: #e6edf3; }
+body.dark-mode .project-card-desc { color: #8b949e; }
+body.dark-mode .project-card-meta { color: #6e7681; }
+body.dark-mode .project-card-delete { color: #444d56; }
+body.dark-mode .project-card-delete:hover { color: #ef4444; background: #1f1419; }
+body.dark-mode .projects-empty { color: #6e7681; }
+body.dark-mode .notes-box { background: #161b22; border-color: #30363d; }
+body.dark-mode .detail-title { color: #e6edf3; }
+body.dark-mode .detail-desc  { color: #8b949e; }
+body.dark-mode .detail-back  { color: #5bc4cf; }
+body.dark-mode .members-trigger-btn { background: #1c2128; border-color: #30363d; color: #8b949e; }
+body.dark-mode .members-hover-panel { background: #161b22; border-color: #30363d; }
+body.dark-mode .mhp-header { color: #6e7681; border-color: #21262d; }
+body.dark-mode .mhp-member-row:hover { background: #1c2128; }
+body.dark-mode .mhp-name { color: #e6edf3; }
+body.dark-mode .mhp-add-dd { background: #161b22; border-color: #30363d; }
+body.dark-mode .mhp-add-section { border-color: #21262d; }
+body.dark-mode .mhp-add-input { background: #0d1117; border-color: #30363d; color: #e6edf3; }
+body.dark-mode #pdmContentCard { border-color: #30363d; }
+body.dark-mode #pdmStyleRow, body.dark-mode #pdmLabelRow { background: #1c2128; border-color: #21262d; }
+body.dark-mode #pdmSubjectRow { border-color: #21262d; }
+body.dark-mode #pdmSubjectVal { color: #e6edf3; }
+body.dark-mode #pdmContent { color: #c9d1d9; }
+body.dark-mode .pdm-participant-tag { background: #1c3a4a; color: #5bc4cf; }
+</style>
+{% endblock %}
+
+{% block content %}
+
+{# ── View danh sách dự án ── #}
+<div id="projectsView">
+    <h2 style="font-size:18px;font-weight:900;color:#1e3a5f;margin-bottom:12px;padding-bottom:12px;border-bottom:1.5px solid #e5e7eb;">Dự Án Của Tôi</h2>
+    <div class="results-summary" style="margin-bottom:14px;">
+        <div style="font-size:13px;color:#6b7280;">
+            Tìm thấy <strong id="projectCount" style="color:#1e3a5f;">0</strong> dự án
+        </div>
+    </div>
+    <div class="notes-box">
+        <div class="projects-grid" id="projectsGrid">
+            <div class="projects-empty">
+                <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                    <path d="M2 17l10-10 10 10"/><path d="M5 14v6h14v-6"/>
+                </svg>
+                <p>Chưa có dự án nào</p>
+                <button class="btn btn-primary" onclick="openCreateProjectModal()">+ Thêm dự án đầu tiên</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{# ── View chi tiết dự án ── #}
+<div id="projectDetail">
+    <button class="detail-back" onclick="backToProjects()">← Quay lại Dự Án</button>
+
+    <div class="detail-header">
+        <div>
+            <div class="detail-title" id="detailTitle">Tên dự án</div>
+            <div class="detail-desc"  id="detailDesc"></div>
+        </div>
+    </div>
+
+    {# ── Thanh info ── #}
+    <div class="results-summary" style="margin-bottom:14px; align-items:center; flex-wrap:wrap; gap:10px;">
+        <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+
+            <div class="members-trigger-wrap" id="membersTriggerWrap">
+                <button class="members-trigger-btn"
+                        id="membersTriggerBtn"
+                        onclick="toggleMembersPanel()"
+                        title="Thành viên dự án">☰</button>
+
+                <div class="members-hover-panel" id="membersHoverPanel">
+                    <div class="mhp-header">
+                        <span>Thành viên</span>
+                        <button class="mhp-add-btn" onclick="toggleMhpAddSection(event)">+ Thêm</button>
+                    </div>
+                    <div class="mhp-list" id="mhpList">
+                        <div style="padding:12px;text-align:center;color:#9ca3af;font-size:12px;">Đang tải...</div>
+                    </div>
+                    <div class="mhp-add-section" id="mhpAddSection" style="display:none; position:relative;">
+                        <input type="text" class="mhp-add-input" id="mhpSearchInput"
+                               placeholder="Tìm tên hoặc email..."
+                               autocomplete="off"
+                               oninput="searchMhpMembers(this.value)">
+                        <div class="mhp-add-dd" id="mhpAddDd"></div>
+                    </div>
+                </div>
+            </div>
+
+            <span style="font-size:13px;color:#6b7280;">Tìm thấy</span>
+            <strong id="detailTaskCount" style="font-size:13px;color:#1e3a5f;">0</strong>
+            <span style="font-size:13px;color:#6b7280;">công việc</span>
+
+            <span style="color:#e5e7eb;font-size:16px;">|</span>
+
+            <span style="font-size:12px;color:#9ca3af;">Sắp xếp:</span>
+            <button class="sort-btn active" data-sort="newest"   onclick="setSortMode('newest',   this)">Mới nhất</button>
+            <button class="sort-btn"        data-sort="priority" onclick="setSortMode('priority', this)">Ưu tiên</button>
+            <button class="sort-btn"        data-sort="deadline" onclick="setSortMode('deadline', this)">Hạn chót</button>
+        </div>
+    </div>
+
+    <div class="kanban-container">
+        <div class="kanban-wrapper">
+            <div class="kanban-board" id="kanbanBoard">
+                <!-- columns rendered by JS -->
+            </div>
+        </div>
+    </div>
+</div>
+
+{# ── Modal Chi Tiết Công Việc ── #}
+<div class="modal" id="projectDetailModal" style="display:none;">
+    <div class="modal-content"
+         style="max-width:800px; max-height:90vh; display:flex; flex-direction:column;">
+
+        <div style="display:flex; align-items:center; justify-content:space-between;
+                    padding:20px 20px 0; flex-shrink:0;">
+            <h2 style="margin:0; font-size:20px; font-weight:900; color:#1a3d52;">Chi Tiết Công Việc</h2>
+            <button onclick="closeProjectDetailModal()"
+                    style="background:none; border:none; font-size:24px; line-height:1;
+                           color:#9ca3af; cursor:pointer; padding:4px 6px; border-radius:6px;
+                           transition:color .2s, background .2s;"
+                    onmouseover="this.style.color='#ef4444';this.style.background='#fee2e2'"
+                    onmouseout="this.style.color='#9ca3af';this.style.background='none'">&times;</button>
+        </div>
+        <div class="modal-underline"></div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;
+                    padding:20px; overflow-y:auto; flex:1; align-items:start;">
+
+            {# Cột trái: thông tin task #}
+            <div>
+                <div style="margin-bottom:20px;">
+                    <label style="color:#9ca3af; font-size:12px; font-weight:600;">TIÊU ĐỀ</label>
+                    <h2 id="pdmTitle" style="color:#1a3d52; margin:8px 0; font-size:18px; word-break:break-word;"></h2>
+                </div>
+
+                {# ── NỘI DUNG — card chia 3 phần ── #}
+                <div style="margin-bottom:20px;">
+                    <label style="color:#9ca3af; font-size:12px; font-weight:600;">NỘI DUNG</label>
+                    <div id="pdmContentCard"
+                         style="margin:8px 0; border:1.5px solid #e5e7eb; border-radius:10px; overflow:hidden;">
+
+                        {# Phong cách #}
+                        <div id="pdmStyleRow"
+                             style="display:none; padding:8px 14px; border-bottom:1px solid #f0f0f0; background:#f8fafc; align-items:center; gap:8px;">
+                            <span style="font-size:11px; font-weight:700; color:#9ca3af; text-transform:uppercase; letter-spacing:.05em;">PHONG CÁCH</span>
+                            <span id="pdmStyleBadge"
+                                  style="background:#e0f7fa; color:#196B7C; border-radius:6px; padding:2px 10px; font-size:12px; font-weight:700;"></span>
+                        </div>
+
+                        {# Nhãn AI #}
+                        <div id="pdmLabelRow"
+                             style="display:none; padding:8px 14px; border-bottom:1px solid #f0f0f0; background:#f8fafc; align-items:center; gap:8px;">
+                            <span style="font-size:11px; font-weight:700; color:#9ca3af; text-transform:uppercase; letter-spacing:.05em;">NHÃN</span>
+                            <span id="pdmLabelBadge"
+                                  style="background:#e0f7fa; color:#196B7C; border-radius:6px; padding:2px 10px; font-size:12px; font-weight:700;"></span>
+                        </div>
+
+                        {# Tiêu đề email #}
+                        <div id="pdmSubjectRow"
+                             style="display:none; padding:8px 14px 6px; border-bottom:1px solid #f0f0f0;">
+                            <div style="font-size:11px; font-weight:700; color:#9ca3af; text-transform:uppercase; letter-spacing:.05em; margin-bottom:4px;">TIÊU ĐỀ EMAIL</div>
+                            <div id="pdmSubjectVal" style="font-size:13px; font-weight:700; color:#1e3a5f;"></div>
+                        </div>
+
+                        {# Nội dung chính #}
+                        <div style="padding:12px 14px;">
+                            <div id="pdmContent"
+                                 style="font-size:13px; color:#374151; line-height:1.65; white-space:pre-wrap; word-break:break-word; min-height:32px;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                {# ── Người tham gia ── #}
+                <div id="pdmParticipantsRow" style="display:none; margin-bottom:20px;">
+                    <label style="color:#9ca3af; font-size:12px; font-weight:600;">NGƯỜI THAM GIA</label>
+                    <div id="pdmParticipantsTags"
+                         style="display:flex; flex-wrap:wrap; gap:6px; margin-top:8px;"></div>
+                </div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:20px;">
+                    <div>
+                        <label style="color:#9ca3af; font-size:12px; font-weight:600;">ƯU TIÊN</label>
+                        <p id="pdmPriority" style="color:#6b7280; margin:8px 0;"></p>
+                    </div>
+                    <div>
+                        <label style="color:#9ca3af; font-size:12px; font-weight:600;">HẠN CHÓT</label>
+                        <p id="pdmDeadline" style="margin:8px 0;"></p>
+                    </div>
+                </div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:20px;">
+                    <div>
+                        <label style="color:#9ca3af; font-size:12px; font-weight:600;">NGÀY TẠO</label>
+                        <p id="pdmCreatedAt" style="color:#6b7280; margin:8px 0;"></p>
+                    </div>
+                    <div>
+                        <label style="color:#9ca3af; font-size:12px; font-weight:600;">NGƯỜI TẠO</label>
+                        <p id="pdmCreator" style="color:#6b7280; margin:8px 0; font-weight:600;"></p>
+                    </div>
+                </div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:20px;">
+                    <div>
+                        <label style="color:#9ca3af; font-size:12px; font-weight:600;">TRẠNG THÁI</label>
+                        <p id="pdmStatus" style="color:#6b7280; margin:8px 0;"></p>
+                    </div>
+                </div>
+            </div>
+
+            {# Cột phải: Chat Trợ Lý #}
+            <div style="border:1px solid #e5e7eb; border-radius:12px; overflow:hidden;
+                        display:flex; flex-direction:column; height:420px; flex-shrink:0;">
+                <div style="background:#1e3a5f; padding:12px 16px; flex-shrink:0;">
+                    <span style="color:white; font-weight:700; font-size:14px;">🤖 Trợ Lý Gợi Ý</span>
+                </div>
+                <div id="pdmChatMessages"
+                     style="flex:1; overflow-y:auto; padding:14px;
+                            display:flex; flex-direction:column; gap:8px; background:#f9fafb;">
+                    <div class="chat-msg bot-msg">Hỏi tôi về cách chuẩn bị cho công việc này!</div>
+                </div>
+                <div style="padding:10px 12px; border-top:1px solid #e5e7eb;
+                            display:flex; gap:8px; background:white; flex-shrink:0;">
+                    <input type="text" id="pdmAiInput"
+                           placeholder="Nhập câu hỏi..."
+                           style="flex:1; border:1.5px solid #e5e7eb; border-radius:8px;
+                                  padding:8px 12px; font-size:13px; outline:none;"
+                           onfocus="this.style.borderColor='#1a3d52'"
+                           onblur="this.style.borderColor='#e5e7eb'">
+                        <button id="pdmAiBtn" type="button" onclick="pdmAskAi()"
+                            style="background:#f97316; color:white; border:none;
+                               border-radius:8px; padding:8px 16px; font-weight:600;
+                               font-size:13px; cursor:pointer; white-space:nowrap;">Gửi</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-actions" style="padding:16px; border-top:2px solid #e5e7eb;">
+            <button class="btn btn-primary" onclick="pdmEdit()">Sửa</button>
+            <button class="btn btn-delete" onclick="pdmDelete()">Xóa</button>
+            <button class="btn btn-cancel" onclick="closeProjectDetailModal()">Đóng</button>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block page_scripts %}
+<script>
+// ── Fallback functions ────────────────────────────────────────────────
+if (typeof esc !== 'function') {
+    window.esc = function(t) {
+        if (!t) return '';
+        return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    };
+}
+if (typeof formatDate !== 'function') {
+    window.formatDate = function(dt) {
+        if (!dt) return '';
+        try {
+            const d = new Date(dt);
+            return d.toLocaleDateString('vi-VN', { day:'2-digit', month:'2-digit', year:'numeric' });
+        } catch(_) { return ''; }
+    };
+}
+
+// ── State ─────────────────────────────────────────────────────────────
+let _currentProjectId    = null;
+let _currentProjectName  = '';
+let _allNotes            = [];
+let _sortMode            = 'newest';
+let _mhpSearchTimer      = null;
+let _projectPollInterval = null;
+let _currentProjectMembers = []; // cache thành viên cho modal
+let _pdmAiSending = false; // guard to prevent duplicate sends
+
+// ── Polling ──────────────────────────────────────────────────────────
+function startProjectPolling(projectId) {
+    stopProjectPolling();
+    _projectPollInterval = setInterval(async () => {
+        if (!_currentProjectId) return;
+        try {
+            const res = await fetch(`/projects/${projectId}/notes`, { credentials: 'include' });
+            if (!res.ok) return;
+            const fresh = await res.json();
+            if (JSON.stringify(fresh.map(n => n.id)) !== JSON.stringify(_allNotes.map(n => n.id))) {
+                _allNotes = fresh;
+                renderProjectNotes(_allNotes);
+            }
+        } catch (e) {}
+    }, 20000);
+}
+
+function stopProjectPolling() {
+    if (_projectPollInterval) { clearInterval(_projectPollInterval); _projectPollInterval = null; }
+}
+
+// ── Sort ─────────────────────────────────────────────────────────────
+function setSortMode(mode, btn) {
+    _sortMode = mode;
+    document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderProjectNotes(_allNotes);
+}
+
+function sortNotes(notes) {
+    const arr = [...notes];
+    if (_sortMode === 'priority') return arr.sort((a, b) => (b.priority || 0) - (a.priority || 0));
+    if (_sortMode === 'deadline') {
+        return arr.sort((a, b) => {
+            if (!a.due_date && !b.due_date) return 0;
+            if (!a.due_date) return 1;
+            if (!b.due_date) return -1;
+            return new Date(a.due_date) - new Date(b.due_date);
+        });
+    }
+    return arr.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+}
+
+// ── Load danh sách dự án ─────────────────────────────────────────────
+async function loadProjects() {
+    try {
+        const res = await fetch('/projects', { credentials: 'include' });
+        if (res.status === 401) { window.location.href = '/login'; return; }
+        if (!res.ok) { console.error('loadProjects HTTP error:', res.status); return; }
+        const data = await res.json();
+        renderProjects(Array.isArray(data) ? data : []);
+    } catch (e) { console.error('loadProjects exception:', e); }
+}
+
+function renderProjects(projects) {
+    document.getElementById('projectCount').textContent = projects.length;
+    const grid = document.getElementById('projectsGrid');
+
+    if (!projects.length) {
+        grid.innerHTML = `
+        <div class="projects-empty" style="grid-column:1/-1;">
+            <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                <path d="M2 17l10-10 10 10"/><path d="M5 14v6h14v-6"/>
+            </svg>
+            <p>Chưa có dự án nào</p>
+            <button class="btn btn-primary" onclick="openCreateProjectModal()">+ Thêm dự án đầu tiên</button>
+        </div>`;
+        return;
+    }
+
+    grid.innerHTML = projects.map(p => {
+        // Render member avatars (hiển thị tối đa 2, còn lại +N)
+        let membersHtml = '';
+        if (p.members && Array.isArray(p.members) && p.members.length) {
+            const visible  = p.members.slice(0, 2);
+            const extra    = p.members.length - visible.length;
+            const avatars  = visible.map((m, i) => {
+                const initial = (m.name || m.username || '?')[0].toUpperCase();
+                const avatar  = m.avatar
+                    ? `<img src="${esc(m.avatar)}" alt="${esc(m.name||'')}"
+                           style="width:24px;height:24px;border-radius:50%;object-fit:cover;border:2px solid #fff;margin-left:${i?'-6px':'0'};"
+                           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                       <div style="display:none;width:24px;height:24px;border-radius:50%;background:#e0f2fe;color:#0369a1;align-items:center;justify-content:center;font-size:9px;font-weight:800;border:2px solid #fff;margin-left:${i?'-6px':'0'};">${initial}</div>`
+                    : `<div style="width:24px;height:24px;border-radius:50%;background:#e0f2fe;color:#0369a1;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;border:2px solid #fff;margin-left:${i?'-6px':'0'};" title="${esc(m.name||'')}">${initial}</div>`;
+                return avatar;
+            }).join('');
+            const extraBadge = extra > 0
+                ? `<div style="width:24px;height:24px;border-radius:50%;background:#f3f4f6;color:#6b7280;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;border:2px solid #fff;margin-left:-6px;">+${extra}</div>`
+                : '';
+            membersHtml = `<div style="display:flex;align-items:center;margin-top:4px;">${avatars}${extraBadge}</div>`;
+        }
+
+        return `
+        <div class="project-card"
+             data-id="${p.id}"
+             data-name="${esc(p.name)}"
+             data-desc="${esc(p.description || '')}">
+            <button class="project-card-delete" data-pid="${p.id}" title="Xóa dự án">&times;</button>
+            <div class="project-card-name">${esc(p.name)}</div>
+            ${p.description ? `<div class="project-card-desc">${esc(p.description)}</div>` : ''}
+            <div class="project-card-meta">
+                <span class="badge-count">${p.task_count} task</span>
+                <span>${formatDate(p.created_at)}</span>
+            </div>
+            ${membersHtml}
+        </div>`;
+    }).join('');
+
+    grid.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('click', function(e) {
+            if (e.target.closest('.project-card-delete')) return;
+            openProject(parseInt(this.dataset.id), this.dataset.name, this.dataset.desc);
+        });
+    });
+    grid.querySelectorAll('.project-card-delete').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            deleteProject(parseInt(this.dataset.pid));
+        });
+    });
+}
+
+// ── Mở chi tiết dự án ────────────────────────────────────────────────
+async function openProject(projectId, name, desc) {
+    _currentProjectId   = projectId;
+    _currentProjectName = name;
+    _allNotes           = [];
+    _currentProjectMembers = [];
+
+    document.getElementById('projectsView').style.display  = 'none';
+    document.getElementById('projectDetail').style.display = 'block';
+    document.getElementById('detailTitle').textContent     = name;
+    document.getElementById('detailDesc').textContent      = desc || '';
+    document.getElementById('detailTaskCount').textContent = '0';
+    const _board = document.getElementById('kanbanBoard');
+    if (_board) _board.innerHTML = '<div style="padding:32px;color:#9ca3af;font-size:13px;">Đang tải...</div>';
+
+    _sortMode = 'newest';
+    document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+    const newestBtn = document.querySelector('.sort-btn[data-sort="newest"]');
+    if (newestBtn) newestBtn.classList.add('active');
+
+    loadMhpMembers(projectId);
+    await loadProjectNotes(projectId);
+    startProjectPolling(projectId);
+}
+
+async function loadProjectNotes(projectId) {
+    try {
+        const res = await fetch(`/projects/${projectId}/notes`, { credentials: 'include' });
+        if (!res.ok) throw new Error();
+        _allNotes = await res.json();
+        renderProjectNotes(_allNotes);
+    } catch (e) {
+        const _b = document.getElementById('kanbanBoard');
+        if (_b) _b.innerHTML = '<div style="padding:32px;color:#ef4444;font-size:13px;">Không thể tải task</div>';
+    }
+}
+
+// ── Kanban config ────────────────────────────────────────────────────
+const KANBAN_COLS = [
+    { key: 'draft',       label: 'NHÁP',        color: '#6b7280' },
+    { key: 'pending',     label: 'CHỜ XỬ LÝ',   color: '#f97316' },
+    { key: 'in_progress', label: 'ĐANG XỬ LÝ',  color: '#3b82f6' },
+    { key: 'review',      label: 'CHỜ DUYỆT',   color: '#8b5cf6' },
+    { key: 'approved',    label: 'ĐÃ DUYỆT',    color: '#10b981' },
+    { key: 'rejected',    label: 'TỪ CHỐI',     color: '#ef4444' },
+    { key: 'cancelled',   label: 'ĐÃ HỦY',      color: '#9ca3af' },
+    { key: 'done',        label: 'HOÀN THÀNH',  color: '#059669' },
+];
+
+const PRI_COLOR  = ['#6b7280','#3b82f6','#f97316','#ef4444'];
+const PRI_LABEL  = ['Thấp','Bình thường','Cao','Khẩn cấp'];
+let   _collapsedCols = {};   // { colKey: true/false }
+let   _dragNoteId    = null;
+
+// ── Render kanban ─────────────────────────────────────────────────────
+function renderProjectNotes(notes) {
+    const sorted = sortNotes(notes);
+    const total  = sorted.length;
+    const el = document.getElementById('detailTaskCount');
+    if (el) el.textContent = total;
+
+    const board = document.getElementById('kanbanBoard');
+    if (!board) return;
+
+    // Group by status — always render all 8 columns even if empty
+    const groups = {};
+    KANBAN_COLS.forEach(c => { groups[c.key] = []; });
+    sorted.forEach(n => {
+        const st = (n.status || 'draft');
+        if (groups[st] !== undefined) groups[st].push(n);
+        else groups['draft'].push(n);
+    });
+
+    board.innerHTML = KANBAN_COLS.map(col => buildKanbanCol(col, groups[col.key])).join('');
+    attachDragDrop();
+}
+
+function buildKanbanCol(col, cards) {
+    const count     = cards.length;
+    const collapsed = !!_collapsedCols[col.key];
+    const colCls    = 'kanban-col' + (collapsed ? ' collapsed' : '');
+
+    const headerContent = collapsed
+        ? `<span class="col-dot" style="background:${col.color};"></span>
+           <span class="col-title">${col.label}</span>
+           <span class="col-count">${count}</span>`
+        : `<span class="col-dot" style="background:${col.color};"></span>
+           <span class="col-title">${col.label}</span>
+           <span class="col-count">${count}</span>
+           <button class="col-btn col-btn-hide" title="Thu nhỏ cột" onclick="toggleColCollapse('${col.key}')">
+               <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                   <polyline points="15 18 9 12 15 6"/>
+               </svg>
+           </button>
+           <button class="col-btn col-btn-hide" title="Thêm công việc" onclick="addTaskToCol('${col.key}')">+</button>`;
+
+    const cardHtml = cards.map(n => buildKanbanCard(n)).join('');
+    const addRow   = `<div class="kb-add-row" onclick="addTaskToCol('${col.key}')">
+                          <span style="font-size:15px;line-height:1;margin-right:2px;">+</span>
+                          <span>Thêm công việc</span>
+                      </div>`;
+
+    const bodyHtml = collapsed ? '' :
+        `<div class="kanban-col-body" data-col="${col.key}"
+              ondragover="handleDragOver(event)"
+              ondragleave="handleDragLeave(event)"
+              ondrop="handleDrop(event,'${col.key}')">
+            ${cardHtml}
+            ${addRow}
+         </div>`;
+
+    const headerClick = collapsed ? `onclick="toggleColCollapse('${col.key}')"` : '';
+
+    return `<div class="${colCls}" data-col="${col.key}" id="kanban-col-${col.key}">
+                <div class="kanban-col-header" ${headerClick}>
+                    ${headerContent}
+                </div>
+                ${bodyHtml}
+            </div>`;
+}
+
+function buildKanbanCard(n) {
+    const now      = new Date();
+    const dueDate  = n.due_date ? new Date(n.due_date) : null;
+    const overdue  = dueDate && dueDate < now;
+    const dueFmt   = dueDate
+        ? `<span class="${overdue ? 'kb-overdue' : ''}">${formatDate(n.due_date)}</span>`
+        : `<span style="color:#d1d5db;">—</span>`;
+
+    const pri   = (n.priority !== null && n.priority !== undefined) ? parseInt(n.priority) : 1;
+    const priDot= `<span class="kb-priority-dot" style="background:${PRI_COLOR[pri]||'#6b7280'}" title="${PRI_LABEL[pri]||''}"></span>`;
+
+    const quickBadge = n.is_quick_add
+        ? `<span class="kb-badge-quick">Nhanh</span>`
+        : '';
+
+    // Creator avatar (ảnh hoặc chữ cái đầu)
+    const creatorInitial = n.creator_name ? n.creator_name.trim()[0].toUpperCase() : '?';
+    const creatorAvatarHtml = n.creator_avatar
+        ? `<img src="${esc(n.creator_avatar)}" alt="${esc(n.creator_name||'')}"
+               style="width:20px;height:20px;border-radius:50%;object-fit:cover;border:1.5px solid #e5e7eb;flex-shrink:0;"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+           <div style="display:none;width:20px;height:20px;border-radius:50%;background:#e0f2fe;color:#0369a1;align-items:center;justify-content:center;font-size:8px;font-weight:800;flex-shrink:0;">${creatorInitial}</div>`
+        : `<div style="width:20px;height:20px;border-radius:50%;background:#e0f2fe;color:#0369a1;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:800;flex-shrink:0;" title="${esc(n.creator_name||'Người tạo')}">${creatorInitial}</div>`;
+
+    // Màu viền theo trạng thái
+    const col = KANBAN_COLS.find(c => c.key === (n.status || 'draft'));
+    const statusColor = col ? col.color : '#6b7280';
+    const borderLeft  = `border-left:3px solid ${statusColor};`;
+
+    return `<div class="kb-card" draggable="true"
+                 data-note-id="${n.id}"
+                 data-status="${esc(n.status||'draft')}"
+                 style="${borderLeft}"
+                 onclick="openDetailModal(${n.id})"
+                 ondragstart="handleDragStart(event,${n.id})">
+                <div class="kb-card-title">${esc(n.title)}${quickBadge ? '&nbsp;' : ''}${quickBadge}</div>
+                <div class="kb-card-meta">
+                    <div class="kb-card-meta-left">${priDot}${dueFmt}</div>
+                    <div class="kb-card-meta-right">${formatDate(n.created_at)}</div>
+                </div>
+                <div class="kb-card-actions" onclick="event.stopPropagation();" style="display:flex;align-items:center;gap:6px;margin-top:auto;">
+                    ${creatorAvatarHtml}
+                    <span style="flex:1;font-size:10px;color:#9ca3af;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${esc(n.creator_name||'')}</span>
+                    <button class="kb-btn-icon kb-btn-edit"   title="Sửa" onclick="openEditModal(${n.id})">✏</button>
+                    <button class="kb-btn-icon kb-btn-delete" title="Xóa" onclick="delNote(${n.id})">✕</button>
+                </div>
+            </div>`;
+}
+
+// ── Collapse ──────────────────────────────────────────────────────────
+function toggleColCollapse(colKey) {
+    _collapsedCols[colKey] = !_collapsedCols[colKey];
+    renderProjectNotes(_allNotes);
+}
+
+// ── Drag & Drop ───────────────────────────────────────────────────────
+function attachDragDrop() {
+    // Nothing extra needed - event handlers are inline
+}
+
+function handleDragStart(e, noteId) {
+    _dragNoteId = noteId;
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/plain', String(noteId));
+    const card = e.currentTarget;
+    setTimeout(() => card && card.classList.add('dragging'), 0);
+}
+
+function handleDragOver(e) {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
+    const body = e.currentTarget;
+    body.classList.add('drag-over');
+}
+
+function handleDragLeave(e) {
+    e.currentTarget.classList.remove('drag-over');
+}
+
+async function handleDrop(e, targetColKey) {
+    e.preventDefault();
+    e.currentTarget.classList.remove('drag-over');
+
+    const noteId = parseInt(e.dataTransfer.getData('text/plain') || _dragNoteId);
+    if (!noteId) return;
+
+    // Find current status
+    const note = _allNotes.find(n => n.id === noteId);
+    if (!note || (note.status || 'draft') === targetColKey) return;
+
+    // Optimistic update
+    note.status = targetColKey;
+    renderProjectNotes(_allNotes);
+
+    // Persist to server
+    try {
+        const fd = new FormData();
+        fd.append('status', targetColKey);
+        fd.append('title',    note.title || '');
+        fd.append('content',  note.content || '');
+        fd.append('priority', note.priority ?? 1);
+        fd.append('due_date', note.due_date || '');
+        await fetch(`/notes/${noteId}`, {
+            method: 'PUT', credentials: 'include', body: fd
+        });
+    } catch(err) {
+        console.error('Status update failed', err);
+    }
+    _dragNoteId = null;
+}
+
+// ── Add task anchored to a specific column ────────────────────────────
+function addTaskToCol(colKey) {
+    window.__kanbanTargetStatus = colKey;
+    if (typeof window.openQuickAddModal === 'function') window.openQuickAddModal();
+    else if (typeof window.openAddNoteModal === 'function') window.openAddNoteModal();
+}
+
+// ── Quay lại ─────────────────────────────────────────────────────────
+function backToProjects() {
+    _currentProjectId   = null;
+    _currentProjectName = '';
+    _allNotes           = [];
+    _currentProjectMembers = [];
+    _collapsedCols      = {};
+    _dragNoteId         = null;
+    window.__activeProjectId   = null;
+    window.__activeProjectName = null;
+    window.__kanbanTargetStatus = null;
+    stopProjectPolling();
+    document.getElementById('projectsView').style.display  = 'block';
+    document.getElementById('projectDetail').style.display = 'none';
+    loadProjects();
+}
+
+// ── Members panel ─────────────────────────────────────────────────────
+let _membersPanelOpen = false;
+
+function toggleMembersPanel() {
+    _membersPanelOpen = !_membersPanelOpen;
+    const panel = document.getElementById('membersHoverPanel');
+    const btn   = document.getElementById('membersTriggerBtn');
+    if (_membersPanelOpen) {
+        panel.classList.add('open');
+        btn.classList.add('active');
+        loadMhpMembers(_currentProjectId);
+    } else {
+        panel.classList.remove('open');
+        btn.classList.remove('active');
+        const sec = document.getElementById('mhpAddSection');
+        if (sec) sec.style.display = 'none';
+    }
+}
+
+function closeMembersPanel() {
+    _membersPanelOpen = false;
+    const panel = document.getElementById('membersHoverPanel');
+    const btn   = document.getElementById('membersTriggerBtn');
+    if (panel) panel.classList.remove('open');
+    if (btn)   btn.classList.remove('active');
+}
+
+document.addEventListener('click', function(e) {
+    if (_membersPanelOpen && !e.target.closest('#membersTriggerWrap')) {
+        closeMembersPanel();
+    }
+});
+
+// ── Load members ──────────────────────────────────────────────────────
+async function loadMhpMembers(projectId) {
+    const list = document.getElementById('mhpList');
+    list.innerHTML = '<div style="padding:12px;text-align:center;color:#9ca3af;font-size:12px;">Đang tải...</div>';
+    try {
+        const res = await fetch(`/projects/${projectId}/members`, { credentials: 'include' });
+        if (!res.ok) throw new Error();
+        const members = await res.json();
+        _currentProjectMembers = members; // cache for modal
+        renderMhpMembers(members);
+    } catch(e) {
+        list.innerHTML = '<div style="padding:12px;text-align:center;color:#9ca3af;font-size:12px;">Lỗi tải thành viên</div>';
+    }
+}
+
+function renderMhpMembers(members) {
+    const list = document.getElementById('mhpList');
+    if (!members.length) {
+        list.innerHTML = '<div style="padding:12px;text-align:center;color:#9ca3af;font-size:12px;">Chưa có thành viên</div>';
+        return;
+    }
+    list.innerHTML = members.map(m => `
+        <div class="mhp-member-row">
+            <div class="mhp-avatar">${m.full_name.charAt(0).toUpperCase()}</div>
+            <div class="mhp-name">${esc(m.full_name)}</div>
+            ${m.is_owner
+                ? '<span class="mhp-owner-badge">Owner</span>'
+                : `<button class="mhp-del-btn" title="Xóa khỏi dự án" onclick="confirmRemoveMember(event,${m.id},'${m.full_name.replace(/'/g,"\\'")}')">✕</button>`
+            }
+        </div>`).join('');
+}
+
+function confirmRemoveMember(e, uid, name) {
+    e.stopPropagation();
+    if (!confirm(`Bạn có chắc chắn xóa "${name}" không?`)) return;
+    removeMemberFromProject(uid);
+}
+
+async function removeMemberFromProject(uid) {
+    try {
+        const res = await fetch(`/projects/${_currentProjectId}/members/${uid}`, {
+            method: 'DELETE', credentials: 'include'
+        });
+        if (!res.ok) throw new Error((await res.json()).detail || 'Xóa thất bại');
+        loadMhpMembers(_currentProjectId);
+    } catch(e) { alert('Lỗi: ' + e.message); }
+}
+
+function toggleMhpAddSection(e) {
+    e.stopPropagation();
+    const sec = document.getElementById('mhpAddSection');
+    const isOpen = sec.style.display !== 'none';
+    sec.style.display = isOpen ? 'none' : 'block';
+    if (!isOpen) document.getElementById('mhpSearchInput').focus();
+}
+
+async function searchMhpMembers(q) {
+    clearTimeout(_mhpSearchTimer);
+    const dd = document.getElementById('mhpAddDd');
+    if (!q || q.trim().length < 2) { dd.classList.remove('show'); return; }
+    _mhpSearchTimer = setTimeout(async () => {
+        try {
+            const res = await fetch(`/users/search?q=${encodeURIComponent(q.trim())}`, { credentials: 'include' });
+            if (!res.ok) return;
+            const users = await res.json();
+            if (!users.length) {
+                dd.innerHTML = '<div class="mhp-dd-row" style="color:#9ca3af;cursor:default;">Không tìm thấy</div>';
+            } else {
+                dd.innerHTML = users.map(u => `
+                    <div class="mhp-dd-row" data-uid="${u.id}" data-name="${esc(u.full_name)}">
+                        <div class="mhp-dd-name">${esc(u.full_name)}</div>
+                        <div class="mhp-dd-email">${esc(u.email)}</div>
+                    </div>`).join('');
+                dd.querySelectorAll('.mhp-dd-row[data-uid]').forEach(row => {
+                    row.addEventListener('click', function() {
+                        addMemberToProject(parseInt(this.dataset.uid), this.dataset.name);
+                    });
+                });
+            }
+            dd.classList.add('show');
+        } catch(e) {}
+    }, 280);
+}
+
+async function addMemberToProject(userId, userName) {
+    try {
+        const res = await fetch(`/projects/${_currentProjectId}/members`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include',
+            body: JSON.stringify({ user_id: userId })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.detail || 'Thêm thất bại');
+        document.getElementById('mhpSearchInput').value = '';
+        document.getElementById('mhpAddDd').classList.remove('show');
+        document.getElementById('mhpAddSection').style.display = 'none';
+        loadMhpMembers(_currentProjectId);
+    } catch(e) { alert('Lỗi: ' + e.message); }
+}
+
+// ── Xóa dự án ────────────────────────────────────────────────────────
+async function deleteProject(projectId) {
+    if (!confirm('Xóa dự án này? Các task sẽ chuyển về Công việc cá nhân.')) return;
+    try {
+        const res = await fetch(`/projects/${projectId}`, { method: 'DELETE', credentials: 'include' });
+        if (!res.ok) throw new Error((await res.json()).detail || 'Xóa thất bại');
+        loadProjects();
+    } catch (e) { alert('Lỗi: ' + e.message); }
+}
+
+// ── Parse nội dung có cấu trúc [Phong cách] Tiêu đề: ... ─────────────
+function parseNoteContent(rawContent) {
+    if (!rawContent) return { style: null, subject: null, body: rawContent || '', label: null };
+
+    const c = rawContent.trim();
+
+    // Định dạng: [Phong cách]\nTiêu đề: ...\n\nNội dung...
+    // Hoặc từ AI: [Chuyên nghiệp]\nTiêu đề: ...\n\nBody...\n---AI---\nNhãn: ...\nThời gian: ...
+    let style = null, subject = null, body = c, aiLabel = null;
+
+    if (c.startsWith('[')) {
+        const bracketEnd = c.indexOf(']');
+        if (bracketEnd > 0) {
+            style = c.slice(1, bracketEnd).trim();
+            const rest = c.slice(bracketEnd + 1).trim();
+
+            // Tách phần AI (---AI---)
+            const aiSep = rest.indexOf('---AI---');
+            let mainPart = aiSep >= 0 ? rest.slice(0, aiSep).trim() : rest;
+            const aiPart  = aiSep >= 0 ? rest.slice(aiSep + 8).trim() : '';
+
+            // Trích nhãn từ phần AI
+            const labelMatch = aiPart.match(/Nhãn:\s*(.+)/);
+            if (labelMatch) aiLabel = labelMatch[1].trim();
+
+            // Trích tiêu đề email
+            const subjectMatch = mainPart.match(/^Tiêu đề:\s*(.+)/m);
+            if (subjectMatch) {
+                subject = subjectMatch[1].trim();
+                mainPart = mainPart.replace(/^Tiêu đề:.+\n?/m, '').trim();
+            }
+
+            body = mainPart;
+        }
+    }
+
+    return { style, subject, body, label: aiLabel };
+}
+
+// ── Render participants tags ─────────────────────────────────────────
+function renderParticipants(members) {
+    const row  = document.getElementById('pdmParticipantsRow');
+    const tags = document.getElementById('pdmParticipantsTags');
+    if (!members || !members.length) {
+        row.style.display = 'none';
+        return;
+    }
+    tags.innerHTML = members.map(m =>
+        `<span class="pdm-participant-tag">👤 ${esc(m.full_name)}</span>`
+    ).join('');
+    row.style.display = 'block';
+}
+
+// ── PROJECT DETAIL MODAL ──────────────────────────────────────────────
+let _pdmNoteId = null;
+
+function openProjectDetailModal(note) {
+    _pdmNoteId = note.id;
+
+    // Tiêu đề
+    document.getElementById('pdmTitle').textContent = note.title || '';
+
+    // Parse nội dung có cấu trúc
+    const parsed = parseNoteContent(note.content);
+
+    // Phong cách
+    const styleRow   = document.getElementById('pdmStyleRow');
+    const styleBadge = document.getElementById('pdmStyleBadge');
+    if (parsed.style) {
+        styleBadge.textContent  = parsed.style;
+        styleRow.style.display  = 'flex';
+    } else {
+        styleRow.style.display  = 'none';
+    }
+
+    // Nhãn AI
+    const labelRow   = document.getElementById('pdmLabelRow');
+    const labelBadge = document.getElementById('pdmLabelBadge');
+    const labelVal   = parsed.label || note.label || null;
+    if (labelVal) {
+        labelBadge.textContent  = labelVal;
+        labelRow.style.display  = 'flex';
+    } else {
+        labelRow.style.display  = 'none';
+    }
+
+    // Tiêu đề email
+    const subjectRow = document.getElementById('pdmSubjectRow');
+    const subjectVal = document.getElementById('pdmSubjectVal');
+    if (parsed.subject) {
+        subjectVal.textContent   = parsed.subject;
+        subjectRow.style.display = 'block';
+    } else {
+        subjectRow.style.display = 'none';
+    }
+
+    // Nội dung chính
+    document.getElementById('pdmContent').textContent = parsed.body || '(Không có nội dung)';
+
+    // Người tham gia — dùng cache thành viên dự án
+    renderParticipants(_currentProjectMembers);
+
+    // Trạng thái
+    const statusMap = { todo: 'Chưa làm', in_progress: 'Đang làm', done: 'Hoàn thành' };
+    document.getElementById('pdmStatus').textContent = statusMap[note.status] || note.status || '—';
+
+    // Ưu tiên
+    const prioMap = { 1: '🟢 Thấp', 2: '🟡 Trung bình', 3: '🔴 Cao' };
+    document.getElementById('pdmPriority').textContent = prioMap[note.priority] || ('Mức ' + note.priority);
+
+    // Hạn chót
+    const now = new Date();
+    const due = note.due_date ? new Date(note.due_date) : null;
+    const deadlineEl = document.getElementById('pdmDeadline');
+    if (due) {
+        deadlineEl.textContent      = formatDate(note.due_date);
+        deadlineEl.style.color      = due < now ? '#ef4444' : '#6b7280';
+        deadlineEl.style.fontWeight = due < now ? '700' : '400';
+    } else {
+        deadlineEl.textContent      = 'Không có hạn';
+        deadlineEl.style.color      = '#9ca3af';
+        deadlineEl.style.fontWeight = '400';
+    }
+
+    // Người tạo & ngày tạo
+    document.getElementById('pdmCreator').textContent   = note.creator_name || '—';
+    document.getElementById('pdmCreatedAt').textContent = formatDate(note.created_at);
+
+    // Reset chat
+    document.getElementById('pdmChatMessages').innerHTML =
+        '<div class="chat-msg bot-msg">Hỏi tôi về cách chuẩn bị cho công việc này!</div>';
+    document.getElementById('pdmAiInput').value = '';
+
+    // Hiện modal
+    document.getElementById('projectDetailModal').style.display = 'flex';
+}
+
+function closeProjectDetailModal() {
+    document.getElementById('projectDetailModal').style.display = 'none';
+    _pdmNoteId = null;
+}
+
+function pdmEdit() {
+    closeProjectDetailModal();
+    if (typeof window.openEditModal === 'function') {
+        const n = _allNotes.find(x => x.id === _pdmNoteId);
+        if (n && typeof window.allNotes !== 'undefined' && !window.allNotes.find(x => x.id === n.id)) {
+            window.allNotes.push(n);
+        }
+        window.openEditModal(_pdmNoteId);
+    }
+}
+
+function pdmDelete() {
+    if (!confirm('Bạn chắc chắn muốn xóa công việc này?')) return;
+    closeProjectDetailModal();
+    if (typeof window.delNote === 'function') window.delNote(_pdmNoteId);
+}
+
+// ── Chat với AI ──────────────────────────────────────────────────────
+async function pdmAskAi() {
+    if (_pdmAiSending) return;
+    const msg = document.getElementById('pdmAiInput').value.trim();
+    if (!msg) return;
+
+    const note = _allNotes.find(x => x.id === _pdmNoteId) || {};
+    const chatBox = document.getElementById('pdmChatMessages');
+    const btn     = document.getElementById('pdmAiBtn');
+
+    chatBox.innerHTML += `<div class="chat-msg user-msg">${esc(msg)}</div>`;
+    document.getElementById('pdmAiInput').value = '';
+    btn.disabled = true;
+    chatBox.innerHTML += `<div class="chat-msg bot-msg" id="pdmThinking"><span style="animation:pulse 1s infinite;color:#9ca3af;">Đang trả lời...</span></div>`;
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+    _pdmAiSending = true;
+    try {
+        const res = await fetch('/nextact/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include',
+            body: JSON.stringify({
+                task_title:       note.title   || '',
+                task_description: note.content || '',
+                due_date:         note.due_date || '',
+                message:          msg,
+            }),
+        });
+        const data = await res.json();
+        const thinking = document.getElementById('pdmThinking');
+        if (thinking) thinking.remove();
+
+        if (!res.ok || !data.success) {
+            chatBox.innerHTML += `<div class="chat-msg bot-msg" style="color:#ef4444;">Lỗi: ${esc(data.detail || data.reply || 'Không thể kết nối trợ lý')}</div>`;
+        } else {
+            let replyHtml = `<div class="chat-msg bot-msg" style="white-space:pre-wrap;">${esc(data.reply)}</div>`;
+            if (data.highlights && data.highlights.length) {
+                replyHtml += `<div class="chat-msg bot-msg"><ul style="margin:4px 0 0;padding-left:16px;">` +
+                    data.highlights.map(h => `<li style="font-size:12px;color:#196B7C;margin-bottom:2px;">${esc(h)}</li>`).join('') +
+                    `</ul></div>`;
+            }
+            chatBox.innerHTML += replyHtml;
+        }
+    } catch(e) {
+        const thinking = document.getElementById('pdmThinking');
+        if (thinking) thinking.remove();
+        chatBox.innerHTML += `<div class="chat-msg bot-msg" style="color:#ef4444;">Lỗi kết nối máy chủ.</div>`;
+    } finally {
+        btn.disabled = false;
+        _pdmAiSending = false;
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+}
+
+// ── Callback khi tạo note mới ─────────────────────────────────────────
+window.onNoteCreated = function(note) {
+    if (_currentProjectId && note && note.project_id == _currentProjectId) {
+        loadProjectNotes(_currentProjectId);
+    }
+    if (note && note.project_id) return true;
+};
+
+// ── DOMContentLoaded ──────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+    loadProjects();
+    // Đồng bộ tỉ lệ hoàn thành trong sidebar
+    if (typeof syncStatsPopover === 'function') syncStatsPopover();
+
+    // Override openEditModal
+    const _origOpenEditModal = window.openEditModal;
+    window.openEditModal = function(id) {
+        if (_currentProjectId) {
+            const n = _allNotes.find(x => x.id === id);
+            if (n && typeof window.allNotes !== 'undefined') {
+                if (!window.allNotes.find(x => x.id === id)) window.allNotes.push(n);
+            }
+        }
+        if (typeof _origOpenEditModal === 'function') _origOpenEditModal(id);
+    };
+
+    // Override delNote
+    const _origDelNote = window.delNote;
+    window.delNote = async function(id) {
+        if (!_currentProjectId) {
+            if (typeof _origDelNote === 'function') return _origDelNote(id);
+            return;
+        }
+        if (!confirm('Bạn chắc chắn muốn xóa ghi chú này?')) return;
+        try {
+            const res = await fetch(`/notes/${id}`, { method: 'DELETE', credentials: 'include' });
+            if (res.ok) {
+                const dm = document.getElementById('detailModal');
+                if (dm && dm.classList.contains('show')) dm.classList.remove('show');
+                loadProjectNotes(_currentProjectId);
+            } else {
+                alert('Lỗi xóa ghi chú');
+            }
+        } catch(e) { alert('Lỗi kết nối'); }
+    };
+
+    // Override openDetailModal — dùng modal project chi tiết
+    const _origOpenDetailModal = window.openDetailModal;
+    window.openDetailModal = function(id) {
+        if (_currentProjectId) {
+            const n = _allNotes.find(x => x.id === id);
+            if (n) { openProjectDetailModal(n); return; }
+        }
+        if (typeof _origOpenDetailModal === 'function') _origOpenDetailModal(id);
+    };
+
+    // Override updateNote
+    const _origUpdateNote = window.updateNote;
+    window.updateNote = async function(e) {
+        if (!_currentProjectId) {
+            if (typeof _origUpdateNote === 'function') return _origUpdateNote(e);
+            return;
+        }
+        e.preventDefault();
+        const fd = new FormData();
+        fd.append('title',    document.getElementById('editTitle').value);
+        fd.append('content',  document.getElementById('editContent').value);
+        fd.append('status',   'todo');
+        fd.append('priority', document.getElementById('editPriority').value);
+        fd.append('due_date', document.getElementById('editDueDate').value || '');
+        try {
+            const res = await fetch(`/notes/${window.editId}`, {
+                method: 'PUT', credentials: 'include', body: fd
+            });
+            if (res.ok) {
+                if (typeof window.closeEditModal === 'function') window.closeEditModal();
+                loadProjectNotes(_currentProjectId);
+            } else { alert('Lỗi cập nhật ghi chú'); }
+        } catch(e) { alert('Lỗi kết nối'); }
+    };
+
+    // Intercept "Tạo Nhanh"
+    const origOpenQuickAdd = window.openQuickAddModal;
+    if (typeof origOpenQuickAdd === 'function') {
+        window.openQuickAddModal = function() {
+            if (_currentProjectId) {
+                window.__activeProjectId   = _currentProjectId;
+                window.__activeProjectName = _currentProjectName;
+                window.__calledFromProject = true;
+                // pass kanban target status if set
+                window.__defaultNoteStatus = window.__kanbanTargetStatus || 'draft';
+            } else {
+                window.__activeProjectId   = null;
+                window.__activeProjectName = null;
+                window.__defaultNoteStatus = null;
+            }
+            window.__kanbanTargetStatus = null;
+            origOpenQuickAdd.apply(this, arguments);
+        };
+    }
+
+    // Intercept "Tạo Ghi Chú"
+    const origOpenAddNote = window.openAddNoteModal;
+    if (typeof origOpenAddNote === 'function') {
+        window.openAddNoteModal = function() {
+            if (_currentProjectId) {
+                window.__activeProjectId   = _currentProjectId;
+                window.__activeProjectName = _currentProjectName;
+                window.__defaultNoteStatus = window.__kanbanTargetStatus || 'draft';
+            } else {
+                window.__activeProjectId   = null;
+                window.__activeProjectName = null;
+                window.__defaultNoteStatus = null;
+            }
+            window.__kanbanTargetStatus = null;
+            origOpenAddNote.apply(this, arguments);
+        };
+    }
+
+    // Enter để gửi chat
+    const pdmInput = document.getElementById('pdmAiInput');
+    if (pdmInput) {
+        pdmInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); pdmAskAi(); }
+        });
+    }
+
+    // Đóng modal khi click ra ngoài
+    const pdmModal = document.getElementById('projectDetailModal');
+    if (pdmModal) {
+        pdmModal.addEventListener('click', function(e) {
+            if (e.target === this) closeProjectDetailModal();
+        });
+    }
+});
+</script>
+{% endblock %}

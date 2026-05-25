@@ -1,0 +1,553 @@
+{% extends "base.html" %}
+
+{% block title %}Kế Hoạch Tuần{% endblock %}
+
+{% block extra_head %}
+<style>
+.planner-shell { display:flex; gap:0; align-items:flex-start; min-width:0; font-family:'Inter',sans-serif; }
+
+/* Đồng bộ font Inter cho toàn bộ các element trong planner */
+.planner-shell *, .planner-shell input, .planner-shell button, .planner-shell span, .planner-shell div {
+    font-family: 'Inter', sans-serif;
+}
+
+/* ===== LEFT PANEL ===== */
+.planner-panel { flex:0 0 210px; min-width:210px; max-width:210px; display:flex; flex-direction:column; gap:12px; padding-right:14px; border-right:1px solid #e8eaed; margin-right:14px; flex-shrink:0; height:calc(100vh - 240px); min-height:380px; overflow-y:auto; }
+.panel-card   { background:#fff; border:1px solid #e8eaed; border-radius:10px; padding:12px 14px; flex-shrink:0; }
+.panel-title  { font-size:11px; font-weight:700; color:#9ca3af; text-transform:uppercase; letter-spacing:.5px; margin-bottom:10px; }
+.panel-stat-row { display:flex; justify-content:space-between; align-items:center; padding:3px 0; }
+.panel-stat-label { font-size:12px; color:#6b7280; }
+.panel-stat-val   { font-size:16px; font-weight:900; color:#1e3a5f; }
+.panel-stat-val.green  { color:#3db38a; }
+.panel-stat-val.orange { color:#f97316; }
+
+/* Mini calendar */
+.mini-cal-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:8px; }
+.mini-cal-title  { font-size:12px; font-weight:700; color:#1e3a5f; }
+.mini-cal-nav    { background:none; border:none; cursor:pointer; color:#6b7280; font-size:13px; padding:2px 5px; border-radius:4px; transition:background .12s; }
+.mini-cal-nav:hover { background:#f3f4f6; color:#1e3a5f; }
+.mini-cal-grid   { display:grid; grid-template-columns:repeat(7,1fr); gap:1px; text-align:center; }
+.mini-cal-dn     { font-size:9px; font-weight:700; color:#9ca3af; padding:2px 0; }
+.mini-cal-d      { font-size:10px; color:#374151; padding:3px 1px; border-radius:4px; cursor:pointer; transition:background .12s; line-height:1; }
+.mini-cal-d:hover  { background:#f3f4f6; }
+.mini-cal-d.other  { color:#d1d5db; cursor:default; }
+.mini-cal-d.today  { background:#f97316; color:#fff; font-weight:700; }
+.mini-cal-d.inweek { background:#fef3e2; color:#f97316; font-weight:600; }
+.mini-cal-d.today.inweek { background:#f97316; color:#fff; }
+
+/* Bar chart */
+.panel-chart-title { font-size:11px; font-weight:700; color:#9ca3af; text-transform:uppercase; letter-spacing:.5px; margin-bottom:8px; }
+.chart-bars    { display:flex; align-items:flex-end; gap:4px; height:74px; }
+.chart-bar-wrap { flex:1; display:flex; flex-direction:column; align-items:center; gap:2px; }
+.chart-bar-bg   { width:100%; background:#f3f4f6; border-radius:4px 4px 0 0; height:55px; display:flex; align-items:flex-end; overflow:hidden; }
+.chart-bar-fill { width:100%; border-radius:4px 4px 0 0; transition:height .4s cubic-bezier(.4,0,.2,1); min-height:2px; }
+.chart-bar-lbl  { font-size:8px; color:#9ca3af; font-weight:700; }
+.chart-bar-pct  { font-size:8px; color:#374151; font-weight:700; min-height:10px; }
+
+/* ===== WEEKLY GRID ===== */
+.planner-main { flex:1; overflow-x:auto; min-width:0; max-width:100%; }
+.weekly-grid  { display:grid; grid-template-columns:repeat(7,minmax(195px,1fr)); gap:10px; min-width:1370px; }
+
+/* Tất cả card ngày đều bo tròn đồng đều */
+.day-col { 
+    background:#fff; 
+    border:1px solid #e8eaed; 
+    border-radius:14px; 
+    display:flex; 
+    flex-direction:column; 
+    overflow:hidden; 
+    box-shadow:0 1px 4px rgba(0,0,0,.05); 
+    transition:box-shadow .2s; 
+    height:calc(100vh - 240px); 
+    min-height:380px; 
+}
+.day-col:hover { box-shadow:0 4px 14px rgba(0,0,0,.09); }
+
+/* Tất cả cột đều phẳng, chỉ khác màu viền trên */
+.day-col[data-di="0"] { border-top:3px solid #3db38a; }
+
+/* Các đường viền màu trên đỉnh của các cột phẳng */
+.day-col[data-di="1"] { border-top:3px solid #2563eb; }
+.day-col[data-di="2"] { border-top:3px solid #8b5cf6; }
+.day-col[data-di="3"] { border-top:3px solid #f0a500; }
+.day-col[data-di="4"] { border-top:3px solid #e05252; }
+.day-col[data-di="5"] { border-top:3px solid #10b981; }
+.day-col[data-di="6"] { border-top:3px solid #f97316; }
+
+.day-header { padding:10px 12px 6px; text-align:center; border-bottom:1px solid #f3f4f6; }
+
+/* Tiêu đề ngày: chỉ hiển thị, không chỉnh sửa */
+.day-title-inp { 
+    font-size:11px; 
+    font-weight:700; 
+    color:#1e3a5f; 
+    border:none; 
+    outline:none; 
+    background:transparent; 
+    text-align:center; 
+    width:100%; 
+    cursor:default; 
+    font-family:'Inter', sans-serif; 
+    border-radius:0; 
+    padding:3px 10px; 
+    box-sizing:border-box; 
+    pointer-events:none;
+    user-select:none;
+}
+.day-title-inp:hover { background:transparent; border-color:transparent; }
+.day-title-inp:focus { 
+    background:transparent; 
+    color:#1e3a5f; 
+    cursor:default; 
+    border-color:transparent; 
+    box-shadow: none; 
+}
+
+/* Override xung đột từ style.css global — phải dùng !important để thắng specificity */
+.day-note-inp:focus {
+    background: #ffffff !important;
+    border: 1px solid #3b82f6 !important;
+    box-shadow: 0 0 0 3px rgba(59,130,246,.12) !important;
+    color: #1e3a5f !important;
+    cursor: text !important;
+    outline: none !important;
+    border-radius: 999px !important;
+}
+.day-title-inp:focus {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Đảm bảo font Inter thắng body font từ style.css */
+.planner-shell, .planner-shell * {
+    font-family: 'Inter', sans-serif !important;
+}
+
+.day-date-badge { display:inline-block; font-size:11px; color:#9ca3af; margin-top:3px; padding:1px 6px; border-radius:10px; }
+.day-col.is-today .day-title-inp  { color:#f97316; }
+.day-col.is-today .day-date-badge { background:#f97316; color:#fff; }
+
+/* Ring */
+.ring-wrap     { display:flex; align-items:center; justify-content:center; padding:10px 0 6px; }
+.ring-rel      { position:relative; width:72px; height:72px; }
+.ring-svg      { width:72px; height:72px; transform:rotate(-90deg); }
+.ring-track    { fill:none; stroke:#f0f0f0; stroke-width:8; }
+.ring-arc      { fill:none; stroke-width:8; stroke-linecap:round; stroke-dasharray:197; stroke-dashoffset:197; transition:stroke-dashoffset .5s cubic-bezier(.4,0,.2,1),stroke .4s; }
+.ring-pct-text { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:900; color:#1e3a5f; }
+
+/* Stats */
+.day-stats  { display:flex; justify-content:center; gap:12px; padding:2px 8px 8px; }
+.stat-pill  { display:flex; flex-direction:column; align-items:center; font-size:10px; color:#9ca3af; }
+.stat-num   { font-size:13px; font-weight:900; }
+.stat-pill.s-done  .stat-num { color:#3db38a; }
+.stat-pill.s-pend  .stat-num { color:#f97316; }
+.stat-pill.s-total .stat-num { color:#1e3a5f; }
+
+/* Ô "CHƯA CÓ CÔNG VIỆC" — viền xám nhạt, chữ nhỏ */
+.day-note-inp {
+    display: block !important;
+    margin: 0 14px 8px !important;
+    width: calc(100% - 28px) !important;
+    box-sizing: border-box !important;
+    height: 26px !important;
+    padding: 0 10px !important;
+    background: #fafafa !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 999px !important;
+    -webkit-border-radius: 999px !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    overflow: hidden !important;
+    font-size: 10.5px !important;
+    font-weight: 500 !important;
+    font-family: 'Inter', sans-serif !important;
+    color: #b0b8cc !important;
+    text-align: center !important;
+    outline: none !important;
+    cursor: pointer !important;
+    transition: background .15s, border-color .15s, color .15s, box-shadow .15s !important;
+}
+
+.day-note-inp:hover {
+    background: #f4f7fe !important;
+    border-color: #c4c9d4 !important;
+}
+
+.day-note-inp.has-note {
+    color: #1e3a5f !important;
+    background: #eff6ff !important;
+    border-color: #bfdbfe !important;
+    font-weight: 600 !important;
+}
+
+.day-note-inp:focus {
+    background: #ffffff;
+    border: 1px solid #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59,130,246,.12);
+    color: #1e3a5f;
+    cursor: text;
+}
+
+.day-note-inp::selection {
+    background: rgba(59,130,246,.18);
+    color: #1e3a5f;
+}
+
+/* Task list — scrollable, reveal on hover */
+.task-list { padding:0 10px 6px; display:flex; flex-direction:column; gap:3px; flex:1; overflow-y:auto; scrollbar-width:thin; scrollbar-color:#e5e7eb transparent; }
+.task-list::-webkit-scrollbar { width:3px; }
+.task-list::-webkit-scrollbar-thumb { background:#d1d5db; border-radius:99px; }
+.task-row  { display:flex; align-items:flex-start; gap:6px; padding:5px; border-radius:7px; cursor:pointer; transition:background .12s; user-select:none; position:relative; }
+.task-row:hover { background:#f9fafb; }
+.task-del  { display:none; width:18px; height:18px; flex-shrink:0; align-items:center; justify-content:center; color:#e05252; cursor:pointer; border-radius:4px; margin-top:1px; transition:background .12s; }
+.task-del:hover       { background:#fee2e2; }
+.task-row:hover .task-del { display:flex; }
+.task-chk  { width:15px; height:15px; border:1.5px solid #d1d5db; border-radius:4px; flex-shrink:0; margin-top:1px; display:flex; align-items:center; justify-content:center; transition:all .15s; background:#fff; }
+.task-chk svg { display:none; }
+.task-row.done .task-chk svg { display:block; }
+.task-lbl  { font-size:12px; line-height:1.45; color:#374151; word-break:break-word; transition:all .2s; flex:1; }
+.task-row.done .task-lbl { text-decoration:line-through; color:#9ca3af; }
+
+/* Màu checkbox theo từng ngày */
+.day-col[data-di="0"] .task-row.done .task-chk { background:#3db38a; border-color:#3db38a; }
+.day-col[data-di="1"] .task-row.done .task-chk { background:#2563eb; border-color:#2563eb; }
+.day-col[data-di="2"] .task-row.done .task-chk { background:#8b5cf6; border-color:#8b5cf6; }
+.day-col[data-di="3"] .task-row.done .task-chk { background:#f0a500; border-color:#f0a500; }
+.day-col[data-di="4"] .task-row.done .task-chk { background:#e05252; border-color:#e05252; }
+.day-col[data-di="5"] .task-row.done .task-chk { background:#10b981; border-color:#10b981; }
+.day-col[data-di="6"] .task-row.done .task-chk { background:#f97316; border-color:#f97316; }
+
+/* Add row */
+.add-row { padding:5px 10px 8px; border-top:1px solid #f3f4f6; margin-top:4px; }
+.add-inp  { width:100%; box-sizing:border-box; border:1px solid #e5e7eb; border-radius:7px; padding:5px 8px; font-size:12px; font-family:inherit; color:#374151; background:#f9fafb; outline:none; transition:border .15s,background .15s; }
+.add-inp:focus       { border-color:#2563eb; background:#fff; }
+.add-inp::placeholder { color:#c4c4c4; }
+
+/* Week nav — rendered inside results-summary slot */
+.week-nav-row    { display:flex; align-items:center; gap:10px; }
+.week-nav-btn    { width:32px; height:32px; border:1.5px solid #e5e7eb; border-radius:8px; background:#fff; cursor:pointer; display:flex; align-items:center; justify-content:center; color:#6b7280; font-size:16px; transition:all .15s; flex-shrink:0; }
+.week-nav-btn:hover { background:#f3f4f6; color:#1e3a5f; border-color:#d1d5db; }
+.week-label-text  { font-size:14px; font-weight:700; color:#1e3a5f; min-width:200px; text-align:center; }
+.btn-today-inline { padding:6px 14px; border:1.5px solid #e5e7eb; border-radius:8px; background:#fff; font-size:13px; font-weight:600; color:#6b7280; cursor:pointer; font-family:inherit; transition:all .15s; }
+.btn-today-inline:hover { background:#f3f4f6; color:#1e3a5f; }
+.planner-wrap { overflow-x:auto; padding-bottom:10px; }
+
+/* Fix notes-box không chặn overflow của planner grid */
+.notes-box { overflow: visible !important; }
+</style>
+{% endblock %}
+
+{# ── Override stats submenu với stats kế hoạch tuần ── #}
+{% block stats_submenu %}
+<div class="stats-submenu-title">Kế hoạch tuần</div>
+<div class="stats-submenu-item">
+    <span>Tổng công việc</span>
+    <strong id="subTotalNotes">0</strong>
+</div>
+<div class="stats-submenu-item">
+    <span>Đã xong</span>
+    <strong id="subDone" style="color:#3db38a;">0</strong>
+</div>
+<div class="stats-submenu-item">
+    <span>Còn lại</span>
+    <strong id="subPending" style="color:#f97316;">0</strong>
+</div>
+{% endblock %}
+
+{% block content %}
+{# Gom cụm tiêu đề + điều hướng ngang hàng vào khối wrapper có gạch ngang dưới đáy #}
+<div style="border-bottom: 1px solid #e5e7eb; padding-bottom: 14px; margin-bottom: 16px;">
+    <h2 style="font-family:'Inter',sans-serif; font-size:18px; font-weight:900; color:#1e3a5f; margin-bottom:14px; margin-top:0;">Kế Hoạch Tuần</h2>
+
+    <div class="results-summary" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0;">
+        <div class="week-nav-row">
+            <button class="week-nav-btn" id="prevWeekBtn">&#8592;</button>
+            <span class="week-label-text" id="weekRangeLabel"></span>
+            <button class="week-nav-btn" id="nextWeekBtn">&#8594;</button>
+            <button class="btn-today-inline" id="todayBtn">Hôm nay</button>
+        </div>
+        <div class="sort-controls">
+            <span style="font-size:13px;color:#6b7280;margin-right:4px;">Tuần này:</span>
+            <span style="font-size:13px;font-weight:700;color:#3db38a;" id="hdrDone">0</span>
+            <span style="font-size:13px;color:#6b7280;margin:0 4px;">/</span>
+            <span style="font-size:13px;font-weight:700;color:#1e3a5f;" id="hdrTotal">0</span>
+            <span style="font-size:13px;color:#6b7280;margin-left:4px;">công việc</span>
+        </div>
+    </div>
+</div>
+
+<div class="notes-box">
+    <div class="planner-shell">
+
+        <div class="planner-panel">
+            <div class="panel-card">
+                <div class="panel-title">Tổng quan tuần</div>
+                <div class="panel-stat-row">
+                    <span class="panel-stat-label">Tổng công việc</span>
+                    <span class="panel-stat-val" id="sumTotal">0</span>
+                </div>
+                <div class="panel-stat-row">
+                    <span class="panel-stat-label">Xong</span>
+                    <span class="panel-stat-val green" id="sumDone">0</span>
+                </div>
+                <div class="panel-stat-row">
+                    <span class="panel-stat-label">Còn lại</span>
+                    <span class="panel-stat-val orange" id="sumPending">0</span>
+                </div>
+            </div>
+
+            <div class="panel-card">
+                <div class="mini-cal-header">
+                    <button class="mini-cal-nav" id="calPrev">&#8592;</button>
+                    <span class="mini-cal-title" id="calMonthTitle"></span>
+                    <button class="mini-cal-nav" id="calNext">&#8594;</button>
+                </div>
+                <div class="mini-cal-grid" id="calGrid"></div>
+            </div>
+
+            <div class="panel-card">
+                <div class="panel-chart-title">% hoàn thành theo ngày</div>
+                <div class="chart-bars" id="chartBars"></div>
+            </div>
+        </div>
+
+        <div class="planner-main">
+            <div class="planner-wrap">
+                <div class="weekly-grid" id="weeklyGrid"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block page_scripts %}
+<script>
+// ============================================================
+//  WEEKLY PLANNER — Toàn bộ logic giữ nguyên
+// ============================================================
+const CIRC = 2 * Math.PI * 31.3;
+const RING_COLS  = ['#3db38a','#2563eb','#8b5cf6','#f0a500','#e05252','#10b981','#f97316'];
+const DONE_COL   = '#3db38a';
+const DAY_NAMES  = ['Thứ Hai','Thứ Ba','Thứ Tư','Thứ Năm','Thứ Sáu','Thứ Bảy','Chủ Nhật'];
+const DAY_SHORT  = ['T2','T3','T4','T5','T6','T7','CN'];
+const MONTH_VN   = ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6','Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'];
+
+let weekOffset = 0;
+let weekData   = {};
+let calView    = new Date();
+
+function escH(t) { const d = document.createElement('div'); d.textContent = t; return d.innerHTML; }
+function getMonday(d) { const r = new Date(d); const day = r.getDay(); r.setDate(r.getDate() - (day === 0 ? 6 : day - 1)); r.setHours(0,0,0,0); return r; }
+function getWeekDays() { const mon = getMonday(new Date()); mon.setDate(mon.getDate() + weekOffset * 7); return Array.from({length:7}, (_,i) => { const d = new Date(mon); d.setDate(d.getDate()+i); return d; }); }
+function dayKey(d) { return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; }
+function fmt(d) { return `${d.getDate()}/${d.getMonth()+1}`; }
+
+async function fetchNotes() {
+    try {
+        const res = await fetch('/notes', { credentials:'include' });
+        if (!res.ok) { if (res.status===401) { window.location.href='/login'; } return; }
+        const notes = await res.json();
+        notes.forEach(note => {
+            if (!note.due_date) return;
+            const key = note.due_date.slice(0,10);
+            if (!weekData[key]) weekData[key] = { tasks:[], customTitle: DAY_NAMES[new Date(key+'T00:00:00').getDay()===0?6:new Date(key+'T00:00:00').getDay()-1] };
+            weekData[key].tasks.push({ id:`db_${note.id}_${key}`, dbId:note.id, text:note.title, done:note.status==='done', src:'db' });
+        });
+    } catch(e) { console.error('fetchNotes error:', e); }
+}
+
+function calcProg(key) {
+    const d = weekData[key];
+    if (!d || !d.tasks.length) return { done:0, total:0, pct:0 };
+    const done = d.tasks.filter(t=>t.done).length;
+    return { done, total:d.tasks.length, pct:Math.round(done/d.tasks.length*100) };
+}
+
+function refreshDay(key, di) {
+    const {done, total, pct} = calcProg(key);
+    const arc = document.querySelector(`[data-arc="${key}"]`);
+    if (arc) { arc.style.strokeDashoffset = CIRC-(pct/100)*CIRC; arc.style.stroke = pct>=100?DONE_COL:RING_COLS[di]; }
+    const upd = (attr, val) => { const el=document.querySelector(`[${attr}="${key}"]`); if(el)el.textContent=val; };
+    upd('data-pct', pct+'%'); upd('data-sdone', done); upd('data-spend', total-done); upd('data-stot', total);
+
+    refreshSummary(); renderChart();
+}
+
+function refreshSummary() {
+    const days = getWeekDays(); let tot=0, done=0;
+    days.forEach(d => { const k=dayKey(d); if(weekData[k]){tot+=weekData[k].tasks.length; done+=weekData[k].tasks.filter(t=>t.done).length;} });
+    ['sumTotal','hdrTotal'].forEach(id => { const el=document.getElementById(id); if(el)el.textContent=tot; });
+    ['sumDone','hdrDone'].forEach(id   => { const el=document.getElementById(id); if(el)el.textContent=done; });
+    const ep = document.getElementById('sumPending'); if(ep) ep.textContent = tot-done;
+    // Update sidebar stats
+    const setEl = (id, v) => { const el=document.getElementById(id); if(el)el.textContent=v; };
+    setEl('subTotalNotes', tot); setEl('subDone', done); setEl('subPending', tot-done);
+}
+
+function toggleTask(key, taskId, di) {
+    const t = weekData[key]?.tasks.find(t=>t.id===taskId); if(!t) return;
+    t.done = !t.done;
+    const row = document.querySelector(`[data-task="${taskId}"]`); if(row) row.classList.toggle('done', t.done);
+    refreshDay(key, di);
+}
+
+function deleteTask(key, taskId, di, ev) {
+    ev.stopPropagation();
+    weekData[key].tasks = weekData[key].tasks.filter(t=>t.id!==taskId);
+    rerenderDay(key, di); refreshSummary(); renderChart();
+}
+
+function addTask(key, di, text) {
+    text = text.trim(); if(!text) return;
+    weekData[key].tasks.push({ id:`${key}_${Date.now()}`, text, done:false, src:'manual' });
+    rerenderDay(key, di); refreshSummary(); renderChart();
+}
+
+function saveTitle(key, di, val) { if(weekData[key]) weekData[key].customTitle = val.trim()||DAY_NAMES[di]; }
+
+function focusDayNote(el) {
+    if (!el.classList.contains('has-note')) el.value = '';
+}
+function blurDayNote(key, el) {
+    const val = el.value.trim();
+    if (weekData[key]) weekData[key].dayNote = val;
+    if (val) {
+        el.value = val;
+        el.classList.add('has-note');
+    } else {
+        el.value = 'Chưa có công việc';
+        el.classList.remove('has-note');
+    }
+}
+
+function buildTaskHTML(t, key, di) {
+    return `<div class="task-row ${t.done?'done':''}" data-task="${t.id}" onclick="toggleTask('${key}','${t.id}',${di})">
+        <div class="task-chk"><svg width="9" height="9" fill="none" stroke="#fff" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <span class="task-lbl">${escH(t.text)}</span>
+
+        <div class="task-del" onclick="deleteTask('${key}','${t.id}',${di},event)" title="Xóa việc này">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>
+        </div>
+    </div>`;
+}
+
+function buildDayHTML(date, di) {
+    const key = dayKey(date);
+    if (!weekData[key]) weekData[key] = { tasks:[], customTitle:DAY_NAMES[di], dayNote:'' };
+    const data = weekData[key];
+    const {done, total, pct} = calcProg(key);
+    const ringCol = pct>=100?DONE_COL:RING_COLS[di];
+    const offset  = CIRC-(pct/100)*CIRC;
+    const focus   = data.tasks.find(t=>!t.done)||data.tasks[0];
+    const title   = escH(data.customTitle||DAY_NAMES[di]);
+    return `
+    <div class="day-header">
+        <input class="day-title-inp" value="${title}" readonly tabindex="-1"/>
+        <div class="day-date-badge">${fmt(date)}</div>
+    </div>
+    <div class="ring-wrap"><div class="ring-rel">
+        <svg class="ring-svg" viewBox="0 0 72 72">
+            <circle class="ring-track" cx="36" cy="36" r="31.3"/>
+            <circle class="ring-arc" cx="36" cy="36" r="31.3" data-arc="${key}" style="stroke:${ringCol};stroke-dashoffset:${offset}"/>
+        </svg>
+        <div class="ring-pct-text" data-pct="${key}">${pct}%</div>
+    </div></div>
+    <div class="day-stats">
+        <div class="stat-pill s-done"><span class="stat-num" data-sdone="${key}">${done}</span><span>Xong</span></div>
+        <div class="stat-pill s-pend"><span class="stat-num" data-spend="${key}">${total-done}</span><span>Còn lại</span></div>
+        <div class="stat-pill s-total"><span class="stat-num" data-stot="${key}">${total}</span><span>Tổng</span></div>
+    </div>
+    <input type="text"
+        class="day-note-inp ${data.dayNote ? 'has-note' : ''}"
+        data-note="${key}"
+        value="${data.dayNote ? escH(data.dayNote) : 'Chưa có công việc'}"
+        onfocus="focusDayNote(this)"
+        onblur="blurDayNote('${key}', this)"
+        onkeydown="if(event.key==='Enter') this.blur();" />
+    <div class="task-list">${data.tasks.map(t=>buildTaskHTML(t,key,di)).join('')}</div>
+    <div class="add-row">
+        <input class="add-inp" placeholder="Thêm việc..." data-inp="${key}"
+            onkeydown="if(event.key==='Enter'){addTask('${key}',${di},this.value);this.value='';}"/>
+    </div>`;
+}
+
+function rerenderDay(key, di) {
+    const col = document.querySelector(`[data-daykey="${key}"]`); if(!col) return;
+    const days = getWeekDays(); const today = new Date(); today.setHours(0,0,0,0);
+    col.innerHTML = buildDayHTML(days[di], di);
+    col.className = `day-col${days[di].getTime()===today.getTime()?' is-today':''}`;
+    refreshDay(key, di);
+}
+
+function renderWeek() {
+    const days = getWeekDays(); const grid = document.getElementById('weeklyGrid'); grid.innerHTML = '';
+    const today = new Date(); today.setHours(0,0,0,0);
+    const mon = days[0], sun = days[6];
+    document.getElementById('weekRangeLabel').textContent = `${fmt(mon)} – ${fmt(sun)} / ${mon.getFullYear()}`;
+    days.forEach((date, di) => {
+        const key = dayKey(date); const isToday = date.getTime()===today.getTime();
+        const col = document.createElement('div');
+        col.className = `day-col${isToday?' is-today':''}`;
+        col.setAttribute('data-di', di); col.setAttribute('data-daykey', key);
+        col.innerHTML = buildDayHTML(date, di); grid.appendChild(col);
+    });
+    refreshSummary(); renderChart(); renderCalendar();
+}
+
+function renderCalendar() {
+    const title = document.getElementById('calMonthTitle');
+    const grid  = document.getElementById('calGrid');
+    if (!title || !grid) return;
+    const y = calView.getFullYear(), m = calView.getMonth();
+    title.textContent = `${MONTH_VN[m]} ${y}`;
+    const firstDay = new Date(y,m,1); const lastDay = new Date(y,m+1,0);
+    let startDow = firstDay.getDay(); startDow = startDow===0?6:startDow-1;
+    const weekKeys = new Set(getWeekDays().map(d=>dayKey(d)));
+    const todayKey = dayKey(new Date());
+    const dn = ['T2','T3','T4','T5','T6','T7','CN'];
+    let html = dn.map(n=>`<div class="mini-cal-dn">${n}</div>`).join('');
+    for (let i=0; i<startDow; i++) html += `<div class="mini-cal-d other"></div>`;
+    for (let d=1; d<=lastDay.getDate(); d++) {
+        const k = dayKey(new Date(y,m,d));
+        let cls = 'mini-cal-d';
+        if (k===todayKey)     cls += ' today';
+        if (weekKeys.has(k))  cls += ' inweek';
+        html += `<div class="${cls}" onclick="jumpToWeek('${k}')">${d}</div>`;
+    }
+    grid.innerHTML = html;
+}
+
+function jumpToWeek(key) {
+    const mon = getMonday(new Date()); mon.setHours(0,0,0,0);
+    const target = getMonday(new Date(key));
+    weekOffset = Math.round((target-mon)/(7*86400000));
+    renderWeek();
+}
+
+function renderChart() {
+    const container = document.getElementById('chartBars'); if(!container) return;
+    container.innerHTML = getWeekDays().map((d,di) => {
+        const {pct} = calcProg(dayKey(d));
+        return `<div class="chart-bar-wrap">
+            <div class="chart-bar-pct">${pct}%</div>
+            <div class="chart-bar-bg"><div class="chart-bar-fill" style="height:${pct}%;background:${RING_COLS[di]};"></div></div>
+            <div class="chart-bar-lbl">${DAY_SHORT[di]}</div>
+        </div>`;
+    }).join('');
+}
+
+document.getElementById('calPrev').onclick  = () => { calView.setMonth(calView.getMonth()-1); renderCalendar(); };
+document.getElementById('calNext').onclick  = () => { calView.setMonth(calView.getMonth()+1); renderCalendar(); };
+document.getElementById('prevWeekBtn').onclick = () => { weekOffset--; renderWeek(); };
+document.getElementById('nextWeekBtn').onclick = () => { weekOffset++; renderWeek(); };
+document.getElementById('todayBtn').onclick    = () => { weekOffset=0; calView=new Date(); renderWeek(); };
+
+document.addEventListener('DOMContentLoaded', async () => {
+    await fetchNotes();
+    renderWeek();
+    if (typeof syncStatsPopover === 'function') syncStatsPopover();
+});
+</script>
+{% endblock %}

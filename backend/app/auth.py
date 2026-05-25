@@ -1,19 +1,15 @@
-from fastapi import APIRouter, Depends, Form, HTTPException, Request
+from fastapi import APIRouter, Depends, HTTPException, status, Form
+from fastapi.responses import RedirectResponse
 from sqlalchemy.orm import Session
-from passlib.context import CryptContext
 from .database import SessionLocal
 from .models import User
-from datetime import datetime, timedelta
-from jose import JWTError, jwt
-import json
+from .dependencies import (
+    get_password_hash,
+    verify_password,
+    create_access_token
+)
 
-router = APIRouter()
-pwd_context = CryptContext(schemes=["argon2"], deprecated="auto")
-
-# Secret key để ký JWT token
-SECRET_KEY = "your-secret-key-change-this-in-production"
-ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_DAYS = 30
+router = APIRouter(tags=["auth"])
 
 def get_db():
     db = SessionLocal()
@@ -22,34 +18,57 @@ def get_db():
     finally:
         db.close()
 
-def create_access_token(user_id: int):
-    """Tạo JWT token"""
-    expire = datetime.utcnow() + timedelta(days=ACCESS_TOKEN_EXPIRE_DAYS)
-    payload = {"sub": str(user_id), "exp": expire}
-    token = jwt.encode(payload, SECRET_KEY, algorithm=ALGORITHM)
-    return token
+@router.post("/login")
+def login(
+    email: str = Form(...),
+    password: str = Form(...),
+    db: Session = Depends(get_db)
+):
+    print(f"📥 Login attempt: {email}")
+    user = db.query(User).filter(User.email == email).first()
+
+    if not user or not verify_password(password, user.password_hash):
+        print(f"❌ Login failed for: {email}")
+        # Nếu lỗi, quay lại trang login kèm thông báo (optional)
+        raise HTTPException(status_code=401, detail="Email hoặc mật khẩu không đúng")
+
+    # 1. Tạo Token
+    access_token = create_access_token(data={"sub": str(user.id)})
+
+    # 2. Tạo phản hồi Chuyển hướng (Redirect)
+    # Bạn có thể đổi "/notes" thành "/dashboard" tùy theo app của bạn
+    response = RedirectResponse(url="/home", status_code=status.HTTP_303_SEE_OTHER)
+
+    # 3. Lưu Token vào Cookie
+    # httponly=True giúp ngăn chặn script độc hại lấy token
+    response.set_cookie(
+        key="access_token", 
+        value=f"Bearer {access_token}", 
+        httponly=True,
+        max_age=36000 # Thời gian sống của cookie (giây)
+    )
+
+    print(f" Login success & Cookie set for: {email}")
+    return response
 
 @router.post("/register")
-def register(full_name: str = Form(...), email: str = Form(...), password: str = Form(...), db: Session = Depends(get_db)):
-    # Kiểm tra email đã tồn tại
-    existing_user = db.query(User).filter(User.email == email).first()
-    if existing_user:
+def register(
+    full_name: str = Form(...),
+    email: str = Form(...),
+    password: str = Form(...),
+    db: Session = Depends(get_db)
+):
+    existing = db.query(User).filter(User.email == email).first()
+    if existing:
         raise HTTPException(status_code=400, detail="Email đã tồn tại")
-    
-    hashed = pwd_context.hash(password)
-    user = User(full_name=full_name, email=email, password_hash=hashed)
-    db.add(user)
-    db.commit()
-    db.refresh(user)
-    
-    token = create_access_token(user.id)
-    return {"message": "Đăng ký thành công", "user_id": user.id, "token": token}
 
-@router.post("/login")
-def login(email: str = Form(...), password: str = Form(...), db: Session = Depends(get_db)):
-    user = db.query(User).filter(User.email == email).first()
-    if not user or not pwd_context.verify(password, user.password_hash):
-        raise HTTPException(status_code=401, detail="Email hoặc mật khẩu không đúng")
+    new_user = User(
+        full_name=full_name,
+        email=email,
+        password_hash=get_password_hash(password)
+    )
+    db.add(new_user)
+    db.commit()
     
-    token = create_access_token(user.id)
-    return {"message": "Đăng nhập thành công", "user_id": user.id, "token": token, "full_name": user.full_name}
+    # Sau khi đăng ký, quay về trang login
+    return RedirectResponse(url="/login", status_code=status.HTTP_303_SEE_OTHER)

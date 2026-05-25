@@ -1,0 +1,13 @@
+  Qwen
+                   precision    recall  f1-score   support
+
+        Giao việc       0.62      0.74      0.68        89
+Gửi/Trả lời email       0.83      0.77      0.80        75
+     Lên lịch họp       0.80      0.82      0.81        77
+        Phê duyệt       0.94      0.78      0.86        79
+     Soạn báo cáo       0.86      0.84      0.85        77
+     Tạo nhắc nhở       0.83      0.83      0.83        65
+
+         accuracy                           0.80       462
+        macro avg       0.81      0.80      0.80       462
+     weighted avg       0.81      0.80      0.80       462
