@@ -69,4 +69,5 @@ The dataset derives from English emails and may under-represent Vietnamese-speci
 <div align="center">
   <p><b>Mai Huong Nguyen</b></p>
   <p>Information Technology, Dai Nam University · 2026</p>
+  <p>Email: 3sevenm@gmail.com</p>
 </div>
